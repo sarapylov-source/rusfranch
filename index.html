@@ -1441,8 +1441,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 // ===== CONFIG =====
 const TG_BOT_TOKEN = '8447258387:AAFEutiJ1gxDWyPtKZS6HC9cQN3U2L-X6q4';
 const TG_CHAT_ID = '-5048576857';
-// Google Apps Script Web App URL — вставьте после деплоя скрипта:
-const GOOGLE_SCRIPT_URL = '';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzpIDFvvOpURXQaVacrRgtIPFWk9o93awDF7waHjuhvWFuCPpA25oTrYswQL6Orn28p/exec';
 
 let currentPackage = '';
 const payLinks = {
@@ -1522,39 +1521,60 @@ function setButtonsState(state) {
 
 // ===== TELEGRAM BOT =====
 async function sendToTelegram(data, paymentMethod) {
-  const text = `🔔 *Новая заявка с лендинга*\n\n` +
-    `👤 *Имя:* ${data.name}\n` +
-    `📞 *Телефон:* ${data.phone}\n` +
-    `✈️ *Telegram:* ${data.telegram || '—'}\n` +
-    `📧 *Email:* ${data.email || '—'}\n` +
-    `📦 *Пакет:* ${data.package}\n` +
-    `💰 *Цена:* ${data.price}\n` +
-    `💳 *Способ оплаты:* ${paymentMethod}\n` +
-    `🕐 *Время:* ${data.date}`;
+  // Using HTML parse_mode to avoid Markdown escaping issues with underscores etc.
+  const text = `🔔 <b>Новая заявка с лендинга</b>\n\n` +
+    `👤 <b>Имя:</b> ${escapeHtml(data.name)}\n` +
+    `📞 <b>Телефон:</b> ${escapeHtml(data.phone)}\n` +
+    `✈️ <b>Telegram:</b> ${escapeHtml(data.telegram || '—')}\n` +
+    `📧 <b>Email:</b> ${escapeHtml(data.email || '—')}\n` +
+    `📦 <b>Пакет:</b> ${escapeHtml(data.package)}\n` +
+    `💰 <b>Цена:</b> ${escapeHtml(data.price)}\n` +
+    `💳 <b>Способ оплаты:</b> ${escapeHtml(paymentMethod)}\n` +
+    `🕐 <b>Время:</b> ${escapeHtml(data.date)}`;
 
   try {
-    await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+    const resp = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         chat_id: TG_CHAT_ID,
         text: text,
-        parse_mode: 'Markdown'
+        parse_mode: 'HTML'
       })
     });
+    const result = await resp.json();
+    if (!result.ok) {
+      console.error('Telegram API error:', result.description);
+      // Fallback: try without parse_mode in case of formatting issues
+      const plainText = `🔔 Новая заявка с лендинга\n\nИмя: ${data.name}\nТелефон: ${data.phone}\nTelegram: ${data.telegram || '—'}\nEmail: ${data.email || '—'}\nПакет: ${data.package}\nЦена: ${data.price}\nОплата: ${paymentMethod}\nВремя: ${data.date}`;
+      await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          chat_id: TG_CHAT_ID,
+          text: plainText
+        })
+      });
+    }
   } catch(e) {
-    console.warn('Telegram send error:', e);
+    console.error('Telegram send error:', e);
   }
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 // ===== GOOGLE SHEETS =====
 async function sendToGoogleSheets(data, paymentMethod) {
   if (!GOOGLE_SCRIPT_URL) return;
   try {
+    // Google Apps Script redirects on POST, so we use no-cors mode
+    // Data will be sent but we won't get a readable response (opaque)
     await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: {'Content-Type': 'application/json'},
+      headers: {'Content-Type': 'text/plain'},
       body: JSON.stringify({
         name: data.name,
         phone: data.phone,
@@ -1566,8 +1586,9 @@ async function sendToGoogleSheets(data, paymentMethod) {
         date: data.date
       })
     });
+    console.log('Google Sheets: request sent');
   } catch(e) {
-    console.warn('Google Sheets send error:', e);
+    console.error('Google Sheets send error:', e);
   }
 }
 
