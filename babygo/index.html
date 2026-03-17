@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аудит франшизы BabyGO! — Отчёт для Сергея и Кристины</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f4;
+  --bg2: #f3f0ea;
+  --bg3: #edeae3;
+  --card: #ffffff;
+  --border: #e8e3da;
+  --accent: #e8956a;
+  --accent2: #d4784f;
+  --green: #7bc5a0;
+  --green-bg: #edf7f1;
+  --red: #e88b8b;
+  --red-bg: #fdf0f0;
+  --blue: #8bb8e0;
+  --blue-bg: #edf4fa;
+  --purple: #b5a0d4;
+  --purple-bg: #f3eff8;
+  --yellow: #f0d78c;
+  --yellow-bg: #fdf8eb;
+  --mint: #a8d8c8;
+  --mint-bg: #f0f9f5;
+  --peach: #f0c4a8;
+  --peach-bg: #fdf5ef;
+  --text: #3d3a36;
+  --text2: #7a756c;
+  --text3: #a9a49b;
+  --round: 'Quicksand', 'Varela Round', sans-serif;
+  --body: 'Quicksand', sans-serif;
+  --shadow-soft: 0 4px 20px rgba(0,0,0,.04), 0 1px 4px rgba(0,0,0,.03);
+  --shadow-hover: 0 8px 30px rgba(0,0,0,.07), 0 2px 8px rgba(0,0,0,.04);
+  --radius: 24px;
+  --radius-sm: 16px;
+  --radius-xs: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-weight: 500;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+::selection { background: var(--peach); color: var(--text); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,248,244,.88);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: transform .3s;
+}
+nav.hidden { transform: translateY(-100%); }
+.nav-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: flex; align-items: center; gap: .75rem;
+  padding: .7rem 2rem;
+  overflow-x: auto;
+}
+.nav-logo {
+  font-family: var(--round); font-weight: 700; font-size: 1.15rem;
+  color: var(--accent); white-space: nowrap; margin-right: 1.5rem;
+  letter-spacing: -.01em;
+}
+.nav-link {
+  font-size: .8rem; font-weight: 600; color: var(--text2);
+  text-decoration: none; white-space: nowrap; padding: .35rem .7rem;
+  border-radius: 50px; transition: .2s;
+}
+.nav-link:hover, .nav-link.active { color: var(--accent2); background: var(--peach-bg); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 6rem 2rem 4rem;
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(168,216,200,.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(240,199,168,.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(139,184,224,.08) 0%, transparent 60%),
+    var(--bg);
+}
+.hero-content { position: relative; z-index: 1; max-width: 860px; }
+.hero-badge {
+  display: inline-block; font-family: var(--round); font-size: .72rem; font-weight: 700;
+  color: var(--accent2); border: 2px solid var(--peach);
+  padding: .35rem 1.2rem; border-radius: 50px; margin-bottom: 2rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  animation: fadeIn .8s ease-out;
+}
+.hero h1 {
+  font-family: var(--round); font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.2; margin-bottom: 1.5rem;
+  color: var(--text);
+  animation: fadeIn 1s ease-out .2s both;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero-sub {
+  font-size: 1.1rem; color: var(--text2); max-width: 580px;
+  margin: 0 auto 2.5rem; animation: fadeIn 1s ease-out .4s both;
+}
+.hero-meta {
+  display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+  font-size: .85rem; color: var(--text3);
+  animation: fadeIn 1s ease-out .6s both;
+}
+.hero-meta span { display: flex; align-items: center; gap: .4rem; }
+
+/* SECTIONS */
+section { padding: 5rem 2rem; }
+.container { max-width: 1060px; margin: 0 auto; }
+.section-label {
+  font-family: var(--round); font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent2); margin-bottom: .6rem;
+}
+.section-title {
+  font-family: var(--round); font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.25; margin-bottom: 1rem; color: var(--text);
+}
+.section-desc { color: var(--text2); max-width: 660px; margin-bottom: 3rem; font-size: 1rem; }
+
+/* CARDS */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.75rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.card-number {
+  font-family: var(--round); font-size: 2.2rem; font-weight: 700;
+  color: var(--accent); line-height: 1.1;
+}
+.card-label { font-size: .82rem; color: var(--text); font-weight: 600; margin-top: .35rem; }
+.card-sub { font-size: .75rem; color: var(--text3); margin-top: .25rem; }
+
+/* STAT BARS */
+.stat-row { margin-bottom: 1.4rem; }
+.stat-header { display: flex; justify-content: space-between; margin-bottom: .35rem; }
+.stat-name { font-weight: 600; font-size: .88rem; }
+.stat-val { font-family: var(--round); font-size: .82rem; font-weight: 700; color: var(--accent2); }
+.stat-bar { height: 10px; background: var(--bg3); border-radius: 50px; overflow: hidden; }
+.stat-fill { height: 100%; border-radius: 50px; transition: width 1.5s ease-out; }
+
+/* TABLE */
+.table-wrap { overflow-x: auto; margin: 2rem 0; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-soft); }
+table { width: 100%; border-collapse: collapse; font-size: .82rem; background: var(--card); }
+thead { background: var(--bg2); }
+th { padding: .7rem .9rem; text-align: left; font-weight: 700; color: var(--text2); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
+td { padding: .7rem .9rem; border-top: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(232,149,106,.04); }
+.tag { display: inline-block; padding: .15rem .55rem; border-radius: 50px; font-size: .7rem; font-weight: 700; }
+.tag-green { background: var(--green-bg); color: #4a9e74; }
+.tag-red { background: var(--red-bg); color: #c26767; }
+.tag-blue { background: var(--blue-bg); color: #5a8db8; }
+.tag-purple { background: var(--purple-bg); color: #8a72b3; }
+
+/* QUOTE */
+.quote-card {
+  background: var(--card);
+  border-left: 4px solid var(--mint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.75rem; margin: 1.5rem 0;
+  box-shadow: var(--shadow-soft);
+}
+.quote-text { font-style: italic; font-size: .95rem; line-height: 1.8; color: var(--text); }
+.quote-author { margin-top: .6rem; font-size: .8rem; color: var(--accent2); font-weight: 700; }
+
+/* SWOT */
+.swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 2rem 0; }
+.swot-box { border-radius: var(--radius); padding: 1.5rem; border: 1px solid; }
+.swot-box h4 { font-size: .9rem; margin-bottom: .6rem; font-weight: 700; }
+.swot-box ul { list-style: none; }
+.swot-box li { font-size: .85rem; padding: .25rem 0 .25rem 1.2rem; position: relative; }
+.swot-box li::before { content: '→'; position: absolute; left: 0; opacity: .4; }
+.sw-s { border-color: rgba(123,197,160,.4); background: var(--green-bg); } .sw-s h4 { color: #4a9e74; }
+.sw-w { border-color: rgba(232,139,139,.4); background: var(--red-bg); } .sw-w h4 { color: #c26767; }
+.sw-o { border-color: rgba(139,184,224,.4); background: var(--blue-bg); } .sw-o h4 { color: #5a8db8; }
+.sw-t { border-color: rgba(181,160,212,.4); background: var(--purple-bg); } .sw-t h4 { color: #8a72b3; }
+
+/* SCORE */
+.score-ring { width: 150px; height: 150px; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+.score-ring svg { position: absolute; inset: 0; }
+.score-val { font-family: var(--round); font-size: 2.8rem; font-weight: 700; position: relative; z-index: 1; color: var(--text); }
+.score-of { font-size: .9rem; color: var(--text3); }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 2rem; margin: 2rem 0; }
+.timeline::before { content: ''; position: absolute; left: .5rem; top: 0; bottom: 0; width: 2px; background: var(--border); border-radius: 1px; }
+.tl-item { position: relative; margin-bottom: 2rem; }
+.tl-item::before { content: ''; position: absolute; left: -1.55rem; top: .5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); }
+.tl-phase { font-family: var(--round); font-size: .7rem; font-weight: 700; color: var(--accent2); letter-spacing: .08em; text-transform: uppercase; }
+.tl-title { font-weight: 700; font-size: 1.02rem; margin: .25rem 0; }
+.tl-desc { font-size: .86rem; color: var(--text2); }
+
+/* PRICE TABLE */
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .9rem 1.4rem; border-bottom: 1px solid var(--border); transition: background .2s;
+}
+.price-row:hover { background: var(--peach-bg); }
+.price-row:last-child { border-bottom: none; }
+.price-item { font-weight: 700; font-size: .9rem; }
+.price-desc { font-size: .78rem; color: var(--text2); }
+.price-cost { font-family: var(--round); font-weight: 700; color: var(--accent2); white-space: nowrap; }
+.price-total {
+  background: linear-gradient(135deg, var(--peach-bg), var(--yellow-bg));
+  border: 2px solid var(--peach);
+  border-radius: var(--radius); padding: 1.3rem 1.8rem;
+  display: flex; justify-content: space-between; align-items: center; margin-top: .75rem;
+}
+.price-total .price-item { font-size: 1.05rem; }
+.price-total .price-cost { font-size: 1.3rem; }
+
+/* CTA */
+.cta-section {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius); padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  margin: 2.5rem 0;
+}
+.cta-section h3 { font-family: var(--round); font-size: 1.4rem; margin-bottom: 1rem; }
+
+/* FOOTER */
+footer { text-align: center; padding: 3rem 2rem; font-size: .78rem; color: var(--text3); border-top: 1px solid var(--border); }
+
+/* ALT BG */
+.alt-bg { background: var(--bg2); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .swot-grid { grid-template-columns: 1fr; }
+  .nav-inner { padding: .7rem 1rem; }
+  section { padding: 3rem 1rem; }
+  .hero { padding: 5rem 1.5rem 3rem; }
+  .price-row { flex-direction: column; align-items: flex-start; gap: .25rem; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity .6s ease-out, transform .6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* PROSE */
+.prose { max-width: 760px; }
+.prose p { margin-bottom: 1.15rem; }
+.prose strong { color: var(--accent2); font-weight: 700; }
+.prose h3 { font-family: var(--round); font-size: 1.2rem; margin: 2rem 0 .7rem; color: var(--text); }
+
+.divider { height: 2px; background: var(--border); border-radius: 1px; margin: 3.5rem 0; }
+
+.note { font-size: .75rem; color: var(--text3); margin-top: .75rem; font-weight: 500; }
+.currency-note { font-size: .78rem; color: var(--text3); margin-bottom: 1.5rem; font-weight: 600; background: var(--yellow-bg); padding: .5rem 1rem; border-radius: 50px; display: inline-block; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="topnav">
+  <div class="nav-inner">
+    <span class="nav-logo">🧸 BabyGO!</span>
+    <a href="#market" class="nav-link">Рынок</a>
+    <a href="#competitors" class="nav-link">Конкуренты</a>
+    <a href="#audit" class="nav-link">Аудит</a>
+    <a href="#swot" class="nav-link">SWOT</a>
+    <a href="#score" class="nav-link">Оценка</a>
+    <a href="#strategy" class="nav-link">Стратегия</a>
+    <a href="#offer" class="nav-link">Предложение</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">Конфиденциальный отчёт</span>
+    <h1>Запуск франшизы <em>BabyGO!</em><br>Аудит, рынок и стратегия</h1>
+    <p class="hero-sub">Комплексное исследование потенциала масштабирования сети детских игровых площадок на рынки Казахстана и России</p>
+    <div class="hero-meta">
+      <span>📅 Март 2026</span>
+      <span>👤 Для: Сергей и Кристина Коломийцевы</span>
+      <span>📍 Кустанай, Казахстан</span>
+    </div>
+  </div>
+</section>
+
+<!-- 1. MARKET -->
+<section id="market">
+  <div class="container">
+    <div class="section-label">01 / Исследование рынка</div>
+    <h2 class="section-title">Рынок детских развлечений:<br>Россия и Казахстан</h2>
+    <p class="section-desc">Глобальный рынок детских развлекательных центров растёт на ~8,5 % ежегодно. В России и Казахстане этот сегмент показывает ещё более уверенную динамику, несмотря на демографические вызовы.</p>
+
+    <p style="font-size: .8rem; color: var(--text3); margin-bottom: 2rem; font-family: var(--round);">Курсы пересчёта: $1 ≈ 490 ₸ ≈ 79 ₽ (НБ РК, март 2026)</p>
+
+    <div class="card-grid fade-in">
+      <div class="card">
+        <div class="card-number">$10,5→20 млрд</div>
+        <div class="card-label">Мировой рынок детских развлекательных центров</div>
+        <div class="card-sub">2022 → 2030 гг., среднегодовой рост (CAGR*) 8,5 % (Verified Market Reports)</div>
+      </div>
+      <div class="card">
+        <div class="card-number">~$977 млн</div>
+        <div class="card-label">Рынок крытых развлечений в России (2024)</div>
+        <div class="card-sub">Прогноз ~$1,47 млрд к 2030 г., CAGR 7,5 % (Grand View Research)</div>
+      </div>
+      <div class="card">
+        <div class="card-number">~$2,5 млрд</div>
+        <div class="card-label">Рынок детских центров в России</div>
+        <div class="card-sub">~200 млрд ₽, один из крупнейших сегментов индустрии развлечений</div>
+      </div>
+      <div class="card">
+        <div class="card-number">12 %</div>
+        <div class="card-label">Доля детских франшиз в РФ</div>
+        <div class="card-sub">~463 из 3 860 действующих франшиз — самый быстрорастущий сегмент</div>
+      </div>
+      <div class="card">
+        <div class="card-number">+50,7 %</div>
+        <div class="card-label">Рост спроса на детские франшизы (2024 г/г)</div>
+        <div class="card-sub">Детское образование +90 %, игрушки +38 %, развитие +65 % (Businessmens.ru)</div>
+      </div>
+      <div class="card">
+        <div class="card-number">15 %</div>
+        <div class="card-label">Доля детских франшиз среди всех продаж в РФ</div>
+        <div class="card-sub">По данным Forbes — каждая 7-я проданная франшиза в России приходится на детский сегмент</div>
+      </div>
+    </div>
+    <p style="font-size: .75rem; color: var(--text3); margin-top: 1rem;">* CAGR (Compound Annual Growth Rate) — среднегодовой темп роста, ключевая метрика для оценки динамики рынка</p>
+
+    <div class="divider"></div>
+
+    <div class="prose fade-in">
+      <h3>Россия: ключевые тренды</h3>
+      <p>Рынок детских товаров в России в 2025 году достиг <strong>₽2,1 трлн (~$26,6 млрд)</strong> (рост +15 % г/г). Детские развлекательные зоны в ТРЦ занимают уже до <strong>20 % арендных площадей</strong>, и прогнозируется рост до 30 % к 2030 году. Ключевые тренды — интерактивность, образовательно-развлекательный формат (edutainment), безопасные материалы и интеграция технологий (AR/VR, проекции, интерактивные полы).</p>
+
+      <p><strong>Франчайзинг в детском сегменте России</strong> — один из главных трендов. В стране работает около <strong>3 860 франшиз</strong>, из них <strong>~12 % (~463)</strong> ориентированы на детскую аудиторию. Это самый быстрорастущий сегмент: спрос на детские франшизы вырос на <strong>+50,7 %</strong> за 2024 год. Каждая <strong>7-я проданная франшиза</strong> в России приходится на детский сегмент (15 % от всех продаж по данным Forbes). Рынок детских центров оценивается в <strong>~200 млрд ₽ (~$2,5 млрд)</strong>, при этом средний детский центр приносит $19 000–25 000 чистой прибыли в месяц и окупается за 12–18 месяцев. За 2024 год на рынок вышло более 500 новых франшиз — абсолютный рекорд.</p>
+
+      <p>Офлайн-развлечения демонстрируют устойчивый отскок после пандемии: в 2023 г. рынок вырос на <strong>44 %</strong>, в 2024 г. достиг <strong>₽227 млрд (~$2,9 млрд)</strong>. Инфляция парадоксально поддерживает доходность — средний чек растёт быстрее, чем падает посещаемость. Семейные расходы на детский досуг остаются приоритетной категорией бюджета.</p>
+
+      <h3>Казахстан: особенности</h3>
+      <p>Население Казахстана — <strong>20,3 млн</strong> (на 01.01.2025), из них около <strong>30 % составляют дети до 15 лет</strong>. Это одна из самых молодых популяций в СНГ (средний возраст — 32,3 года). Несмотря на снижение рождаемости (365,9 тыс. в 2024 г. против 446,5 тыс. в 2021 г.), абсолютное количество детей дошкольного возраста остаётся значительным — порядка <strong>2,5–3 млн</strong> в целевом возрасте 1–7 лет.</p>
+
+      <p>Франчайзинг в Казахстане активно развивается — объём рынка оценивается примерно в <strong>$3 млрд</strong>. Регулируется ГК РК (глава 45) и Законом № 330-II «О комплексной предпринимательской лицензии». При этом эксперты отмечают правовые пробелы — понятие «франшиза» формально отсутствует в законодательстве, что создаёт как риски, так и возможности для первопроходцев.</p>
+
+      <p>Ниша детских развлечений в Казахстане <strong>значительно менее насыщена</strong>, чем в России. Из 10 проаудированных франшиз лишь 3 работают в Казахстане (WOW!Land, Пол — это Лава, KidsBoom), а крупных локальных сетей детских игровых практически нет. Это создаёт <strong>окно возможностей</strong> для BabyGO! как местного бренда с 7-летним опытом.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. COMPETITORS -->
+<section id="competitors" style="background: var(--bg2);">
+  <div class="container">
+    <div class="section-label">02 / Конкурентный анализ</div>
+    <h2 class="section-title">Аудит действующих франшиз</h2>
+    <p class="section-desc">Мы проанализировали 10 франшиз детских игровых, обзвонили действующих партнёров и сравнили ключевые параметры.</p>
+
+    <p style="font-size: .8rem; color: var(--text3); margin-bottom: 1.5rem; font-family: var(--round);">Все суммы пересчитаны в USD по курсу $1 ≈ 490 ₸ ≈ 79 ₽ (НБ РК, март 2026)</p>
+
+    <div class="table-wrap fade-in">
+      <table>
+        <thead>
+          <tr>
+            <th>Франшиза</th>
+            <th>Рынок</th>
+            <th>Точки</th>
+            <th>Паушальный</th>
+            <th>Роялти</th>
+            <th>Инвестиции</th>
+            <th>Прибыль/мес</th>
+            <th>Окупаемость</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Пол — это Лава</strong></td>
+            <td><span class="tag tag-blue">РФ/КЗ</span></td>
+            <td>300</td>
+            <td>$10 100</td>
+            <td>7 %</td>
+            <td>$50 600–76 000</td>
+            <td>$6 300</td>
+            <td>от 8 мес</td>
+          </tr>
+          <tr>
+            <td><strong>WOW!Land</strong></td>
+            <td><span class="tag tag-blue">РФ/КЗ</span></td>
+            <td>80</td>
+            <td>$6 300 / $5 100</td>
+            <td>7 %</td>
+            <td>$31 600 / $24 500</td>
+            <td>$4 200–7 600</td>
+            <td>10 мес</td>
+          </tr>
+          <tr>
+            <td><strong>CrazyDrift</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>50</td>
+            <td>$16 300</td>
+            <td>8 %</td>
+            <td>от $88 600</td>
+            <td>от $8 900</td>
+            <td>1 год</td>
+          </tr>
+          <tr>
+            <td><strong>Pixel Quest</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>48</td>
+            <td>$6 300–11 400</td>
+            <td>3–8 %</td>
+            <td>$57 000</td>
+            <td>$7 500</td>
+            <td>1,5–2 года</td>
+          </tr>
+          <tr>
+            <td><strong>Trends Toys</strong></td>
+            <td><span class="tag tag-blue">РФ/КЗ</span></td>
+            <td>40</td>
+            <td>$1 300–4 400</td>
+            <td>8 %</td>
+            <td>$6 300–25 300</td>
+            <td>~$1 300</td>
+            <td>от 8 мес</td>
+          </tr>
+          <tr>
+            <td><strong>KidsBoom</strong></td>
+            <td><span class="tag tag-purple">КЗ</span></td>
+            <td>—</td>
+            <td>$6 100</td>
+            <td>5 %</td>
+            <td>$122 400</td>
+            <td>$2 040</td>
+            <td>1 год</td>
+          </tr>
+          <tr>
+            <td><strong>Море Песка</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>—</td>
+            <td>$7 600–10 100</td>
+            <td>2–5 %</td>
+            <td>$31 100</td>
+            <td>$8 900</td>
+            <td>14 мес</td>
+          </tr>
+          <tr>
+            <td><strong>Футурамия</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>7</td>
+            <td>$6 300</td>
+            <td>7 %</td>
+            <td>$53 200</td>
+            <td>от $4 400</td>
+            <td>14 мес</td>
+          </tr>
+          <tr>
+            <td><strong>Планета ЕГА</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>—</td>
+            <td>$4 600–7 300</td>
+            <td>4 %</td>
+            <td>$38 000–44 300</td>
+            <td>$4 300–8 700</td>
+            <td>от 9 мес</td>
+          </tr>
+          <tr>
+            <td><strong>Дети</strong></td>
+            <td><span class="tag tag-green">РФ</span></td>
+            <td>2</td>
+            <td>$5 900</td>
+            <td>5 %</td>
+            <td>$11 900</td>
+            <td>$4 800</td>
+            <td>1 год</td>
+          </tr>
+          <tr style="background: rgba(240,160,64,.05);">
+            <td><strong style="color: var(--accent);">BabyGO! (текущие)</strong></td>
+            <td><span class="tag tag-purple">КЗ</span></td>
+            <td>2</td>
+            <td>$6 100 (план)</td>
+            <td>$612 фикс/мес</td>
+            <td>$81 600–122 400</td>
+            <td>$3 670</td>
+            <td>2 года</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="section-label">Голоса партнёров</div>
+    <h3 class="section-title" style="font-size: 1.4rem; margin-bottom: 2rem;">Что говорят действующие франчайзи?</h3>
+
+    <div class="quote-card fade-in">
+      <div class="quote-text">«УК помогает на всех этапах, есть обучение, есть менеджер, который закрепляется за вами. Есть общий чат с партнёрами. Сама бы я в это не пошла — круто, что есть такая поддержка.»</div>
+      <div class="quote-author">— Партнёр WOW!Land, Владикавказ</div>
+    </div>
+
+    <div class="quote-card fade-in">
+      <div class="quote-text">«УК всегда на связи, поддержка огромная. Самостоятельно я бы в жизни к этому никогда не пришла. У меня ушло около 5 млн год назад. В течение года работает без поломок.»</div>
+      <div class="quote-author">— Партнёр «Пол — это Лава», Россия</div>
+    </div>
+
+    <div class="quote-card fade-in">
+      <div class="quote-text">«Хорошая франшиза, не избалованные, помогают по всем вопросам и подсказывают, что и как добавить, чтобы увеличить чеки. Нужно общаться с УК — они не всем продают.»</div>
+      <div class="quote-author">— Партнёр WOW!Land, Павлодар</div>
+    </div>
+
+    <div class="prose fade-in" style="margin-top: 2rem;">
+      <p><strong>Ключевые выводы из обзвона:</strong> Все опрошенные партнёры рекомендуют свои франшизы. Критичные факторы успеха — качество поддержки УК, обучение продажам администраторов, не экономить на площади помещения. Лидеры рынка (Пол — это Лава, WOW!Land) отличаются глубокой системой сопровождения и отбором франчайзи.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. AUDIT BabyGO -->
+<section id="audit">
+  <div class="container">
+    <div class="section-label">03 / Аудит BabyGO!</div>
+    <h2 class="section-title">Профиль бизнеса Няня Клуб BabyGO!</h2>
+    <p class="section-desc">Анализ текущего состояния бизнеса на основе заполненного брифа.</p>
+
+    <div class="card-grid fade-in">
+      <div class="card">
+        <div class="card-number">7 лет</div>
+        <div class="card-label">На рынке (основная точка)</div>
+        <div class="card-sub">Петропавловск, ТРЦ, 190 м²</div>
+      </div>
+      <div class="card">
+        <div class="card-number">2</div>
+        <div class="card-label">Действующие точки</div>
+        <div class="card-sub">Петропавловск + Кокшетау (3 мес)</div>
+      </div>
+      <div class="card">
+        <div class="card-number">$9 180</div>
+        <div class="card-label">Средняя выручка / мес</div>
+        <div class="card-sub">4,5 млн ₸ — основная точка, последние 6-12 мес</div>
+      </div>
+      <div class="card">
+        <div class="card-number">40 %</div>
+        <div class="card-label">Рентабельность</div>
+        <div class="card-sub">Чистая прибыль ~$3 670/мес (1,8 млн ₸)</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="prose fade-in">
+      <h3>Описание бизнес-модели</h3>
+      <p><strong>Продукт:</strong> Детская развлекательная площадка для дошкольников. Два формата — в ТРЦ и в спальных районах. Ключевое УТП — <strong>полностью мягкое оборудование</strong> (максимальная безопасность) и <strong>поминутная тарификация</strong> с шагом 10 минут. Средний чек: $5,1 будни, $6,6 выходные (2 500–3 250 ₸).</p>
+
+      <p><strong>Целевая аудитория:</strong> Мамы 20–30 лет, бабушки/дедушки 50–70 лет. Средний поток: 28 клиентов в будни, 80 — в выходные. Пиковые месяцы: март, май, сентябрь, декабрь (+20 %). Спад: ноябрь, апрель (−20 %).</p>
+
+      <p><strong>Команда на точку:</strong> 1 администратор + 4–5 кассиров-нянь. Бренд BabyGO! — зарегистрированная торговая марка на территории Казахстана. Используется ПО «Антикафе» для учёта. Привлечение клиентов — Instagram.</p>
+
+      <p><strong>Инвестиции в открытие:</strong> <strong>$81 600–122 400</strong> (40–60 млн ₸). Фактический срок окупаемости основной точки — 2 года. Основные статьи расходов: аренда ($2 160 + $1 630/мес) и ФОТ.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SWOT -->
+<section id="swot" style="background: var(--bg2);">
+  <div class="container">
+    <div class="section-label">04 / SWOT-анализ</div>
+    <h2 class="section-title">Сильные и слабые стороны</h2>
+    <p class="section-desc">Комплексная оценка готовности BabyGO! к масштабированию через франчайзинг.</p>
+
+    <div class="swot-grid fade-in">
+      <div class="swot-box sw-s">
+        <h4>💪 Сильные стороны</h4>
+        <ul>
+          <li>7 лет на рынке — доказанная бизнес-модель</li>
+          <li>Высокая рентабельность (40 %) — выше среднерыночной</li>
+          <li>Зарегистрированная ТМ в Казахстане</li>
+          <li>Понятное УТП (безопасность + поминутка)</li>
+          <li>Низкая конкуренция в нише в КЗ</li>
+          <li>Отсутствие долгов и судебных разбирательств</li>
+          <li>Положительные отзывы клиентов</li>
+        </ul>
+      </div>
+      <div class="swot-box sw-w">
+        <h4>⚠️ Слабые стороны</h4>
+        <ul>
+          <li>Нет описанных бизнес-процессов и регламентов</li>
+          <li>Нет базы знаний и обучающих материалов</li>
+          <li>Нет финансовой модели / P&L</li>
+          <li>Нет CRM и системы лояльности (только скидки)</li>
+          <li>Нет сайта</li>
+          <li>Маркетинг только через Instagram</li>
+          <li>Зависимость от одного поставщика оборудования</li>
+          <li>Вторая точка пока убыточна</li>
+        </ul>
+      </div>
+      <div class="swot-box sw-o">
+        <h4>🚀 Возможности</h4>
+        <ul>
+          <li>Казахстан — молодая нация, 30 % населения — дети</li>
+          <li>Ниша детских игровых франшиз в КЗ практически пуста</li>
+          <li>Россия — огромный рынок с CAGR 7,5 %</li>
+          <li>Тренд на edutainment и безопасные пространства</li>
+          <li>ТМ можно зарегистрировать в РФ для экспансии</li>
+          <li>Низкий входной порог для франчайзи в городах КЗ</li>
+        </ul>
+      </div>
+      <div class="swot-box sw-t">
+        <h4>🛡 Угрозы</h4>
+        <ul>
+          <li>Снижение рождаемости в КЗ (−15,8 % в Q1 2025)</li>
+          <li>Федеральные конкуренты из РФ заходят в КЗ</li>
+          <li>Правовые пробелы в законодательстве КЗ о франшизах</li>
+          <li>Зависимость от арендодателей ТРЦ</li>
+          <li>Инфляция оборудования и материалов</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SCORE -->
+<section id="score">
+  <div class="container">
+    <div class="section-label">05 / Оценка готовности</div>
+    <h2 class="section-title">Готовность к франчайзингу</h2>
+    <p class="section-desc">Оценка по 10 ключевым параметрам готовности бизнеса к масштабированию.</p>
+
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-in">
+      <div class="score-ring">
+        <svg viewBox="0 0 160 160">
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--border)" stroke-width="8"/>
+          <circle cx="80" cy="80" r="70" fill="none" stroke="var(--accent)" stroke-width="8"
+            stroke-dasharray="440" stroke-dashoffset="220"
+            stroke-linecap="round" transform="rotate(-90 80 80)"/>
+        </svg>
+        <span class="score-val">5<span class="score-of">/10</span></span>
+      </div>
+      <p style="color: var(--text2); max-width: 500px; margin: 0 auto;">
+        Бизнес обладает <strong>сильным фундаментом</strong> (рентабельность, опыт, ТМ), но требует серьёзной <strong>системной упаковки</strong> перед масштабированием.
+      </p>
+    </div>
+
+    <div style="max-width: 700px; margin: 0 auto;" class="fade-in">
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Рентабельность модели</span><span class="stat-val">9/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 90%; background: var(--green);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Опыт работы</span><span class="stat-val">8/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 80%; background: var(--green);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Бренд и ТМ</span><span class="stat-val">6/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 60%; background: var(--accent);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Продуктовое отличие (УТП)</span><span class="stat-val">6/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 60%; background: var(--accent);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Репутация</span><span class="stat-val">7/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 70%; background: var(--green);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Документация и стандарты</span><span class="stat-val">2/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 20%; background: var(--red);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Обучение и база знаний</span><span class="stat-val">1/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 10%; background: var(--red);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Автоматизация и IT</span><span class="stat-val">3/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 30%; background: var(--red);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Маркетинговая система</span><span class="stat-val">3/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 30%; background: var(--red);"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-header"><span class="stat-name">Финансовая прозрачность</span><span class="stat-val">3/10</span></div>
+        <div class="stat-bar"><div class="stat-fill" style="width: 30%; background: var(--red);"></div></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="prose fade-in">
+      <h3>Что это значит?</h3>
+      <p>У BabyGO! <strong>отличный бизнес</strong>, но пока нет <strong>системы</strong>, которую можно передать франчайзи. Рентабельность 40 % — это лучше, чем у большинства конкурентных франшиз. 7 лет опыта — мощный аргумент для потенциальных партнёров. Однако без стандартов, обучения и финмодели продажа франшизы рискованна и может навредить бренду.</p>
+      <p>Хорошая новость: <strong>всё это можно построить за 3–5 месяцев</strong> при профессиональной упаковке. Вы в лучшей стартовой позиции, чем 80 % бизнесов, которые обращаются за упаковкой франшизы — у вас уже есть рабочая модель с проверенной экономикой.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. STRATEGY -->
+<section id="strategy" style="background: var(--bg2);">
+  <div class="container">
+    <div class="section-label">06 / Стратегия</div>
+    <h2 class="section-title">Рекомендации по запуску франшизы</h2>
+    <p class="section-desc">Пошаговый план превращения BabyGO! из локального бизнеса в масштабируемую франшизу.</p>
+
+    <div class="prose fade-in">
+      <h3>Рекомендуемое позиционирование</h3>
+      <p>На основе аудита конкурентов, мы рекомендуем позиционировать BabyGO! как <strong>«безопасную и прозрачную игровую для малышей»</strong> — ниша, которую не занимает ни одна из действующих франшиз. Конкуренты делают акцент на интерактивные технологии (WOW!Land), дрифт-картинги (CrazyDrift) или песочницы (Море Песка). BabyGO! может стать <strong>первой казахстанской франшизой</strong> мягких детских игровых с поминутной тарификацией.</p>
+
+      <h3>Рекомендуемые условия франшизы</h3>
+    </div>
+
+    <div class="card-grid fade-in" style="margin: 2rem 0;">
+      <div class="card" style="border-color: var(--accent);">
+        <div class="card-number">~$6 100</div>
+        <div class="card-label">Паушальный взнос (3 млн ₸)</div>
+        <div class="card-sub">Соответствует рынку КЗ (KidsBoom — $6 100, WOW!Land — $5 100). Для РФ: от $6 300</div>
+      </div>
+      <div class="card" style="border-color: var(--accent);">
+        <div class="card-number">5–7 % + мин. $400</div>
+        <div class="card-label">Роялти (% от выручки + фикс. минимум)</div>
+        <div class="card-sub">Процент мотивирует УК помогать с ростом. Минимальный фикс $400/мес защищает от занижения</div>
+      </div>
+      <div class="card" style="border-color: var(--accent);">
+        <div class="card-number">$40 000–80 000</div>
+        <div class="card-label">Рекомендуемые инвестиции партнёра</div>
+        <div class="card-sub">Оптимизировать текущие $82–122K за счёт стандартизации закупок и ремонта</div>
+      </div>
+    </div>
+
+    <div class="prose fade-in">
+      <h3>Что необходимо создать перед продажей первой франшизы</h3>
+    </div>
+
+    <div class="timeline fade-in">
+      <div class="tl-item">
+        <div class="tl-phase">Этап 1 — Упаковка (месяцы 1–2)</div>
+        <div class="tl-title">Документация и стандарты</div>
+        <div class="tl-desc">Описание всех бизнес-процессов, создание операционных стандартов (SOP), чек-листы открытия, управления и контроля качества. Финансовая модель P&L. Создание рекомендуемой планировки. Стандарты безопасности и санитарии.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-phase">Этап 2 — Франчбук и юридика (месяцы 2–3)</div>
+        <div class="tl-title">Франчайзинговый пакет</div>
+        <div class="tl-desc">Разработка франчбука (бренд-бук + операционный мануал + маркетинг-кит). Договор коммерческой концессии для КЗ и РФ. Регистрация ТМ в РФ. Юридическая структура УК. Концепция обучения персонала.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-phase">Этап 3 — Маркетинг продаж (месяцы 3–4)</div>
+        <div class="tl-title">Стратегия привлечения франчайзи</div>
+        <div class="tl-desc">Сайт франшизы. Презентация для потенциальных партнёров. Размещение на площадках (TopFranchise, Beboss, БИБОСС). Скрипты продаж и воронка лидогенерации. Контентная стратегия: кейсы, цифры, отзывы.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-phase">Этап 4 — Запуск (месяцы 4–5)</div>
+        <div class="tl-title">Первые партнёры</div>
+        <div class="tl-desc">Создание УК (минимум 3–4 человека: <strong>менеджер по продажам франшиз</strong>, менеджер по открытию, менеджер по сопровождению, маркетолог). Запуск продаж. Пилотная работа с первыми 2–3 партнёрами с усиленным сопровождением.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. OFFER -->
+<section id="offer">
+  <div class="container">
+    <div class="section-label">07 / Коммерческое предложение</div>
+    <h2 class="section-title">Предложение о сотрудничестве</h2>
+    <p class="section-desc">Формат работы, стоимость, этапы и прогноз возврата инвестиций.</p>
+
+    <!-- HOW I WORK -->
+    <div class="cta-section fade-in" style="text-align: left; margin-bottom: 3rem;">
+      <div class="section-label" style="margin-bottom: .75rem;">Как я работаю?</div>
+      <h3 style="font-family: var(--round); font-size: 1.5rem; margin-bottom: 1.5rem;">Внешний директор по франчайзингу</h3>
+      
+      <div style="display: flex; align-items: baseline; gap: 1rem; margin-bottom: .5rem; flex-wrap: wrap;">
+        <div style="font-family: var(--round); font-size: 2.8rem; font-weight: 700; color: var(--accent);">$2 500</div>
+        <div style="font-size: 1rem; color: var(--text2);">/ месяц</div>
+      </div>
+      <div style="display: flex; align-items: baseline; gap: .5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <div style="font-family: var(--round); font-size: 1.4rem; font-weight: 700; color: var(--accent2);">+ 10 %</div>
+        <div style="font-size: .9rem; color: var(--text2);">с паушальных взносов и роялти партнёров</div>
+      </div>
+
+      <p style="color: var(--text); margin-bottom: 1.5rem; max-width: 700px;">Я захожу в проект в качестве внешнего директора по франчайзингу и сопровождаю вас на всех этапах — от упаковки до запуска первых партнёров.</p>
+
+      <div style="margin-bottom: 2rem;">
+        <div style="font-weight: 700; margin-bottom: .75rem;">Что входит в эту стоимость:</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .75rem;">
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Сопровождение на всех этапах запуска франшизы: упаковка, привлечение первых лидов, продажи и запуск партнёров</div>
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Помощь в привлечении проверенных подрядчиков и найме сотрудников в УК</div>
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Разработка стратегии выхода на рынок и позиционирования</div>
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Еженедельные созвоны в Zoom с собственниками и командой франчайзинга</div>
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Ежедневная работа в рабочих чатах</div>
+          <div style="display: flex; gap: .5rem; font-size: .9rem;"><span style="color: var(--accent);">→</span> Помощь в подготовке ТЗ для каждой из работ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY THIS WAY -->
+    <div class="prose fade-in">
+      <h3>Почему именно так?</h3>
+      <p><strong>Максимальная прозрачность.</strong> Все услуги по разработке франчайзингового пакета оплачиваются вами непосредственно исполнителям. Вы видите реальную экономику проекта. Если мы где-то можем сэкономить (у вас есть свой штатный дизайнер, или уже описаны какие-то процессы) — мы экономим. Если вы вдруг поняли, что франчайзинг — это не ваш путь, мы можем остановиться на фактически понесённых издержках.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- STAGES & COSTS -->
+    <div class="section-label">Этапы и бюджеты работ</div>
+    <h3 class="section-title" style="font-size: 1.4rem; margin-bottom: .5rem;">Ориентировочная стоимость работ подрядчиков</h3>
+    <p style="color: var(--text2); margin-bottom: 2rem; font-size: .9rem;">Оплачиваются вами напрямую исполнителям. Я помогаю с ТЗ, контролем качества и приёмкой.</p>
+
+    <div class="fade-in">
+      <h4 style="font-family: var(--round); margin-bottom: 1rem; font-size: 1.1rem;">Этап 1: Упаковка (месяцы 1–2)</h4>
+      <div class="price-table" style="background: var(--card); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+        <div class="price-row">
+          <div><div class="price-item">Описание бизнес-процессов (SOP)</div><div class="price-desc">Все операционные процессы: от найма до закрытия дня</div></div>
+          <div class="price-cost">$2 300</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Финансовая модель P&L</div><div class="price-desc">Юнит-экономика точки, план на 3 года, breakeven-анализ</div></div>
+          <div class="price-cost">$1 275</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Чек-листы и регламенты</div><div class="price-desc">Открытие точки, ежедневные операции, контроль качества</div></div>
+          <div class="price-cost">$1 025</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Программа обучения персонала</div><div class="price-desc">Модули для администраторов и кассиров-нянь, скрипты, экзамены</div></div>
+          <div class="price-cost">$1 525</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Стандарты бренда и дизайн-гайд</div><div class="price-desc">Оформление точки, вывески, интерьер, фото-мудборд</div></div>
+          <div class="price-cost">$1 025</div>
+        </div>
+      </div>
+      <div class="price-total">
+        <div class="price-item">Итого «Этап 1 — Упаковка»</div>
+        <div class="price-cost">~$7 150</div>
+      </div>
+    </div>
+
+    <div style="height: 2rem;"></div>
+
+    <div class="fade-in">
+      <h4 style="font-family: var(--round); margin-bottom: 1rem; font-size: 1.1rem;">Этап 2: Франчбук + Юридика (месяцы 2–3)</h4>
+      <div class="price-table" style="background: var(--card); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+        <div class="price-row">
+          <div><div class="price-item">Франчбук (операционный мануал)</div><div class="price-desc">Полное руководство франчайзи: 60–100 стр., все разделы</div></div>
+          <div class="price-cost">$2 550</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Договор коммерческой концессии (КЗ)</div><div class="price-desc">Юридический шаблон для Казахстана + консультация юриста</div></div>
+          <div class="price-cost">$1 775</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Договор коммерческой концессии (РФ)</div><div class="price-desc">Адаптация для российского законодательства</div></div>
+          <div class="price-cost">$1 775</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Регистрация ТМ в РФ</div><div class="price-desc">Подготовка и подача заявки + госпошлины</div></div>
+          <div class="price-cost">$1 025</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Юридическая структура УК</div><div class="price-desc">Рекомендации по форме, налогам, учредительные документы</div></div>
+          <div class="price-cost">$775</div>
+        </div>
+      </div>
+      <div class="price-total">
+        <div class="price-item">Итого «Этап 2 — Франчбук и юридика»</div>
+        <div class="price-cost">~$7 900</div>
+      </div>
+    </div>
+
+    <div style="height: 2rem;"></div>
+
+    <div class="fade-in">
+      <h4 style="font-family: var(--round); margin-bottom: 1rem; font-size: 1.1rem;">Этап 3: Маркетинг продаж франшиз (месяцы 3–4)</h4>
+      <div class="price-table" style="background: var(--card); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+        <div class="price-row">
+          <div><div class="price-item">Сайт франшизы (лендинг)</div><div class="price-desc">Продающая страница с формой заявки и кейсами</div></div>
+          <div class="price-cost">$1 000</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Презентация для партнёров</div><div class="price-desc">PDF/PPTX-презентация с финмоделью и УТП</div></div>
+          <div class="price-cost">$775</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Размещение на франчайзинговых каталогах</div><div class="price-desc">TopFranchise, БИБОСС, Businessmens — размещение + продвижение</div></div>
+          <div class="price-cost">$10 000</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Воронка продаж + скрипты</div><div class="price-desc">CRM-логика, сценарии звонков, квалификация лидов</div></div>
+          <div class="price-cost">$1 275</div>
+        </div>
+        <div class="price-row">
+          <div><div class="price-item">Лидогенерация (бюджет на 3 месяца)</div><div class="price-desc">Instagram (таргет + контент), Яндекс.Директ, Google Ads — привлечение потенциальных франчайзи</div></div>
+          <div class="price-cost">$15 000</div>
+        </div>
+      </div>
+      <div class="price-total">
+        <div class="price-item">Итого «Этап 3 — Маркетинг продаж»</div>
+        <div class="price-cost">~$28 050</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- TOTAL ECONOMY -->
+    <div class="section-label">Итоговая экономика проекта</div>
+    <h3 class="section-title" style="font-size: 1.4rem; margin-bottom: 2rem;">Полный бюджет запуска франшизы</h3>
+
+    <div class="table-wrap fade-in">
+      <table>
+        <thead>
+          <tr><th>Статья расходов</th><th>Сумма</th><th>Примечание</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Внешний директор по франчайзингу (5 мес)</td><td><strong>$12 500</strong></td><td>$2 500/мес × 5 месяцев запуска</td></tr>
+          <tr><td>Этап 1 — Упаковка (подрядчики)</td><td>$7 150</td><td>Оплата напрямую исполнителям</td></tr>
+          <tr><td>Этап 2 — Франчбук и юридика (подрядчики)</td><td>$7 900</td><td>Оплата напрямую исполнителям</td></tr>
+          <tr><td>Этап 3 — Маркетинг продаж (подрядчики + бюджеты)</td><td>$28 050</td><td>Включая лидогенерацию $15K и каталоги $10K</td></tr>
+          <tr><td>Запуск УК (ФОТ 3 мес, 3–4 человека)</td><td>$9 000</td><td>Менеджер по продажам + открытию + маркетолог</td></tr>
+          <tr><td>Доработка IT-инфраструктуры</td><td>$5 000</td><td>CRM, аналитика + MVP: TG-бот для партнёров и клиентов</td></tr>
+          <tr style="background: rgba(240,160,64,.06);">
+            <td><strong>ИТОГО ориентировочный бюджет</strong></td>
+            <td><strong style="color: var(--accent);">~$69 600</strong></td>
+            <td>≈ 34,1 млн ₸</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose fade-in">
+      <p>При продаже первых <strong>12 франшиз с паушальным взносом ~$6 100</strong> = $73 200 — полные инвестиции в запуск полностью окупаются. Далее каждая новая продажа и ежемесячное роялти формируют чистый доход УК.</p>
+
+      <h3>Прогноз доходности франчайзинга (первый год)</h3>
+      <p><strong>Консервативный сценарий (5 продаж):</strong> 5 франшиз × $6 100 = <strong>$30 500</strong> паушальных + ~$3 060 роялти (5 точек × $9 180 × 6 % × 6 мес в среднем) = <strong>~$33 560</strong> выручки УК.</p>
+      <p><strong>Целевой сценарий (10 продаж):</strong> 10 франшиз × $6 100 = <strong>$61 000</strong> паушальных + ~$6 120 роялти = <strong>~$67 120</strong> выручки УК.</p>
+      <p><strong>Оптимистичный сценарий (20 продаж):</strong> 20 франшиз × $6 100 = <strong>$122 000</strong> паушальных + ~$12 240 роялти = <strong>~$134 240</strong> выручки УК. При таком сценарии инвестиции окупаются уже на 12-й продаже, а оставшиеся 8 — чистый рост.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- KEY DIFFERENTIATOR -->
+    <div class="cta-section fade-in" style="text-align: left;">
+      <div class="section-label" style="margin-bottom: .75rem;">Ключевое отличие</div>
+      <h3 style="font-family: var(--round); font-size: 1.4rem; margin-bottom: 1.5rem;">Чем этот подход отличается от обычных «упаковщиков»?</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div>
+          <div style="font-weight: 700; color: var(--accent); margin-bottom: .5rem;">Я внутри, а не снаружи</div>
+          <p style="font-size: .9rem; color: var(--text2);">Я захожу в периметр компании на срок от 1 года и более. Не «сдаю проект и ухожу», а строю вместе с вами — помогаю с построением УК и отладкой всех процессов.</p>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--accent); margin-bottom: .5rem;">Передаю всех подрядчиков</div>
+          <p style="font-size: .9rem; color: var(--text2);">Вы получаете контакты всех проверенных подрядчиков: юристы, дизайнеры, копирайтеры, разработчики. Далее можете работать с ними напрямую без моего участия.</p>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--accent); margin-bottom: .5rem;">Результат — не файлы, а система</div>
+          <p style="font-size: .9rem; color: var(--text2);">Моя задача — не просто дать вам сайт франшизы и красивую презентацию, а настроить все процессы: продажи, открытие, сопровождение, контроль качества. Работающая машина, а не набор документов.</p>
+        </div>
+        <div>
+          <div style="font-weight: 700; color: var(--accent); margin-bottom: .5rem;">Полная прозрачность расходов</div>
+          <p style="font-size: .9rem; color: var(--text2);">Вы платите подрядчикам напрямую. Видите каждую копейку. Можете остановиться в любой момент на фактически понесённых затратах. Никаких скрытых наценок.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="font-family: var(--round); font-size: 1.2rem; color: var(--text); margin-bottom: .5rem;">BabyGO! × Франчайзинг</p>
+    <p>Конфиденциальный отчёт · Подготовлено в марте 2026</p>
+    <p style="margin-top: 1rem;">По вопросам сотрудничества — свяжитесь с автором отчёта</p>
+  </div>
+</footer>
+
+<script>
+// Scroll-triggered fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Nav hide on scroll down
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('topnav');
+  const cur = window.scrollY;
+  nav.classList.toggle('hidden', cur > lastScroll && cur > 100);
+  lastScroll = cur;
+
+  // Active nav link
+  document.querySelectorAll('section[id]').forEach(s => {
+    const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+    if (!link) return;
+    const rect = s.getBoundingClientRect();
+    link.classList.toggle('active', rect.top <= 120 && rect.bottom > 120);
+  });
+});
+</script>
+</body>
+</html>
