@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Клуб «Гуру Франшиз» — Франчайзинг по-русски</title>
+<meta name="description" content="Премиальный клуб для франчайзоров. Мастермайнды, Франч-Тревел, закрытый нетворкинг с лидерами рынка.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}
+.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-2px);box-shadow:0 8px 32px rgba(242,72,34,0.25)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 40px 100px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:2}
+.hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;margin-bottom:32px;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:20px;line-height:1.6;color:var(--text-sec);margin:0 auto 40px;max-width:600px}
+.hero-price{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3vw,36px);color:var(--accent);margin-bottom:8px}
+.hero-price-note{font-size:15px;color:var(--text-muted);margin-bottom:40px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);border:1.5px solid var(--border-hover);transition:all .2s;cursor:pointer}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+.max-w{max-width:1200px;margin:0 auto}
+.section{padding:100px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;max-width:700px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
+
+/* FOR WHOM */
+.for-whom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.for-whom-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;transition:border-color .2s;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.for-whom-card:hover{border-color:var(--accent)}
+.for-whom-icon{font-size:32px;margin-bottom:16px}
+.for-whom-card h3{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:10px}
+.for-whom-card p{font-size:15px;color:var(--text-muted);line-height:1.6}
+
+/* WHAT'S INCLUDED */
+.included-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.included-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03);transition:border-color .2s}
+.included-card:hover{border-color:var(--accent)}
+.included-card-num{font-family:var(--font-display);font-weight:900;font-size:48px;color:var(--accent);opacity:.15;position:absolute;top:20px;right:24px;line-height:1}
+.included-card h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:12px}
+.included-card p{font-size:15px;color:var(--text-muted);line-height:1.7}
+.included-tag{display:inline-block;background:var(--accent-mid);color:var(--accent);font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;margin-bottom:16px;letter-spacing:.5px}
+
+/* TRAVEL */
+.travel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.travel-card{background:var(--bg-dark);border-radius:24px;padding:48px;color:#fff;position:relative;overflow:hidden;transition:transform .3s}
+.travel-card:hover{transform:translateY(-4px)}
+.travel-card::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(242,72,34,0.2) 0%,transparent 70%);pointer-events:none}
+.travel-emoji{font-size:48px;margin-bottom:20px;display:block}
+.travel-card h3{font-family:var(--font-display);font-size:24px;font-weight:900;margin-bottom:8px}
+.travel-date{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:16px;font-weight:500}
+.travel-card p{font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6}
+
+/* CALCULATOR */
+.calc-section{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:60px;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.calc-slider-wrap{margin:32px 0}
+.calc-slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;background:var(--bg-alt);border-radius:3px;outline:none}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:var(--accent);border-radius:50%;cursor:pointer;box-shadow:0 4px 12px rgba(242,72,34,0.3)}
+.calc-points{font-size:15px;color:var(--text-muted);margin-bottom:8px}
+.calc-points strong{color:var(--accent);font-size:20px}
+.calc-result-big{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,4vw,56px);color:var(--accent);line-height:1}
+.calc-result-note{font-size:15px;color:var(--text-muted);margin-top:8px}
+.calc-save{display:inline-block;background:rgba(46,139,87,0.1);color:#2E8B57;font-size:14px;font-weight:600;padding:6px 16px;border-radius:100px;margin-top:12px}
+.calc-info{display:flex;flex-direction:column;gap:16px}
+.calc-info-item{display:flex;gap:12px;align-items:start}
+.calc-info-item span:first-child{color:var(--accent);font-weight:700;font-size:18px;flex-shrink:0}
+.calc-info-item p{font-size:14px;color:var(--text-sec);line-height:1.5}
+
+/* MEMBERS */
+.members-grid{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.member-card{text-align:center;width:220px}
+.member-avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 16px;border:3px solid var(--accent-mid);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.member-avatar img{width:100%;height:100%;object-fit:cover}
+.member-name{font-family:var(--font-display);font-weight:700;font-size:16px;margin-bottom:4px}
+.member-role{font-size:13px;color:var(--text-muted);line-height:1.4}
+.member-brand{font-size:12px;font-weight:600;color:var(--accent);margin-top:6px;letter-spacing:.5px}
+.members-note{text-align:center;margin-top:40px;font-size:16px;color:var(--text-muted);font-style:italic}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.faq-q{padding:24px 28px;font-weight:600;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .2s;user-select:none}
+.faq-q:hover{color:var(--accent)}
+.faq-q::after{content:'+';font-size:24px;color:var(--accent);transition:transform .3s;font-weight:400}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:300px;padding:0 28px 24px}
+.faq-a p{font-size:15px;color:var(--text-muted);line-height:1.7}
+
+/* PROCESS */
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.process-step{text-align:center;padding:32px 24px}
+.process-num{font-family:var(--font-display);font-weight:900;font-size:48px;color:var(--accent);opacity:.2;line-height:1;margin-bottom:16px}
+.process-step h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:8px}
+.process-step p{font-size:14px;color:var(--text-muted);line-height:1.5}
+
+/* CTA */
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+
+/* FOOTER */
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}
+.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .for-whom-grid{grid-template-columns:1fr}.included-grid{grid-template-columns:1fr}
+  .travel-grid{grid-template-columns:1fr}.calc-grid{grid-template-columns:1fr}
+  .process-steps{grid-template-columns:1fr;max-width:400px;margin:0 auto}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .header{padding:16px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}
+  .nav.open a{font-size:24px;color:var(--text);opacity:1}
+  .hero{padding:110px 20px 60px}.section{padding:60px 20px}
+  .calc-section{padding:32px 24px}.travel-card{padding:32px}
+  .members-grid{gap:20px}.member-card{width:160px}.member-avatar{width:90px;height:90px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}
+  .cta{padding:80px 20px;border-radius:24px 24px 0 0}
+}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Главная</a><a href="#included">Что входит</a><a href="#travel">Франч-Тревел</a><a href="#calc">Стоимость</a><a href="#faq">FAQ</a><a href="#apply" class="nav-cta">Подать заявку</a></nav>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-flag">Флагманский продукт</div>
+    <h1>Клуб<br>«Гуру <span>Франшиз</span>»</h1>
+    <p class="hero-sub">Закрытое сообщество для франчайзоров, которые строят крупные сети. Мастермайнды, путешествия, нетворкинг с лидерами рынка — и никакого инфобиза.</p>
+    <div class="hero-price">500 000 ₽/год</div>
+    <div class="hero-price-note">Скидка до 350 000 ₽ за размер вашей сети</div>
+    <a href="#apply" class="btn-primary">Подать заявку →</a>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="section-label">Для кого</div>
+    <div class="section-title">Клуб создан для тех, кто уже строит сеть</div>
+    <div class="for-whom-grid">
+      <div class="for-whom-card">
+        <div class="for-whom-icon">🏗️</div>
+        <h3>Владельцы франшиз</h3>
+        <p>У вас работающая франшиза и вы хотите масштабироваться быстрее. От 10 до 1000 точек — неважно, важна амбиция.</p>
+      </div>
+      <div class="for-whom-card">
+        <div class="for-whom-icon">🚀</div>
+        <h3>Начинающие франчайзеры</h3>
+        <p>Вы выводите франшизу на рынок и хотите учиться у тех, кто уже прошёл этот путь. Без теории — только практический опыт.</p>
+      </div>
+      <div class="for-whom-card">
+        <div class="for-whom-icon">🤝</div>
+        <h3>Устали от инфобиза</h3>
+        <p>Вы были в других клубах и устали от «гуру», которые учат, но не строят. Здесь — только практики, которые работают на рынке каждый день.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section fade-in" id="included">
+  <div class="max-w">
+    <div class="section-label">Что входит</div>
+    <div class="section-title">Всё, что нужно для роста вашей сети</div>
+    <div class="included-grid">
+      <div class="included-card">
+        <div class="included-card-num">01</div>
+        <div class="included-tag">Оффлайн</div>
+        <h3>Все мероприятия сообщества</h3>
+        <p>Участие во всех оффлайн-встречах в Сколково и ток-шоу «Франчайзинг по-русски». Нетворкинг с участниками, спикерами и экспертами рынка.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-card-num">02</div>
+        <div class="included-tag">Мастермайнды</div>
+        <h3>Ежемесячные групповые сессии</h3>
+        <p>Закрытые мастермайнды для участников клуба. Разбираем реальные задачи вашего бизнеса в кругу людей, которые понимают контекст. Честная обратная связь и свежий взгляд на ваши вызовы.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-card-num">03</div>
+        <div class="included-tag">Путешествия</div>
+        <h3>2 Франч-Тревел поездки в год</h3>
+        <p>Уникальные путешествия с единомышленниками. Это не просто отдых — это глубокий нетворкинг в нерабочей обстановке, где рождаются идеи и партнёрства.</p>
+      </div>
+      <div class="included-card">
+        <div class="included-card-num">04</div>
+        <div class="included-tag">Контент</div>
+        <h3>Членство в чате «Масштаб»</h3>
+        <p>Полный доступ к закрытому чату: записи всех вебинаров и выступлений из Сколково, чек-листы, шаблоны, книги. Всё, что доступно участникам «Масштаба» — входит в клуб.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANCH-TRAVEL -->
+<section class="section fade-in" id="travel">
+  <div class="max-w">
+    <div class="section-label">Франч-Тревел</div>
+    <div class="section-title">Путешествия, которые<br>меняют нетворкинг</div>
+    <div class="section-desc">Два раза в год — уникальные поездки с участниками клуба. Не тимбилдинг из корпораций, а настоящие приключения с людьми, которые мыслят масштабно.</div>
+    <div class="travel-grid">
+      <div class="travel-card">
+        <span class="travel-emoji">🏔️</span>
+        <h3>Эль-Франч</h3>
+        <div class="travel-date">5 — 11 августа 2026</div>
+        <p>Восхождение на Эльбрус до базового лагеря. Неделя в горах с единомышленниками — за это время узнаёшь людей лучше, чем за год созвонов.</p>
+      </div>
+      <div class="travel-card">
+        <span class="travel-emoji">⛵</span>
+        <h3>Яхт-Франч</h3>
+        <div class="travel-date">7 — 14 ноября 2026</div>
+        <p>Недельный яхтинг в Турции. Море, солнце и разговоры без галстуков — лучший формат для стратегических обсуждений и человеческих связей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section fade-in" id="calc">
+  <div class="max-w">
+    <div class="section-label">Стоимость</div>
+    <div class="section-title">Чем больше сеть — тем меньше взнос</div>
+    <div class="section-desc">Мы ценим масштаб. За каждую точку в вашей сети — скидка 1 000 ₽ на годовой взнос. Максимальная скидка — 350 000 ₽.</div>
+    <div class="calc-section">
+      <div class="calc-grid">
+        <div>
+          <div class="calc-points">Точек в вашей сети: <strong id="calcPoints">0</strong></div>
+          <div class="calc-slider-wrap">
+            <input type="range" class="calc-slider" id="calcSlider" min="0" max="350" value="0" oninput="updateCalc(this.value)">
+          </div>
+          <div class="calc-result-big" id="calcPrice">500 000 ₽</div>
+          <div class="calc-result-note">годовой взнос</div>
+          <div class="calc-save" id="calcSave" style="display:none"></div>
+        </div>
+        <div class="calc-info">
+          <div class="calc-info-item"><span>→</span><p>1 точка = 1 000 ₽ скидки на годовой взнос</p></div>
+          <div class="calc-info-item"><span>→</span><p>Максимальная скидка — 350 000 ₽ (при 350+ точках)</p></div>
+          <div class="calc-info-item"><span>→</span><p>Минимальный взнос — 150 000 ₽/год</p></div>
+          <div class="calc-info-item"><span>→</span><p>Размер сети подтверждается на созвоне с основателем</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="section fade-in" id="members">
+  <div class="max-w">
+    <div class="section-label">Участники клуба</div>
+    <div class="section-title">С кем вы будете в одном кругу</div>
+    <div class="members-grid">
+      <div class="member-card">
+        <div class="member-avatar"><img src="dolgov.jpg" alt="Александр Долгов"></div>
+        <div class="member-name">Александр Долгов</div>
+        <div class="member-role">Основатель, 800+ франчайзи</div>
+        <div class="member-brand">20x80</div>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"><img src="nabiullin.jpg" alt="Ильназ Набиуллин"></div>
+        <div class="member-name">Ильназ Набиуллин</div>
+        <div class="member-role">Основатель холдинга, 1000+ франчайзи</div>
+        <div class="member-brand">INBRAND</div>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar"><img src="zaripov.jpg" alt="Артур Зарипов"></div>
+        <div class="member-name">Артур Зарипов</div>
+        <div class="member-role">200+ клиник за 3 года</div>
+        <div class="member-brand">BIORISE</div>
+      </div>
+    </div>
+    <p class="members-note">...и другие основатели крупнейших франшиз России</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="section-label">Как вступить</div>
+    <div class="section-title">Три шага до клуба</div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <h3>Оставьте заявку</h3>
+        <p>Нажмите «Подать заявку» и кратко расскажите о себе и своей франшизе.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <h3>Созвон с основателем</h3>
+        <p>Семён Сарапулов лично знакомится с каждым кандидатом. Обсуждаем цели, задачи и ожидания.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <h3>Добро пожаловать</h3>
+        <p>После одобрения — оплата и полный доступ ко всем ресурсам, мероприятиям и закрытому чату клуба.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section fade-in" id="faq">
+  <div class="max-w">
+    <div class="section-label">Вопросы</div>
+    <div class="section-title">Частые вопросы о клубе</div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Сколько человек в клубе?</div><div class="faq-a"><p>Клуб намеренно ограничен по размеру. Мы не гонимся за количеством — нам важно, чтобы каждый участник получал внимание и ценность от нетворкинга.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Можно ли попробовать перед вступлением?</div><div class="faq-a"><p>Да. Вы можете прийти на одно оффлайн-мероприятие в качестве гостя, познакомиться с участниками и атмосферой, а потом принять решение.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Как работает скидка за количество точек?</div><div class="faq-a"><p>Каждая точка в вашей сети = скидка 1 000 ₽ на годовой взнос. При 100 точках — взнос 400 000 ₽, при 200 — 300 000 ₽, при 350+ — минимальные 150 000 ₽. Размер сети подтверждается на созвоне.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Что входит в «Масштаб», который идёт в комплекте?</div><div class="faq-a"><p>Закрытый чат с записями 20+ вебинаров, 22 выступлений из Сколково, чек-листы, шаблоны, книги о франчайзинге и экскурсии в офисы крупнейших франчайзеров.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Можно ли оплатить помесячно?</div><div class="faq-a"><p>Оплата годовая. Это обеспечивает стабильность группы и серьёзность намерений каждого участника. Возможна рассрочка — обсуждается на созвоне.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Обязательно ли ехать во Франч-Тревел?</div><div class="faq-a"><p>Нет, участие в поездках — по желанию. Но те, кто ездил, говорят что это самый ценный элемент клуба. Одна поездка заменяет десятки созвонов.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="apply">
+  <div class="cta-title" style="position:relative">Готовы вступить<br>в клуб «Гуру Франшиз»?</div>
+  <p class="cta-sub" style="position:relative">Оставьте заявку — Семён Сарапулов свяжется с вами лично для знакомства.</p>
+  <div style="display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap">
+    <a href="https://t.me/frguru" class="btn-primary" target="_blank">Написать основателю →</a>
+    <a href="index.html" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.2)">Вернуться на главную</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Чат «Масштаб»</a><a href="guru.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Контент</h4><a href="index.html#events">Мероприятия</a><a href="blog.html">Блог</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram</a><a href="https://t.me/frguru" target="_blank">@frguru</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function updateCalc(v){
+  const p=parseInt(v),d=Math.min(p*1000,350000),pr=500000-d;
+  document.getElementById('calcPoints').textContent=p;
+  document.getElementById('calcPrice').textContent=pr.toLocaleString('ru-RU')+' ₽';
+  const saveEl=document.getElementById('calcSave');
+  if(d>0){saveEl.style.display='inline-block';saveEl.textContent='Ваша скидка: '+d.toLocaleString('ru-RU')+' ₽'}
+  else{saveEl.style.display='none'}
+}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
