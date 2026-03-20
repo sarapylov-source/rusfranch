@@ -3,1718 +3,462 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ТОК-ШОУ: Франчайзинг по-русски | 15 марта 2026, Москва</title>
-<meta name="description" content="Закрытое оффлайн-мероприятие сообщества Франчайзинг по-русски. Ток-шоу экспертов, питчи акулам франчайзинга, нетворкинг. 15 марта, Москва.">
+<title>Франчайзинг по-русски — Запускаем франшизы в космос</title>
+<meta name="description" content="Сообщество 1400+ франчайзеров. Ток-шоу, мастермайнды, нетворкинг.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --charcoal: #2D2D2D;
-  --red: #E63946;
-  --silver: #F1F1F1;
-  --dark: #1A1A1A;
-  --white: #FFFFFF;
-  --gray: #888888;
-  --card-bg: #363636;
-}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
 
-* { margin:0; padding:0; box-sizing:border-box; }
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}
+.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-2px);box-shadow:0 8px 32px rgba(242,72,34,0.25)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
 
-html { scroll-behavior: smooth; }
+/* HERO - wide layout for group photo */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 40px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:800px;height:800px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:500;color:var(--accent);margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.hero-badge-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:18px;line-height:1.6;color:var(--text-sec);margin-bottom:40px;max-width:600px}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:16px 36px;border-radius:100px;font-weight:600;font-size:16px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);padding:16px 36px;border-radius:100px;font-weight:600;font-size:16px;font-family:var(--font-body);border:1.5px solid var(--border-hover);transition:all .2s;cursor:pointer}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+.hero-photo{width:100%;border-radius:24px;overflow:hidden;box-shadow:0 24px 64px rgba(13,13,13,0.12)}
+.hero-photo img{width:100%;height:auto;display:block;object-fit:cover;max-height:480px}
 
-body {
-  font-family: 'Manrope', sans-serif;
-  background: var(--dark);
-  color: var(--silver);
-  overflow-x: hidden;
-}
+.stats{padding:0 40px 80px;max-width:1200px;margin:0 auto}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);border-radius:20px;overflow:hidden}
+.stat-card{background:var(--bg-card);padding:40px 32px;text-align:center}
+.stat-number{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);color:var(--accent);line-height:1;margin-bottom:8px}
+.stat-label{font-size:14px;color:var(--text-muted);line-height:1.4}
 
-/* ===== UTILITY ===== */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-.section { padding: 80px 0; }
-.section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-  line-height: 1.05;
-}
-.section-subtitle {
-  font-size: 1.1rem;
-  color: var(--gray);
-  margin-bottom: 48px;
-  max-width: 600px;
-}
-.red { color: var(--red); }
-.btn {
-  display: inline-block;
-  padding: 16px 40px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.btn-red {
-  background: var(--red);
-  color: var(--white);
-  clip-path: polygon(0 0, 100% 0, 96% 100%, 0% 100%);
-}
-.btn-red:hover {
-  background: #ff4757;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(230,57,70,0.4);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  border: 2px solid var(--red);
-  clip-path: none;
-}
-.btn-outline:hover {
-  background: var(--red);
-  transform: translateY(-2px);
-}
+.marquee{overflow:hidden;white-space:nowrap;padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.marquee-inner{display:inline-flex;gap:60px;animation:marquee 20s linear infinite}
+.marquee-speakers .marquee-inner{animation-duration:30s}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3vw,40px);color:#F27649;display:flex;align-items:center;gap:60px}
+.marquee-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.marquee-speakers .marquee-item{font-size:clamp(16px,2vw,24px);color:var(--text-muted);font-weight:500}
 
-/* ===== NAVBAR ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(26,26,26,0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.3s;
-}
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.2rem;
-  color: var(--white);
-  text-decoration: none;
-  letter-spacing: 2px;
-}
-.nav-logo span { color: var(--red); }
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--gray);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--white); }
-.nav-cta {
-  background: var(--red);
-  color: var(--white) !important;
-  padding: 8px 20px;
-}
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.hamburger span {
-  width: 24px;
-  height: 2px;
-  background: var(--white);
-  transition: all 0.3s;
-}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;max-width:700px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
 
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-top: 64px;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -30%;
-  width: 80vw;
-  height: 80vw;
-  background: radial-gradient(circle, rgba(230,57,70,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--red), transparent);
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-.hero-badge {
-  display: inline-block;
-  padding: 8px 20px;
-  border: 1px solid var(--red);
-  color: var(--red);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 32px;
-  animation: fadeInUp 0.8s ease forwards;
-}
-.hero-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  line-height: 0.95;
-  color: var(--white);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  animation: fadeInUp 0.8s ease 0.15s forwards;
-  opacity: 0;
-}
-.hero-title .line2 { color: var(--red); }
-.hero-desc {
-  font-size: 1.15rem;
-  color: var(--gray);
-  max-width: 560px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  animation: fadeInUp 0.8s ease 0.3s forwards;
-  opacity: 0;
-}
-.hero-meta {
-  display: flex;
-  gap: 32px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease 0.45s forwards;
-  opacity: 0;
-}
-.hero-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-meta-icon {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-.hero-meta-text {
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-.hero-meta-text strong {
-  display: block;
-  color: var(--white);
-  font-weight: 700;
-}
-.hero-buttons {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease 0.6s forwards;
-  opacity: 0;
-}
+.about{padding:100px 40px;max-width:1200px;margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about-text{font-size:17px;line-height:1.8;color:var(--text-sec)}
+.about-text strong{color:var(--text);font-weight:600}
+.about-features{display:grid;gap:20px}
+.about-feature{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;transition:border-color .2s;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.about-feature:hover{border-color:var(--accent)}
+.about-feature-icon{width:40px;height:40px;background:var(--accent-mid);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.about-feature h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:6px}
+.about-feature p{font-size:14px;color:var(--text-muted);line-height:1.5}
 
-/* ===== COUNTDOWN ===== */
-.countdown-section {
-  background: var(--charcoal);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding: 40px 0;
-}
-.countdown-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.countdown-item {
-  text-align: center;
-  min-width: 80px;
-}
-.countdown-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  color: var(--white);
-  line-height: 1;
-}
-.countdown-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--gray);
-  margin-top: 4px;
-}
-.countdown-sep {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  color: var(--red);
-  line-height: 1;
-  margin-top: -12px;
-}
+.products{padding:100px 40px;max-width:1200px;margin:0 auto}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:0}
+.product-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.product-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(242,72,34,0.08)}
+.product-card.featured{border-color:var(--accent);background:linear-gradient(160deg,var(--bg-card) 0%,rgba(242,72,34,0.04) 100%)}
+.product-badge{position:absolute;top:20px;right:20px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
+.product-tier{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.product-name{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:-.5px;margin-bottom:12px}
+.product-desc{font-size:15px;color:var(--text-muted);line-height:1.6;margin-bottom:24px;flex-grow:1}
+.product-price{font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--accent);margin-bottom:8px}
+.product-price-note{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.product-features{list-style:none;margin-bottom:28px}
+.product-features li{font-size:14px;color:var(--text-sec);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.product-features li::before{content:'→';color:var(--accent);font-weight:700}
+.product-btn{display:block;text-align:center;padding:14px;border-radius:12px;font-weight:600;font-size:15px;transition:.2s;margin-top:auto;font-family:var(--font-body)}
+.product-btn-primary{background:var(--accent);color:#fff;border:none;cursor:pointer}
+.product-btn-primary:hover{background:var(--accent-hover)}
+.product-btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border-hover);cursor:pointer}
+.product-btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.calc-box{background:var(--bg);border-radius:16px;padding:24px;margin-top:16px;border:1px solid var(--border)}
+.calc-label{font-size:13px;color:var(--text-muted);margin-bottom:10px}
+.calc-label strong{color:var(--accent);font-weight:700}
+.calc-slider{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--bg-alt);border-radius:2px;outline:none}
+.calc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--accent);border-radius:50%;cursor:pointer}
+.calc-result{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.calc-result-price{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--accent)}
+.calc-result-save{font-size:13px;color:#2E8B57;font-weight:600}
 
-/* ===== ABOUT / MISSION ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 40px;
-}
-.stat-card {
-  background: var(--charcoal);
-  padding: 28px;
-  border-left: 3px solid var(--red);
-}
-.stat-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  color: var(--red);
-}
-.stat-label {
-  font-size: 0.85rem;
-  color: var(--gray);
-  margin-top: 4px;
-}
-.about-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--silver);
-}
-.about-text strong { color: var(--white); }
+.events{padding:100px 40px;max-width:1200px;margin:0 auto}
+.events-toggle{display:flex;gap:4px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:4px;width:fit-content;margin-bottom:48px}
+.events-toggle-btn{padding:10px 28px;border-radius:100px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none;background:transparent;color:var(--text-muted);font-family:var(--font-body)}
+.events-toggle-btn.active{background:var(--accent);color:#fff}
+.events-toggle-btn:hover:not(.active){background:var(--accent-light);color:var(--accent)}
+.events-tab{display:none}
+.events-tab.active{display:block}
+.events-timeline{position:relative}
+.events-timeline::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--bg-alt))}
+.event-item{display:grid;grid-template-columns:120px 1fr;gap:40px;margin-bottom:32px;position:relative}
+.event-date{text-align:right;padding-right:20px;position:relative}
+.event-date::after{content:'';position:absolute;right:-6px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.event-date-day{font-family:var(--font-display);font-weight:900;font-size:28px;line-height:1}
+.event-date-month{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.event-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:border-color .2s,transform .2s;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.03);display:block}
+.event-card:hover{border-color:var(--accent);transform:translateX(4px)}
+.event-card-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.event-type{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px}
+.event-type-offline{background:var(--accent-mid);color:var(--accent)}
+.event-type-online{background:rgba(46,139,87,0.1);color:#2E8B57}
+.event-type-travel{background:rgba(70,130,180,0.1);color:#4682B4}
+.event-type-sold{background:rgba(13,13,13,0.06);color:var(--text-muted)}
+.event-location{font-size:13px;color:var(--text-muted)}
+.event-title{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-.3px;margin-bottom:8px}
+.event-description{font-size:14px;color:var(--text-muted);line-height:1.5;margin-bottom:16px}
+.event-btn{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent);transition:gap .2s}
+.event-btn:hover{gap:10px}
+.event-speakers{display:flex;align-items:center;gap:8px}
+.event-speakers-avatars{display:flex}
+.event-speakers-avatars span{width:32px;height:32px;border-radius:50%;background:var(--accent-light);border:2px solid var(--bg-card);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--accent);margin-left:-8px}
+.event-speakers-avatars span:first-child{margin-left:0}
+.event-speakers-text{font-size:13px;color:var(--text-muted)}
 
-/* ===== PROGRAM ===== */
-.program { background: var(--dark); }
-.timeline {
-  position: relative;
-  padding-left: 0;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 24px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--red), var(--charcoal));
-}
-.timeline-item {
-  display: flex;
-  gap: 32px;
-  margin-bottom: 32px;
-  position: relative;
-  align-items: flex-start;
-}
-.timeline-dot {
-  width: 50px;
-  min-width: 50px;
-  height: 50px;
-  background: var(--charcoal);
-  border: 2px solid var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.85rem;
-  color: var(--red);
-  z-index: 2;
-  position: relative;
-}
-.timeline-content {
-  background: var(--charcoal);
-  padding: 28px;
-  flex: 1;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: border-color 0.3s;
-}
-.timeline-content:hover {
-  border-color: var(--red);
-}
-.timeline-module {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--red);
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.timeline-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  color: var(--white);
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  line-height: 1.15;
-}
-.timeline-speakers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 16px;
-}
-.timeline-speaker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.timeline-speaker img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--charcoal);
-}
-.timeline-speaker-info {
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-.timeline-speaker-info strong {
-  display: block;
-  color: var(--white);
-  font-weight: 700;
-}
-.timeline-speaker-info span {
-  color: var(--gray);
-  font-size: 0.72rem;
-}
-.vacant-slot {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.vacant-dot {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px dashed var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: var(--red);
-}
-.vacant-slot a {
-  color: var(--red);
-  text-decoration: none;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-.vacant-slot a:hover { text-decoration: underline; }
+/* GALLERY - real photos */
+.gallery{padding:100px 40px}
+.gallery-inner{max-width:1200px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-grid img{width:100%;height:240px;object-fit:cover;border-radius:16px;transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.02)}
 
-.sold-out-badge {
-  display: inline-block;
-  background: var(--red);
-  color: var(--white);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  margin-top: 12px;
-}
+/* SPEAKERS - with photos */
+.speakers{padding:100px 40px;max-width:1200px;margin:0 auto}
+.speakers-carousel{position:relative;overflow:hidden;margin-top:0}
+.speakers-track{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 0}
+.speakers-track::-webkit-scrollbar{display:none}
+.speaker-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;transition:border-color .2s,transform .2s;box-shadow:0 2px 12px rgba(0,0,0,0.03);min-width:200px;flex-shrink:0}
+.speaker-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.speaker-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 12px;overflow:hidden;border:2px solid var(--accent-mid);background:var(--accent-light);display:flex;align-items:center;justify-content:center}
+.speaker-avatar img{width:100%;height:100%;object-fit:cover}
+.speaker-avatar-text{font-family:var(--font-display);font-weight:700;font-size:22px;color:var(--accent)}
+.speaker-name{font-family:var(--font-display);font-weight:700;font-size:13px;margin-bottom:4px;line-height:1.3}
+.speaker-role{font-size:12px;color:var(--text-muted);line-height:1.3}
+.speaker-brand{margin-top:8px;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.5px}
+.carousel-arrows{display:flex;gap:12px;margin-top:32px;justify-content:center}
+.carousel-arrow{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--border-hover);background:var(--bg-card);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:18px;color:var(--text)}
+.carousel-arrow:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
 
-/* ===== FORMAT SECTION ===== */
-.format { background: var(--dark); }
-.format-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--silver);
-  max-width: 800px;
-  margin-bottom: 48px;
-}
-.format-text strong { color: var(--white); }
-.compare-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-.compare-card {
-  padding: 40px 32px;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-.compare-card.compare-self {
-  background: var(--charcoal);
-}
-.compare-card.compare-show {
-  background: var(--charcoal);
-  border: 2px solid var(--red);
-  position: relative;
-}
-.compare-card.compare-show::after {
-  content: 'ВЫГОДНО';
-  position: absolute;
-  top: 0;
-  right: 32px;
-  background: var(--red);
-  color: var(--white);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  padding: 6px 14px;
-}
-.compare-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: var(--white);
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-}
-.compare-list {
-  list-style: none;
-  margin-bottom: 24px;
-}
-.compare-list li {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 0.9rem;
-  color: var(--silver);
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-}
-.compare-list .price {
-  color: var(--white);
-  font-weight: 700;
-  white-space: nowrap;
-}
-.compare-total {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.5rem;
-  margin-top: 16px;
-}
-.compare-total.total-bad { color: var(--gray); }
-.compare-total.total-good { color: var(--red); }
-.compare-note {
-  font-size: 0.85rem;
-  color: var(--gray);
-  margin-top: 8px;
-  line-height: 1.5;
-}
-@media (max-width: 768px) {
-  .compare-grid { grid-template-columns: 1fr !important; }
-}
+.testimonials{padding:100px 40px;max-width:1200px;margin:0 auto}
+.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:0}
+.testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.testimonial-quote{font-size:42px;color:var(--accent);opacity:.3;font-family:Georgia,serif;line-height:1;margin-bottom:8px}
+.testimonial-text{font-size:15px;line-height:1.7;color:var(--text-sec);margin-bottom:20px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-author-avatar{width:40px;height:40px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--accent)}
+.testimonial-author-name{font-weight:600;font-size:14px}
+.testimonial-author-role{font-size:13px;color:var(--text-muted)}
 
-.timeline-break {
-  background: transparent;
-  border: 1px dashed rgba(255,255,255,0.1);
-  padding: 20px 28px;
-}
-.timeline-break .timeline-title { color: var(--gray); font-size: 1.2rem; }
+/* APP - gallery */
+.app-section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.app-screenshots{display:flex;gap:16px;justify-content:center}
+.app-screenshots img{width:180px;height:auto;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.1);border:1px solid var(--border)}
+.app-screenshots img:nth-child(2){transform:translateY(-20px)}
+.app-features{display:grid;gap:20px;margin-top:24px}
+.app-feature{display:flex;gap:16px;align-items:start}
+.app-feature-num{font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--accent);min-width:36px}
+.app-feature p{font-size:15px;color:var(--text-sec);line-height:1.5}
+.app-feature strong{color:var(--text)}
 
-/* ===== SHARKS ===== */
-.sharks { background: var(--charcoal); position: relative; overflow: hidden; }
-.sharks::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 40px,
-    rgba(230,57,70,0.03) 40px,
-    rgba(230,57,70,0.03) 80px
-  );
-  pointer-events: none;
-}
-.sharks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  position: relative;
-  z-index: 2;
-}
-.shark-card {
-  background: var(--dark);
-  padding: 32px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.4s ease;
-  position: relative;
-}
-.shark-card::before {
-  content: '🦈';
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 1.3rem;
-  opacity: 0.5;
-}
-.shark-card:hover {
-  border-color: var(--red);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(230,57,70,0.15);
-}
-.shark-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 20px;
-  border: 3px solid var(--red);
-}
-.shark-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem;
-  color: var(--white);
-  letter-spacing: 1px;
-}
-.shark-role {
-  font-size: 0.85rem;
-  color: var(--gray);
-  margin-top: 8px;
-  line-height: 1.5;
-}
-.shark-vacant {
-  border: 2px dashed rgba(230,57,70,0.4);
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
-}
-.shark-vacant .vacant-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px dashed var(--red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--red);
-  margin-bottom: 20px;
-}
-.pitch-cta {
-  text-align: center;
-  margin-top: 48px;
-  position: relative;
-  z-index: 2;
-}
+.video-reviews{padding:100px 40px;max-width:1200px;margin:0 auto}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.video-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.video-card iframe{width:100%;aspect-ratio:9/16;display:block;border:none}
+@media(max-width:768px){.video-grid{grid-template-columns:1fr;max-width:360px;margin:0 auto}}
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.cta .btn-secondary{color:#fff;border-color:rgba(255,255,255,0.2)}
+.cta .btn-secondary:hover{border-color:var(--accent);color:var(--accent);background:rgba(242,72,34,0.1)}
 
-/* ===== PRICING ===== */
-.pricing { background: var(--dark); }
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-}
-.price-card {
-  background: var(--charcoal);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 40px 32px;
-  position: relative;
-  transition: all 0.4s;
-}
-.price-card:hover {
-  border-color: var(--red);
-  transform: translateY(-4px);
-}
-.price-card.featured {
-  border: 2px solid var(--red);
-}
-.price-card.featured::after {
-  content: 'ХИТ';
-  position: absolute;
-  top: 0;
-  right: 32px;
-  background: var(--red);
-  color: var(--white);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  padding: 6px 14px;
-}
-.price-name {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: var(--white);
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-.price-amount {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
-  color: var(--red);
-  margin-bottom: 4px;
-}
-.price-note {
-  font-size: 0.78rem;
-  color: var(--gray);
-  margin-bottom: 24px;
-}
-.price-features {
-  list-style: none;
-  margin-bottom: 32px;
-}
-.price-features li {
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 0.9rem;
-  color: var(--silver);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.price-features li::before {
-  content: '→';
-  color: var(--red);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.price-btn {
-  width: 100%;
-  text-align: center;
-}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}
+.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
 
-/* ===== VENUE ===== */
-.venue { background: var(--charcoal); }
-.venue-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+@media(max-width:1024px){
+  .hero-photo img{max-height:360px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}
+  .products-grid{grid-template-columns:1fr;max-width:480px}.speaker-card{min-width:180px}
+  .testimonials-grid{grid-template-columns:1fr}.gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .app-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}
 }
-.venue-info h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
-  color: var(--white);
-  margin-bottom: 16px;
+@media(max-width:768px){
+  .header{padding:16px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}
+  .nav.open a{font-size:24px;color:var(--text);opacity:1}
+  .hero{padding:100px 20px 60px}.hero-buttons{flex-direction:column}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}.stat-card{padding:24px 16px}
+  .about,.products,.events,.speakers,.testimonials,.app-section,.gallery-inner{padding-left:20px;padding-right:20px}
+  .events-timeline::before{left:50px}.event-item{grid-template-columns:60px 1fr;gap:20px}.event-date-day{font-size:22px}.event-date::after{right:-26px}
+  .speaker-card{min-width:160px}
+  .gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{height:180px}
+  .app-screenshots img{width:120px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}
+  .cta{padding:80px 20px;border-radius:24px 24px 0 0}
 }
-.venue-info p {
-  color: var(--gray);
-  line-height: 1.7;
-  margin-bottom: 12px;
-}
-.venue-info .venue-detail {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  font-size: 0.95rem;
-}
-.venue-detail-icon {
-  font-size: 1.2rem;
-  width: 32px;
-  text-align: center;
-}
-.venue-map {
-  width: 100%;
-  height: 360px;
-  border: 0;
-  filter: grayscale(80%) contrast(1.1);
-  transition: filter 0.4s;
-}
-.venue-map:hover { filter: grayscale(20%); }
-
-/* ===== REVIEWS ===== */
-.reviews { background: var(--dark); }
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 24px;
-}
-.review-card {
-  background: var(--charcoal);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 0;
-  overflow: hidden;
-  aspect-ratio: 16/9;
-  position: relative;
-}
-.review-card iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* ===== FAQ ===== */
-.faq { background: var(--charcoal); }
-.faq-list {
-  max-width: 780px;
-}
-.faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  color: var(--white);
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-align: left;
-  padding: 24px 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-.faq-question::after {
-  content: '+';
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.5rem;
-  color: var(--red);
-  transition: transform 0.3s;
-  flex-shrink: 0;
-}
-.faq-item.active .faq-question::after {
-  transform: rotate(45deg);
-}
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-}
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding-bottom: 24px;
-}
-.faq-answer p {
-  color: var(--gray);
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  background: var(--dark);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 48px 0 24px;
-}
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-.footer-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.4rem;
-  color: var(--white);
-  letter-spacing: 2px;
-}
-.footer-logo span { color: var(--red); }
-.footer-contact p {
-  color: var(--gray);
-  font-size: 0.85rem;
-  margin-bottom: 6px;
-}
-.footer-contact a {
-  color: var(--silver);
-  text-decoration: none;
-}
-.footer-contact a:hover { color: var(--red); }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.footer-bottom p, .footer-bottom a {
-  color: var(--gray);
-  font-size: 0.75rem;
-}
-.footer-bottom a {
-  text-decoration: none;
-}
-.footer-bottom a:hover { color: var(--silver); }
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-/* ===== MODAL ===== */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.8);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.modal-overlay.active { display: flex; }
-.modal {
-  background: var(--charcoal);
-  max-width: 480px;
-  width: 100%;
-  padding: 40px 32px;
-  position: relative;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.modal-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: none;
-  border: none;
-  color: var(--gray);
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.modal-close:hover { color: var(--white); }
-.modal h3 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: var(--white);
-  margin-bottom: 24px;
-  letter-spacing: 1px;
-}
-.form-group {
-  margin-bottom: 16px;
-}
-.form-group label {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--gray);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
-.form-group input {
-  width: 100%;
-  padding: 14px 16px;
-  background: var(--dark);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--white);
-  font-family: 'Manrope', sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-.form-group input:focus { border-color: var(--red); }
-.form-group input::placeholder { color: var(--gray); }
-.payment-options {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-}
-.payment-options .btn {
-  flex: 1;
-  text-align: center;
-  font-size: 1rem;
-  padding: 14px 16px;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  .about-grid, .venue-grid { grid-template-columns: 1fr; }
-  .venue-map { height: 280px; }
-  .sharks-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .section { padding: 60px 0; }
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: var(--dark);
-    padding: 20px 24px;
-    gap: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .hamburger { display: flex; }
-  .hero-title { font-size: clamp(2.8rem, 12vw, 5rem); }
-  .hero-meta { gap: 16px; }
-  .countdown-wrap { gap: 20px; }
-  .countdown-num { font-size: 2.5rem; }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .sharks-grid { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
-  .timeline-item { gap: 16px; }
-  .timeline::before { left: 24px; }
-  .payment-options { flex-direction: column; }
-  .footer-top { flex-direction: column; }
-}
-@media (max-width: 480px) {
-  .container { padding: 0 16px; }
-  .hero-title { font-size: 2.5rem; }
-  .section-title { font-size: 2rem; }
-}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
+<header class="header" id="header">
+  <div class="logo"><span>ФРАНЧАЙЗИНГ</span> <span class="logo-accent">ПО-РУССКИ</span></div>
+  <nav class="nav" id="nav"><a href="#about">О нас</a><a href="#products">Продукты</a><a href="#events">События</a><a href="#speakers">Участники</a><a href="blog.html">Блог</a><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="nav-cta" target="_blank">Вступить</a></nav>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="container">
-    <a href="#" class="nav-logo">ТОК-ШОУ: <span>Франчайзинг по-русски</span></a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#program">Программа</a></li>
-      <li><a href="#format">Формат</a></li>
-      <li><a href="#venue">Место</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="#format" class="nav-cta">Купить билет</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>1 400+ участников в сообществе</div>
+    <h1>Строим франчайзинг,<br><span>вместе.</span></h1>
+    <p class="hero-sub">Сообщество франчайзеров, которые делают рынок франшиз прозрачнее, а бизнес — сильнее. Ток-шоу, мастермайнды, живые встречи и прямой доступ к лидерам индустрии.</p>
+    <div class="hero-buttons"><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="btn-primary" target="_blank">Вступить в сообщество →</a><a href="#events" class="btn-secondary">Ближайшие события</a></div>
+    <div class="hero-photo"><img src="hero-group.jpg" alt="Участники сообщества Франчайзинг по-русски в Сколково" loading="eager"></div>
   </div>
-</nav>
+</section>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">Закрытое мероприятие · 15 марта 2026</div>
-      <h1 class="hero-title">
-        <span class="line1">Ток-шоу</span><br>
-        <span class="line2">Франчайзинг</span><br>
-        <span class="line1">по-русски</span>
-      </h1>
-      <p class="hero-desc">Оффлайн-мероприятие со съёмками: дискуссии экспертов, нетворкинг. Одно место — все ключевые игроки рынка.</p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon">📅</div>
-          <div class="hero-meta-text"><strong>15 марта 2026</strong>Воскресенье, 09:30</div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon">📍</div>
-          <div class="hero-meta-text"><strong>Москва</strong>Лофт-Студия FRAME</div>
-        </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-icon">🎬</div>
-          <div class="hero-meta-text"><strong>Съёмки</strong>Профессиональное видео</div>
-        </div>
-      </div>
-      <div class="hero-buttons">
-        <a href="#format" class="btn btn-red">Участвовать</a>
-        <a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank" class="btn btn-outline">Telegram-сообщество</a>
-      </div>
+<section class="stats fade-in"><div class="stats-grid">
+  <div class="stat-card"><div class="stat-number">1 400+</div><div class="stat-label">участников<br>в сообществе</div></div>
+  <div class="stat-card"><div class="stat-number">7 500+</div><div class="stat-label">франчайзи в сетях<br>участников</div></div>
+  <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">экспертов<br>выступили</div></div>
+  <div class="stat-card"><div class="stat-number">18 000+</div><div class="stat-label">сообщений<br>за 9 месяцев</div></div>
+</div></section>
+
+<div class="marquee"><div class="marquee-inner"><span class="marquee-item">DODO BRANDS <span class="marquee-dot"></span></span><span class="marquee-item">FIT SERVICE <span class="marquee-dot"></span></span><span class="marquee-item">INBRAND <span class="marquee-dot"></span></span><span class="marquee-item">BIORISE <span class="marquee-dot"></span></span><span class="marquee-item">MYBOX <span class="marquee-dot"></span></span><span class="marquee-item">ZOLTOR <span class="marquee-dot"></span></span><span class="marquee-item">GAGAWA <span class="marquee-dot"></span></span><span class="marquee-item">РОСИНТЕР <span class="marquee-dot"></span></span><span class="marquee-item">DODO BRANDS <span class="marquee-dot"></span></span><span class="marquee-item">FIT SERVICE <span class="marquee-dot"></span></span><span class="marquee-item">INBRAND <span class="marquee-dot"></span></span><span class="marquee-item">BIORISE <span class="marquee-dot"></span></span><span class="marquee-item">MYBOX <span class="marquee-dot"></span></span><span class="marquee-item">ZOLTOR <span class="marquee-dot"></span></span><span class="marquee-item">GAGAWA <span class="marquee-dot"></span></span><span class="marquee-item">РОСИНТЕР <span class="marquee-dot"></span></span></div></div>
+
+<section class="about fade-in" id="about">
+  <div class="section-label">О сообществе</div><div class="section-title">Место, где франчайзеры становятся сильнее</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p><strong>«Франчайзинг по-русски»</strong> — это не клуб по интересам. Это хаб для тех, кто строит франчайзинговые сети, продаёт услуги франчайзерам или только выводит свою франшизу на рынок.</p><br>
+      <p>Мы делаем рынок франшиз прозрачнее. Наши участники — это основатели сетей от 10 до 1000+ точек, юристы, маркетологи, упаковщики и все, кто делает франчайзинг в России.</p><br>
+      <p>Основатель сообщества — <strong>Семён Сарапулов</strong>, автор книги «Франчайзинг по-русски» и серийный предприниматель с опытом создания и продажи франшизы Zoltor (350+ точек).</p>
+    </div>
+    <div class="about-features">
+      <div class="about-feature"><div class="about-feature-icon">⚡</div><h3>Живые встречи в Сколково</h3><p>Регулярные оффлайны со съёмками и нетворкингом. Не лекции — дискуссии.</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🎬</div><h3>Ток-шоу формат</h3><p>Камеры, споры, реальные кейсы. Каждый спикер получает профессиональный видеоконтент.</p></div>
+      <div class="about-feature"><div class="about-feature-icon">🚀</div><h3>Прямой доступ к экспертам</h3><p>Основатели Dodo, INBRAND, FIT SERVICE и десятков других сетей — в вашем Telegram.</p></div>
     </div>
   </div>
 </section>
 
-<!-- COUNTDOWN -->
-<section class="countdown-section">
-  <div class="container">
-    <div class="countdown-wrap" id="countdown">
-      <div class="countdown-item"><div class="countdown-num" id="cd-days">00</div><div class="countdown-label">Дней</div></div>
-      <div class="countdown-sep">:</div>
-      <div class="countdown-item"><div class="countdown-num" id="cd-hours">00</div><div class="countdown-label">Часов</div></div>
-      <div class="countdown-sep">:</div>
-      <div class="countdown-item"><div class="countdown-num" id="cd-mins">00</div><div class="countdown-label">Минут</div></div>
-      <div class="countdown-sep">:</div>
-      <div class="countdown-item"><div class="countdown-num" id="cd-secs">00</div><div class="countdown-label">Секунд</div></div>
+<section class="products fade-in" id="products">
+  <div class="section-label">Продукты</div><div class="section-title">Три уровня погружения</div><div class="section-desc">Начните с бесплатного сообщества, прокачайтесь в «Масштабе» и присоединяйтесь к элите в «Гуру Франшиз».</div>
+  <div class="products-grid">
+    <div class="product-card"><div class="product-tier">Старт</div><div class="product-name">Сообщество</div><div class="product-desc">Бесплатная группа в Telegram. Вход после знакомства с основателем. Нетворкинг, новости индустрии и анонсы.</div><div class="product-price">Пока Бесплатно</div><div class="product-price-note">после личного знакомства</div><ul class="product-features"><li>Telegram-группа 1400+ участников</li><li>Анонсы событий и эвентов</li><li>Нетворкинг с франчайзерами</li></ul><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="product-btn product-btn-outline" target="_blank">Вступить →</a></div>
+    <div class="product-card"><div class="product-tier">Прокачка</div><div class="product-name">Чат «Масштаб»</div><div class="product-desc">Закрытый чат с записями вебинаров, выступлений из Сколково, материалами спикеров и приватной атмосферой.</div><div class="product-price">5 000 ₽/мес</div><div class="product-price-note">или 35 000 ₽/год — экономия 25 000 ₽</div><ul class="product-features"><li>20+ записей вебинаров</li><li>22 выступления из Сколково</li><li>Чек-листы и шаблоны</li><li>Книги о франчайзинге</li><li>Экскурсии в офисы (Dodo)</li></ul><a href="https://t.me/tribute/app?startapp=sCed" class="product-btn product-btn-primary" target="_blank">Оформить подписку</a></div>
+    <div class="product-card featured"><div class="product-badge">Флагман</div><div class="product-tier">Элита</div><div class="product-name">Клуб «Гуру Франшиз»</div><div class="product-desc">Флагманская программа. Мастермайнды, путешествия, нетворкинг с лидерами рынка.</div><div class="product-price">500 000 ₽/год</div><div class="product-price-note">скидка до 350 000 ₽ за размер сети</div><ul class="product-features"><li>Все оффлайны сообщества</li><li>Ежемесячные мастермайнды</li><li>2 Франч-Тревел поездки в год</li><li>Членство в «Масштабе»</li><li>Закрытый клуб лидеров</li></ul><div class="calc-box"><div class="calc-label">Рассчитайте свою цену: <strong id="calcPoints">0</strong> точек в сети</div><input type="range" class="calc-slider" id="calcSlider" min="0" max="350" value="0" oninput="updateCalc(this.value)"><div class="calc-result"><div class="calc-result-price" id="calcPrice">500 000 ₽</div><div class="calc-result-save" id="calcSave"></div></div></div><a href="guru.html" class="product-btn product-btn-primary" style="margin-top:20px">Подать заявку</a></div>
+  </div>
+</section>
+
+<section class="events fade-in" id="events">
+  <div class="section-label">Календарь событий</div><div class="section-title">Ближайшие мероприятия</div><div class="section-desc">Офлайн-встречи, ток-шоу, вебинары — все мероприятия сообщества.</div>
+  <div class="events-toggle">
+    <button class="events-toggle-btn active" onclick="switchTab('offline')">Оффлайн</button>
+    <button class="events-toggle-btn" onclick="switchTab('online')">Онлайн</button>
+  </div>
+
+  <div class="events-tab active" id="tab-offline">
+  <div class="events-timeline">
+    <div class="event-item"><div class="event-date"><div class="event-date-day">31</div><div class="event-date-month">Май</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-offline">Оффлайн</span><span class="event-location">Москва, Сколково</span></div><div class="event-title">Масштаб</div><div class="event-description">31 мая — 1 июня. Оффлайн-встреча сообщества. Спикеры, нетворкинг, обмен опытом.</div><div class="event-btn">Регистрация скоро →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">05</div><div class="event-date-month">Авг</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-travel">Франч-Тревел</span><span class="event-location">Эльбрус</span></div><div class="event-title">Эль-Франч</div><div class="event-description">5 — 11 августа. Восхождение на Эльбрус (до базового лагеря) в сообществе единомышленников.</div><div class="event-btn">Подробности скоро →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">20</div><div class="event-date-month">Сен</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-offline">Оффлайн</span><span class="event-location">Москва</span></div><div class="event-title">Ток-Шоу «Франчайзинг по-русски» — 2 сезон</div><div class="event-description">Возвращение ток-шоу. Новые спикеры, новые модули, профессиональные съёмки.</div><div class="event-btn">Анонс скоро →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">07</div><div class="event-date-month">Ноя</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-travel">Франч-Тревел</span><span class="event-location">Турция</span></div><div class="event-title">Яхт-Франч</div><div class="event-description">7 — 14 ноября. Недельный яхтинг в Турции вместе с единомышленниками.</div><div class="event-btn">Подробности скоро →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">13</div><div class="event-date-month">Дек</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-offline">Оффлайн</span><span class="event-location">Москва, Сколково</span></div><div class="event-title">Масштаб-Новогодний</div><div class="event-description">13 — 14 декабря. Итоги года, нетворкинг и новогодняя атмосфера в Сколково.</div><div class="event-btn">Регистрация скоро →</div></div></div>
+  </div>
+  </div>
+
+  <div class="events-tab" id="tab-online">
+  <div class="events-timeline">
+    <div class="event-item"><div class="event-date"><div class="event-date-day">03</div><div class="event-date-month">Апр</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-online">Онлайн</span><span class="event-location">Чт, 19:00 МСК</span></div><div class="event-title">Франчайзинговый Договор — как не стать рабом покупателя?</div><div class="event-description">Спикер: Игорь Анфалов, управляющий партнёр Lumos Partners.</div><div class="event-btn">Зарегистрироваться →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">10</div><div class="event-date-month">Апр</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-online">Онлайн</span><span class="event-location">Чт, 19:00 МСК</span></div><div class="event-title">Как выстроить маркетинг, который реально продаёт франшизы?</div><div class="event-description">Спикер: Тимур Шарафутдинов.</div><div class="event-btn">Зарегистрироваться →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">17</div><div class="event-date-month">Апр</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-online">Онлайн</span><span class="event-location">Чт, 19:00 МСК</span></div><div class="event-title">Отдел поддержки партнеров — как запускать по 40 точек в месяц?</div><div class="event-description">Спикер: Денис Блохин, руководитель УК Junior Projects.</div><div class="event-btn">Зарегистрироваться →</div></div></div>
+    <div class="event-item"><div class="event-date"><div class="event-date-day">24</div><div class="event-date-month">Апр</div></div><div class="event-card"><div class="event-card-header"><span class="event-type event-type-online">Онлайн</span><span class="event-location">Чт, 19:00 МСК</span></div><div class="event-title">Как расти быстрее рынка?</div><div class="event-description">Спикер: Денис Селезнев.</div><div class="event-btn">Зарегистрироваться →</div></div></div>
+  </div>
+  </div>
+</section>
+
+<section class="gallery fade-in"><div class="gallery-inner">
+  <div class="section-label">Атмосфера</div><div class="section-title">Как проходят наши встречи</div><div class="section-desc">Камеры, живые споры, нетворкинг за кофе — формат, который не даёт скучать.</div>
+  <div class="gallery-grid">
+    <img src="gallery-1.jpg" alt="Спикер выступает на мероприятии" loading="lazy">
+    <img src="gallery-2.jpg" alt="Нетворкинг участников" loading="lazy">
+    <img src="gallery-3.jpg" alt="Выступление в Сколково" loading="lazy">
+    <img src="gallery-4.jpg" alt="Нетворкинг за кофе" loading="lazy">
+    <img src="gallery-5.jpg" alt="Общение участников сообщества" loading="lazy">
+    <img src="gallery-6.jpg" alt="Дискуссия на мероприятии" loading="lazy">
+  </div>
+</div></section>
+
+<section class="speakers fade-in" id="speakers">
+  <div class="section-label">Участники сообщества</div><div class="section-title">Мы за обмен опытом, а не за раскрученных спикеров</div>
+  <div class="section-desc">В нашем сообществе нет «гуру», которые последние 10 лет только учат других. Здесь — основатели, топ-менеджеры и подрядчики, которые прямо сейчас строят сети и каждый день решают реальные задачи. Взаимоопыление практиков, а не лекции из учебников.</div>
+  <div class="speakers-carousel" id="speakersCarousel">
+    <div class="speakers-track" id="speakersTrack">
+      <div class="speaker-card"><div class="speaker-avatar"><img src="dolgov.jpg" alt="Александр Долгов"></div><div class="speaker-name">Александр Долгов</div><div class="speaker-role">Основатель, 800+ франчайзи</div><div class="speaker-brand">20x80</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="nabiullin.jpg" alt="Ильназ Набиуллин"></div><div class="speaker-name">Ильназ Набиуллин</div><div class="speaker-role">Основатель холдинга, 1000+ франчайзи</div><div class="speaker-brand">INBRAND</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="speaker-shabanov.jpg" alt="Евгений Шабанов"></div><div class="speaker-name">Евгений Шабанов</div><div class="speaker-role">Ресторанный холдинг</div><div class="speaker-brand">VASILCHUKI GROUP</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="zaripov.jpg" alt="Артур Зарипов"></div><div class="speaker-name">Артур Зарипов</div><div class="speaker-role">200+ клиник за 3 года</div><div class="speaker-brand">BIORISE</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="redkin.png" alt="Владислав Редькин"></div><div class="speaker-name">Владислав Редькин</div><div class="speaker-role">Основатель сети кофеен</div><div class="speaker-brand">ЗДРАСТЕ</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="nazarov.jpg" alt="Александр Назаров"></div><div class="speaker-name">Александр Назаров</div><div class="speaker-role">Ex-лидер франчайзинга</div><div class="speaker-brand">MY BOX</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="bachmanov.jpg" alt="Олег Бачманов"></div><div class="speaker-name">Олег Бачманов</div><div class="speaker-role">Директор по маркетингу</div><div class="speaker-brand">FIT SERVICE</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="speaker-sagalov.jpg" alt="Константин Сагалов"></div><div class="speaker-name">Константин Сагалов</div><div class="speaker-role">Ex-CEO</div><div class="speaker-brand">СУШИ-WOK</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="anfalov.jpg" alt="Игорь Анфалов"></div><div class="speaker-name">Игорь Анфалов</div><div class="speaker-role">Управляющий партнёр</div><div class="speaker-brand">LUMOS PARTNERS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="ovchinnikova.jpg" alt="Алёна Овчинникова"></div><div class="speaker-name">Алёна Овчинникова</div><div class="speaker-role">17 лет в HoReCa</div><div class="speaker-brand">РОСИНТЕР · KFC · GAGAWA</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="blokhin.jpg" alt="Денис Блохин"></div><div class="speaker-name">Денис Блохин</div><div class="speaker-role">Руководитель УК, 40 точек/мес</div><div class="speaker-brand">JUNIOR PROJECTS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="oputin.jpg" alt="Женя Опутин"></div><div class="speaker-name">Женя Опутин</div><div class="speaker-role">Экс-дизайн-директор</div><div class="speaker-brand">DODO BRANDS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="osintsev.jpg" alt="Ярослав Осинцев"></div><div class="speaker-name">Ярослав Осинцев</div><div class="speaker-role">Маркетинг франшиз</div><div class="speaker-brand">МАРКЕТИНГОВОЕ АГЕНТСТВО</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="vorobiev.jpg" alt="Михаил Воробьёв"></div><div class="speaker-name">Михаил Воробьёв</div><div class="speaker-role">Основатель</div><div class="speaker-brand">МЕСТО ПРЯТОК</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="suvorov.jpg" alt="Иван Суворов"></div><div class="speaker-name">Иван Суворов</div><div class="speaker-role">Сооснователь</div><div class="speaker-brand">LUMOS PARTNERS</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="chukova.jpg" alt="Альбина Чукова"></div><div class="speaker-name">Альбина Чукова</div><div class="speaker-role">CEO</div><div class="speaker-brand">СОВЕТ ЛИГАЛ</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="kharitonova.png" alt="Анна Харитонова"></div><div class="speaker-name">Анна Харитонова</div><div class="speaker-role">Каталог</div><div class="speaker-brand">ЛИДЕР ФРАНШИЗ</div></div>
+      <div class="speaker-card"><div class="speaker-avatar"><img src="moshchenko.png" alt="Елена Мощенко"></div><div class="speaker-name">Елена Мощенко</div><div class="speaker-role">Юрист по защите прав</div><div class="speaker-brand">ФРАНЧАЙЗИ</div></div>
+    </div>
+    <div class="carousel-arrows">
+      <button class="carousel-arrow" onclick="slideSpeakers(-1)">←</button>
+      <button class="carousel-arrow" onclick="slideSpeakers(1)">→</button>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:48px;font-size:18px;color:var(--text-sec);font-weight:500;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.5">...и ещё сотни талантливых основателей, топ-менеджеров и подрядчиков из рынка франчайзинга.</p>
+</section>
+
+<div class="marquee marquee-speakers" style="border-top:none"><div class="marquee-inner">
+  <span class="marquee-item">Александр Касьянов · DODO BRANDS <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Николай Маркин <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Тимур Шарафутдинов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Ольга Золотухина <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Борис Колесников <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Даниил Безко <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Аделина Сахапова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Рустэм Юсупов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Денис Селезнев <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Надежда Нестерова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Владимир Панкратов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Анастасия Мансурова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Анастасия Панчук <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Антон Романов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Сергей Жамков <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Александр Старжинский <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Ярослав Осинцев <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Дамир Умаров <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Александр Касьянов · DODO BRANDS <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Николай Маркин <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Тимур Шарафутдинов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Ольга Золотухина <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Борис Колесников <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Даниил Безко <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Аделина Сахапова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Рустэм Юсупов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Денис Селезнев <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Надежда Нестерова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Владимир Панкратов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Анастасия Мансурова <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Анастасия Панчук <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Антон Романов <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Сергей Жамков <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Александр Старжинский <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Ярослав Осинцев <span class="marquee-dot"></span></span>
+  <span class="marquee-item">Дамир Умаров <span class="marquee-dot"></span></span>
+</div></div>
+
+<section class="testimonials fade-in"><div class="section-label">Отзывы</div><div class="section-title">Что говорят участники</div><div class="testimonials-grid">
+  <div class="testimonial-card"><div class="testimonial-quote">"</div><div class="testimonial-text">Сообщество реально работает. За один оффлайн нашёл подрядчика на маркетинг, юриста и двух потенциальных франчайзи.</div><div class="testimonial-author"><div class="testimonial-author-avatar">АС</div><div><div class="testimonial-author-name">Участник сообщества</div><div class="testimonial-author-role">Основатель франшизы, 45 точек</div></div></div></div>
+  <div class="testimonial-card"><div class="testimonial-quote">"</div><div class="testimonial-text">Ток-шоу — не конференция, где засыпаешь. Это живой формат, где эксперты спорят, а ты забираешь инсайты.</div><div class="testimonial-author"><div class="testimonial-author-avatar">МВ</div><div><div class="testimonial-author-name">Участник ток-шоу</div><div class="testimonial-author-role">Франчайзер, сеть кофеен</div></div></div></div>
+</div></section>
+
+<section class="app-section fade-in">
+  <div class="section-label">Приложение</div><div class="section-title">Сообщество в кармане</div>
+  <div class="app-grid">
+    <div>
+      <p style="font-size:17px;color:var(--text-sec);line-height:1.7;margin-bottom:8px">Собственное приложение — справочник участников, спецпредложения для франчайзеров и быстрый доступ ко всем ресурсам.</p>
+      <div class="app-features">
+        <div class="app-feature"><div class="app-feature-num">01</div><p><strong>Справочник участников</strong> — найдите нужного человека за секунды. Фильтры по городу, роли и тегам.</p></div>
+        <div class="app-feature"><div class="app-feature-num">02</div><p><strong>Спецпредложения</strong> — эксклюзивные скидки от участников сообщества.</p></div>
+        <div class="app-feature"><div class="app-feature-num">03</div><p><strong>Профили участников</strong> — подробные карточки с опытом, городом и контактами.</p></div>
+      </div>
+    </div>
+    <div class="app-screenshots">
+      <img src="app-1.jpg" alt="Справочник участников" loading="lazy">
+      <img src="app-2.jpg" alt="Спецпредложения" loading="lazy">
+      <img src="app-3.jpg" alt="Профиль участника" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <div class="section-title">О <span class="red">сообществе</span></div>
-        <p class="about-text">
-          <strong>«Франчайзинг по-русски»</strong> — это хаб, где формируются сильные сети и рождаются новые истории успеха.<br><br>
-          Наша миссия — делать рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.<br><br>
-          Ток-шоу — это формат, где эксперты не читают лекции, а ведут живые дискуссии. Камеры, споры, реальные кейсы. Каждый участник получает профессиональный видеоконтент для своих соцсетей.
-        </p>
-      </div>
-      <div>
-        <div class="about-stats">
-          <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Модулей дискуссий</div></div>
-          <div class="stat-card"><div class="stat-num">20+</div><div class="stat-label">Экспертов на сцене</div></div>
-          <div class="stat-card"><div class="stat-num">2000+</div><div class="stat-label">Участников сообщества</div></div>
-          <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">Reels каждому спикеру</div></div>
-        </div>
-      </div>
-    </div>
+<section class="video-reviews fade-in">
+  <div class="section-label">Видео-отзывы</div><div class="section-title">Живые впечатления участников</div><div class="section-desc">Не верьте нам на слово — послушайте тех, кто уже был на мероприятиях.</div>
+  <div class="video-grid">
+    <div class="video-card"><iframe src="https://player.vimeo.com/video/1128159622?badge=0&autopause=0&player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+    <div class="video-card"><iframe src="https://player.vimeo.com/video/1148576108?badge=0&autopause=0&player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
+    <div class="video-card"><iframe src="https://player.vimeo.com/video/1148577108?badge=0&autopause=0&player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div>
   </div>
 </section>
 
-<!-- PROGRAM -->
-<section class="section program" id="program">
-  <div class="container">
-    <div class="section-title">Программа <span class="red">дня</span></div>
-    <div class="section-subtitle">Два этапа съёмок: экспертные дискуссии и питчи перед акулами франчайзинга</div>
+<section class="cta"><div class="cta-title">Строим франчайзинг,<br>вместе.</div><div class="cta-sub">Вступайте в сообщество, где делают бизнес, а не разговаривают о нём.</div><div style="display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap"><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="btn-primary" target="_blank">Вступить в Telegram →</a><a href="https://www.youtube.com/@rusfranch/shorts" class="btn-secondary" target="_blank">Смотреть на YouTube</a></div></section>
 
-    <div class="timeline">
-
-      <!-- 09:30 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">09:30</div>
-        <div class="timeline-content timeline-break">
-          <div class="timeline-title">☕ Сбор гостей, кофе, знакомства</div>
-        </div>
-      </div>
-
-      <!-- Module 1 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">10:00</div>
-        <div class="timeline-content">
-          <div class="timeline-module">Модуль 1 · Дискуссия</div>
-          <div class="timeline-title">Юридические и налоговые изменения в 2026 году и их влияние на франчайзинг</div>
-          <div class="timeline-speakers">
-            <div class="timeline-speaker">
-              <img src="anfalov.jpg" alt="Игорь Анфалов">
-              <div class="timeline-speaker-info"><strong>Игорь Анфалов</strong><span>Управляющий партнёр Lumos Partners</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="suvorov.jpg" alt="Иван Суворов">
-              <div class="timeline-speaker-info"><strong>Иван Суворов</strong><span>Сооснователь Lumos Partners</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="chukova.jpg" alt="Альбина Чукова">
-              <div class="timeline-speaker-info"><strong>Альбина Чукова</strong><span>CEO «Совет Лигал»</span></div>
-            </div>
-            <div class="vacant-slot">
-              <div class="vacant-dot">+</div>
-              <a href="#" onclick="openModal('speaker'); return false;">Стать экспертом →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Module 2 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">11:15</div>
-        <div class="timeline-content">
-          <div class="timeline-module">Модуль 2 · Дискуссия</div>
-          <div class="timeline-title">Ресторанный франчайзинг в 2026 году</div>
-          <div class="timeline-speakers">
-            <div class="timeline-speaker">
-              <img src="nazarov.jpg" alt="Александр Назаров">
-              <div class="timeline-speaker-info"><strong>Александр Назаров</strong><span>Ex-лидер франчайзинга My Box</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="ovchinnikova.jpg" alt="Алёна Овчинникова">
-              <div class="timeline-speaker-info"><strong>Алёна Овчинникова</strong><span>Эксперт масштабирования, ex-GaGawa</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img style="background:var(--dark); padding: 8px;" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTAwIj48dGV4dCB4PSIxMDAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5WQVNJTENIVUtJPC90ZXh0Pjwvc3ZnPg==" alt="Vasilchuki">
-              <div class="timeline-speaker-info"><strong>Vasilchuki Restaurant Group</strong><span>Представитель уточняется</span></div>
-            </div>
-            <div class="vacant-slot">
-              <div class="vacant-dot">+</div>
-              <a href="#" onclick="openModal('speaker'); return false;">Стать экспертом →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Module 3 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">12:30</div>
-        <div class="timeline-content">
-          <div class="timeline-module">Модуль 3 · Дискуссия</div>
-          <div class="timeline-title">Маркетинг, трафик и продажи франшиз. Как не уронить продажи в 2026?</div>
-          <div class="timeline-speakers">
-            <div class="timeline-speaker">
-              <img src="osintsev.jpg" alt="Ярослав Осинцев">
-              <div class="timeline-speaker-info"><strong>Ярослав Осинцев</strong><span>Основатель маркетингового агентства</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="dolgov.jpg" alt="Александр Долгов">
-              <div class="timeline-speaker-info"><strong>Александр Долгов</strong><span>Основатель 20x80, 800+ франчайзи</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="zaripov.jpg" alt="Артур Зарипов">
-              <div class="timeline-speaker-info"><strong>Артур Зарипов</strong><span>Основатель сети клиник BIORISE</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="kabanova.jpg" alt="Екатерина Кабанова">
-              <div class="timeline-speaker-info"><strong>Екатерина Кабанова</strong><span>Специалист по франчайзингу и построению отделов продаж</span></div>
-            </div>
-          </div>
-          <div class="sold-out-badge">Мест больше нет</div>
-        </div>
-      </div>
-
-      <!-- Module 4 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">15:00</div>
-        <div class="timeline-content">
-          <div class="timeline-module">Модуль 4 · Дискуссия</div>
-          <div class="timeline-title">Упаковка франшизы: внешний лоск vs внутренние процессы</div>
-          <div class="timeline-speakers">
-            <div class="timeline-speaker">
-              <img src="blokhin.jpg" alt="Денис Блохин">
-              <div class="timeline-speaker-info"><strong>Денис Блохин</strong><span>Руководитель УК Junior Projects</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="oputin.jpg" alt="Женя Опутин">
-              <div class="timeline-speaker-info"><strong>Женя Опутин</strong><span>Дизайн-директор Vagabond Agency, ex-Dodo Brands</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="kharitonova.png" alt="Анна Харитонова">
-              <div class="timeline-speaker-info"><strong>Анна Харитонова</strong><span>Основатель компании «Лидер Франшиз»</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="vorobiev.jpg" alt="Михаил Воробьёв">
-              <div class="timeline-speaker-info"><strong>Михаил Воробьёв</strong><span>Основатель франшизы «Место Пряток»</span></div>
-            </div>
-          </div>
-          <div class="sold-out-badge">Мест больше нет</div>
-        </div>
-      </div>
-
-      <!-- Module 5 -->
-      <div class="timeline-item fade-in">
-        <div class="timeline-dot">16:15</div>
-        <div class="timeline-content" style="border-color: var(--red);">
-          <div class="timeline-module">Модуль 5 · Дискуссия</div>
-          <div class="timeline-title">🔥 Будущее франчайзинга в России: риски, угрозы и возможности</div>
-          <div class="timeline-speakers">
-            <div class="timeline-speaker">
-              <img src="nabiullin.jpg" alt="Ильназ Набиуллин">
-              <div class="timeline-speaker-info"><strong>Ильназ Набиуллин</strong><span>🥇 Лидер франчайзинга, 1000+ точек · Чио Чио</span></div>
-            </div>
-            <div class="timeline-speaker">
-              <img src="mansurova.jpg" alt="Анастасия Мансурова">
-              <div class="timeline-speaker-info"><strong>Анастасия Мансурова</strong><span>Систематизирует SMM внутри франшиз</span></div>
-            </div>
-            <div class="vacant-slot">
-              <div class="vacant-dot">+</div>
-              <a href="#" onclick="openModal('speaker'); return false;">Стать экспертом →</a>
-            </div>
-            <div class="vacant-slot">
-              <div class="vacant-dot">+</div>
-              <a href="#" onclick="openModal('speaker'); return false;">Стать экспертом →</a>
-            </div>
-            <div class="vacant-slot">
-              <div class="vacant-dot">+</div>
-              <a href="#" onclick="openModal('speaker'); return false;">Стать экспертом →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FORMAT -->
-<section class="section format" id="format">
-  <div class="container">
-    <div class="section-title">Это не <span class="red">конференция</span></div>
-    <div class="section-subtitle">Формат, который работает на вас ещё 6 месяцев после мероприятия</div>
-
-    <div class="format-text fade-in">
-      <strong>ТОК-ШОУ «Франчайзинг по-русски»</strong> — это не конференция и не форум. Это <strong>контент-площадка</strong>, где мы снимаем профессиональный видеоконтент для сообщества, всех участников модулей и медиа-партнёров.<br><br>
-      Каждая дискуссия снимается на профессиональное оборудование многокамерной съёмкой. Из материалов монтируются полноформатные выпуски и короткие вертикальные ролики (Reels, Shorts, VK Clips).<br><br>
-      Контент транслируется в каналах партнёров, в сообществе и на других площадках <strong>в течение следующих 6 месяцев</strong>. Вы не просто выступаете — вы получаете медийный охват, который работает на вас долго после мероприятия.
-    </div>
-
-    <div class="fade-in" style="margin-bottom:48px;">
-      <img src="studio-photo.png" alt="Съёмки ТОК-ШОУ Франчайзинг по-русски" style="width:100%; border: 1px solid rgba(255,255,255,0.1);">
-    </div>
-
-    <div class="section-title" style="font-size:clamp(1.8rem,4vw,3rem); margin-bottom:32px;">Сравните <span class="red">стоимость</span></div>
-
-    <div class="compare-grid" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="compare-card compare-self fade-in">
-        <div class="compare-title">Самостоятельные съёмки</div>
-        <ul class="compare-list">
-          <li><span>Аренда студии</span><span class="price">50 000 ₽</span></li>
-          <li><span>Съёмочная команда</span><span class="price">100 000 ₽</span></li>
-          <li><span>Продюсер</span><span class="price">50 000 ₽</span></li>
-          <li><span>Монтаж материала</span><span class="price">50 000 ₽</span></li>
-        </ul>
-        <div class="compare-total total-bad">250 000 ₽</div>
-        <div class="compare-note">В кадре только вы. Такие видео мало кому интересны. Размещение ищете сами или платите за дистрибуцию отдельно.</div>
-      </div>
-
-      <div class="compare-card compare-show fade-in">
-        <div class="compare-title">Спикер ТОК-ШОУ</div>
-        <ul class="compare-list">
-          <li><span>Профессиональная съёмка</span><span class="price">✓</span></li>
-          <li><span>Полный смонтированный материал</span><span class="price">✓</span></li>
-          <li><span>10 вертикальных Reels</span><span class="price">✓</span></li>
-          <li><span>Интересные оппоненты в кадре</span><span class="price">✓</span></li>
-          <li><span>Медийный охват 6 мес.</span><span class="price">✓</span></li>
-          <li><span>Нетворкинг с экспертами</span><span class="price">✓</span></li>
-        </ul>
-        <div class="compare-total total-good">45 000 ₽</div>
-        <div class="compare-note">Готовый контент, живые дискуссии с лидерами рынка и дистрибуция на аудиторию сообщества.</div>
-        <a href="#" onclick="openModal('speaker'); return false;" class="btn btn-red" style="width:100%; text-align:center; margin-top:20px; font-size:1rem; padding:14px 16px;">Стать спикером</a>
-      </div>
-
-      <div class="compare-card fade-in" style="border: 1px solid rgba(255,255,255,0.1);">
-        <div class="compare-title">Зритель</div>
-        <ul class="compare-list">
-          <li><span>Просмотр всех дискуссий</span><span class="price">✓</span></li>
-          <li><span>Присутствие на съёмках</span><span class="price">✓</span></li>
-          <li><span>Нетворкинг с экспертами</span><span class="price">✓</span></li>
-        </ul>
-        <div class="compare-total total-good">15 000 ₽</div>
-        <div class="compare-note">Посмотрите как снимается контент, познакомьтесь с лидерами рынка франчайзинга.</div>
-        <a href="#" onclick="openModal('viewer'); return false;" class="btn btn-outline" style="width:100%; text-align:center; margin-top:20px; font-size:1rem; padding:14px 16px;">Купить билет</a>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:48px;" class="fade-in">
-      <p style="color:var(--gray); margin-bottom:16px;">Остались вопросы? Свяжитесь с менеджером</p>
-      <a href="https://t.me/Yes_Yasya" target="_blank" class="btn btn-outline" style="font-size:1.1rem; padding:16px 40px;">Написать менеджеру @Yes_Yasya</a>
-    </div>
-  </div>
-</section>
-
-<!-- VENUE -->
-<section class="section venue" id="venue">
-  <div class="container">
-    <div class="section-title">Место <span class="red">проведения</span></div>
-    <div style="margin-top:40px;" class="venue-grid">
-      <div class="venue-info fade-in">
-        <h3>Лофт-Студия FRAME</h3>
-        <div class="venue-detail"><span class="venue-detail-icon">📍</span>Болотная набережная, д. 3 ст. 4, Москва</div>
-        <div class="venue-detail"><span class="venue-detail-icon">📅</span>15 марта 2026, воскресенье</div>
-        <div class="venue-detail"><span class="venue-detail-icon">⏰</span>Сбор с 09:30, начало в 10:00</div>
-      </div>
-      <div class="fade-in">
-        <iframe class="venue-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.8!2d37.6097!3d55.7422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54beb47cc39e1%3A0x5765a04396abce5e!2z0JHQvtC70L7RgtC90LDRjyDQvdCw0LEuLCAzINGB0YLRgC4gNCwg0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="section reviews" id="reviews">
-  <div class="container">
-    <div class="section-title">Отзывы <span class="red">участников</span></div>
-    <div class="section-subtitle">Видеоотзывы с предыдущих мероприятий сообщества</div>
-    <div class="reviews-grid">
-      <div class="review-card fade-in">
-        <iframe src="https://player.vimeo.com/video/1128159622" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
-      <div class="review-card fade-in">
-        <iframe src="https://player.vimeo.com/video/1148576108" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
-      <div class="review-card fade-in">
-        <iframe src="https://player.vimeo.com/video/1148577108" allow="autoplay; fullscreen" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section faq" id="faq">
-  <div class="container">
-    <div class="section-title"><span class="red">Частые</span> вопросы</div>
-    <div class="faq-list" style="margin-top:40px;">
-
-      <div class="faq-item">
-        <button class="faq-question">Что я получу как зритель?</button>
-        <div class="faq-answer"><p>Вы будете присутствовать на съёмках всех дискуссионных модулей. После мероприятия — нетворкинг с экспертами и участниками.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Что входит в пакет спикера?</button>
-        <div class="faq-answer"><p>Участие в экспертной дискуссии на сцене одного из модулей. Вы получите в своё полное распоряжение весь отснятый и смонтированный материал, а также 10 коротких вертикальных видео, готовых к размещению в социальных сетях. Плюс нетворкинг с лидерами рынка.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Как проходит питч акулам?</button>
-        <div class="faq-answer"><p>Вы выходите на сцену и презентуете свой проект перед акулами — собственниками крупных сетей с сотнями точек. Они задают вопросы и дают обратную связь. Всё снимается на профессиональное видео, которое вы получите в полное распоряжение.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Можно ли оплатить по безналу?</button>
-        <div class="faq-answer"><p>Да, доступна оплата по безналичному расчёту. При выборе этого способа вас перенаправят к менеджеру Ярославе Токаревой в Telegram (<a href="https://t.me/Yes_Yasya" target="_blank" style="color:var(--red);">@Yes_Yasya</a>) для оформления.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Сколько человек будет на мероприятии?</button>
-        <div class="faq-answer"><p>Мероприятие закрытое, количество мест строго ограничено форматом площадки. Камерная атмосфера позволяет каждому участнику пообщаться с экспертами и акулами лично.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">До какого числа действует ранняя цена?</button>
-        <div class="faq-answer"><p>Специальная цена действует при оплате до 1 марта 2026 года. После этой даты стоимость участия будет увеличена.</p></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Как попасть в Telegram-сообщество?</button>
-        <div class="faq-answer"><p>Присоединяйтесь по ссылке: <a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank" style="color:var(--red);">Франчайзинг по-русски в Telegram</a>. Это открытое сообщество для всех, кто связан с франчайзингом.</p></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <div class="footer-logo">ТОК-ШОУ: <span>Франчайзинг по-русски</span></div>
-        <p style="color:var(--gray); font-size:0.85rem; margin-top:8px; max-width:360px;">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче</p>
-      </div>
-      <div class="footer-contact">
-        <p><strong style="color:var(--white);">Контакты</strong></p>
-        <p>Ярослава Токарева</p>
-        <p>Telegram: <a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a></p>
-        <p>Телефон: <a href="tel:+79281325031">+7 928 132 50 31</a></p>
-        <p style="margin-top:12px;"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank" style="color:var(--red); font-weight:600;">Telegram-сообщество →</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 ИП Сарапулова Дарья Сергеевна · ИНН 027611813929</p>
-      <div class="footer-links">
-        <a href="#" onclick="alert('Раздел в разработке'); return false;">Политика конфиденциальности</a>
-        <a href="#" onclick="alert('Раздел в разработке'); return false;">Согласие на обработку ПД</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h3 id="modalTitle">Регистрация</h3>
-    <form id="regForm" onsubmit="return false;">
-      <div class="form-group">
-        <label>Имя</label>
-        <input type="text" id="regName" placeholder="Ваше имя" required>
-      </div>
-      <div class="form-group">
-        <label>Телефон</label>
-        <input type="tel" id="regPhone" placeholder="+7 (___) ___-__-__" required>
-      </div>
-      <div class="form-group">
-        <label>Telegram</label>
-        <input type="text" id="regTg" placeholder="@username">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="regEmail" placeholder="email@example.com">
-      </div>
-      <div class="payment-options">
-        <button class="btn btn-red" id="payCard" onclick="payByCard()" type="button">Оплатить картой</button>
-        <button class="btn btn-outline" id="payCash" onclick="payByCash()" type="button">По безналу</button>
-      </div>
-    </form>
-  </div>
-</div>
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Сообщество</a><a href="masshtab.html">Чат «Масштаб»</a><a href="guru.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Контент</h4><a href="#events">Мероприятия</a><a href="blog.html">Блог</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram</a><a href="https://t.me/frguru" target="_blank">@frguru</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
 
 <script>
-// ===== COUNTDOWN =====
-function updateCountdown() {
-  const target = new Date('2026-03-15T09:30:00+03:00');
-  const now = new Date();
-  const diff = target - now;
-  if (diff <= 0) {
-    document.getElementById('cd-days').textContent = '00';
-    document.getElementById('cd-hours').textContent = '00';
-    document.getElementById('cd-mins').textContent = '00';
-    document.getElementById('cd-secs').textContent = '00';
-    return;
-  }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function switchTab(tab){document.querySelectorAll('.events-tab').forEach(t=>t.classList.remove('active'));document.getElementById('tab-'+tab).classList.add('active');document.querySelectorAll('.events-toggle-btn').forEach(b=>{b.classList.toggle('active',b.textContent.trim()===(tab==='offline'?'Оффлайн':'Онлайн'))})}
 
-// ===== MOBILE NAV =====
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-});
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('open');
-  });
-});
-
-// ===== SCROLL ANIMATIONS =====
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// ===== FAQ =====
-document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
-  });
-});
-
-// ===== CONFIG =====
-const TG_BOT_TOKEN = '8447258387:AAFEutiJ1gxDWyPtKZS6HC9cQN3U2L-X6q4';
-const TG_CHAT_ID = '-5048576857';
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzpIDFvvOpURXQaVacrRgtIPFWk9o93awDF7waHjuhvWFuCPpA25oTrYswQL6Orn28p/exec';
-
-let currentPackage = '';
-const payLinks = {
-  viewer: 'https://t.me/tribute/app?startapp=sApE',
-  speaker: 'https://t.me/tribute/app?startapp=sEFq',
-  pitch: 'https://t.me/tribute/app?startapp=sEFq'
-};
-const titles = {
-  viewer: 'Билет зрителя — 15 000 ₽',
-  speaker: 'Пакет спикера — 45 000 ₽',
-  pitch: 'Питч акулам — 45 000 ₽'
-};
-const packageNames = {
-  viewer: 'Зритель',
-  speaker: 'Спикер-Эксперт',
-  pitch: 'Питч акулам'
-};
-
-function openModal(pkg) {
-  currentPackage = pkg;
-  document.getElementById('modalTitle').textContent = titles[pkg] || 'Регистрация';
-  document.getElementById('modalOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-  // Reset form
-  document.getElementById('regForm').querySelectorAll('input').forEach(i => i.value = '');
-  setButtonsState('idle');
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('modalOverlay').addEventListener('click', (e) => {
-  if (e.target === document.getElementById('modalOverlay')) closeModal();
-});
-
-function validateForm() {
-  const name = document.getElementById('regName').value.trim();
-  const phone = document.getElementById('regPhone').value.trim();
-  if (!name || !phone) {
-    alert('Пожалуйста, заполните имя и телефон');
-    return false;
-  }
-  return true;
-}
-
-function getFormData() {
-  return {
-    name: document.getElementById('regName').value.trim(),
-    phone: document.getElementById('regPhone').value.trim(),
-    telegram: document.getElementById('regTg').value.trim(),
-    email: document.getElementById('regEmail').value.trim(),
-    package: packageNames[currentPackage] || currentPackage,
-    price: currentPackage === 'viewer' ? '15 000 ₽' : '45 000 ₽',
-    date: new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Moscow'})
+// Speakers carousel
+(function(){
+  const track=document.getElementById('speakersTrack');
+  if(!track)return;
+  const cardW=()=>track.children[0].offsetWidth+16;
+  
+  window.slideSpeakers=function(dir){
+    const w=cardW();
+    const max=track.scrollWidth-track.clientWidth;
+    let target=track.scrollLeft+dir*w;
+    if(target>max)target=0;
+    if(target<0)target=max;
+    track.scrollTo({left:target,behavior:'smooth'});
   };
-}
-
-function setButtonsState(state) {
-  const cardBtn = document.getElementById('payCard');
-  const cashBtn = document.getElementById('payCash');
-  if (state === 'loading') {
-    cardBtn.disabled = true;
-    cashBtn.disabled = true;
-    cardBtn.textContent = 'Отправка...';
-    cardBtn.style.opacity = '0.6';
-    cashBtn.style.opacity = '0.6';
-  } else {
-    cardBtn.disabled = false;
-    cashBtn.disabled = false;
-    cardBtn.textContent = 'Оплатить картой';
-    cardBtn.style.opacity = '1';
-    cashBtn.style.opacity = '1';
-  }
-}
-
-// ===== TELEGRAM BOT =====
-async function sendToTelegram(data, paymentMethod) {
-  // Using HTML parse_mode to avoid Markdown escaping issues with underscores etc.
-  const text = `🔔 <b>Новая заявка с лендинга</b>\n\n` +
-    `👤 <b>Имя:</b> ${escapeHtml(data.name)}\n` +
-    `📞 <b>Телефон:</b> ${escapeHtml(data.phone)}\n` +
-    `✈️ <b>Telegram:</b> ${escapeHtml(data.telegram || '—')}\n` +
-    `📧 <b>Email:</b> ${escapeHtml(data.email || '—')}\n` +
-    `📦 <b>Пакет:</b> ${escapeHtml(data.package)}\n` +
-    `💰 <b>Цена:</b> ${escapeHtml(data.price)}\n` +
-    `💳 <b>Способ оплаты:</b> ${escapeHtml(paymentMethod)}\n` +
-    `🕐 <b>Время:</b> ${escapeHtml(data.date)}`;
-
-  try {
-    const resp = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        chat_id: TG_CHAT_ID,
-        text: text,
-        parse_mode: 'HTML'
-      })
-    });
-    const result = await resp.json();
-    if (!result.ok) {
-      console.error('Telegram API error:', result.description);
-      // Fallback: try without parse_mode in case of formatting issues
-      const plainText = `🔔 Новая заявка с лендинга\n\nИмя: ${data.name}\nТелефон: ${data.phone}\nTelegram: ${data.telegram || '—'}\nEmail: ${data.email || '—'}\nПакет: ${data.package}\nЦена: ${data.price}\nОплата: ${paymentMethod}\nВремя: ${data.date}`;
-      await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          chat_id: TG_CHAT_ID,
-          text: plainText
-        })
-      });
-    }
-  } catch(e) {
-    console.error('Telegram send error:', e);
-  }
-}
-
-function escapeHtml(str) {
-  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
-
-// ===== GOOGLE SHEETS =====
-async function sendToGoogleSheets(data, paymentMethod) {
-  if (!GOOGLE_SCRIPT_URL) return;
-  try {
-    // Google Apps Script redirects on POST, so we use no-cors mode
-    // Data will be sent but we won't get a readable response (opaque)
-    await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {'Content-Type': 'text/plain'},
-      body: JSON.stringify({
-        name: data.name,
-        phone: data.phone,
-        telegram: data.telegram,
-        email: data.email,
-        package: data.package,
-        price: data.price,
-        paymentMethod: paymentMethod,
-        date: data.date
-      })
-    });
-    console.log('Google Sheets: request sent');
-  } catch(e) {
-    console.error('Google Sheets send error:', e);
-  }
-}
-
-// ===== PAYMENT HANDLERS =====
-async function payByCard() {
-  if (!validateForm()) return;
-  setButtonsState('loading');
-
-  const data = getFormData();
-
-  // Send to both services in parallel
-  await Promise.all([
-    sendToTelegram(data, 'Картой'),
-    sendToGoogleSheets(data, 'Картой')
-  ]);
-
-  // Redirect to payment
-  const link = payLinks[currentPackage];
-  if (link) window.open(link, '_blank');
-
-  setButtonsState('idle');
-  closeModal();
-}
-
-async function payByCash() {
-  if (!validateForm()) return;
-  setButtonsState('loading');
-
-  const data = getFormData();
-
-  // Send to both services in parallel
-  await Promise.all([
-    sendToTelegram(data, 'По безналу'),
-    sendToGoogleSheets(data, 'По безналу')
-  ]);
-
-  // Redirect to manager
-  const msg = encodeURIComponent('Здравствуйте! Хочу оплатить по безналу. Пакет: ' + data.package + ' (' + data.price + '). Имя: ' + data.name + (data.telegram ? ', TG: ' + data.telegram : ''));
-  window.open('https://t.me/Yes_Yasya?text=' + msg, '_blank');
-
-  setButtonsState('idle');
-  closeModal();
-}
-
-// ===== NAVBAR SCROLL =====
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('.navbar');
-  const scroll = window.scrollY;
-  if (scroll > 100) {
-    nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
-  } else {
-    nav.style.boxShadow = 'none';
-  }
-  lastScroll = scroll;
-});
+  
+  let autoId=setInterval(()=>slideSpeakers(1),3000);
+  const wrap=track.closest('.speakers-carousel');
+  wrap.addEventListener('mouseenter',()=>clearInterval(autoId));
+  wrap.addEventListener('mouseleave',()=>{autoId=setInterval(()=>slideSpeakers(1),3000)});
+  wrap.addEventListener('touchstart',()=>clearInterval(autoId),{passive:true});
+  wrap.addEventListener('touchend',()=>{autoId=setInterval(()=>slideSpeakers(1),3000)},{passive:true});
+})();
+function updateCalc(v){const p=parseInt(v),d=Math.min(p*1000,350000),pr=500000-d;document.getElementById('calcPoints').textContent=p;document.getElementById('calcPrice').textContent=pr.toLocaleString('ru-RU')+' ₽';document.getElementById('calcSave').textContent=d>0?'Скидка '+d.toLocaleString('ru-RU')+' ₽':''}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
