@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверенный подрядчик — Франчайзинг по-русски</title>
+<meta name="description" content="Станьте проверенным подрядчиком в сообществе 1400+ франчайзоров. Выступления, публикации, статус.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}
+.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-2px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+.hero{min-height:90vh;display:flex;align-items:center;padding:140px 40px 80px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:2}
+.hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;margin-bottom:32px;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4.5vw,56px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:18px;line-height:1.7;color:var(--text-sec);margin:0 auto 24px;max-width:600px}
+.hero-price{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3vw,40px);color:var(--accent);margin-bottom:8px}
+.hero-price-note{font-size:15px;color:var(--text-muted);margin-bottom:40px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.max-w{max-width:1200px;margin:0 auto}
+.section{padding:100px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;max-width:700px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
+.infographic-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:48px 24px;box-shadow:0 4px 24px rgba(0,0,0,0.04);max-width:720px;margin:0 auto}
+.infographic-wrap svg{display:block;width:100%;height:auto}
+.package-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.package-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03);transition:border-color .2s}
+.package-card:hover{border-color:var(--accent)}
+.package-num{font-family:var(--font-display);font-weight:900;font-size:48px;color:var(--accent);opacity:.12;position:absolute;top:16px;right:20px;line-height:1}
+.package-tag{display:inline-block;background:var(--accent-mid);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase}
+.package-card h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:12px}
+.package-card p{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
+.package-detail{display:flex;align-items:start;gap:10px;font-size:14px;color:var(--text-sec);line-height:1.5;margin-bottom:8px}
+.package-detail span:first-child{color:var(--accent);font-weight:700;flex-shrink:0}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:60px;box-shadow:0 4px 24px rgba(0,0,0,0.04);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.pricing-main .price-big{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,4vw,56px);color:var(--accent);line-height:1;margin-bottom:8px}
+.pricing-main .price-period{font-size:16px;color:var(--text-muted);margin-bottom:24px}
+.discount-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px}
+.discount-card h3{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:12px;color:#2E8B57}
+.discount-card p{font-size:14px;color:var(--text-sec);line-height:1.6;margin-bottom:12px}
+.discount-price{font-family:var(--font-display);font-weight:900;font-size:28px;color:#2E8B57}
+.req-card{background:var(--bg-dark);border-radius:24px;padding:60px;color:#fff;position:relative;overflow:hidden}
+.req-card::before{content:'';position:absolute;top:0;right:0;width:300px;height:300px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.req-card h2{font-family:var(--font-display);font-weight:900;font-size:clamp(24px,3vw,36px);margin-bottom:16px;position:relative}
+.req-card p{font-size:17px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:600px;position:relative}
+.req-highlight{display:flex;align-items:center;gap:16px;margin-top:32px;padding:24px;background:rgba(242,72,34,0.1);border-radius:16px;border:1px solid rgba(242,72,34,0.2);position:relative}
+.req-highlight-num{font-family:var(--font-display);font-weight:900;font-size:48px;color:var(--accent);line-height:1}
+.req-highlight p{font-size:15px;color:rgba(255,255,255,0.8);line-height:1.5;margin:0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:48px;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
+.contact-avatar{width:80px;height:80px;border-radius:50%;overflow:hidden;margin-bottom:20px;border:3px solid var(--accent-mid)}
+.contact-avatar img{width:100%;height:100%;object-fit:cover}
+.contact-name{font-family:var(--font-display);font-weight:700;font-size:20px;margin-bottom:4px}
+.contact-role{font-size:14px;color:var(--text-muted);margin-bottom:20px}
+.contact-link{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--accent);margin-bottom:10px;transition:gap .2s}
+.contact-link:hover{gap:12px}
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:550px;margin-left:auto;margin-right:auto;position:relative}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}
+.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
+@media(max-width:1024px){.package-grid{grid-template-columns:1fr}.pricing-card{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text);opacity:1}.hero{padding:110px 20px 60px}.section{padding:60px 20px}.infographic-wrap{padding:24px 12px}.pricing-card{padding:32px 24px}.req-card{padding:32px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Главная</a><a href="#package">Пакет</a><a href="#pricing">Стоимость</a><a href="#contact">Контакты</a><a href="#contact" class="nav-cta">Стать подрядчиком</a></nav>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-flag">Для подрядчиков</div>
+    <h1>1 400 франчайзоров ищут подрядчиков.<br>Станьте тем, кого <span>рекомендуют</span></h1>
+    <p class="hero-sub">Пакет «Проверенный подрядчик» — комплексное продвижение вашей экспертности внутри сообщества через оффлайн и онлайн каналы.</p>
+    <div class="hero-price">150 000 ₽/год</div>
+    <div class="hero-price-note">или 135 000 ₽ со скидкой за кросс-промо</div>
+    <a href="#contact" class="btn-primary">Обсудить участие →</a>
+  </div>
+</section>
+
+<!-- INFOGRAPHIC -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="section-label">Почему сообщество</div>
+    <div class="section-title">Два пути к клиентам-франчайзорам</div>
+    <div class="section-desc">Холодные продажи дороги и медленны. Внутри сообщества вы строите репутацию, а клиенты приходят сами.</div>
+    <div class="infographic-wrap">
+      <svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+        <line x1="340" y1="40" x2="340" y2="380" stroke="#E0D6CD" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="170" y="28" text-anchor="middle" fill="#8A7A72" font-family="Unbounded,sans-serif" font-size="13" font-weight="700">ХОЛОДНЫЙ ПУТЬ</text>
+        <text x="510" y="28" text-anchor="middle" fill="#F24822" font-family="Unbounded,sans-serif" font-size="13" font-weight="700">ПУТЬ ЧЕРЕЗ СООБЩЕСТВО</text>
+        <rect x="70" y="50" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+        <text x="170" y="72" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Холодные звонки</text>
+        <line x1="170" y1="94" x2="170" y2="118" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="70" y="118" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+        <text x="170" y="140" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Реклама и конференции</text>
+        <line x1="170" y1="162" x2="170" y2="186" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="70" y="186" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
+        <text x="170" y="208" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Нецелевые контакты</text>
+        <line x1="170" y1="230" x2="170" y2="254" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="70" y="254" width="200" height="56" rx="8" fill="#FCEBEB" stroke="#F09595" stroke-width="0.5"/>
+        <text x="170" y="274" text-anchor="middle" dominant-baseline="central" fill="#791F1F" font-family="Onest,sans-serif" font-size="14" font-weight="600">Долго и дорого</text>
+        <text x="170" y="294" text-anchor="middle" dominant-baseline="central" fill="#A32D2D" font-family="Onest,sans-serif" font-size="12">Низкая конверсия</text>
+
+        <rect x="410" y="50" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+        <text x="510" y="68" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Даёте ценность</text>
+        <text x="510" y="88" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">Вебинары и встречи</text>
+        <line x1="510" y1="106" x2="510" y2="130" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="410" y="130" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+        <text x="510" y="148" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Клиенты рекомендуют</text>
+        <text x="510" y="168" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">Социальное доказательство</text>
+        <line x1="510" y1="186" x2="510" y2="210" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="410" y="210" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
+        <text x="510" y="228" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Всегда на виду</text>
+        <text x="510" y="248" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">В поле зрения аудитории</text>
+        <line x1="510" y1="266" x2="510" y2="290" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
+        <rect x="410" y="290" width="200" height="56" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
+        <text x="510" y="310" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-family="Onest,sans-serif" font-size="14" font-weight="600">Тёплые лиды</text>
+        <text x="510" y="330" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-family="Onest,sans-serif" font-size="12">Долгосрочные контракты</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGE -->
+<section class="section fade-in" id="package">
+  <div class="max-w">
+    <div class="section-label">Пакет «Проверенный подрядчик»</div>
+    <div class="section-title">Что входит в годовой пакет</div>
+    <div class="section-desc">Комплексное продвижение вашей экспертности внутри сообщества — оффлайн и онлайн.</div>
+    <div class="package-grid">
+      <div class="package-card"><div class="package-num">01</div><div class="package-tag">Экспертность</div><h3>Прямой контакт с аудиторией</h3><p>Личное знакомство с ключевыми игроками рынка через выступления и обучение.</p><div class="package-detail"><span>→</span><p>2 выступления (30 мин) в год на закрытых оффлайн-встречах</p></div><div class="package-detail"><span>→</span><p>3 вебинара (1 час) в год — формирование экспертного имиджа через решение болей участников</p></div></div>
+      <div class="package-card"><div class="package-num">02</div><div class="package-tag">IT-экосистема</div><h3>Интеграция в приложение</h3><p>Приоритетное размещение в справочнике сообщества с отметкой «Проверенный подрядчик».</p><div class="package-detail"><span>→</span><p>Ваш оффер и анкета в справочнике выше других</p></div><div class="package-detail"><span>→</span><p>Отметка «Проверенный подрядчик» — доверие с первого взгляда</p></div></div>
+      <div class="package-card"><div class="package-num">03</div><div class="package-tag">Охват и трафик</div><h3>Медийное присутствие</h3><p>Прямой доступ к аудитории через публикации в основной группе.</p><div class="package-detail"><span>→</span><p>3 рекламных публикации в год в Telegram-группе</p></div><div class="package-detail"><span>→</span><p>Активная ссылка + закреп на 24 часа для максимального охвата</p></div></div>
+      <div class="package-card"><div class="package-num">04</div><div class="package-tag">Статус</div><h3>Статусное присутствие</h3><p>Видимость и доверие на уровне бренда сообщества.</p><div class="package-detail"><span>→</span><p>Статус «Проверенный подрядчик» в чате сообщества</p></div><div class="package-detail"><span>→</span><p>Размещение в списке админов канала — видят все 1400+ участников</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section fade-in" id="pricing">
+  <div class="max-w">
+    <div class="section-label">Стоимость</div>
+    <div class="section-title">Инвестиция в постоянный поток клиентов</div>
+    <div class="pricing-card">
+      <div class="pricing-main">
+        <div class="price-big">150 000 ₽</div>
+        <div class="price-period">в год · все 4 блока включены</div>
+        <a href="#contact" class="btn-primary" style="margin-top:24px">Стать подрядчиком →</a>
+      </div>
+      <div class="discount-card">
+        <h3>Скидка 10% за кросс-промо</h3>
+        <p>Разместите на своих медиа-площадках (каналы, соцсети) 3 партнёрских публикации с анонсами мероприятий сообщества — и получите скидку.</p>
+        <div class="discount-price">135 000 ₽</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="req-card">
+      <h2>Требования к подрядчикам</h2>
+      <p>Мы дорожим доверием участников сообщества. Поэтому статус «Проверенный подрядчик» — это не просто покупка рекламы. Это подтверждение качества вашей работы.</p>
+      <div class="req-highlight">
+        <div class="req-highlight-num">3</div>
+        <p>Минимум три рекомендателя из числа участников сообщества, готовых подтвердить качество ваших услуг. Это ваш входной билет.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section fade-in" id="contact">
+  <div class="max-w">
+    <div class="section-label">Контакты</div>
+    <div class="section-title">Обсудим участие</div>
+    <div class="contact-grid">
+      <div><div class="section-desc">Напишите нам — обсудим, подходит ли ваш профиль, и запустим процесс получения рекомендаций.</div><a href="https://t.me/Yes_Yasya" class="btn-primary" target="_blank">Написать в Telegram →</a></div>
+      <div class="contact-card">
+        <div class="contact-avatar"><img src="tokareva.jpg" alt="Ярослава Токарева"></div>
+        <div class="contact-name">Ярослава Токарева</div>
+        <div class="contact-role">Менеджер сообщества</div>
+        <a href="https://t.me/Yes_Yasya" target="_blank" class="contact-link">Telegram: @Yes_Yasya →</a>
+        <a href="tel:+79281325031" class="contact-link">+7 (928) 132-50-31 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-title" style="position:relative">Станьте подрядчиком,<br>которого рекомендуют</div>
+  <p class="cta-sub" style="position:relative">1 400+ франчайзоров с реальными задачами и бюджетами. Ваши будущие клиенты уже здесь.</p>
+  <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="https://t.me/Yes_Yasya" class="btn-primary" target="_blank">Написать Ярославе →</a></div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Чат «Масштаб»</a><a href="guru.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Контент</h4><a href="index.html#events">Мероприятия</a><a href="blog.html">Блог</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram</a><a href="https://t.me/frguru" target="_blank">@frguru</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
