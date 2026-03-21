@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Семён Сарапулов — Основатель «Франчайзинг по-русски»</title>
+<meta name="description" content="Построил франшизу №1 в недвижимости. Продал стратегу. Создал сообщество 1400+ франчайзоров.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}.nav-cta:hover{background:var(--accent-hover)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}.burger span{width:24px;height:2px;background:var(--text)}
+.max-w{max-width:1200px;margin:0 auto}.section{padding:100px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;max-width:700px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 40px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-20%;right:-10%;width:800px;height:800px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 60%);pointer-events:none}
+.hero-grid{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:18px;line-height:1.7;color:var(--text-sec);margin-bottom:32px;max-width:520px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.hero-tag{background:var(--bg-card);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:500;color:var(--text-sec)}
+.hero-tag-accent{background:var(--accent-mid);color:var(--accent);border-color:transparent}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.hero-photo{border-radius:24px;overflow:hidden;box-shadow:0 24px 64px rgba(13,13,13,0.12)}
+.hero-photo img{width:100%;height:auto;display:block}
+
+/* TIMELINE */
+.timeline{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:20px 0}
+.timeline::-webkit-scrollbar{display:none}
+.timeline-track{display:flex;gap:0;min-width:max-content;position:relative;padding:0 40px}
+.timeline-item{display:flex;flex-direction:column;align-items:center;min-width:160px;position:relative;cursor:pointer;padding:0 12px}
+.timeline-dot{width:16px;height:16px;border-radius:50%;background:var(--bg-alt);border:3px solid var(--accent);transition:all .3s;z-index:2}
+.timeline-item.active .timeline-dot{background:var(--accent);transform:scale(1.3)}
+.timeline-line{position:absolute;top:8px;left:0;right:0;height:2px;background:var(--accent);opacity:.2}
+.timeline-year{font-family:var(--font-display);font-weight:900;font-size:14px;color:var(--accent);margin-top:12px}
+.timeline-label{font-size:12px;color:var(--text-muted);text-align:center;margin-top:4px;max-width:140px;line-height:1.3}
+.timeline-detail{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;margin-top:32px;box-shadow:0 4px 24px rgba(0,0,0,0.04);max-width:700px;transition:all .3s}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:80px}
+.story-grid.reverse{direction:rtl}.story-grid.reverse>*{direction:ltr}
+.story-img{border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.1)}
+.story-img img{width:100%;height:auto;display:block}
+.story-text h3{font-family:var(--font-display);font-weight:900;font-size:24px;margin-bottom:16px;letter-spacing:-.5px}
+.story-text p{font-size:16px;color:var(--text-sec);line-height:1.8;margin-bottom:12px}
+.story-text strong{color:var(--text)}
+
+/* SKILLS RADAR */
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.skills-canvas{position:relative;width:100%;max-width:500px;margin:0 auto}
+.skills-canvas canvas{width:100%;height:auto}
+.skills-list{display:grid;gap:12px}
+.skill-row{display:flex;align-items:center;gap:12px}
+.skill-name{font-size:14px;font-weight:600;min-width:200px}
+.skill-bar-wrap{flex:1;height:8px;background:var(--bg-alt);border-radius:4px;overflow:hidden}
+.skill-bar{height:100%;background:var(--accent);border-radius:4px;transition:width 1s ease}
+.skill-score{font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--accent);min-width:30px;text-align:right}
+
+/* PERSONALITY */
+.personality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pers-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.pers-type{font-family:var(--font-display);font-weight:900;font-size:28px;color:var(--accent);margin-bottom:8px}
+.pers-name{font-size:14px;color:var(--text-muted);margin-bottom:16px}
+.pers-traits{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pers-trait{background:var(--accent-light);color:var(--accent);font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px}
+
+/* QUOTES */
+.quotes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.quote-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.quote-mark{font-size:42px;color:var(--accent);opacity:.3;font-family:Georgia,serif;line-height:1;margin-bottom:8px}
+.quote-text{font-size:15px;line-height:1.7;color:var(--text-sec);font-style:italic}
+
+/* EDU */
+.edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.edu-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.edu-card h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:6px}
+.edu-card p{font-size:14px;color:var(--text-muted);line-height:1.5}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;transition:border-color .2s;box-shadow:0 2px 12px rgba(0,0,0,0.03);display:flex;flex-direction:column}
+.service-card:hover{border-color:var(--accent)}
+.service-card.featured{border-color:var(--accent);background:linear-gradient(160deg,var(--bg-card) 0%,rgba(242,72,34,0.04) 100%)}
+.service-num{font-family:var(--font-display);font-weight:900;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.service-card h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:12px}
+.service-card p{font-size:15px;color:var(--text-muted);line-height:1.6;flex-grow:1;margin-bottom:20px}
+.service-price{font-family:var(--font-display);font-weight:700;font-size:18px;margin-bottom:4px}
+.service-price-old{text-decoration:line-through;color:var(--text-muted);font-size:16px;font-weight:400}
+.service-note{font-size:13px;color:var(--text-muted);line-height:1.5;margin-top:8px}
+.charity-links{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+.charity-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--accent);padding:6px 16px;background:var(--accent-light);border-radius:100px;transition:background .2s}
+.charity-link:hover{background:var(--accent-mid)}
+
+/* BOOKS */
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.book-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.book-card h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:12px}
+.book-card p{font-size:15px;color:var(--text-muted);line-height:1.6}
+
+/* CTA + FOOTER */
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
+
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr}.hero-photo{max-width:400px;margin:0 auto}.story-grid,.story-grid.reverse{grid-template-columns:1fr;direction:ltr}.skills-wrap{grid-template-columns:1fr}.personality-grid{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.edu-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.books-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text)}.hero{padding:110px 20px 60px}.section{padding:60px 20px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header class="header" id="header"><a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a><nav class="nav" id="nav"><a href="index.html">Главная</a><a href="#story">История</a><a href="#skills">Компетенции</a><a href="#services">Услуги</a><a href="#services" class="nav-cta">Консультация</a></nav><div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div></header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-grid">
+<div>
+  <div class="hero-tags"><span class="hero-tag hero-tag-accent">ENTP</span><span class="hero-tag">PCM: Бунтарь / Деятель</span><span class="hero-tag">CliftonStrengths: Strategic</span></div>
+  <h1>Семён<br><span>Сарапулов</span></h1>
+  <p class="hero-sub">Построил франшизу №1 в недвижимости — 350+ офисов, 65 млрд выручки. Продал стратегу. Создал сообщество 1400+ франчайзоров.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap"><a href="https://t.me/franchguru" class="btn-primary" target="_blank">Telegram-канал →</a></div>
+</div>
+<div class="hero-photo"><img src="sem-studio.jpg" alt="Семён Сарапулов" loading="eager"></div>
+</div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section fade-in">
+<div class="max-w">
+<div class="section-label">Путь</div>
+<div class="section-title">15 лет во франчайзинге</div>
+<div class="timeline"><div class="timeline-track">
+  <div class="timeline-line"></div>
+  <div class="timeline-item active" onclick="showTimeline(0)"><div class="timeline-dot"></div><div class="timeline-year">2011</div><div class="timeline-label">Билайн</div></div>
+  <div class="timeline-item" onclick="showTimeline(1)"><div class="timeline-dot"></div><div class="timeline-year">2014</div><div class="timeline-label">Фриланс</div></div>
+  <div class="timeline-item" onclick="showTimeline(2)"><div class="timeline-dot"></div><div class="timeline-year">2015</div><div class="timeline-label">ВВК · 65 франшиз</div></div>
+  <div class="timeline-item" onclick="showTimeline(3)"><div class="timeline-dot"></div><div class="timeline-year">2017</div><div class="timeline-label">Перспектива 24</div></div>
+  <div class="timeline-item" onclick="showTimeline(4)"><div class="timeline-dot"></div><div class="timeline-year">2019</div><div class="timeline-label">ZOLTOR</div></div>
+  <div class="timeline-item" onclick="showTimeline(5)"><div class="timeline-dot"></div><div class="timeline-year">2023</div><div class="timeline-label">EXIT → ГК Самолёт</div></div>
+  <div class="timeline-item" onclick="showTimeline(6)"><div class="timeline-dot"></div><div class="timeline-year">2025</div><div class="timeline-label">Фр. по-русски</div></div>
+</div></div>
+<div class="timeline-detail" id="timelineDetail">
+  <p id="timelineText" style="font-size:16px;color:var(--text-sec);line-height:1.7">Попал в «Вымпелком» (Билайн). Начинал в прямых продажах, быстро перешёл в отдел по работе с партнёрами. Узнал, что 80% салонов «Билайн» работают по франшизе. Так началось знакомство с франчайзингом.</p>
+</div>
+</div>
+</section>
+
+<!-- STORY -->
+<section class="section fade-in" id="story">
+<div class="max-w">
+<div class="section-label">История</div>
+<div class="section-title">От найма до крупнейшей сделки</div>
+
+<div class="story-grid">
+  <div class="story-img"><img src="sem-masshtab.jpg" alt="Семён на Масштабе" loading="lazy"></div>
+  <div class="story-text"><h3>Упаковка не работает</h3><p>Увидев спрос на создание франшиз, ушёл во фриланс. Быстро понял: классическая «упаковка» — это презентация и лендинг за 150К, которые не продают ни одной франшизы.</p><p>Переосмыслил подход: стал <strong>«Внешним директором по франчайзингу»</strong> — заходил внутрь компании, выстраивал управляющую компанию, маркетинг, продажи, запуск и удержание партнёров. Первый проект — <strong>ВВК</strong> — 65 франшиз за 2 года.</p></div>
+</div>
+
+<div class="story-grid reverse">
+  <div class="story-img"><img src="sem-zoltor.jpg" alt="Семён с наградой Zoltor" loading="lazy"></div>
+  <div class="story-text"><h3>Перспектива 24 и ZOLTOR</h3><p>Реализовал несколько проектов (Автоюрист, СтопДолг, WantResult), но главный прорыв — <strong>недвижимость</strong>.</p><p><strong>Перспектива 24</strong> — стала №2 по числу сделок в России. Получил опцион. <strong>ZOLTOR</strong> — запустил в 2019 как сооснователь. Изобрёл формат «НЕОфраншиза» без бренда. Вырос до <strong>350+ офисов</strong> и <strong>65 млрд ₽</strong> выручки в год. Франшиза №1 по числу офисов в стране.</p></div>
+</div>
+
+<div class="story-grid">
+  <div class="story-img"><img src="sem-street.jpg" alt="Семён Сарапулов" loading="lazy"></div>
+  <div class="story-text"><h3>EXIT и новый старт</h3><p>Обе компании были проданы <strong>ГК «Самолёт»</strong> — одна из крупнейших сделок по купле-продажи франчайзинговой сети в истории России. После ребрендинга ZOLTOR стал «Самолёт+» и получил оценку <strong>21,4 млрд ₽</strong> на PreIPO.</p><p>Год после продажи — поиски, эксперименты, осмысление. Затем — создание <strong>«Франчайзинг по-русски»</strong>: сообщества, которое объединило 1400+ франчайзоров за несколько месяцев.</p></div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section class="section fade-in" id="skills">
+<div class="max-w">
+<div class="section-label">Компетенции</div>
+<div class="section-title">Зоны экспертизы</div>
+<div class="section-desc">Сильные стороны — и честно о слабых. Не пытаюсь быть хорош во всём.</div>
+<div class="skills-list" style="max-width:700px">
+  <div class="skill-row"><span class="skill-name">Стратегия</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:100%"></div></div><span class="skill-score">10</span></div>
+  <div class="skill-row"><span class="skill-name">НеоФранчайзинг</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:100%"></div></div><span class="skill-score">10</span></div>
+  <div class="skill-row"><span class="skill-name">MLM / Реферальные системы</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div><span class="skill-score">9</span></div>
+  <div class="skill-row"><span class="skill-name">Маркетинг</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div><span class="skill-score">8</span></div>
+  <div class="skill-row"><span class="skill-name">Продажи</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div><span class="skill-score">7</span></div>
+  <div class="skill-row"><span class="skill-name">Разработка</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div><span class="skill-score">7</span></div>
+  <div class="skill-row"><span class="skill-name" style="color:var(--text-muted)">Работа с персоналом</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:40%;background:var(--bg-alt)"></div></div><span class="skill-score" style="color:var(--text-muted)">4</span></div>
+  <div class="skill-row"><span class="skill-name" style="color:var(--text-muted)">Операционное управление</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:30%;background:var(--bg-alt)"></div></div><span class="skill-score" style="color:var(--text-muted)">3</span></div>
+  <div class="skill-row"><span class="skill-name" style="color:var(--text-muted)">Найм команды</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:30%;background:var(--bg-alt)"></div></div><span class="skill-score" style="color:var(--text-muted)">3</span></div>
+  <div class="skill-row"><span class="skill-name" style="color:var(--text-muted)">Оценка рисков</span><div class="skill-bar-wrap"><div class="skill-bar" style="width:10%;background:var(--bg-alt)"></div></div><span class="skill-score" style="color:var(--text-muted)">1</span></div>
+</div>
+</div>
+</section>
+
+<!-- PERSONALITY -->
+<section class="section fade-in">
+<div class="max-w">
+<div class="section-label">Типы личности</div>
+<div class="section-title">Как я устроен</div>
+<div class="personality-grid">
+  <div class="pers-card"><div class="pers-type">ENTP</div><div class="pers-name">MBTI</div><div class="pers-traits"><span class="pers-trait">Изобретатель</span><span class="pers-trait">Стратег</span><span class="pers-trait">Адаптивный</span><span class="pers-trait">Предприимчивый</span></div></div>
+  <div class="pers-card"><div class="pers-type" style="font-size:20px">Strategic<br>Activator</div><div class="pers-name">CliftonStrengths Top-5</div><div class="pers-traits"><span class="pers-trait">Significance</span><span class="pers-trait">Futuristic</span><span class="pers-trait">Competition</span></div></div>
+  <div class="pers-card"><div class="pers-type" style="font-size:18px">Бунтарь<br>Деятель</div><div class="pers-name">PCM</div><div class="pers-traits"><span class="pers-trait">Энергия</span><span class="pers-trait">Действие</span><span class="pers-trait">Вызов</span><span class="pers-trait">Нарушение правил</span></div></div>
+</div>
+</div>
+</section>
+
+<!-- QUOTES -->
+<section class="section fade-in">
+<div class="max-w">
+<div class="section-label">Философия</div>
+<div class="section-title">Как я думаю</div>
+<div class="quotes-grid">
+  <div class="quote-card"><div class="quote-mark">"</div><div class="quote-text">Половина рынка — люди, которые вчера окончили курсы «Tilda для начинающих», а сегодня стали «упаковщиками франшиз». Франшиза — это не презентация. Это не лендинг.</div></div>
+  <div class="quote-card"><div class="quote-mark">"</div><div class="quote-text">37 — нам не привыкать, падать и вставать, строить, рушить. Первый год после продажи я гонялся за новыми проектами, как ребёнок в магазине игрушек. А потом понял — надо вернуться к тому, в чём силён.</div></div>
+  <div class="quote-card"><div class="quote-mark">"</div><div class="quote-text">Ты можешь уехать на месяц в Таиланд — вырубить телефон — а вернувшись, обнаружить что дела идут даже лучше? Если нет — тебе ещё рано делать франшизу.</div></div>
+  <div class="quote-card"><div class="quote-mark">"</div><div class="quote-text">Мы сожгли 15 миллионов инвесторских денег и сплотили против себя все агентства в Тольятти. Пора было менять курс. Просто поменяли сайт и презентацию — и ZOLTOR заработал.</div></div>
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section fade-in">
+<div class="max-w">
+<div class="section-label">Образование</div>
+<div class="section-title">Учёба и программы</div>
+<div class="edu-grid">
+  <div class="edu-card"><h3>Сколково — Тандемократия</h3><p>Управление партнёрствами и совместными проектами</p></div>
+  <div class="edu-card"><h3>Сколково — Стартап Академия</h3><p>Создание и масштабирование стартапов</p></div>
+  <div class="edu-card"><h3>Сколково — ReStart</h3><p>Перезапуск бизнеса и личная трансформация</p></div>
+  <div class="edu-card"><h3>NextMBA — Директор по маркетингу</h3><p>Стратегический маркетинг и управление</p></div>
+  <div class="edu-card"><h3>УГНТУ</h3><p>Экономика и управление в строительстве</p></div>
+</div>
+</div>
+</section>
+
+<!-- BOOKS -->
+<section class="section fade-in">
+<div class="max-w">
+<div class="section-label">Книги</div>
+<div class="section-title">Написал две книги</div>
+<div class="books-grid">
+  <div class="book-card"><h3>ZOLTOR</h3><p>История создания феномена на рынке недвижимости — от провала на 15 млн до 350+ офисов и продажи ГК «Самолёт». Честный путь без прикрас.</p></div>
+  <div class="book-card"><h3>Франчайзинг по-русски</h3><p>Практическое руководство по созданию и масштабированию франшизы в России. Всё, что узнал за 10+ лет работы с десятками франчайзинговых проектов.</p></div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section fade-in" id="services">
+<div class="max-w">
+<div class="section-label">Услуги</div>
+<div class="section-title">Как я могу помочь</div>
+<div class="services-grid">
+  <div class="service-card">
+    <div class="service-num">01 · Консультация</div>
+    <h3>Разовая консультация</h3>
+    <p>Разбор вашей ситуации, стратегия развития франшизы, ответы на конкретные вопросы.</p>
+    <div class="service-price"><span class="service-price-old">50 000 ₽</span></div>
+    <div class="service-note">Первую консультацию я провожу за пожертвование любой комфортной для вас суммы в один из благотворительных фондов, которые я поддерживаю. Я делаю это, так как мне важно работать с людьми, разделяющими мои ценности.</div>
+    <div class="charity-links"><a href="https://mayak.help/help/" target="_blank" class="charity-link">Маяк</a><a href="https://bfkh.ru/how-to-help/donation/online/" target="_blank" class="charity-link">Детский хоспис</a></div>
+  </div>
+  <div class="service-card featured">
+    <div class="service-num">02 · Консалтинг</div>
+    <h3>Стратегический консалтинг</h3>
+    <p>Глубокое погружение в ваш проект. Стратегия, маркетинг, продажи, построение УК — в зависимости от уровня вовлечённости.</p>
+    <div class="service-price" style="color:var(--accent)">от 250 000 ₽/мес</div>
+    <div class="service-note">Стоимость зависит от уровня вовлечённости в проект и объёма задач.</div>
+  </div>
+  <div class="service-card">
+    <div class="service-num">03 · Партнёрство</div>
+    <h3>Стратегическое партнёрство</h3>
+    <p>Если видите ценность в моём опыте и хотите долгосрочного импакта — готов войти в долю в ваш проект.</p>
+    <div class="service-price">Условия индивидуально</div>
+    <div class="service-note">Вестинг, клифф, опцион за KPI приветствуется. Должен быть обоюдный мэтч.</div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<div class="cta-title" style="position:relative">Познакомимся?</div>
+<p class="cta-sub" style="position:relative">Пишите в Telegram — обсудим вашу задачу, стратегию или партнёрство.</p>
+<div style="display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap"><a href="https://t.me/frguru" class="btn-primary" target="_blank">Написать Семёну →</a><a href="https://t.me/franchguru" target="_blank" style="display:inline-flex;align-items:center;gap:10px;color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;border:1.5px solid rgba(255,255,255,0.2);transition:all .2s">Читать канал</a></div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Чат «Масштаб»</a><a href="guru.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Контент</h4><a href="index.html#events">Мероприятия</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://t.me/franchguru" target="_blank">Telegram-канал</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/frguru" target="_blank">@frguru</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+const timelineData=[
+  'Попал в «Вымпелком» (Билайн). Начинал в прямых продажах, быстро перешёл в отдел по работе с партнёрами. Узнал, что 80% салонов «Билайн» работают по франшизе. Так началось знакомство с франчайзингом.',
+  'Ушёл во фриланс — начал заниматься «упаковкой» франшиз. Быстро понял: франшизы, которые я упаковал, не продаются и не покупаются. Подход не работает. Нужно менять модель.',
+  'Первый проект как «Внешний директор по франчайзингу» — ВВК (Военно-Врачебная Коллегия). Заходил в периметр компании, выстраивал УК и все процессы. Результат: 65 франшиз за 2 года.',
+  'Перспектива 24 — агентство недвижимости, ставшее №2 по числу сделок в России. Здесь получил опцион. Далее — Автоюрист, СтопДолг, WantResult.',
+  'ZOLTOR запущен как со-учредитель. Изобрёл формат «НЕОфраншиза» — без бренда, с технологической платформой. Вырос до 350+ офисов и 65 млрд ₽ выручки. Франшиза №1 по числу офисов.',
+  'Перспектива 24 и ZOLTOR проданы ГК «Самолёт» — одна из крупнейших сделок в истории франчайзинга в России. ZOLTOR стал «Самолёт+» с оценкой 21,4 млрд ₽ на PreIPO.',
+  'Создание сообщества «Франчайзинг по-русски». За несколько месяцев — 1400+ участников, ток-шоу, оффлайны в Сколково, клуб «Гуру Франшиз».'
+];
+function showTimeline(i){document.querySelectorAll('.timeline-item').forEach((el,idx)=>{el.classList.toggle('active',idx===i)});document.getElementById('timelineText').textContent=timelineData[i]}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
