@@ -52,7 +52,20 @@ a{color:inherit;text-decoration:none}
 .package-card p{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
 .package-detail{display:flex;align-items:start;gap:10px;font-size:14px;color:var(--text-sec);line-height:1.5;margin-bottom:8px}
 .package-detail span:first-child{color:var(--accent);font-weight:700;flex-shrink:0}
-.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:60px;box-shadow:0 4px 24px rgba(0,0,0,0.04);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;margin-bottom:40px}
+.compare-table th{font-family:var(--font-display);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:16px 20px;text-align:left;border-bottom:2px solid var(--accent)}
+.compare-table th:last-child{text-align:right;color:var(--accent)}
+.compare-table td{padding:14px 20px;font-size:15px;border-bottom:1px solid var(--border)}
+.compare-table td:last-child{text-align:right;font-weight:600;font-family:var(--font-display);white-space:nowrap}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-total{background:var(--accent-light);border-radius:12px}
+.compare-total td{font-weight:700;font-size:17px;color:var(--text)}
+.compare-total td:last-child{color:var(--accent);font-size:20px}
+.compare-priceless{color:var(--accent);font-style:italic;font-weight:600}
+.price-monthly{font-family:var(--font-display);font-weight:900;font-size:clamp(48px,6vw,72px);color:var(--accent);line-height:1;margin-bottom:8px}
+.price-monthly-note{font-size:15px;color:var(--text-muted);max-width:360px;line-height:1.5}
+.vs-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg-dark);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14px;padding:8px 24px;border-radius:100px;margin:32px 0 24px}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:60px;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
 .pricing-main .price-big{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,4vw,56px);color:var(--accent);line-height:1;margin-bottom:8px}
 .pricing-main .price-period{font-size:16px;color:var(--text-muted);margin-bottom:24px}
 .discount-card{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:28px}
@@ -92,7 +105,7 @@ a{color:inherit;text-decoration:none}
 .footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}
 .footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
 @media(max-width:1024px){.package-grid{grid-template-columns:1fr}.pricing-card{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text);opacity:1}.hero{padding:110px 20px 60px}.section{padding:60px 20px}.infographic-wrap{padding:24px 12px}.pricing-card{padding:32px 24px}.req-card{padding:32px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
+@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text);opacity:1}.hero{padding:110px 20px 60px}.section{padding:60px 20px}.infographic-wrap{padding:24px 12px}.pricing-card{padding:32px 24px}.pricing-card [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}.req-card{padding:32px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
@@ -179,17 +192,37 @@ a{color:inherit;text-decoration:none}
 <section class="section fade-in" id="pricing">
   <div class="max-w">
     <div class="section-label">Стоимость</div>
-    <div class="section-title">Инвестиция в постоянный поток клиентов</div>
+    <div class="section-title">Пакет выгоднее, чем по отдельности</div>
+    <div class="section-desc">Сравните стоимость отдельных активностей в сообществе с пакетом «Проверенный подрядчик».</div>
     <div class="pricing-card">
-      <div class="pricing-main">
-        <div class="price-big">150 000 ₽</div>
-        <div class="price-period">в год · все 4 блока включены</div>
-        <a href="#contact" class="btn-primary" style="margin-top:24px">Стать подрядчиком →</a>
-      </div>
-      <div class="discount-card">
-        <h3>Скидка 10% за кросс-промо</h3>
-        <p>Разместите на своих медиа-площадках (каналы, соцсети) 3 партнёрских публикации с анонсами мероприятий сообщества — и получите скидку.</p>
-        <div class="discount-price">135 000 ₽</div>
+      <table class="compare-table">
+        <thead><tr><th>Активность</th><th>Стоимость отдельно</th></tr></thead>
+        <tbody>
+          <tr><td>Участие в эвенте в качестве спикера</td><td>30 000 ₽</td></tr>
+          <tr><td>Участие в съёмках ток-шоу</td><td>45 000 ₽</td></tr>
+          <tr><td>3 рекламных поста в сообществе</td><td>21 000 ₽</td></tr>
+          <tr><td>3 экспертных онлайн-вебинара</td><td>21 000 ₽</td></tr>
+          <tr><td>Освобождение от 10% реферальной комиссии<br><span style="font-size:13px;color:var(--text-muted)">условно при продажах на 1,5 млн ₽/год</span></td><td>150 000 ₽</td></tr>
+          <tr><td>Статус «Проверенный подрядчик» — больше заявок</td><td class="compare-priceless">бесценно</td></tr>
+          <tr class="compare-total"><td>Итого по отдельности</td><td>267 000 ₽+</td></tr>
+        </tbody>
+      </table>
+
+      <div class="vs-badge">VS</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+        <div>
+          <div style="font-size:14px;color:var(--text-muted);margin-bottom:8px;font-weight:600">Пакет «Проверенный подрядчик» со скидкой 10%:</div>
+          <div style="font-family:var(--font-display);font-weight:900;font-size:36px;color:var(--accent);text-decoration:line-through;opacity:.4">150 000 ₽</div>
+          <div class="price-monthly">135 000 ₽</div>
+          <div style="font-size:16px;color:#2E8B57;font-weight:700;margin-bottom:8px">Ваша выгода: 132 000 ₽+ в год</div>
+          <div style="font-size:13px;color:var(--text-muted)">Скидка 10% за 3 кросс-промо публикации на ваших площадках</div>
+        </div>
+        <div style="text-align:center">
+          <div class="price-monthly">11 250 ₽</div>
+          <div class="price-monthly-note" style="margin:0 auto">в месяц — за продвижение в самом активном и большом профессиональном сообществе франчайзоров в России</div>
+          <a href="#contact" class="btn-primary" style="margin-top:24px">Стать подрядчиком →</a>
+        </div>
       </div>
     </div>
   </div>
