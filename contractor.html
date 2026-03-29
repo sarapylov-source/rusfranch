@@ -87,6 +87,16 @@ a{color:inherit;text-decoration:none}
 .contact-role{font-size:14px;color:var(--text-muted);margin-bottom:20px}
 .contact-link{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--accent);margin-bottom:10px;transition:gap .2s}
 .contact-link:hover{gap:12px}
+.form-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:48px;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:14px;font-weight:600;margin-bottom:8px;color:var(--text)}
+.form-group .req{color:var(--accent)}
+.form-group input,.form-group textarea{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:15px;font-family:var(--font-body);background:var(--bg);color:var(--text);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-muted)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-error{color:var(--accent);font-size:13px;font-weight:600;margin-bottom:16px;min-height:20px}
+.form-success{background:rgba(46,139,87,0.1);color:#2E8B57;border-radius:12px;padding:20px;text-align:center;font-weight:600;font-size:16px;display:none}
 .cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
 .cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
 .cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
@@ -245,16 +255,30 @@ a{color:inherit;text-decoration:none}
 <!-- CONTACT -->
 <section class="section fade-in" id="contact">
   <div class="max-w">
-    <div class="section-label">Контакты</div>
-    <div class="section-title">Обсудим участие</div>
+    <div class="section-label">Заявка</div>
+    <div class="section-title">Стать проверенным подрядчиком</div>
     <div class="contact-grid">
-      <div><div class="section-desc">Напишите нам — обсудим, подходит ли ваш профиль, и запустим процесс получения рекомендаций.</div><a href="https://t.me/Yes_Yasya" class="btn-primary" target="_blank">Написать в Telegram →</a></div>
-      <div class="contact-card">
-        <div class="contact-avatar"><img src="tokareva.jpg" alt="Ярослава Токарева"></div>
-        <div class="contact-name">Ярослава Токарева</div>
-        <div class="contact-role">Менеджер сообщества</div>
-        <a href="https://t.me/Yes_Yasya" target="_blank" class="contact-link">Telegram: @Yes_Yasya →</a>
-        <a href="tel:+79281325031" class="contact-link">+7 (928) 132-50-31 →</a>
+      <div class="form-card">
+        <div id="formFields">
+          <div class="form-group"><label for="cName">Имя <span class="req">*</span></label><input type="text" id="cName" placeholder="Ваше имя" autocomplete="name"></div>
+          <div class="form-group"><label for="cCompany">Компания / Услуга</label><input type="text" id="cCompany" placeholder="Название компании или услуги"></div>
+          <div class="form-group"><label for="cPhone">Телефон <span class="req">*</span></label><input type="tel" id="cPhone" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
+          <div class="form-group"><label for="cTg">Telegram</label><input type="text" id="cTg" placeholder="@username" autocomplete="off"></div>
+          <div class="form-group"><label for="cNote">Комментарий</label><textarea id="cNote" placeholder="Расскажите кратко о вашей услуге и опыте работы с франчайзорами"></textarea></div>
+          <div class="form-error" id="formError"></div>
+          <button class="btn-primary" style="width:100%;justify-content:center" id="formBtn" onclick="submitForm()">Отправить заявку →</button>
+        </div>
+        <div class="form-success" id="formSuccess">Заявка отправлена! Ярослава свяжется с вами в ближайшее время.</div>
+      </div>
+      <div>
+        <div class="contact-card" style="margin-bottom:24px">
+          <div class="contact-avatar"><img src="tokareva.jpg" alt="Ярослава Токарева"></div>
+          <div class="contact-name">Ярослава Токарева</div>
+          <div class="contact-role">Менеджер сообщества</div>
+          <a href="https://t.me/rufranch" target="_blank" class="contact-link">Telegram: @rufranch →</a>
+          <a href="tel:+79281325031" class="contact-link">+7 (928) 132-50-31 →</a>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.6">Заполните форму — мы свяжемся с вами, обсудим подходит ли ваш профиль и запустим процесс получения рекомендаций от участников сообщества.</p>
       </div>
     </div>
   </div>
@@ -263,7 +287,7 @@ a{color:inherit;text-decoration:none}
 <section class="cta">
   <div class="cta-title" style="position:relative">Станьте подрядчиком,<br>которого рекомендуют</div>
   <p class="cta-sub" style="position:relative">1 400+ франчайзоров с реальными задачами и бюджетами. Ваши будущие клиенты уже здесь.</p>
-  <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="https://t.me/Yes_Yasya" class="btn-primary" target="_blank">Написать Ярославе →</a></div>
+  <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="#contact" class="btn-primary">Оставить заявку →</a></div>
 </section>
 
 <footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Чат «Масштаб»</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Контент</h4><a href="index.html#events">Мероприятия</a><a href="blog.html">Блог</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram</a><a href="https://t.me/frguru" target="_blank">@frguru</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
@@ -272,6 +296,43 @@ a{color:inherit;text-decoration:none}
 const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
 const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+const TG_BOT_TOKEN='8447258387:AAFEutiJ1gxDWyPtKZS6HC9cQN3U2L-X6q4';
+const TG_CHAT_ID='-5048576857';
+
+function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+
+async function submitForm(){
+  const name=document.getElementById('cName').value.trim();
+  const phone=document.getElementById('cPhone').value.trim();
+  const company=document.getElementById('cCompany').value.trim();
+  const tg=document.getElementById('cTg').value.trim();
+  const note=document.getElementById('cNote').value.trim();
+  const errEl=document.getElementById('formError');
+  if(!name||!phone){errEl.textContent='Заполните имя и телефон';return}
+  errEl.textContent='';
+  const btn=document.getElementById('formBtn');
+  btn.disabled=true;btn.textContent='Отправка…';
+  const text=
+    `🔔 <b>Новая заявка — ПРОВЕРЕННЫЙ ПОДРЯДЧИК</b>\n\n`+
+    `👤 <b>Имя:</b> ${escapeHtml(name)}\n`+
+    `🏢 <b>Компания:</b> ${escapeHtml(company||'—')}\n`+
+    `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n`+
+    `✈️ <b>Telegram:</b> ${escapeHtml(tg||'—')}\n`+
+    `📝 <b>Комментарий:</b> ${escapeHtml(note||'—')}\n`+
+    `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'})}`;
+  try{
+    await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({chat_id:TG_CHAT_ID,text,parse_mode:'HTML'})
+    });
+    document.getElementById('formFields').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }catch(e){
+    errEl.textContent='Ошибка отправки. Напишите напрямую в Telegram @rufranch';
+    btn.disabled=false;btn.textContent='Отправить заявку →';
+  }
+}
 </script>
 </body>
 </html>

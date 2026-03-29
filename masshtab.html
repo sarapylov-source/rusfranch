@@ -2067,7 +2067,7 @@
       const data = getFormData();
       try { await sendToTelegram(data, 'По безналу'); } catch(e) {}
       const msg = encodeURIComponent(`МАСШТАБ · ${data.package} (${data.price})`);
-      window.open('https://t.me/Yes_Yasya?text=' + msg, '_blank');
+      window.open('https://t.me/rufranch?text=' + msg, '_blank');
       setButtons('idle');
       closeModal();
     }
