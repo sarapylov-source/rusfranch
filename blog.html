@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог — Франчайзинг по-русски</title>
+<meta name="description" content="Аналитика, исследования и статьи о франчайзинге в России.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}.nav-cta:hover{background:var(--accent-hover)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}.burger span{width:24px;height:2px;background:var(--text)}
+.max-w{max-width:1200px;margin:0 auto}
+.section{padding:100px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-2px;margin-bottom:16px}
+.section-title span{color:var(--accent)}
+.section-desc{font-size:18px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:60px}
+.blog-grid{display:grid;gap:32px}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1.5fr;transition:border-color .3s,transform .3s;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.blog-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.blog-card-img{background:var(--bg-alt);min-height:240px;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden}
+.blog-card-img-icon{font-size:64px;opacity:.3}
+.blog-card-featured .blog-card-img{background:var(--bg-dark)}
+.blog-card-featured .blog-card-img-icon{color:#fff}
+.blog-card-body{padding:40px;display:flex;flex-direction:column;justify-content:center}
+.blog-tag{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:16px;width:fit-content}
+.blog-tag-research{background:var(--accent-mid);color:var(--accent)}
+.blog-tag-article{background:rgba(46,139,87,0.1);color:#2E8B57}
+.blog-card h2{font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.5vw,28px);line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+.blog-card p{font-size:15px;color:var(--text-muted);line-height:1.6;margin-bottom:20px}
+.blog-card-link{font-size:15px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.blog-card-link:hover{gap:10px}
+.blog-date{font-size:13px;color:var(--text-muted);margin-top:auto}
+.blog-coming{text-align:center;padding:60px;color:var(--text-muted);font-size:16px}
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
+@media(max-width:1024px){.blog-card{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text)}.section{padding:60px 20px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="contractor.html">Подрядчикам</a><a href="partners.html">Партнёрам</a><a href="blog.html">Блог</a><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="nav-cta" target="_blank">Вступить</a></nav>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<section class="section" style="padding-top:140px">
+  <div class="max-w">
+    <div class="section-label">Блог</div>
+    <div class="section-title">Исследования и <span>статьи</span></div>
+    <div class="section-desc">Аналитика рынка, разборы кейсов и экспертные материалы от сообщества «Франчайзинг по-русски».</div>
+
+    <div class="blog-grid">
+
+      <a href="norules.html" class="blog-card blog-card-featured fade-in">
+        <div class="blog-card-img"><div class="blog-card-img-icon" style="color:rgba(242,72,34,0.4);font-size:72px">§</div></div>
+        <div class="blog-card-body">
+          <div class="blog-tag blog-tag-research">Исследование</div>
+          <h2>Франчайзинг без правил</h2>
+          <p>Аналитический отчёт о регулировании франчайзинга в России и мире. Сравнение с международными стандартами — FTC (США), Loi Doubin (Франция), BFA (Великобритания), ACCC (Австралия). Аудит ГОСТа и рекомендации для рынка.</p>
+          <div class="blog-card-link">Читать отчёт →</div>
+          <div class="blog-date">Март 2026</div>
+        </div>
+      </a>
+
+      <div class="blog-coming fade-in">
+        <p>Новые материалы скоро появятся. Подпишитесь на <a href="https://t.me/franchguru" target="_blank" style="color:var(--accent);font-weight:600">Telegram-канал</a>, чтобы не пропустить.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-title" style="position:relative">Хотите опубликоваться<br>в нашем блоге?</div>
+  <p class="cta-sub" style="position:relative">Если у вас есть экспертный материал о франчайзинге — напишите нам.</p>
+  <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="https://t.me/rufranch" class="btn-primary" target="_blank">Предложить материал →</a></div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="contractor.html">Подрядчикам</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
