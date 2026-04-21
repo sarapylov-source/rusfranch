@@ -1263,12 +1263,24 @@
     }
 
     /* ─── SPEAKER TAGS IN PROGRAM ───────────────────────── */
+    .program-speaker-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .program-speaker-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid rgba(242,72,34,0.45);
+    }
     .program-speaker-tag {
       display: flex;
-      align-items: baseline;
-      gap: 8px;
-      margin-bottom: 4px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 2px;
     }
     .program-speaker-name {
       font-size: 13px;
@@ -1318,6 +1330,14 @@
     .participant-card:hover {
       box-shadow: 0 8px 32px rgba(13,13,13,0.09);
       transform: translateY(-3px);
+    }
+    .participant-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 16px;
+      border: 2px solid var(--border);
     }
     .participant-type {
       font-size: 11px;
@@ -1521,9 +1541,12 @@
               <span class="program-time">10:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <div class="program-speaker-tag">
-                  <span class="program-speaker-name">Елена Мощенко</span>
-                  <span class="program-speaker-role">Юрист · @mrsscissors</span>
+                <div class="program-speaker-header">
+                  <img src="speaker-moshchenko.jpg" alt="Елена Мощенко" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Елена Мощенко</span>
+                    <span class="program-speaker-role">Юрист · @mrsscissors</span>
+                  </div>
                 </div>
                 <h4>Чего не знает франчайзер о своих франчайзи</h4>
                 <p>Суровая правда с обратной стороны баррикад — взгляд юриста по защите прав франчайзи</p>
@@ -1533,9 +1556,12 @@
               <span class="program-time">10:30</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <div class="program-speaker-tag">
-                  <span class="program-speaker-name">Евгений Опутин</span>
-                  <span class="program-speaker-role">Агентство Vagabond · @oputin</span>
+                <div class="program-speaker-header">
+                  <img src="speaker-oputin.jpg" alt="Евгений Опутин" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Евгений Опутин</span>
+                    <span class="program-speaker-role">Агентство Vagabond · @oputin</span>
+                  </div>
                 </div>
                 <h4>Дизайн-код франшизы как инструмент масштабирования</h4>
                 <p>Со-основатель и дизайн-директор Vagabond, ментор DuoSapiens</p>
@@ -1545,9 +1571,12 @@
               <span class="program-time">11:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <div class="program-speaker-tag">
-                  <span class="program-speaker-name">Игорь Анфалов</span>
-                  <span class="program-speaker-role">LumosPartners.ru · @igoranfalow</span>
+                <div class="program-speaker-header">
+                  <img src="speaker-anfalov.jpg" alt="Игорь Анфалов" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Игорь Анфалов</span>
+                    <span class="program-speaker-role">LumosPartners.ru · @igoranfalow</span>
+                  </div>
                 </div>
                 <h4>Юридические аспекты франчайзинга</h4>
                 <p>IP Law &amp; Litigation, Franchise consulting</p>
@@ -1557,9 +1586,12 @@
               <span class="program-time">11:30</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <div class="program-speaker-tag">
-                  <span class="program-speaker-name">Ярослав Осинцев</span>
-                  <span class="program-speaker-role">Агентство Osintcev · @yaroslav_osintsev</span>
+                <div class="program-speaker-header">
+                  <img src="speaker-osintsev.jpg" alt="Ярослав Осинцев" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Ярослав Осинцев</span>
+                    <span class="program-speaker-role">Агентство Osintcev · @yaroslav_osintsev</span>
+                  </div>
                 </div>
                 <h4>Лидген в 2026: что работает, а что нет</h4>
                 <p>Основатель маркетингового агентства со специализацией на продвижении франшиз</p>
@@ -1578,9 +1610,12 @@
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-keynote-badge">Спикер спикеров</div>
-                <div class="program-speaker-tag">
-                  <span class="program-speaker-name">Александр Долгов</span>
-                  <span class="program-speaker-role">Акула Франчайзинга · Холдинг 20x80 · @dolgovalexandr</span>
+                <div class="program-speaker-header">
+                  <img src="speaker-dolgov.jpg" alt="Александр Долгов" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Александр Долгов</span>
+                    <span class="program-speaker-role">Акула Франчайзинга · Холдинг 20x80 · @dolgovalexandr</span>
+                  </div>
                 </div>
                 <h4>Как продавать франшизы быстро и много?</h4>
                 <p>Основатель холдинга 20x80, бренды Чебурек.ми и LaserLove — более 800 франшиз в 16 странах</p>
@@ -1685,6 +1720,7 @@
       <div class="participants-grid">
 
         <div class="participant-card reveal">
+          <img src="speaker-vorobev.jpg" alt="Михаил Воробьев" class="participant-photo" loading="lazy" />
           <div class="participant-type">Франчайзер</div>
           <div class="participant-name">Михаил Воробьев</div>
           <div class="participant-desc">Франшиза экшен-игр и квестов «Место Пряток»</div>
@@ -1695,6 +1731,7 @@
         </div>
 
         <div class="participant-card reveal">
+          <img src="speaker-slashchev.jpg" alt="Владислав Слащев" class="participant-photo" loading="lazy" />
           <div class="participant-type">Франчайзер</div>
           <div class="participant-name">Владислав Слащев</div>
           <div class="participant-desc">Основатель «ОКНА-НОВА»</div>
