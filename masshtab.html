@@ -1262,6 +1262,28 @@
       .fitservice-photos { grid-template-columns: 1fr; }
     }
 
+    /* ─── PRACTICE GALLERY ──────────────────────────────── */
+    .practice-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 6px;
+      margin-top: 14px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .practice-gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+      transition: transform 400ms var(--ease);
+    }
+    .practice-gallery img:hover { transform: scale(1.04); }
+    @media (max-width: 600px) {
+      .practice-gallery { grid-template-columns: 1fr 1fr; }
+      .practice-gallery img:first-child { grid-column: span 2; }
+    }
+
     /* ─── SPEAKER TAGS IN PROGRAM ───────────────────────── */
     .program-speaker-header {
       display: flex;
@@ -1627,6 +1649,7 @@
               <div class="program-text">
                 <h4>Возможность выступить</h4>
                 <p>Короткие питчи участников — только для тарифа «2 дня»</p>
+                <a href="#pricing" class="btn btn-red" style="margin-top:12px; padding:10px 24px; font-size:13px;">Зарегистрироваться</a>
               </div>
             </div>
             <div class="program-item" role="listitem">
@@ -1689,6 +1712,11 @@
               <div class="program-text">
                 <h4>Предпринимательская практика «Масштаб личности»</h4>
                 <p>Глубокая практика для расширения предпринимательского мышления. Только через масштаб личности достигается масштаб бизнеса. В программе: чайная церемония, метафорические франч-карты, ханг-драм</p>
+                <div class="practice-gallery" aria-hidden="true">
+                  <img src="practice-tea.jpg" alt="Чайная церемония" loading="lazy" />
+                  <img src="practice-hangdrum.jpg" alt="Ханг-драм" loading="lazy" />
+                  <img src="practice-cards.jpg" alt="Метафорические карты" loading="lazy" />
+                </div>
               </div>
             </div>
             <div class="program-item" role="listitem">
