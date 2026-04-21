@@ -1197,6 +1197,70 @@
       .hero-scroll-line { animation: none; }
       .hero-tag-dot { animation: none; }
     }
+
+    /* ─── FIT SERVICE SPOTLIGHT ─────────────────────────── */
+    .fitservice-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+
+    .fitservice-header {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .fitservice-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .fitservice-badge {
+      display: inline-block;
+      background: rgba(242,72,34,0.15);
+      border: 1px solid rgba(242,72,34,0.3);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .fitservice-meta p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.60);
+      line-height: 1.65;
+    }
+
+    .fitservice-meta p strong { color: rgba(255,255,255,0.85); }
+
+    .fitservice-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .fitservice-photos img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .fitservice-header { flex-direction: column; }
+      .fitservice-photos { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -1419,46 +1483,65 @@
           <div class="program-day-header">
             <div class="program-day-num" aria-hidden="true">2</div>
             <div class="program-day-info">
-              <h3>1 июня — Экскурсия</h3>
-              <span>Офис франчайзера · малая группа</span>
+              <h3>1 июня — Экскурсия и практика</h3>
+              <span>Fit Service · 15:00 — 22:00</span>
             </div>
           </div>
 
-          <div class="program-day2" role="list">
-            <div class="program-day2-items">
-              <div class="program-day2-item" role="listitem">
-                <div class="program-day2-icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0z"/></svg>
-                </div>
-                <div>
-                  <h4>Экскурсия в офис франчайзера</h4>
-                  <p>Закулисный взгляд на работу одной из ведущих российских франчайзинговых сетей. Разбор операционных процессов изнутри.</p>
-                </div>
-              </div>
-              <div class="program-day2-item" role="listitem">
-                <div class="program-day2-icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div>
-                  <h4>Круглый стол с топ-менеджментом</h4>
-                  <p>Прямой диалог с руководством компании: вопросы и ответы в формате открытой дискуссии.</p>
-                </div>
-              </div>
-              <div class="program-day2-item" role="listitem">
-                <div class="program-day2-icon" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
-                <div>
-                  <h4>Неформальный нетворкинг</h4>
-                  <p>Свободное общение в малой группе, встречи тет-а-тет, обмен контактами и совместный ужин.</p>
-                </div>
+          <!-- Fit Service spotlight -->
+          <div class="fitservice-card">
+            <div class="fitservice-header">
+              <img src="fit-service-logo.jpg" alt="Fit Service" class="fitservice-logo" loading="lazy" />
+              <div class="fitservice-meta">
+                <div class="fitservice-badge">Партнёр дня 2</div>
+                <p>Федеральная сеть автосервисов <strong>Fit Service</strong> — один из сильнейших игроков на рынке автомобильного франчайзинга в России. Основанная в <strong>2008 году</strong>, сеть выросла до <strong>400+ точек</strong> по всей стране. Автосервис — одна из самых операционно сложных ниш: жёсткие технические стандарты, высокое доверие клиента, сложный персонал. Fit Service сумел выстроить автоматизированную, устойчивую модель масштабирования там, где большинство останавливается — и сегодня это один из эталонных примеров зрелого франчайзинга в России.</p>
               </div>
             </div>
-
-            <p style="margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.35); padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
-              День 2 доступен только для тарифа «2 дня — Участник + Спикер»
-            </p>
+            <div class="fitservice-photos">
+              <img src="fit-service-1.jpg" alt="Точка Fit Service" loading="lazy" />
+              <img src="fit-service-2.jpg" alt="Команда Fit Service" loading="lazy" />
+            </div>
           </div>
+
+          <!-- Timeline -->
+          <div class="program-items" role="list">
+            <div class="program-item" role="listitem">
+              <span class="program-time">15:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>Экскурсия на точку Fit Service</h4>
+                <p>Осмотр работающего автосервиса изнутри: операционные процессы, стандарты качества, клиентский путь</p>
+              </div>
+            </div>
+            <div class="program-item" role="listitem">
+              <span class="program-time">16:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>Сессия «Вопрос — ответ» с руководителем отдела развития</h4>
+                <p>Прямой диалог с топ-менеджером Fit Service: как строится сеть 400+, что работает во франчайзинге в технических нишах</p>
+              </div>
+            </div>
+            <div class="program-item" role="listitem">
+              <span class="program-time">19:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>Предпринимательская практика «Масштаб личности»</h4>
+                <p>Глубокая практика для расширения предпринимательского мышления. Только через масштаб личности достигается масштаб бизнеса. В программе: чайная церемония, метафорические франч-карты, ханг-драм</p>
+              </div>
+            </div>
+            <div class="program-item" role="listitem">
+              <span class="program-time">до 22:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>Нетворкинг и свободное общение</h4>
+                <p>Неформальные встречи, обмен контактами, живые разговоры в кругу предпринимателей</p>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.35); padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
+            День 2 доступен только для тарифа «2 дня — Участник + Спикер»
+          </p>
         </div>
       </div>
     </div>
