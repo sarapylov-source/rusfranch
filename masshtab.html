@@ -1261,6 +1261,96 @@
       .fitservice-header { flex-direction: column; }
       .fitservice-photos { grid-template-columns: 1fr; }
     }
+
+    /* ─── SPEAKER TAGS IN PROGRAM ───────────────────────── */
+    .program-speaker-tag {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .program-speaker-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+    }
+    .program-speaker-role {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+    }
+    .program-item--keynote {
+      background: rgba(242,72,34,0.08);
+      border: 1px solid rgba(242,72,34,0.22);
+      border-radius: 12px;
+      padding: 16px 16px 16px 0;
+      margin-bottom: 0;
+    }
+    .program-keynote-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 2px 10px;
+      margin-bottom: 6px;
+    }
+
+    /* ─── PARTICIPANTS SECTION ──────────────────────────── */
+    .participants { background: var(--bg-alt); }
+    .participants-header { margin-bottom: 48px; }
+
+    .participants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .participant-card {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: box-shadow 250ms var(--ease), transform 250ms var(--ease);
+    }
+    .participant-card:hover {
+      box-shadow: 0 8px 32px rgba(13,13,13,0.09);
+      transform: translateY(-3px);
+    }
+    .participant-type {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+    .participant-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .participant-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .participant-tg {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 200ms;
+    }
+    .participant-tg:hover { color: var(--red); }
+    .participant-tg svg { width: 14px; height: 14px; flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -1431,16 +1521,48 @@
               <span class="program-time">10:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Открытие форума. Итоги года сообщества</h4>
-                <p>Ключевые события и достижения «Франчайзинг по-русски»</p>
+                <div class="program-speaker-tag">
+                  <span class="program-speaker-name">Елена Мощенко</span>
+                  <span class="program-speaker-role">Юрист · @mrsscissors</span>
+                </div>
+                <h4>Чего не знает франчайзер о своих франчайзи</h4>
+                <p>Суровая правда с обратной стороны баррикад — взгляд юриста по защите прав франчайзи</p>
+              </div>
+            </div>
+            <div class="program-item" role="listitem">
+              <span class="program-time">10:30</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <div class="program-speaker-tag">
+                  <span class="program-speaker-name">Евгений Опутин</span>
+                  <span class="program-speaker-role">Агентство Vagabond · @oputin</span>
+                </div>
+                <h4>Дизайн-код франшизы как инструмент масштабирования</h4>
+                <p>Со-основатель и дизайн-директор Vagabond, ментор DuoSapiens</p>
               </div>
             </div>
             <div class="program-item" role="listitem">
               <span class="program-time">11:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Блок «Рост и масштабирование»</h4>
-                <p>Кейсы участников: как вырасти до 100+ точек</p>
+                <div class="program-speaker-tag">
+                  <span class="program-speaker-name">Игорь Анфалов</span>
+                  <span class="program-speaker-role">LumosPartners.ru · @igoranfalow</span>
+                </div>
+                <h4>Юридические аспекты франчайзинга</h4>
+                <p>IP Law &amp; Litigation, Franchise consulting</p>
+              </div>
+            </div>
+            <div class="program-item" role="listitem">
+              <span class="program-time">11:30</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <div class="program-speaker-tag">
+                  <span class="program-speaker-name">Ярослав Осинцев</span>
+                  <span class="program-speaker-role">Агентство Osintcev · @yaroslav_osintsev</span>
+                </div>
+                <h4>Лидген в 2026: что работает, а что нет</h4>
+                <p>Основатель маркетингового агентства со специализацией на продвижении франшиз</p>
               </div>
             </div>
             <div class="program-item" role="listitem">
@@ -1451,12 +1573,17 @@
                 <p>Питание не включено в стоимость участия</p>
               </div>
             </div>
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--keynote" role="listitem">
               <span class="program-time">14:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Дискуссии по трекам</h4>
-                <p>Маркетинг, продажи, поддержка партнёров, управление</p>
+                <div class="program-keynote-badge">Спикер спикеров</div>
+                <div class="program-speaker-tag">
+                  <span class="program-speaker-name">Александр Долгов</span>
+                  <span class="program-speaker-role">Холдинг 20x80 · @dolgovalexandr</span>
+                </div>
+                <h4>Как продавать франшизы быстро и много?</h4>
+                <p>Основатель холдинга 20x80, бренды Чебурек.ми и LaserLove — более 800 франшиз в 16 странах</p>
               </div>
             </div>
             <div class="program-item" role="listitem">
@@ -1543,6 +1670,50 @@
             День 2 доступен только для тарифа «2 дня — Участник + Спикер»
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTICIPANTS -->
+  <section class="participants" id="participants" aria-labelledby="participantsTitle">
+    <div class="container">
+      <div class="participants-header reveal">
+        <span class="section-label">Участники</span>
+        <h2 class="section-title" id="participantsTitle">Другие участники</h2>
+        <p class="section-lead">Предприниматели и владельцы франшизных сетей, которые приедут обмениваться опытом.</p>
+      </div>
+      <div class="participants-grid">
+
+        <div class="participant-card reveal">
+          <div class="participant-type">Франчайзер</div>
+          <div class="participant-name">Михаил Воробьев</div>
+          <div class="participant-desc">Франшиза экшен-игр и квестов «Место Пряток»</div>
+          <a href="https://t.me/vorobevms" target="_blank" rel="noopener" class="participant-tg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0v5.5l3.5-3"/></svg>
+            @vorobevms
+          </a>
+        </div>
+
+        <div class="participant-card reveal">
+          <div class="participant-type">Франчайзер</div>
+          <div class="participant-name">Владислав Слащев</div>
+          <div class="participant-desc">Основатель «ОКНА-НОВА»</div>
+          <a href="https://t.me/vladislavslashchev" target="_blank" rel="noopener" class="participant-tg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0v5.5l3.5-3"/></svg>
+            @vladislavslashchev
+          </a>
+        </div>
+
+        <div class="participant-card reveal">
+          <div class="participant-type">Франчайзер</div>
+          <div class="participant-name">Николай Михайлович</div>
+          <div class="participant-desc">Основатель сети «Фермерский гриль»</div>
+          <a href="https://t.me/farmers_grill" target="_blank" rel="noopener" class="participant-tg">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0v5.5l3.5-3"/></svg>
+            @farmers_grill
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
