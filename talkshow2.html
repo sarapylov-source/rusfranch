@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ток-шоу «Франчайзинг по-русски» — 2 сезон · 20 сентября 2026</title>
+<meta name="description" content="Второй сезон ток-шоу. 20 сентября 2026, Москва, Чайхона №1 в ТРЦ Европейский. Дискуссии, съёмки, нетворкинг.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}.nav-cta:hover{background:var(--accent-hover)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}.burger span{width:24px;height:2px;background:var(--text)}
+.max-w{max-width:1200px;margin:0 auto}
+.section{padding:100px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;max-width:700px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 40px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:1000px;height:1000px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
+.hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;margin-bottom:32px;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(38px,5.5vw,72px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:24px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:18px;line-height:1.7;color:var(--text-sec);margin-bottom:40px;max-width:640px}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;max-width:720px}
+.hero-meta-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.hero-meta-icon{font-size:22px;margin-bottom:8px}
+.hero-meta-title{font-family:var(--font-display);font-weight:700;font-size:14px;margin-bottom:4px}
+.hero-meta-sub{font-size:13px;color:var(--text-muted)}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;background:transparent;color:var(--text);padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);border:1.5px solid var(--border-hover);transition:all .2s;cursor:pointer}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+
+/* COUNTDOWN */
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:560px;margin-top:48px}
+.countdown-cell{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.countdown-num{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,40px);color:var(--accent);line-height:1}
+.countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text{font-size:17px;line-height:1.8;color:var(--text-sec)}
+.about-text p{margin-bottom:16px}
+.about-text strong{color:var(--text);font-weight:600}
+.about-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.about-stat{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px 24px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.about-stat-num{font-family:var(--font-display);font-weight:900;font-size:36px;color:var(--accent);line-height:1;margin-bottom:8px}
+.about-stat-label{font-size:13px;color:var(--text-muted);line-height:1.4}
+
+/* PROGRAM */
+.program-list{display:flex;flex-direction:column;gap:20px}
+.program-item{display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:start}
+.program-time{font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--accent);padding-top:28px}
+.program-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.program-tag{display:inline-block;background:var(--accent-mid);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:12px;letter-spacing:.5px;text-transform:uppercase}
+.program-card h3{font-family:var(--font-display);font-weight:700;font-size:20px;line-height:1.3;margin-bottom:12px;letter-spacing:-.3px}
+.program-card p{font-size:15px;color:var(--text-muted);line-height:1.6;margin-bottom:20px}
+.program-spots{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px dashed var(--border)}
+.program-spots-icon{font-size:18px}
+.program-spots-text{font-size:14px;color:var(--text-sec);font-weight:600}
+.program-break{padding:20px 32px;background:var(--bg-alt);border-radius:16px;font-size:15px;color:var(--text-sec);font-weight:500}
+
+/* FORMAT */
+.format-card{background:var(--bg-dark);border-radius:24px;padding:60px;color:#fff;position:relative;overflow:hidden}
+.format-card::before{content:'';position:absolute;top:0;right:0;width:500px;height:500px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.format-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:60px;align-items:center;position:relative}
+.format-card h2{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,42px);line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
+.format-card h2 span{color:var(--accent)}
+.format-card p{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:16px}
+.format-card strong{color:#fff}
+.format-features{display:grid;gap:16px}
+.format-feature{display:flex;gap:14px;align-items:start}
+.format-feature-icon{width:40px;height:40px;border-radius:10px;background:var(--accent-mid);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0}
+.format-feature p{margin:0;font-size:15px;color:rgba(255,255,255,0.85);line-height:1.5}
+.format-feature strong{display:block;color:#fff;margin-bottom:4px;font-size:15px}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:40px 32px;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.03);transition:transform .3s,border-color .3s}
+.pricing-card:hover{transform:translateY(-4px)}
+.pricing-card.featured{border-color:var(--accent);background:linear-gradient(160deg,var(--bg-card) 0%,rgba(242,72,34,0.04) 100%);position:relative}
+.pricing-badge{position:absolute;top:20px;right:20px;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:.5px;text-transform:uppercase}
+.pricing-tier{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.pricing-name{font-family:var(--font-display);font-weight:900;font-size:22px;margin-bottom:16px;letter-spacing:-.3px}
+.pricing-features{list-style:none;margin-bottom:24px;flex-grow:1}
+.pricing-features li{font-size:14px;color:var(--text-sec);padding:10px 0;border-bottom:1px solid var(--border);display:flex;align-items:start;gap:8px}
+.pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.pricing-features li.dim{color:var(--text-muted)}
+.pricing-features li.dim::before{content:'×';color:var(--text-muted)}
+.pricing-price{font-family:var(--font-display);font-weight:900;font-size:36px;color:var(--accent);margin-bottom:8px;line-height:1}
+.pricing-note{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5}
+.pricing-btn{display:block;text-align:center;padding:14px;border-radius:12px;font-weight:600;font-size:15px;font-family:var(--font-body);cursor:pointer;border:none;transition:.2s;width:100%}
+.pricing-btn-primary{background:var(--accent);color:#fff}
+.pricing-btn-primary:hover{background:var(--accent-hover)}
+.pricing-btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border-hover)}
+.pricing-btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-grid img{width:100%;height:280px;object-fit:cover;border-radius:16px;transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.02)}
+.gallery-grid img:first-child{grid-column:span 2;grid-row:span 2;height:auto;min-height:560px}
+
+/* VENUE */
+.venue-card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:48px;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
+.venue-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
+.venue-info h3{font-family:var(--font-display);font-weight:900;font-size:28px;margin-bottom:16px;letter-spacing:-.5px}
+.venue-meta{display:flex;flex-direction:column;gap:14px;margin-bottom:24px}
+.venue-meta-item{display:flex;gap:12px;align-items:start;font-size:15px;color:var(--text-sec)}
+.venue-meta-item span:first-child{font-size:18px;flex-shrink:0}
+.venue-meta-item strong{color:var(--text);display:block;margin-bottom:2px}
+.venue-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.venue-photos img{width:100%;height:100%;object-fit:cover;border-radius:12px;min-height:160px}
+.venue-photos img:first-child{grid-column:span 2;height:280px}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:800px;margin:0 auto}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.faq-q{padding:24px 28px;font-weight:600;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .2s;user-select:none}
+.faq-q:hover{color:var(--accent)}
+.faq-q::after{content:'+';font-size:24px;color:var(--accent);transition:transform .3s;font-weight:400}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:400px;padding:0 28px 24px}
+.faq-a p{font-size:15px;color:var(--text-muted);line-height:1.7}
+
+/* CTA + FOOTER */
+.cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:40px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,0.15) 0%,transparent 60%);pointer-events:none}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-2px;margin-bottom:20px;position:relative}
+.cta-sub{font-size:18px;color:rgba(255,255,255,0.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,0.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,0.7);padding:6px 0;transition:color .2s}.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);font-size:13px;color:rgba(255,255,255,0.4)}
+.footer-social{display:flex;gap:16px}.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,0.1)}
+
+@media(max-width:1024px){
+  .hero-meta{grid-template-columns:1fr}.about-grid,.format-grid,.venue-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img:first-child{grid-column:span 2;min-height:auto;height:320px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text)}
+  .hero{padding:110px 20px 60px}.section{padding:60px 20px}
+  .program-item{grid-template-columns:1fr;gap:8px}.program-time{padding-top:0}
+  .countdown{grid-template-columns:repeat(4,1fr);gap:8px}.countdown-cell{padding:14px 8px}
+  .gallery-grid{grid-template-columns:1fr}.gallery-grid img:first-child{grid-column:span 1}
+  .format-card,.venue-card{padding:32px 24px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}
+  .cta{padding:80px 20px;border-radius:24px 24px 0 0}
+}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="#program">Программа</a><a href="#format">Формат</a><a href="#pricing">Билеты</a><a href="#venue">Место</a><a href="#faq">FAQ</a><a href="#pricing" class="nav-cta">Забронировать</a></nav>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-flag">2 СЕЗОН · 20 СЕНТЯБРЯ 2026</div>
+    <h1>Ток-шоу<br>«Франчайзинг<br><span>по-русски»</span></h1>
+    <p class="hero-sub">Второй сезон закрытого ток-шоу со съёмками. Дискуссии практиков рынка, нетворкинг, профессиональный видеоконтент. Одно место — все ключевые игроки франчайзинга.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="hero-meta-icon">📅</div><div class="hero-meta-title">20 сентября 2026</div><div class="hero-meta-sub">Воскресенье · с 10:30</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-icon">📍</div><div class="hero-meta-title">Москва, Чайхона №1</div><div class="hero-meta-sub">ТРЦ «Европейский»</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-icon">🎬</div><div class="hero-meta-title">Съёмки</div><div class="hero-meta-sub">Многокамерное видео</div></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#pricing" class="btn-primary">Забронировать участие →</a>
+      <a href="https://t.me/+9r_ooRQLEDg0MmM6" class="btn-secondary" target="_blank">Telegram-сообщество</a>
+    </div>
+    <div class="countdown" id="countdown">
+      <div class="countdown-cell"><div class="countdown-num" id="cdDays">00</div><div class="countdown-label">Дней</div></div>
+      <div class="countdown-cell"><div class="countdown-num" id="cdHours">00</div><div class="countdown-label">Часов</div></div>
+      <div class="countdown-cell"><div class="countdown-num" id="cdMins">00</div><div class="countdown-label">Минут</div></div>
+      <div class="countdown-cell"><div class="countdown-num" id="cdSecs">00</div><div class="countdown-label">Секунд</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="section-label">О сообществе</div>
+    <div class="section-title">Хаб, где формируются сильные сети</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p><strong>«Франчайзинг по-русски»</strong> — сообщество практиков, где не читают лекций. Здесь спорят, делятся реальными цифрами и работающими процессами.</p>
+        <p>Ток-шоу — это формат, где эксперты ведут живые дискуссии перед камерами. Каждый участник модуля получает профессиональный видеоконтент для своих соцсетей и медийный охват сообщества.</p>
+      </div>
+      <div class="about-stats">
+        <div class="about-stat"><div class="about-stat-num">5</div><div class="about-stat-label">модулей<br>дискуссий</div></div>
+        <div class="about-stat"><div class="about-stat-num">20+</div><div class="about-stat-label">экспертов<br>на сцене</div></div>
+        <div class="about-stat"><div class="about-stat-num">1 400+</div><div class="about-stat-label">участников<br>сообщества</div></div>
+        <div class="about-stat"><div class="about-stat-num">10</div><div class="about-stat-label">Reels каждому<br>спикеру</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="section fade-in" id="program">
+  <div class="max-w">
+    <div class="section-label">Программа дня</div>
+    <div class="section-title">Пять модулей по ключевым темам<br>франчайзинга 2026</div>
+    <div class="section-desc">Каждый модуль — экспертная дискуссия с многокамерной съёмкой. Между ними — обед и нетворкинг.</div>
+    <div class="program-list">
+
+      <div class="program-break"><strong>10:30</strong> · ☕ Сбор гостей, кофе, знакомства</div>
+
+      <div class="program-item">
+        <div class="program-time">11:00</div>
+        <div class="program-card">
+          <div class="program-tag">Модуль 1 · Дискуссия</div>
+          <h3>Упаковка франшизы: внешний лоск vs внутренние процессы УК</h3>
+          <p>Что важнее — красивый сайт и презентация или работающая управляющая компания? Разбираем на реальных кейсах.</p>
+          <div class="program-spots"><span class="program-spots-icon">🎤</span><span class="program-spots-text">4 места для спикеров</span></div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">12:15</div>
+        <div class="program-card">
+          <div class="program-tag">Модуль 2 · Дискуссия</div>
+          <h3>Маркетинг и продажи франшиз в 2026</h3>
+          <p>Каналы, которые работают сейчас. Как не уронить продажи и где брать дешёвый трафик в условиях растущей конкуренции.</p>
+          <div class="program-spots"><span class="program-spots-icon">🎤</span><span class="program-spots-text">4 места для спикеров</span></div>
+        </div>
+      </div>
+
+      <div class="program-break"><strong>13:15</strong> · 🍽️ Обед</div>
+
+      <div class="program-item">
+        <div class="program-time">14:15</div>
+        <div class="program-card">
+          <div class="program-tag">Модуль 3 · Дискуссия</div>
+          <h3>Поддержка франчайзи: что реально работает</h3>
+          <p>Как удерживать партнёров и помогать им зарабатывать. Структура УК, обучение, сопровождение, контроль качества.</p>
+          <div class="program-spots"><span class="program-spots-icon">🎤</span><span class="program-spots-text">4 места для спикеров</span></div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">15:30</div>
+        <div class="program-card">
+          <div class="program-tag">Модуль 4 · Дискуссия</div>
+          <h3>Юридические тонкости франчайзинга в 2026</h3>
+          <p>Договоры, налоги, защита бренда, споры с франчайзи. Что изменилось в законодательстве и как избежать ошибок.</p>
+          <div class="program-spots"><span class="program-spots-icon">🎤</span><span class="program-spots-text">4 места для спикеров</span></div>
+        </div>
+      </div>
+
+      <div class="program-item">
+        <div class="program-time">16:45</div>
+        <div class="program-card">
+          <div class="program-tag">Модуль 5 · Дискуссия</div>
+          <h3>🔥 Автоматизация и ИИ во франчайзинге</h3>
+          <p>Как технологии меняют управление сетью. От CRM и BI до AI-агентов в поддержке франчайзи. Реальные внедрения и результаты.</p>
+          <div class="program-spots"><span class="program-spots-icon">🎤</span><span class="program-spots-text">4 места для спикеров</span></div>
+        </div>
+      </div>
+
+      <div class="program-break"><strong>18:00</strong> · 🥂 Финал, нетворкинг, фуршет</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT -->
+<section class="section fade-in" id="format">
+  <div class="max-w">
+    <div class="format-card">
+      <div class="format-grid">
+        <div>
+          <div style="font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px">Формат</div>
+          <h2>Это <span>не конференция</span></h2>
+          <p>Ток-шоу — это <strong>контент-площадка</strong>, где мы снимаем профессиональный видеоконтент для сообщества, всех участников модулей и медиа-партнёров.</p>
+          <p>Каждая дискуссия снимается на профессиональное оборудование многокамерной съёмкой. Из материалов монтируются полноформатные выпуски и короткие вертикальные ролики (Reels, Shorts, VK Clips).</p>
+          <p>Контент транслируется в каналах партнёров и сообществе <strong>в течение 6 месяцев</strong>. Вы не просто выступаете — получаете медийный охват, который работает на вас долго после мероприятия.</p>
+        </div>
+        <div class="format-features">
+          <div class="format-feature"><div class="format-feature-icon">🎬</div><p><strong>Многокамерная съёмка</strong>Профессиональное оборудование и команда</p></div>
+          <div class="format-feature"><div class="format-feature-icon">📺</div><p><strong>Полные выпуски</strong>Смонтированный материал в полном объёме</p></div>
+          <div class="format-feature"><div class="format-feature-icon">📱</div><p><strong>10 Reels каждому</strong>Готовые вертикальные ролики для соцсетей</p></div>
+          <div class="format-feature"><div class="format-feature-icon">📡</div><p><strong>6 месяцев охвата</strong>Дистрибуция в сообществе и у партнёров</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section fade-in" id="pricing">
+  <div class="max-w">
+    <div class="section-label">Стоимость</div>
+    <div class="section-title">Сравните стоимость самостоятельных съёмок</div>
+    <div class="section-desc">Готовый контент, живые дискуссии с лидерами рынка и дистрибуция на аудиторию сообщества — за фракцию цены продакшена.</div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Самостоятельно</div>
+        <div class="pricing-name">Свои съёмки</div>
+        <ul class="pricing-features">
+          <li>Аренда студии — 50 000 ₽</li>
+          <li>Съёмочная команда — 100 000 ₽</li>
+          <li>Продюсер — 50 000 ₽</li>
+          <li>Монтаж — 50 000 ₽</li>
+          <li class="dim">Интересные оппоненты в кадре</li>
+          <li class="dim">Медийный охват</li>
+          <li class="dim">Нетворкинг с лидерами</li>
+        </ul>
+        <div class="pricing-price">250 000 ₽</div>
+        <div class="pricing-note">В кадре только вы. Дистрибуцию ищете сами.</div>
+      </div>
+
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Лучшее</div>
+        <div class="pricing-tier">Спикер</div>
+        <div class="pricing-name">Спикер ток-шоу</div>
+        <ul class="pricing-features">
+          <li>Профессиональная съёмка</li>
+          <li>Полный смонтированный материал</li>
+          <li>10 вертикальных Reels</li>
+          <li>Интересные оппоненты в кадре</li>
+          <li>Медийный охват 6 месяцев</li>
+          <li>Нетворкинг с экспертами</li>
+          <li>Обед и фуршет</li>
+        </ul>
+        <div class="pricing-price">45 000 ₽</div>
+        <div class="pricing-note">Готовый контент + дистрибуция на аудиторию сообщества.</div>
+        <a href="https://t.me/rufranch" target="_blank" class="pricing-btn pricing-btn-primary">Стать спикером →</a>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-tier">Зритель</div>
+        <div class="pricing-name">Гостевой билет</div>
+        <ul class="pricing-features">
+          <li>Просмотр всех дискуссий</li>
+          <li>Присутствие на съёмках</li>
+          <li>Нетворкинг с экспертами</li>
+          <li>Обед и фуршет</li>
+          <li class="dim">Участие в кадре</li>
+          <li class="dim">Видеоконтент для соцсетей</li>
+          <li class="dim">Медийный охват</li>
+        </ul>
+        <div class="pricing-price">15 000 ₽</div>
+        <div class="pricing-note">Посмотрите как снимается контент, познакомьтесь с лидерами рынка.</div>
+        <a href="https://t.me/rufranch" target="_blank" class="pricing-btn pricing-btn-outline">Купить билет →</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;margin-top:48px;font-size:15px;color:var(--text-muted)">Остались вопросы? <a href="https://t.me/rufranch" target="_blank" style="color:var(--accent);font-weight:600">Написать менеджеру @rufranch →</a></p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section fade-in">
+  <div class="max-w">
+    <div class="section-label">1 сезон</div>
+    <div class="section-title">Как это было в прошлый раз</div>
+    <div class="section-desc">Фотографии со съёмок первого сезона ток-шоу — атмосфера, формат, эмоции.</div>
+    <div class="gallery-grid">
+      <img src="talkshow2/ts2-1.jpg" alt="Съёмки ток-шоу 1 сезон" loading="lazy">
+      <img src="talkshow2/ts2-2.jpg" alt="Дискуссия на ток-шоу" loading="lazy">
+      <img src="talkshow2/ts2-3.jpg" alt="Эксперты в студии" loading="lazy">
+      <img src="talkshow2/ts2-4.jpg" alt="Спикеры на диване" loading="lazy">
+      <img src="talkshow2/ts2-5.jpg" alt="Ведущая ток-шоу" loading="lazy">
+      <img src="talkshow2/ts2-6.jpg" alt="Гости и спикеры" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="section fade-in" id="venue">
+  <div class="max-w">
+    <div class="section-label">Место проведения</div>
+    <div class="section-title">Чайхона №1, ТРЦ «Европейский»</div>
+    <div class="venue-card">
+      <div class="venue-grid">
+        <div class="venue-info">
+          <h3>Чайхона №1</h3>
+          <div class="venue-meta">
+            <div class="venue-meta-item"><span>📍</span><div><strong>Адрес</strong>Москва, площадь Киевского Вокзала, 2<br>ТРЦ «Европейский»</div></div>
+            <div class="venue-meta-item"><span>📅</span><div><strong>Дата</strong>20 сентября 2026, воскресенье</div></div>
+            <div class="venue-meta-item"><span>⏰</span><div><strong>Время</strong>Сбор с 10:30, начало в 11:00</div></div>
+            <div class="venue-meta-item"><span>🚇</span><div><strong>Метро</strong>Киевская — выход к ТРЦ</div></div>
+          </div>
+          <a href="https://yandex.ru/maps/?text=Чайхона%20№1%20Европейский%20Москва" target="_blank" class="btn-secondary" style="padding:14px 28px;font-size:15px">Открыть на карте →</a>
+        </div>
+        <div class="venue-photos">
+          <img src="talkshow2/venue1.jpg" alt="Чайхона №1 — зал" loading="lazy">
+          <img src="talkshow2/venue2.jpg" alt="Чайхона №1 — вид из окон" loading="lazy">
+          <img src="talkshow2/venue3.jpg" alt="Чайхона №1 — интерьер" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section fade-in" id="faq">
+  <div class="max-w">
+    <div class="section-label">Вопросы</div>
+    <div class="section-title" style="text-align:center;margin:0 auto 48px">Частые вопросы</div>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Что я получу как зритель?</div><div class="faq-a"><p>Вы будете присутствовать на съёмках всех дискуссионных модулей, обед и фуршет включены. После мероприятия — нетворкинг с экспертами и участниками.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Что входит в пакет спикера?</div><div class="faq-a"><p>Участие в экспертной дискуссии на сцене одного из модулей. Вы получите весь отснятый и смонтированный материал, а также 10 коротких вертикальных видео для соцсетей. Плюс нетворкинг с лидерами рынка и медийный охват сообщества в течение 6 месяцев.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Как стать спикером?</div><div class="faq-a"><p>Напишите менеджеру Ярославе в Telegram <a href="https://t.me/rufranch" target="_blank" style="color:var(--accent)">@rufranch</a>. Мы согласуем ваш профиль с темой модуля и забронируем место.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Можно ли оплатить по безналу?</div><div class="faq-a"><p>Да, доступна оплата по безналичному расчёту. Напишите менеджеру <a href="https://t.me/rufranch" target="_blank" style="color:var(--accent)">@rufranch</a> для оформления договора.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Сколько человек будет на мероприятии?</div><div class="faq-a"><p>Мероприятие закрытое, количество мест ограничено форматом площадки. Камерная атмосфера позволяет каждому пообщаться с экспертами лично.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Как попасть в Telegram-сообщество?</div><div class="faq-a"><p>Присоединяйтесь по ссылке: <a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank" style="color:var(--accent)">Франчайзинг по-русски в Telegram</a>. Это открытое сообщество для всех, кто связан с франчайзингом.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-title" style="position:relative">Забронируйте место<br>на ток-шоу</div>
+  <p class="cta-sub" style="position:relative">20 сентября 2026 · Москва · Чайхона №1, ТРЦ «Европейский»</p>
+  <div style="display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap">
+    <a href="https://t.me/rufranch" class="btn-primary" target="_blank">Забронировать участие →</a>
+    <a href="#program" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.2)">Смотреть программу</a>
+  </div>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="contractor.html">Подрядчикам</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// Countdown to 20 September 2026
+const target=new Date('2026-09-20T11:00:00+03:00').getTime();
+function tick(){
+  const now=Date.now();const d=Math.max(0,target-now);
+  const days=Math.floor(d/86400000);const hours=Math.floor((d%86400000)/3600000);const mins=Math.floor((d%3600000)/60000);const secs=Math.floor((d%60000)/1000);
+  document.getElementById('cdDays').textContent=String(days).padStart(2,'0');
+  document.getElementById('cdHours').textContent=String(hours).padStart(2,'0');
+  document.getElementById('cdMins').textContent=String(mins).padStart(2,'0');
+  document.getElementById('cdSecs').textContent=String(secs).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
