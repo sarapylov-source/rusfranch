@@ -13,9 +13,17 @@
 :root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
 html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
 .header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header .logo,.header .nav a{color:#fff}
+.header .nav a{color:rgba(255,255,255,0.75)}
+.header .nav a:hover{color:#fff}
+.header .burger span{background:#fff}
 .header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
-.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)}
-.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}.nav a:hover{color:var(--text)}
+.header.scrolled .logo{color:var(--text)}
+.header.scrolled .nav a{color:var(--text-muted)}
+.header.scrolled .nav a:hover{color:var(--text)}
+.header.scrolled .burger span{background:var(--text)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)!important}
+.nav{display:flex;gap:32px;align-items:center}.nav a{font-size:14px;font-weight:500;transition:color .2s}
 .nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important;transition:all .2s!important}.nav-cta:hover{background:var(--accent-hover)!important}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}.burger span{width:24px;height:2px;background:var(--text)}
 .max-w{max-width:1200px;margin:0 auto}
@@ -25,18 +33,21 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
 .section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:600px;margin-bottom:48px}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:140px 40px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:1000px;height:1000px;background:radial-gradient(circle,rgba(242,72,34,0.06) 0%,transparent 60%);pointer-events:none}
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 40px 80px;position:relative;overflow:hidden;color:#fff}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0D0D0D}
+.hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,13,13,0.78) 0%,rgba(13,13,13,0.65) 50%,rgba(13,13,13,0.85) 100%)}
+.hero::before{content:'';position:absolute;top:-30%;right:-10%;width:1000px;height:1000px;background:radial-gradient(circle,rgba(242,72,34,0.18) 0%,transparent 60%);pointer-events:none;z-index:1}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2}
 .hero-flag{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;margin-bottom:32px;letter-spacing:.5px;text-transform:uppercase}
-.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(38px,5.5vw,72px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:24px}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(38px,5.5vw,72px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:24px;color:#fff}
 .hero h1 span{color:var(--accent)}
-.hero-sub{font-size:18px;line-height:1.7;color:var(--text-sec);margin-bottom:40px;max-width:640px}
+.hero-sub{font-size:18px;line-height:1.7;color:rgba(255,255,255,0.85);margin-bottom:40px;max-width:640px}
 .hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;max-width:720px}
-.hero-meta-item{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.hero-meta-item{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:20px;color:#fff}
 .hero-meta-icon{font-size:22px;margin-bottom:8px}
-.hero-meta-title{font-family:var(--font-display);font-weight:700;font-size:14px;margin-bottom:4px}
-.hero-meta-sub{font-size:13px;color:var(--text-muted)}
+.hero-meta-title{font-family:var(--font-display);font-weight:700;font-size:14px;margin-bottom:4px;color:#fff}
+.hero-meta-sub{font-size:13px;color:rgba(255,255,255,0.65)}
 .hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
 .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 44px;border-radius:100px;font-weight:600;font-size:17px;font-family:var(--font-body);transition:all .2s;border:none;cursor:pointer}
 .btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,0.25)}
@@ -45,9 +56,9 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
 
 /* COUNTDOWN */
 .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:560px;margin-top:48px}
-.countdown-cell{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.countdown-cell{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:20px;text-align:center}
 .countdown-num{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.5vw,40px);color:var(--accent);line-height:1}
-.countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
+.countdown-label{font-size:11px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:1px;margin-top:6px}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -224,6 +235,11 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="auto" poster="talkshow/ts2-1.jpg">
+      <source src="talkshow/hero-bg.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-inner">
     <div class="hero-flag">2 СЕЗОН · 20 СЕНТЯБРЯ 2026</div>
     <h1>Ток-шоу<br>«Франчайзинг<br><span>по-русски»</span></h1>
@@ -235,7 +251,7 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
     </div>
     <div class="hero-buttons">
       <a href="#pricing" class="btn-primary">Забронировать участие →</a>
-      <a href="https://t.me/+9r_ooRQLEDg0MmM6" class="btn-secondary" target="_blank">Telegram-сообщество</a>
+      <a href="https://t.me/+9r_ooRQLEDg0MmM6" class="btn-secondary" target="_blank" style="color:#fff;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)">Telegram-сообщество</a>
     </div>
     <div class="countdown" id="countdown">
       <div class="countdown-cell"><div class="countdown-num" id="cdDays">00</div><div class="countdown-label">Дней</div></div>
@@ -353,12 +369,12 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
         </div>
         <div class="format-slider">
           <div class="format-slider-track">
-            <img src="talkshow2/ts2-1.jpg" alt="Съёмки 1 сезона">
-            <img src="talkshow2/ts2-3.jpg" alt="Съёмки 1 сезона">
-            <img src="talkshow2/ts2-2.jpg" alt="Съёмки 1 сезона">
-            <img src="talkshow2/ts2-4.jpg" alt="Съёмки 1 сезона">
-            <img src="talkshow2/ts2-5.jpg" alt="Съёмки 1 сезона">
-            <img src="talkshow2/ts2-1.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-1.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-3.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-2.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-4.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-5.jpg" alt="Съёмки 1 сезона">
+            <img src="talkshow/ts2-1.jpg" alt="Съёмки 1 сезона">
           </div>
         </div>
       </div>
@@ -478,9 +494,9 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
           <a href="https://yandex.ru/maps/?text=Чайхона%20№1%20Европейский%20Москва" target="_blank" class="btn-secondary" style="padding:14px 28px;font-size:15px">Открыть на карте →</a>
         </div>
         <div class="venue-photos">
-          <img src="talkshow2/venue1.jpg" alt="Чайхона №1 — зал" loading="lazy">
-          <img src="talkshow2/venue2.jpg" alt="Чайхона №1 — вид из окон" loading="lazy">
-          <img src="talkshow2/venue3.jpg" alt="Чайхона №1 — интерьер" loading="lazy">
+          <img src="talkshow/venue1.jpg" alt="Чайхона №1 — зал" loading="lazy">
+          <img src="talkshow/venue2.jpg" alt="Чайхона №1 — вид из окон" loading="lazy">
+          <img src="talkshow/venue3.jpg" alt="Чайхона №1 — интерьер" loading="lazy">
         </div>
       </div>
     </div>
