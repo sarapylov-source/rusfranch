@@ -1332,6 +1332,32 @@
       padding: 2px 10px;
       margin-bottom: 6px;
     }
+    .program-item--break {
+      opacity: 0.6;
+    }
+    .program-item--break h4 { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); }
+    .program-panel-avatars {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .program-panel-member {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .program-panel-member img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(242,72,34,0.4);
+    }
+    .program-panel-member span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+    }
 
     /* ─── PARTICIPANTS SECTION ──────────────────────────── */
     .participants { background: var(--bg-alt); }
@@ -1551,6 +1577,7 @@
           </div>
 
           <div class="program-items" role="list">
+            <!-- 09:00 -->
             <div class="program-item" role="listitem">
               <span class="program-time">09:00</span>
               <div class="program-dot" aria-hidden="true"></div>
@@ -1559,6 +1586,7 @@
                 <p>Знакомство участников, неформальное общение</p>
               </div>
             </div>
+            <!-- 10:00 Мощенко -->
             <div class="program-item" role="listitem">
               <span class="program-time">10:00</span>
               <div class="program-dot" aria-hidden="true"></div>
@@ -1604,8 +1632,17 @@
                 <p>IP Law &amp; Litigation, Franchise consulting</p>
               </div>
             </div>
-            <div class="program-item" role="listitem">
+            <!-- 11:30 Кофе-брейк -->
+            <div class="program-item program-item--break" role="listitem">
               <span class="program-time">11:30</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>☕ Кофе-брейк · 15 минут</h4>
+              </div>
+            </div>
+            <!-- 11:45 Осинцев -->
+            <div class="program-item" role="listitem">
+              <span class="program-time">11:45</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-speaker-header">
@@ -1619,8 +1656,9 @@
                 <p>Основатель маркетингового агентства со специализацией на продвижении франшиз</p>
               </div>
             </div>
+            <!-- 12:15 Малкина -->
             <div class="program-item" role="listitem">
-              <span class="program-time">12:00</span>
+              <span class="program-time">12:15</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-speaker-header">
@@ -1634,8 +1672,18 @@
                 <p>Финансовые инструменты для масштабирования: когда и как использовать заёмный капитал при покупке франшизы</p>
               </div>
             </div>
+            <!-- 12:45 Обед -->
+            <div class="program-item program-item--break" role="listitem">
+              <span class="program-time">12:45</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>🍽 Обед · до 14:30</h4>
+                <p>Питание не включено в стоимость участия</p>
+              </div>
+            </div>
+            <!-- 14:30 Попов -->
             <div class="program-item" role="listitem">
-              <span class="program-time">12:30</span>
+              <span class="program-time">14:30</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-speaker-header">
@@ -1649,44 +1697,86 @@
                 <p>Практические кейсы применения искусственного интеллекта для роста франчайзинговых сетей</p>
               </div>
             </div>
+            <!-- 15:00 Батищев -->
             <div class="program-item" role="listitem">
-              <span class="program-time">13:00</span>
+              <span class="program-time">15:00</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Обед</h4>
-                <p>Питание не включено в стоимость участия</p>
-              </div>
-            </div>
-            <div class="program-item program-item--keynote" role="listitem">
-              <span class="program-time">14:00</span>
-              <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-keynote-badge">Спикер спикеров</div>
                 <div class="program-speaker-header">
-                  <img src="speaker-dolgov.jpg" alt="Александр Долгов" class="program-speaker-avatar" loading="lazy" />
+                  <img src="speaker-batishchev.jpg" alt="Юрий Батищев" class="program-speaker-avatar" loading="lazy" />
                   <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Александр Долгов</span>
-                    <span class="program-speaker-role">Акула Франчайзинга · Холдинг 20x80 · @dolgovalexandr</span>
+                    <span class="program-speaker-name">Юрий Батищев</span>
+                    <span class="program-speaker-role">DPO · Soglasen.ru</span>
                   </div>
                 </div>
-                <h4>Как продавать франшизы быстро и много?</h4>
-                <p>Основатель холдинга 20x80, бренды Чебурек.ми и LaserLove — более 800 франшиз в 16 странах</p>
+                <h4>Как франшизе защитить себя и франчайзи от штрафов Роскомнадзора?</h4>
+                <p>Юрист по персональным данным, основатель онлайн-сервиса Soglasen.ru</p>
               </div>
             </div>
+            <!-- 15:30 Сарапулов -->
             <div class="program-item" role="listitem">
+              <span class="program-time">15:30</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <div class="program-speaker-header">
+                  <img src="speaker-sarapulov.jpg" alt="Семён Сарапулов" class="program-speaker-avatar" loading="lazy" />
+                  <div class="program-speaker-tag">
+                    <span class="program-speaker-name">Семён Сарапулов</span>
+                    <span class="program-speaker-role">Основатель · «Франчайзинг по-русски»</span>
+                  </div>
+                </div>
+                <h4>Куда мы катимся?</h4>
+                <p>Данные по сообществу, результаты первых 9 месяцев, планы и идеи</p>
+              </div>
+            </div>
+            <!-- 16:00 Кофе-брейк -->
+            <div class="program-item program-item--break" role="listitem">
+              <span class="program-time">16:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>☕ Кофе-брейк</h4>
+              </div>
+            </div>
+            <!-- 16:30 Дискуссия -->
+            <div class="program-item program-item--keynote" role="listitem">
               <span class="program-time">16:30</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Питчи участников</h4>
-                <p>Спикерских мест больше нет — возможность выступить с докладом закрыта.</p>
+                <div class="program-keynote-badge">Дискуссия</div>
+                <h4>Поговорим? Франчайзинг вчера, сегодня и завтра</h4>
+                <p>Дискуссия титанов рынка с участием зала</p>
+                <div class="program-panel-avatars">
+                  <div class="program-panel-member">
+                    <img src="speaker-dolgov.jpg" alt="Александр Долгов" />
+                    <span>Долгов</span>
+                  </div>
+                  <div class="program-panel-member">
+                    <img src="speaker-babaev.jpg" alt="Дмитрий Бабаев" />
+                    <span>Бабаев · Fit Service</span>
+                  </div>
+                  <div class="program-panel-member">
+                    <img src="speaker-sarapulov.jpg" alt="Семён Сарапулов" />
+                    <span>Сарапулов · модератор</span>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- 17:30 Награждение -->
             <div class="program-item" role="listitem">
-              <span class="program-time">18:00</span>
+              <span class="program-time">17:30</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Неформальный ужин</h4>
-                <p>Нетворкинг и живое общение после программы</p>
+                <h4>Награждение и фотографирование</h4>
+                <p>Торжественное вручение наград участникам сообщества</p>
+              </div>
+            </div>
+            <!-- 19:00 Ужин -->
+            <div class="program-item" role="listitem">
+              <span class="program-time">19:00</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <h4>Ужин в ресторане Forum</h4>
+                <p>Нетворкинг и живое общение в неформальной обстановке</p>
               </div>
             </div>
           </div>
@@ -1841,6 +1931,27 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0v5.5l3.5-3"/></svg>
             Seller Capital
           </a>
+        </div>
+
+        <div class="participant-card reveal">
+          <img src="speaker-sarapulov.jpg" alt="Семён Сарапулов" class="participant-photo" loading="lazy" />
+          <div class="participant-type">Организатор · Спикер</div>
+          <div class="participant-name">Семён Сарапулов</div>
+          <div class="participant-desc">Основатель сообщества «Франчайзинг по-русски»</div>
+        </div>
+
+        <div class="participant-card reveal">
+          <img src="speaker-batishchev.jpg" alt="Юрий Батищев" class="participant-photo" loading="lazy" />
+          <div class="participant-type">Спикер · Юрист</div>
+          <div class="participant-name">Юрий Батищев</div>
+          <div class="participant-desc">DPO и юрист по персональным данным, основатель Soglasen.ru</div>
+        </div>
+
+        <div class="participant-card reveal">
+          <img src="speaker-babaev.jpg" alt="Дмитрий Бабаев" class="participant-photo" loading="lazy" />
+          <div class="participant-type">Спикер · Fit Service</div>
+          <div class="participant-name">Дмитрий Бабаев</div>
+          <div class="participant-desc">Директор направления развития сети, Fit Service</div>
         </div>
 
         <div class="participant-card reveal">
