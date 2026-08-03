@@ -5,7 +5,7 @@
 -- ============================================
 
 -- 1. КАТЕГОРИИ
-create table if not exists categories (
+create table if not exists frgu_categories (
   id          text primary key,
   name        text not null,
   icon        text,
@@ -13,12 +13,12 @@ create table if not exists categories (
 );
 
 -- 2. ПОДРЯДЧИКИ
-create table if not exists contractors (
+create table if not exists frgu_contractors (
   id            uuid primary key default gen_random_uuid(),
   slug          text unique not null,
   name          text not null,
   company       text,
-  category_id   text references categories(id),
+  category_id   text references frgu_categories(id),
   city          text,
   photo_url     text,
   short_desc    text,
@@ -33,9 +33,9 @@ create table if not exists contractors (
 );
 
 -- 3. ОТЗЫВЫ
-create table if not exists reviews (
+create table if not exists frgu_reviews (
   id             uuid primary key default gen_random_uuid(),
-  contractor_id  uuid references contractors(id) on delete cascade,
+  contractor_id  uuid references frgu_contractors(id) on delete cascade,
   reviewer_name  text not null,
   reviewer_role  text,
   reviewer_photo text,
@@ -45,33 +45,34 @@ create table if not exists reviews (
   discipline     text,          -- п.4 "Сроки и бюджеты"
   verdict        text,          -- п.5 "Итоговый вердикт"
   sort_order     int default 100,
-  created_at     timestamptz default now()
+  created_at     timestamptz default now(),
+  unique (contractor_id, reviewer_name)
 );
 
 -- ============================================
 -- RLS: только публичное чтение, запись закрыта
 -- ============================================
-alter table categories  enable row level security;
-alter table contractors enable row level security;
-alter table reviews     enable row level security;
+alter table frgu_categories  enable row level security;
+alter table frgu_contractors enable row level security;
+alter table frgu_reviews     enable row level security;
 
-drop policy if exists "public read categories"  on categories;
-drop policy if exists "public read contractors" on contractors;
-drop policy if exists "public read reviews"     on reviews;
+drop policy if exists "public read frgu_categories"  on frgu_categories;
+drop policy if exists "public read frgu_contractors" on frgu_contractors;
+drop policy if exists "public read frgu_reviews"     on frgu_reviews;
 
-create policy "public read categories"
-  on categories for select to anon using (true);
+create policy "public read frgu_categories"
+  on frgu_categories for select to anon using (true);
 
-create policy "public read contractors"
-  on contractors for select to anon using (is_published = true);
+create policy "public read frgu_contractors"
+  on frgu_contractors for select to anon using (is_published = true);
 
-create policy "public read reviews"
-  on reviews for select to anon using (true);
+create policy "public read frgu_reviews"
+  on frgu_reviews for select to anon using (true);
 
 -- ============================================
 -- ДАННЫЕ: категории
 -- ============================================
-insert into categories (id, name, icon, sort_order) values
+insert into frgu_categories (id, name, icon, sort_order) values
   ('marketing',   'Маркетинг',            '📈', 10),
   ('sales',       'Продажи и упаковка',   '🎯', 20),
   ('legal',       'Юристы',               '⚖️', 30),
@@ -86,7 +87,7 @@ on conflict (id) do update set
 -- ============================================
 -- ДАННЫЕ: Ярослав Осинцев
 -- ============================================
-insert into contractors (
+insert into frgu_contractors (
   slug, name, company, category_id, city, photo_url,
   short_desc, full_desc, tg_account, tg_channel, website,
   is_verified, sort_order
@@ -112,14 +113,12 @@ insert into contractors (
   is_verified = excluded.is_verified;
 
 -- Отзывы на Ярослава
-delete from reviews where contractor_id = (select id from contractors where slug = 'yaroslav-osintsev');
-
-insert into reviews (
+insert into frgu_reviews (
   contractor_id, reviewer_name, reviewer_role, reviewer_photo, reviewer_tg,
   duration, results, discipline, verdict, sort_order
 ) values
 (
-  (select id from contractors where slug = 'yaroslav-osintsev'),
+  (select id from frgu_contractors where slug = 'yaroslav-osintsev'),
   'Денис Блохин',
   'Директор по франчайзингу, Junior Projects (Юниор, Русский балет, ЮниорКод)',
   'contractors/rev-blokhin.jpg',
@@ -131,7 +130,7 @@ insert into reviews (
   10
 ),
 (
-  (select id from contractors where slug = 'yaroslav-osintsev'),
+  (select id from frgu_contractors where slug = 'yaroslav-osintsev'),
   'Александр Мельников',
   'OnePrice, EpicPizza и др.',
   'contractors/rev-melnikov.jpg',
@@ -141,4 +140,9 @@ insert into reviews (
   'Да',
   'На мой взгляд адекватная и профессиональная команда, работа на результат.',
   20
-);
+)
+on conflict (contractor_id, reviewer_name) do update set
+  reviewer_role = excluded.reviewer_role, reviewer_photo = excluded.reviewer_photo,
+  reviewer_tg = excluded.reviewer_tg, duration = excluded.duration,
+  results = excluded.results, discipline = excluded.discipline,
+  verdict = excluded.verdict, sort_order = excluded.sort_order;

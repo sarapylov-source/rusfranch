@@ -215,9 +215,9 @@ async function sb(path){
 async function load(){
   try{
     const [cats,cons,revs]=await Promise.all([
-      sb('categories?select=*&order=sort_order.asc'),
-      sb('contractors?select=*&is_published=eq.true&order=sort_order.asc,name.asc'),
-      sb('reviews?select=*&order=sort_order.asc')
+      sb('frgu_categories?select=*&order=sort_order.asc'),
+      sb('frgu_contractors?select=*&is_published=eq.true&order=sort_order.asc,name.asc'),
+      sb('frgu_reviews?select=*&order=sort_order.asc')
     ]);
     CATEGORIES=cats; CONTRACTORS=cons;
     REVIEWS={};
