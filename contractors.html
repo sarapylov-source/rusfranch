@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проверенные подрядчики — Франчайзинг по-русски</title>
+<meta name="description" content="Каталог проверенных подрядчиков сообщества «Франчайзинг по-русски». Маркетинг, юристы, IT, дизайн — с реальными отзывами франчайзоров.">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--accent-mid:rgba(242,72,34,0.15);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-.3px;display:flex;flex-direction:column;line-height:1.2}.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:28px;align-items:center}.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important}.nav-cta:hover{background:var(--accent-hover)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}.burger span{width:24px;height:2px;background:var(--text)}
+.max-w{max-width:1200px;margin:0 auto}.section{padding:80px 40px}
+.section-label{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.section-title{font-family:var(--font-display);font-weight:900;font-size:clamp(26px,3.2vw,42px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:14px}
+.section-desc{font-size:16px;color:var(--text-muted);line-height:1.6;max-width:620px;margin-bottom:40px}
+
+/* HERO */
+.hero{padding:150px 40px 50px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-10%;width:800px;height:800px;background:radial-gradient(circle,rgba(242,72,34,.06) 0%,transparent 60%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
+.hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(32px,4.5vw,58px);line-height:1.04;letter-spacing:-2px;margin-bottom:20px}
+.hero h1 span{color:var(--accent)}
+.hero-sub{font-size:18px;line-height:1.7;color:var(--text-sec);max-width:620px;margin-bottom:36px}
+.search-box{position:relative;max-width:560px}
+.search-box input{width:100%;padding:18px 20px 18px 52px;border:1.5px solid var(--border);border-radius:100px;font-size:16px;font-family:var(--font-body);background:var(--bg-card);color:var(--text);outline:none;transition:border-color .2s;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+.search-box input:focus{border-color:var(--accent)}
+.search-box input::placeholder{color:var(--text-muted)}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:18px;opacity:.5;pointer-events:none}
+
+/* CHIPS */
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.chip{background:var(--bg-card);border:1.5px solid var(--border);border-radius:100px;padding:10px 20px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-body);color:var(--text-sec);display:inline-flex;align-items:center;gap:7px}
+.chip:hover{border-color:var(--border-hover)}
+.chip.active{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.chip-count{font-size:12px;opacity:.6}
+
+/* VERIFIED GRID */
+.v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.v-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:32px;cursor:pointer;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.03);display:flex;flex-direction:column}
+.v-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.07)}
+.v-badge{display:inline-flex;align-items:center;gap:5px;background:var(--accent-mid);color:var(--accent);font-size:11px;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:18px;width:fit-content;letter-spacing:.4px;text-transform:uppercase}
+.v-photo{width:84px;height:84px;border-radius:50%;overflow:hidden;margin-bottom:16px;border:3px solid var(--accent-mid);flex-shrink:0}
+.v-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.v-name{font-family:var(--font-display);font-weight:900;font-size:19px;letter-spacing:-.4px;margin-bottom:5px}
+.v-company{font-size:14px;color:var(--text-sec);font-weight:500;margin-bottom:14px;line-height:1.4}
+.v-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.v-tag{font-size:12px;padding:4px 11px;border-radius:100px;background:var(--bg-alt);color:var(--text-sec);font-weight:500}
+.v-desc{font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:18px;flex-grow:1}
+.v-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border)}
+.v-reviews{font-size:13px;color:var(--text-sec);font-weight:600;display:flex;align-items:center;gap:6px}
+.v-more{font-size:14px;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
+.v-card:hover .v-more{gap:9px}
+
+/* OTHERS */
+.others{background:var(--bg-alt);border-radius:32px;padding:60px 40px;margin-top:20px}
+.o-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.o-card{background:rgba(255,255,255,.55);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;align-items:center;gap:13px;transition:all .2s}
+.o-card:hover{background:var(--bg-card);border-color:var(--border-hover)}
+.o-photo{width:44px;height:44px;border-radius:50%;background:var(--bg);overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--text-muted);font-weight:700}
+.o-photo img{width:100%;height:100%;object-fit:cover}
+.o-info{min-width:0;flex:1}
+.o-name{font-size:14px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.o-cat{font-size:12px;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:flex-start;justify-content:center;padding:40px 20px;overflow-y:auto;background:rgba(13,13,13,.6);backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.modal-box{background:var(--bg);border-radius:24px;max-width:820px;width:100%;position:relative;box-shadow:0 24px 80px rgba(0,0,0,.3);margin:auto}
+.modal-close{position:absolute;top:20px;right:20px;width:40px;height:40px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);cursor:pointer;font-size:20px;color:var(--text-sec);display:flex;align-items:center;justify-content:center;z-index:5;transition:.2s;font-family:var(--font-body)}
+.modal-close:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.modal-head{padding:44px 44px 32px;border-bottom:1px solid var(--border)}
+.modal-head-top{display:flex;gap:22px;align-items:flex-start;margin-bottom:22px}
+.modal-photo{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--accent-mid);flex-shrink:0}
+.modal-photo img{width:100%;height:100%;object-fit:cover}
+.modal-name{font-family:var(--font-display);font-weight:900;font-size:26px;letter-spacing:-.6px;margin-bottom:6px}
+.modal-company{font-size:15px;color:var(--text-sec);margin-bottom:12px;line-height:1.4}
+.modal-desc{font-size:15px;color:var(--text-sec);line-height:1.75;margin-bottom:22px}
+.modal-links{display:flex;gap:10px;flex-wrap:wrap}
+.modal-link{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:600;transition:.2s}
+.ml-primary{background:var(--accent);color:#fff}.ml-primary:hover{background:var(--accent-hover)}
+.ml-outline{background:transparent;color:var(--text);border:1.5px solid var(--border-hover)}
+.ml-outline:hover{border-color:var(--accent);color:var(--accent)}
+.modal-body{padding:36px 44px 44px}
+.modal-section-title{font-family:var(--font-display);font-weight:900;font-size:19px;margin-bottom:22px;letter-spacing:-.4px;display:flex;align-items:center;gap:10px}
+.rev{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:28px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.03)}
+.rev-head{display:flex;gap:14px;align-items:center;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.rev-photo{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--bg-alt)}
+.rev-photo img{width:100%;height:100%;object-fit:cover}
+.rev-name{font-weight:700;font-size:15px;margin-bottom:3px}
+.rev-role{font-size:13px;color:var(--text-muted);line-height:1.45}
+.rev-tg{margin-left:auto;font-size:13px;font-weight:600;color:var(--accent);white-space:nowrap;flex-shrink:0}
+.rev-rows{display:grid;gap:15px}
+.rev-row-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.rev-row-value{font-size:14px;color:var(--text-sec);line-height:1.65}
+.rev-verdict{background:var(--accent-light);border-radius:12px;padding:18px;margin-top:4px}
+.rev-verdict .rev-row-value{color:var(--text);font-weight:500}
+
+/* STATES */
+.state{text-align:center;padding:70px 20px;color:var(--text-muted);font-size:16px}
+.spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 18px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.cta{padding:110px 40px;text-align:center;position:relative;overflow:hidden;background:var(--bg-dark);color:#fff;border-radius:40px 40px 0 0;margin-top:60px}
+.cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(242,72,34,.15) 0%,transparent 60%)}
+.cta-title{font-family:var(--font-display);font-weight:900;font-size:clamp(28px,3.6vw,46px);line-height:1.1;letter-spacing:-2px;margin-bottom:18px;position:relative}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.6);margin:0 auto 36px;max-width:520px;position:relative}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:17px 42px;border-radius:100px;font-weight:600;font-size:16px;transition:.2s;position:relative}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 12px 40px rgba(242,72,34,.25)}
+
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--font-display);font-weight:900;font-size:20px;margin-bottom:12px}.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--font-display);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);padding:6px 0;transition:color .2s}.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.4)}
+.footer-social{display:flex;gap:16px}.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s;color:#fff}.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,.1)}
+
+@media(max-width:1024px){.v-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .header{padding:16px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);justify-content:center;align-items:center;gap:22px;z-index:100}.nav.open a{font-size:22px;color:var(--text)}
+  .hero{padding:120px 20px 40px}.section{padding:50px 20px}
+  .v-grid{grid-template-columns:1fr}
+  .others{padding:40px 22px;border-radius:24px}
+  .o-grid{grid-template-columns:1fr}
+  .modal{padding:0}.modal-box{border-radius:0;min-height:100vh}
+  .modal-head{padding:60px 22px 26px}.modal-body{padding:26px 22px 40px}
+  .modal-head-top{flex-direction:column;gap:16px}
+  .rev{padding:22px 18px}.rev-head{flex-wrap:wrap}.rev-tg{margin-left:0;width:100%}
+  .footer-grid{grid-template-columns:1fr;gap:28px}.footer{padding:40px 20px}
+  .cta{padding:70px 20px;border-radius:24px 24px 0 0}
+}
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="talkshow.html">Ток-шоу</a><a href="club.html">Клуб</a><a href="contractors.html">Подрядчики</a><a href="blog.html">Блог</a><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="nav-cta" target="_blank">Вступить</a></nav>
+  <div class="burger" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="section-label">Каталог</div>
+    <h1>Проверенные<br><span>подрядчики</span></h1>
+    <p class="hero-sub">Специалисты, которых рекомендуют участники сообщества. Каждый прошёл отбор и получил минимум три рекомендации от действующих франчайзоров.</p>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search" placeholder="Поиск по имени, компании или услуге…" autocomplete="off">
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px">
+  <div class="max-w">
+    <div class="chips" id="chips"></div>
+    <div id="verifiedWrap">
+      <div class="state"><div class="spinner"></div>Загружаем подрядчиков…</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" id="othersSection" hidden>
+  <div class="max-w">
+    <div class="others">
+      <div class="section-label">Сообщество</div>
+      <div class="section-title" style="font-size:clamp(22px,2.6vw,32px)">Другие подрядчики</div>
+      <div class="section-desc" style="margin-bottom:32px">Участники сообщества, оказывающие услуги франчайзорам. Пока без статуса «Проверенный» — рекомендации в процессе сбора.</div>
+      <div class="o-grid" id="othersGrid"></div>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<section class="cta">
+  <div class="cta-title" style="position:relative">Хотите попасть<br>в этот список?</div>
+  <p class="cta-sub">Пакет «Проверенный подрядчик» — статус, выступления, публикации и прямой доступ к 1400+ франчайзорам.</p>
+  <a href="contractor.html" class="btn-primary">Узнать про пакет →</a>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="talkshow.html">Ток-шоу</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="contractors.html">Каталог подрядчиков</a><a href="contractor.html">Стать подрядчиком</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+
+<script>
+const SB_URL='https://ylqtmlrwdiqgvovvqakn.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlscXRtbHJ3ZGlxZ3ZvdnZxYWtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg3NDg3OTMsImV4cCI6MjA4NDMyNDc5M30.jnOnbWZrtNEgyOJj9r54nGkOHZyB01UlKdsGw4fq8IE';
+
+let CONTRACTORS=[], CATEGORIES=[], REVIEWS={}, activeCat='all', query='';
+
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const initials=n=>String(n||'?').trim().split(/\s+/).slice(0,2).map(w=>w[0]||'').join('').toUpperCase();
+
+async function sb(path){
+  const r=await fetch(`${SB_URL}/rest/v1/${path}`,{headers:{apikey:SB_KEY,Authorization:`Bearer ${SB_KEY}`}});
+  if(!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+  return r.json();
+}
+
+async function load(){
+  try{
+    const [cats,cons,revs]=await Promise.all([
+      sb('categories?select=*&order=sort_order.asc'),
+      sb('contractors?select=*&is_published=eq.true&order=sort_order.asc,name.asc'),
+      sb('reviews?select=*&order=sort_order.asc')
+    ]);
+    CATEGORIES=cats; CONTRACTORS=cons;
+    REVIEWS={};
+    revs.forEach(r=>{(REVIEWS[r.contractor_id] ||= []).push(r)});
+    renderChips(); render();
+  }catch(e){
+    document.getElementById('verifiedWrap').innerHTML=
+      `<div class="state">Не удалось загрузить каталог.<br><span style="font-size:13px;opacity:.7">${esc(e.message)}</span></div>`;
+    console.error(e);
+  }
+}
+
+function catById(id){return CATEGORIES.find(c=>c.id===id)}
+
+function renderChips(){
+  const verified=CONTRACTORS.filter(c=>c.is_verified);
+  const used=CATEGORIES.filter(c=>verified.some(v=>v.category_id===c.id));
+  document.getElementById('chips').innerHTML=
+    `<button class="chip active" data-cat="all">Все<span class="chip-count">${verified.length}</span></button>`+
+    used.map(c=>{
+      const n=verified.filter(v=>v.category_id===c.id).length;
+      return `<button class="chip" data-cat="${esc(c.id)}">${esc(c.icon||'')} ${esc(c.name)}<span class="chip-count">${n}</span></button>`;
+    }).join('');
+  document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); activeCat=b.dataset.cat; render();
+  });
+}
+
+function matches(c){
+  if(!query) return true;
+  const q=query.toLowerCase();
+  return [c.name,c.company,c.short_desc,c.full_desc,c.city,catById(c.category_id)?.name]
+    .some(f=>String(f||'').toLowerCase().includes(q));
+}
+
+function render(){
+  const verified=CONTRACTORS.filter(c=>c.is_verified&&matches(c)&&(activeCat==='all'||c.category_id===activeCat));
+  const others=CONTRACTORS.filter(c=>!c.is_verified&&matches(c));
+
+  document.getElementById('verifiedWrap').innerHTML = verified.length
+    ? `<div class="v-grid">${verified.map(cardHTML).join('')}</div>`
+    : `<div class="state">Ничего не найдено.<br><span style="font-size:14px;opacity:.7">Попробуйте изменить запрос или выбрать другую категорию.</span></div>`;
+
+  document.querySelectorAll('.v-card').forEach(el=>el.onclick=()=>openModal(el.dataset.slug));
+
+  const os=document.getElementById('othersSection');
+  if(others.length){
+    os.hidden=false;
+    document.getElementById('othersGrid').innerHTML=others.map(c=>{
+      const cat=catById(c.category_id);
+      const href=c.tg_account?`https://t.me/${esc(c.tg_account)}`:(c.website||'#');
+      return `<a class="o-card" href="${href}" target="_blank" rel="noopener">
+        <div class="o-photo">${c.photo_url?`<img src="${esc(c.photo_url)}" alt="" loading="lazy">`:esc(initials(c.name))}</div>
+        <div class="o-info"><div class="o-name">${esc(c.name)}</div>
+        <div class="o-cat">${esc(cat?cat.name:(c.company||'—'))}</div></div>
+      </a>`;
+    }).join('');
+  } else os.hidden=true;
+}
+
+function cardHTML(c){
+  const cat=catById(c.category_id);
+  const n=(REVIEWS[c.id]||[]).length;
+  return `<div class="v-card" data-slug="${esc(c.slug)}">
+    <div class="v-badge">✓ Проверенный</div>
+    <div class="v-photo">${c.photo_url?`<img src="${esc(c.photo_url)}" alt="${esc(c.name)}" loading="lazy">`:''}</div>
+    <div class="v-name">${esc(c.name)}</div>
+    <div class="v-company">${esc(c.company||'')}</div>
+    <div class="v-meta">
+      ${cat?`<span class="v-tag">${esc(cat.icon||'')} ${esc(cat.name)}</span>`:''}
+      ${c.city?`<span class="v-tag">📍 ${esc(c.city)}</span>`:''}
+    </div>
+    <div class="v-desc">${esc(c.short_desc||'')}</div>
+    <div class="v-footer">
+      <span class="v-reviews">⭐ ${n} ${plural(n,'отзыв','отзыва','отзывов')}</span>
+      <span class="v-more">Подробнее →</span>
+    </div>
+  </div>`;
+}
+
+function plural(n,a,b,c){const m=n%100,k=n%10;return m>=11&&m<=14?c:k===1?a:k>=2&&k<=4?b:c}
+
+function openModal(slug){
+  const c=CONTRACTORS.find(x=>x.slug===slug); if(!c) return;
+  const cat=catById(c.category_id), revs=REVIEWS[c.id]||[];
+  document.getElementById('modalContent').innerHTML=`
+    <div class="modal-head">
+      <div class="modal-head-top">
+        <div class="modal-photo">${c.photo_url?`<img src="${esc(c.photo_url)}" alt="${esc(c.name)}">`:''}</div>
+        <div>
+          <div class="v-badge">✓ Проверенный подрядчик</div>
+          <div class="modal-name">${esc(c.name)}</div>
+          <div class="modal-company">${esc(c.company||'')}</div>
+          <div class="v-meta">
+            ${cat?`<span class="v-tag">${esc(cat.icon||'')} ${esc(cat.name)}</span>`:''}
+            ${c.city?`<span class="v-tag">📍 ${esc(c.city)}</span>`:''}
+          </div>
+        </div>
+      </div>
+      <div class="modal-desc">${esc(c.full_desc||c.short_desc||'')}</div>
+      <div class="modal-links">
+        ${c.tg_account?`<a class="modal-link ml-primary" href="https://t.me/${esc(c.tg_account)}" target="_blank" rel="noopener">✈ Написать в Telegram</a>`:''}
+        ${c.tg_channel&&c.tg_channel!==c.tg_account?`<a class="modal-link ml-outline" href="https://t.me/${esc(c.tg_channel)}" target="_blank" rel="noopener">📢 Канал</a>`:''}
+        ${c.website?`<a class="modal-link ml-outline" href="${esc(c.website)}" target="_blank" rel="noopener">🌐 Сайт</a>`:''}
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-title">Отзывы участников сообщества <span style="color:var(--accent)">${revs.length}</span></div>
+      ${revs.length?revs.map(revHTML).join(''):'<div class="state" style="padding:30px">Отзывы скоро появятся</div>'}
+    </div>`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function revHTML(r){
+  return `<div class="rev">
+    <div class="rev-head">
+      <div class="rev-photo">${r.reviewer_photo?`<img src="${esc(r.reviewer_photo)}" alt="" loading="lazy">`:''}</div>
+      <div style="min-width:0">
+        <div class="rev-name">${esc(r.reviewer_name)}</div>
+        <div class="rev-role">${esc(r.reviewer_role||'')}</div>
+      </div>
+      ${r.reviewer_tg?`<a class="rev-tg" href="https://t.me/${esc(r.reviewer_tg)}" target="_blank" rel="noopener">@${esc(r.reviewer_tg)} →</a>`:''}
+    </div>
+    <div class="rev-rows">
+      ${r.duration?`<div><div class="rev-row-label">Срок сотрудничества</div><div class="rev-row-value">${esc(r.duration)}</div></div>`:''}
+      ${r.results?`<div><div class="rev-row-label">Результаты</div><div class="rev-row-value">${esc(r.results)}</div></div>`:''}
+      ${r.discipline?`<div><div class="rev-row-label">Сроки и бюджеты</div><div class="rev-row-value">${esc(r.discipline)}</div></div>`:''}
+      ${r.verdict?`<div class="rev-verdict"><div class="rev-row-label">Вердикт</div><div class="rev-row-value">${esc(r.verdict)}</div></div>`:''}
+    </div>
+  </div>`;
+}
+
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+let t;
+document.getElementById('search').addEventListener('input',e=>{
+  clearTimeout(t); t=setTimeout(()=>{query=e.target.value.trim(); render()},180);
+});
+
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>60));
+load();
+</script>
+</body>
+</html>
