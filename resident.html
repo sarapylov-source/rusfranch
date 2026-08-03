@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Проверенный подрядчик — Франчайзинг по-русски</title>
-<meta name="description" content="Станьте проверенным подрядчиком в сообществе 1400+ франчайзоров. Выступления, публикации, статус.">
+<title>Резидент сообщества — Франчайзинг по-русски</title>
+<meta name="description" content="Годовое членство в сообществе «Франчайзинг по-русски». Все мероприятия, мастермайнды, аудит франшизы и премия — 150 000 ₽ в год.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -118,107 +118,135 @@ a{color:inherit;text-decoration:none}
 @media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);justify-content:center;align-items:center;gap:24px;z-index:100}.nav.open a{font-size:24px;color:var(--text);opacity:1}.hero{padding:110px 20px 60px}.section{padding:60px 20px}.infographic-wrap{padding:24px 12px}.pricing-card{padding:32px 24px}.pricing-card [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}.req-card{padding:32px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer{padding:40px 20px}.cta{padding:80px 20px;border-radius:24px 24px 0 0}}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
+
+.benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.benefit-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:36px;position:relative;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.03);transition:border-color .2s}
+.benefit-card:hover{border-color:var(--accent)}
+.benefit-num{font-family:var(--font-display);font-weight:900;font-size:48px;color:var(--accent);opacity:.12;position:absolute;top:14px;right:20px;line-height:1}
+.benefit-tag{display:inline-block;background:var(--accent-mid);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;margin-bottom:16px;letter-spacing:.5px;text-transform:uppercase}
+.benefit-card h3{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:12px}
+.benefit-card p{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:14px}
+.benefit-detail{display:flex;align-items:start;gap:10px;font-size:14px;color:var(--text-sec);line-height:1.55;margin-bottom:8px}
+.benefit-detail span:first-child{color:var(--accent);font-weight:700;flex-shrink:0}
+.benefit-worth{margin-top:16px;padding-top:14px;border-top:1px dashed var(--border);font-size:13px;color:var(--text-muted)}
+.benefit-worth b{font-family:var(--font-display);color:var(--text);font-size:15px}
+.priceless{color:var(--accent);font-style:italic;font-weight:600}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.who-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.03)}
+.who-icon{font-size:30px;margin-bottom:12px;display:block}
+.who-card h3{font-family:var(--font-display);font-size:16px;font-weight:700;margin-bottom:8px}
+.who-card p{font-size:14px;color:var(--text-muted);line-height:1.6}
+@media(max-width:1024px){.benefit-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <header class="header" id="header">
   <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
-  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="contractors.html">Подрядчики</a><a href="partners.html">Партнёрам</a><a href="blog.html">Блог</a><a href="https://t.me/+9r_ooRQLEDg0MmM6" class="nav-cta" target="_blank">Вступить</a></nav>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="talkshow.html">Ток-шоу</a><a href="club.html">Клуб</a><a href="contractors.html">Подрядчики</a><a href="blog.html">Блог</a><a href="#contact" class="nav-cta">Стать резидентом</a></nav>
   <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-flag">Для подрядчиков</div>
-    <h1>1 400 франчайзоров ищут подрядчиков.<br>Станьте тем, кого <span>рекомендуют</span></h1>
-    <p class="hero-sub">Пакет «Проверенный подрядчик» — комплексное продвижение вашей экспертности внутри сообщества через оффлайн и онлайн каналы.</p>
+    <div class="hero-flag">Годовое членство</div>
+    <h1>Резидент <span>сообщества</span></h1>
+    <p class="hero-sub">Год внутри сообщества, где решения принимают владельцы сетей. Все мероприятия, закрытые мастермайнды, аудит вашей франшизы и участие в первой премии рынка.</p>
     <div class="hero-price">150 000 ₽/год</div>
-    <div class="hero-price-note">или 135 000 ₽ со скидкой за кросс-промо</div>
-    <a href="#contact" class="btn-primary">Обсудить участие →</a>
+    <div class="hero-price-note">12 500 ₽ в месяц · выгода 195 000 ₽</div>
+    <a href="#contact" class="btn-primary">Стать резидентом →</a>
   </div>
 </section>
 
-<!-- INFOGRAPHIC -->
 <section class="section fade-in">
   <div class="max-w">
-    <div class="section-label">Почему сообщество</div>
-    <div class="section-title">Два пути к клиентам-франчайзорам</div>
-    <div class="section-desc">Холодные продажи дороги и медленны. Внутри сообщества вы строите репутацию, а клиенты приходят сами.</div>
-    <div class="infographic-wrap">
-      <svg viewBox="0 0 680 400" xmlns="http://www.w3.org/2000/svg">
-        <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-        <line x1="340" y1="40" x2="340" y2="380" stroke="#E0D6CD" stroke-width="1" stroke-dasharray="4 4"/>
-        <text x="170" y="28" text-anchor="middle" fill="#8A7A72" font-family="Unbounded,sans-serif" font-size="13" font-weight="700">ХОЛОДНЫЙ ПУТЬ</text>
-        <text x="510" y="28" text-anchor="middle" fill="#F24822" font-family="Unbounded,sans-serif" font-size="13" font-weight="700">ПУТЬ ЧЕРЕЗ СООБЩЕСТВО</text>
-        <rect x="70" y="50" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text x="170" y="72" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Холодные звонки</text>
-        <line x1="170" y1="94" x2="170" y2="118" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="70" y="118" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text x="170" y="140" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Реклама и конференции</text>
-        <line x1="170" y1="162" x2="170" y2="186" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="70" y="186" width="200" height="44" rx="8" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.5"/>
-        <text x="170" y="208" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A" font-family="Onest,sans-serif" font-size="14" font-weight="600">Нецелевые контакты</text>
-        <line x1="170" y1="230" x2="170" y2="254" stroke="#B4B2A9" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="70" y="254" width="200" height="56" rx="8" fill="#FCEBEB" stroke="#F09595" stroke-width="0.5"/>
-        <text x="170" y="274" text-anchor="middle" dominant-baseline="central" fill="#791F1F" font-family="Onest,sans-serif" font-size="14" font-weight="600">Долго и дорого</text>
-        <text x="170" y="294" text-anchor="middle" dominant-baseline="central" fill="#A32D2D" font-family="Onest,sans-serif" font-size="12">Низкая конверсия</text>
-
-        <rect x="410" y="50" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
-        <text x="510" y="68" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Даёте ценность</text>
-        <text x="510" y="88" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">Вебинары и встречи</text>
-        <line x1="510" y1="106" x2="510" y2="130" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="410" y="130" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
-        <text x="510" y="148" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Клиенты рекомендуют</text>
-        <text x="510" y="168" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">Социальное доказательство</text>
-        <line x1="510" y1="186" x2="510" y2="210" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="410" y="210" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#5DCAA5" stroke-width="0.5"/>
-        <text x="510" y="228" text-anchor="middle" dominant-baseline="central" fill="#085041" font-family="Onest,sans-serif" font-size="14" font-weight="600">Всегда на виду</text>
-        <text x="510" y="248" text-anchor="middle" dominant-baseline="central" fill="#0F6E56" font-family="Onest,sans-serif" font-size="12">В поле зрения аудитории</text>
-        <line x1="510" y1="266" x2="510" y2="290" stroke="#5DCAA5" stroke-width="1.5" marker-end="url(#arr)" fill="none"/>
-        <rect x="410" y="290" width="200" height="56" rx="8" fill="#FAECE7" stroke="#F0997B" stroke-width="0.5"/>
-        <text x="510" y="310" text-anchor="middle" dominant-baseline="central" fill="#712B13" font-family="Onest,sans-serif" font-size="14" font-weight="600">Тёплые лиды</text>
-        <text x="510" y="330" text-anchor="middle" dominant-baseline="central" fill="#993C1D" font-family="Onest,sans-serif" font-size="12">Долгосрочные контракты</text>
-      </svg>
+    <div class="section-label">Для кого</div>
+    <div class="section-title">Кому подойдёт статус резидента</div>
+    <div class="section-desc">Пакет для франчайзоров, которые хотят системно расти и быть в курсе того, что реально работает на рынке.</div>
+    <div class="who-grid">
+      <div class="who-card"><span class="who-icon">🚀</span><h3>Действующим франчайзорам</h3><p>У вас есть сеть, и вы хотите её масштабировать без дорогих ошибок.</p></div>
+      <div class="who-card"><span class="who-icon">🧭</span><h3>Тем, кто запускает франшизу</h3><p>Разберём вашу модель до того, как вы потратите бюджет на упаковку.</p></div>
+      <div class="who-card"><span class="who-icon">🤝</span><h3>Топ-менеджерам сетей</h3><p>Прямой доступ к тем, кто уже прошёл ваш этап и готов делиться цифрами.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGE -->
 <section class="section fade-in" id="package">
   <div class="max-w">
-    <div class="section-label">Пакет «Проверенный подрядчик»</div>
-    <div class="section-title">Что входит в годовой пакет</div>
-    <div class="section-desc">Комплексное продвижение вашей экспертности внутри сообщества — оффлайн и онлайн.</div>
-    <div class="package-grid">
-      <div class="package-card"><div class="package-num">01</div><div class="package-tag">Экспертность</div><h3>Прямой контакт с аудиторией</h3><p>Личное знакомство с ключевыми игроками рынка через выступления и обучение.</p><div class="package-detail"><span>→</span><p>2 выступления (30 мин) в год на закрытых оффлайн-встречах</p></div><div class="package-detail"><span>→</span><p>3 вебинара (1 час) в год — формирование экспертного имиджа через решение болей участников</p></div></div>
-      <div class="package-card"><div class="package-num">02</div><div class="package-tag">IT-экосистема</div><h3>Интеграция в приложение</h3><p>Приоритетное размещение в справочнике сообщества с отметкой «Проверенный подрядчик».</p><div class="package-detail"><span>→</span><p>Ваш оффер и анкета в справочнике выше других</p></div><div class="package-detail"><span>→</span><p>Отметка «Проверенный подрядчик» — доверие с первого взгляда</p></div></div>
-      <div class="package-card"><div class="package-num">03</div><div class="package-tag">Охват и трафик</div><h3>Медийное присутствие</h3><p>Прямой доступ к аудитории через публикации в основной группе.</p><div class="package-detail"><span>→</span><p>3 рекламных публикации в год в Telegram-группе</p></div><div class="package-detail"><span>→</span><p>Активная ссылка + закреп на 24 часа для максимального охвата</p></div></div>
-      <div class="package-card"><div class="package-num">04</div><div class="package-tag">Статус</div><h3>Статусное присутствие</h3><p>Видимость и доверие на уровне бренда сообщества.</p><div class="package-detail"><span>→</span><p>Статус «Проверенный подрядчик» в чате сообщества</p></div><div class="package-detail"><span>→</span><p>Размещение в списке админов канала — видят все 1400+ участников</p></div></div>
-      <div class="package-card"><div class="package-num">05</div><div class="package-tag">Контент</div><h3>Подписка на «Масштаб»</h3><p>Полный доступ к закрытому чату на весь год — записи вебинаров, выступлений, чек-листы и шаблоны.</p><div class="package-detail"><span>→</span><p>20+ записей вебинаров и 22 выступления из Сколково</p></div><div class="package-detail"><span>→</span><p>Годовая подписка включена в пакет</p></div></div>
-      <div class="package-card"><div class="package-num">06</div><div class="package-tag">Нетворкинг</div><h3>+1 гостевой на мероприятия</h3><p>Приведите партнёра или клиента на наши оффлайн-эвенты — два гостевых пропуска в год.</p><div class="package-detail"><span>→</span><p>2 гостевых билета на мероприятия сообщества</p></div><div class="package-detail"><span>→</span><p>Усильте лояльность своих клиентов через ценный нетворкинг</p></div></div>
+    <div class="section-label">Пакет «Резидент сообщества»</div>
+    <div class="section-title">Что входит в годовое членство</div>
+    <div class="section-desc">Четыре блока, которые закрывают год работы над вашей франшизой.</div>
+    <div class="benefit-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <div class="benefit-tag">Мероприятия</div>
+        <h3>Все оффлайны сообщества</h3>
+        <p>Участие зрителем на всех мероприятиях в течение года — минимум четыре события.</p>
+        <div class="benefit-detail"><span>→</span><p>«Масштаб», ток-шоу и другие форматы</p></div>
+        <div class="benefit-detail"><span>→</span><p>Живой нетворкинг с владельцами крупнейших сетей</p></div>
+        <div class="benefit-worth">Отдельно: 4 × 40 000 ₽ = <b>160 000 ₽</b></div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <div class="benefit-tag">Контент</div>
+        <h3>Закрытый чат «Масштаб»</h3>
+        <p>Подписка на весь год: записи всех оффлайнов, вебинаров и материалы спикеров.</p>
+        <div class="benefit-detail"><span>→</span><p>Записи выступлений и вебинаров в полном объёме</p></div>
+        <div class="benefit-detail"><span>→</span><p>Чек-листы, шаблоны и разборы от практиков</p></div>
+        <div class="benefit-worth">Отдельно: <b>35 000 ₽</b></div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <div class="benefit-tag">Мастермайнды</div>
+        <h3>12 закрытых разборов в год</h3>
+        <p>Ежемесячные мастермайнды в узком кругу, где разбирают реальные ситуации участников.</p>
+        <div class="benefit-detail"><span>→</span><p>Один разбор в месяц, камерный формат</p></div>
+        <div class="benefit-detail"><span>→</span><p>Возможность вынести на разбор свою задачу</p></div>
+        <div class="benefit-worth">Отдельно: <span class="priceless">бесценно</span></div>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">04</div>
+        <div class="benefit-tag">Аудит</div>
+        <h3>Аудит вашей франшизы</h3>
+        <p>Разбор франшизы проверенными подрядчиками сообщества — маркетинг, продажи, юридическая часть, процессы УК.</p>
+        <div class="benefit-detail"><span>→</span><p>Специалисты с подтверждёнными рекомендациями</p></div>
+        <div class="benefit-detail"><span>→</span><p>Конкретные точки роста, а не общие слова</p></div>
+        <div class="benefit-worth">Отдельно: <b>100 000 ₽</b></div>
+      </div>
+
+      <div class="benefit-card" style="grid-column:1 / -1">
+        <div class="benefit-num">05</div>
+        <div class="benefit-tag">Премия</div>
+        <h3>Первая ежегодная премия «Франчайзинг по-русски»</h3>
+        <p>Участие в номинации «Франшиза года» — премия, которую рынок увидит впервые. Резиденты попадают в неё автоматически.</p>
+        <div class="benefit-detail"><span>→</span><p>Участие в номинации без отдельного взноса</p></div>
+        <div class="benefit-detail"><span>→</span><p>Медийный охват вокруг события</p></div>
+        <div class="benefit-worth">Отдельно: <b>50 000 ₽</b></div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="section fade-in" id="pricing">
   <div class="max-w">
     <div class="section-label">Стоимость</div>
-    <div class="section-title">Пакет выгоднее, чем по отдельности</div>
-    <div class="section-desc">Сравните стоимость отдельных активностей в сообществе с пакетом «Проверенный подрядчик».</div>
+    <div class="section-title">Членство выгоднее, чем по отдельности</div>
+    <div class="section-desc">Сравните стоимость каждой опции по отдельности с годовым пакетом резидента.</div>
     <div class="pricing-card">
       <table class="compare-table">
-        <thead><tr><th>Активность</th><th>Стоимость отдельно</th></tr></thead>
+        <thead><tr><th>Что входит</th><th>Стоимость отдельно</th></tr></thead>
         <tbody>
-          <tr><td>Участие в эвенте в качестве спикера</td><td>30 000 ₽</td></tr>
-          <tr><td>Участие в съёмках ток-шоу</td><td>45 000 ₽</td></tr>
-          <tr><td>3 рекламных поста в сообществе</td><td>21 000 ₽</td></tr>
-          <tr><td>3 экспертных онлайн-вебинара</td><td>21 000 ₽</td></tr>
+          <tr><td>Участие на всех мероприятиях<br><span style="font-size:13px;color:var(--text-muted)">4 события × 40 000 ₽</span></td><td>160 000 ₽</td></tr>
           <tr><td>Годовая подписка на чат «Масштаб»</td><td>35 000 ₽</td></tr>
-          <tr><td>+1 гостевой на 2 мероприятия<br><span style="font-size:13px;color:var(--text-muted)">возьмите партнёра или клиента на наши эвенты</span></td><td>30 000 ₽</td></tr>
-          <tr><td>Освобождение от 10% реферальной комиссии<br><span style="font-size:13px;color:var(--text-muted)">условно при продажах на 1,5 млн ₽/год</span></td><td>150 000 ₽</td></tr>
-          <tr><td>Статус «Проверенный подрядчик» — больше заявок</td><td class="compare-priceless">бесценно</td></tr>
-          <tr class="compare-total"><td>Итого по отдельности</td><td>332 000 ₽+</td></tr>
+          <tr><td>Аудит франшизы от проверенных подрядчиков</td><td>100 000 ₽</td></tr>
+          <tr><td>Участие в премии «Франшиза года»</td><td>50 000 ₽</td></tr>
+          <tr><td>12 закрытых мастермайндов с разборами</td><td class="compare-priceless">бесценно</td></tr>
+          <tr class="compare-total"><td>Итого по отдельности</td><td>345 000 ₽+</td></tr>
         </tbody>
       </table>
 
@@ -226,49 +254,46 @@ a{color:inherit;text-decoration:none}
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
         <div>
-          <div style="font-size:14px;color:var(--text-muted);margin-bottom:8px;font-weight:600">Пакет «Проверенный подрядчик» со скидкой 10%:</div>
-          <div style="font-family:var(--font-display);font-weight:900;font-size:36px;color:var(--accent);text-decoration:line-through;opacity:.4">150 000 ₽</div>
-          <div class="price-monthly">135 000 ₽</div>
-          <div style="font-size:16px;color:#2E8B57;font-weight:700;margin-bottom:8px">Ваша выгода: 197 000 ₽+ в год</div>
-          <div style="font-size:13px;color:var(--text-muted)">Скидка 10% за 3 кросс-промо публикации на ваших площадках</div>
+          <div style="font-size:14px;color:var(--text-muted);margin-bottom:8px;font-weight:600">Пакет «Резидент сообщества»:</div>
+          <div class="price-monthly">150 000 ₽</div>
+          <div style="font-size:16px;color:#2E8B57;font-weight:700;margin-bottom:8px">Ваша выгода: 195 000 ₽+ в год</div>
+          <div style="font-size:13px;color:var(--text-muted)">Оплата один раз за год, доступ ко всему сразу</div>
         </div>
         <div style="text-align:center">
-          <div class="price-monthly">11 250 ₽</div>
-          <div class="price-monthly-note" style="margin:0 auto">в месяц — за продвижение в самом активном и большом профессиональном сообществе франчайзоров в России</div>
-          <a href="#contact" class="btn-primary" style="margin-top:24px">Стать подрядчиком →</a>
+          <div class="price-monthly">12 500 ₽</div>
+          <div class="price-monthly-note" style="margin:0 auto">в месяц — за год внутри самого активного профессионального сообщества франчайзоров в России</div>
+          <a href="#contact" class="btn-primary" style="margin-top:24px">Стать резидентом →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REQUIREMENTS -->
 <section class="section fade-in">
   <div class="max-w">
     <div class="req-card">
-      <h2>Требования к подрядчикам</h2>
-      <p>Мы дорожим доверием участников сообщества. Поэтому статус «Проверенный подрядчик» — это не просто покупка рекламы. Это подтверждение качества вашей работы.</p>
+      <h2>Почему это работает</h2>
+      <p>В сообществе каждый одновременно и продукт, и потребитель. Резиденты приходят не слушать лекции, а обмениваться реальными цифрами: что сработало, что нет и сколько это стоило.</p>
       <div class="req-highlight">
-        <div class="req-highlight-num">3</div>
-        <p>Минимум три рекомендателя из числа участников сообщества, готовых подтвердить качество ваших услуг. Это ваш входной билет.</p>
+        <div class="req-highlight-num">1400+</div>
+        <p>владельцев сетей, топ-менеджеров и подрядчиков рынка. 75% участников — основатели и топ-менеджеры франчайзинговых сетей.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="section fade-in" id="contact">
   <div class="max-w">
     <div class="section-label">Заявка</div>
-    <div class="section-title">Стать проверенным подрядчиком</div>
+    <div class="section-title">Стать резидентом сообщества</div>
     <div class="contact-grid">
       <div class="form-card">
         <div id="formFields">
           <div class="form-group"><label for="cName">Имя <span class="req">*</span></label><input type="text" id="cName" placeholder="Ваше имя" autocomplete="name"></div>
-          <div class="form-group"><label for="cCompany">Компания / Услуга</label><input type="text" id="cCompany" placeholder="Название компании или услуги"></div>
+          <div class="form-group"><label for="cCompany">Франшиза / компания</label><input type="text" id="cCompany" placeholder="Название вашей сети"></div>
           <div class="form-group"><label for="cPhone">Телефон <span class="req">*</span></label><input type="tel" id="cPhone" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
           <div class="form-group"><label for="cTg">Telegram</label><input type="text" id="cTg" placeholder="@username" autocomplete="off"></div>
-          <div class="form-group"><label for="cNote">Комментарий</label><textarea id="cNote" placeholder="Расскажите кратко о вашей услуге и опыте работы с франчайзорами"></textarea></div>
+          <div class="form-group"><label for="cNote">Комментарий</label><textarea id="cNote" placeholder="Коротко о вашей сети и задачах на год"></textarea></div>
           <div class="form-error" id="formError"></div>
           <button class="btn-primary" style="width:100%;justify-content:center" id="formBtn" onclick="submitForm()">Отправить заявку →</button>
         </div>
@@ -282,19 +307,19 @@ a{color:inherit;text-decoration:none}
           <a href="https://t.me/rufranch" target="_blank" class="contact-link">Telegram: @rufranch →</a>
           <a href="tel:+79281325031" class="contact-link">+7 (928) 132-50-31 →</a>
         </div>
-        <p style="font-size:14px;color:var(--text-muted);line-height:1.6">Заполните форму — мы свяжемся с вами, обсудим подходит ли ваш профиль и запустим процесс получения рекомендаций от участников сообщества.</p>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.6">Заполните форму — свяжемся, ответим на вопросы и оформим членство. Доступ ко всем материалам открывается сразу после оплаты.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="cta">
-  <div class="cta-title" style="position:relative">Станьте подрядчиком,<br>которого рекомендуют</div>
-  <p class="cta-sub" style="position:relative">1 400+ франчайзоров с реальными задачами и бюджетами. Ваши будущие клиенты уже здесь.</p>
+  <div class="cta-title" style="position:relative">Год, который окупится<br>одним решением</div>
+  <p class="cta-sub" style="position:relative">345 000 ₽ по отдельности или 150 000 ₽ за год членства. Решайте сами.</p>
   <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="#contact" class="btn-primary">Оставить заявку →</a></div>
 </section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="contractors.html">Подрядчики</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="resident.html">Резидент сообщества</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="contractors.html">Каталог подрядчиков</a><a href="contractor.html">Стать подрядчиком</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
 
 <script>
 const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
@@ -303,7 +328,6 @@ const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)
 
 const TG_BOT_TOKEN='8447258387:AAFEutiJ1gxDWyPtKZS6HC9cQN3U2L-X6q4';
 const TG_CHAT_ID='-5048576857';
-
 function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 
 async function submitForm(){
@@ -318,13 +342,13 @@ async function submitForm(){
   const btn=document.getElementById('formBtn');
   btn.disabled=true;btn.textContent='Отправка…';
   const text=
-    `🔔 <b>Новая заявка — ПРОВЕРЕННЫЙ ПОДРЯДЧИК</b>\n\n`+
-    `👤 <b>Имя:</b> ${escapeHtml(name)}\n`+
-    `🏢 <b>Компания:</b> ${escapeHtml(company||'—')}\n`+
-    `📞 <b>Телефон:</b> ${escapeHtml(phone)}\n`+
-    `✈️ <b>Telegram:</b> ${escapeHtml(tg||'—')}\n`+
-    `📝 <b>Комментарий:</b> ${escapeHtml(note||'—')}\n`+
-    `🕐 <b>Время:</b> ${new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'})}`;
+    `\u2b50 <b>Новая заявка — РЕЗИДЕНТ СООБЩЕСТВА</b>\n\n`+
+    `\ud83d\udc64 <b>Имя:</b> ${escapeHtml(name)}\n`+
+    `\ud83c\udfe2 <b>Франшиза:</b> ${escapeHtml(company||'—')}\n`+
+    `\ud83d\udcde <b>Телефон:</b> ${escapeHtml(phone)}\n`+
+    `\u2708\ufe0f <b>Telegram:</b> ${escapeHtml(tg||'—')}\n`+
+    `\ud83d\udcdd <b>Комментарий:</b> ${escapeHtml(note||'—')}\n`+
+    `\ud83d\udd50 <b>Время:</b> ${new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'})}`;
   try{
     await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`,{
       method:'POST',headers:{'Content-Type':'application/json'},
