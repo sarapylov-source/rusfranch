@@ -1382,11 +1382,34 @@
     .speaker-cta-text span { font-size: 13px; color: rgba(255,255,255,0.45); }
 
     .pricing-card--resident {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-      border-color: rgba(100,120,255,0.25);
+      background: var(--dark);
+      border-color: #F5921E;
+      color: var(--light);
     }
-    .pricing-card--resident .pricing-amount { color: #a5b4fc; }
-    .pricing-card--resident .pricing-features li svg { color: #a5b4fc; }
+    .pricing-card--resident .pricing-tier { color: #F5921E; }
+    .pricing-card--resident .pricing-name { color: var(--light); }
+    .pricing-card--resident .pricing-amount { color: #F5921E; }
+    .pricing-card--resident .pricing-currency { color: #F5921E; }
+    .pricing-card--resident .pricing-period { color: rgba(255,255,255,0.4); }
+    .pricing-card--resident .pricing-divider { background: rgba(255,255,255,0.10); }
+    .pricing-card--resident .pricing-features li { color: rgba(255,255,255,0.85); }
+    .pricing-card--resident .pricing-features li svg { color: #F5921E; }
+    .pricing-card--resident:hover { box-shadow: 0 16px 48px rgba(245,146,30,0.18); }
+    .pricing-badge--resident {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #F5921E;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 4px 16px;
+      white-space: nowrap;
+    }
 
     .program-panel-avatars {
       display: flex;
@@ -2234,14 +2257,15 @@
 
         <!-- Tier 3 — Резидент -->
         <div class="pricing-card pricing-card--resident reveal" role="listitem" aria-label="Резидент Сообщества — 135 000 рублей в год">
-          <div class="pricing-tier">Годовая подписка</div>
+          <div class="pricing-badge--resident">Годовая подписка</div>
+          <div class="pricing-tier">Резидент</div>
           <div class="pricing-name">Резидент<br/>Сообщества</div>
 
           <div class="pricing-price">
-            <div class="pricing-amount" style="font-size: clamp(28px, 4vw, 38px);">
+            <div class="pricing-amount">
               <span class="pricing-currency">₽</span>135 000
             </div>
-            <div class="pricing-period">в год</div>
+            <div class="pricing-period">в год · всё включено</div>
           </div>
 
           <div class="pricing-divider" aria-hidden="true"></div>
@@ -2265,11 +2289,9 @@
             </li>
           </ul>
 
-          <div style="margin-bottom: 16px;">
-            <a href="https://frgu.ru/resident" target="_blank" rel="noopener" style="font-size:13px; color: rgba(255,255,255,0.5); text-decoration: underline; text-underline-offset: 3px;">Подробнее о пакете →</a>
-          </div>
+          <a href="https://frgu.ru/resident" target="_blank" rel="noopener" style="font-size:13px; color: rgba(255,255,255,0.4); text-decoration: underline; text-underline-offset: 3px; display:block; margin-bottom:16px;">Подробнее о пакете →</a>
 
-          <a href="https://frgu.ru/resident" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%; justify-content:center; text-align:center;">Стать резидентом</a>
+          <a href="https://frgu.ru/resident" target="_blank" rel="noopener" class="btn" style="width:100%; justify-content:center; text-align:center; background:#F5921E; color:#fff; border:none;">Стать резидентом</a>
         </div>
       </div>
 
