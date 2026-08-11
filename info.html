@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Участники сообщества — Франчайзинг по-русски</title>
+<meta name="description" content="Справочник участников сообщества «Франчайзинг по-русски»: франчайзеры, подрядчики и эксперты рынка.">
+<link rel="icon" href="favicon.ico">
+<style>
+:root{
+  --bg:#f7e9e1; --card:#fff; --ink:#1a1614; --muted:#7b6a60;
+  --accent:#f4471f; --accent-soft:#fde7e0; --line:#ecd9ce;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1240px; margin:0 auto; padding:0 24px}
+a{color:inherit}
+
+/* шапка */
+.top{padding:48px 0 8px}
+.eyebrow{
+  color:var(--accent); font-weight:800; font-size:13px;
+  letter-spacing:.14em; text-transform:uppercase; margin:0 0 10px;
+}
+.head-row{display:flex; align-items:flex-start; justify-content:space-between; gap:24px; flex-wrap:wrap}
+h1{margin:0; font-size:clamp(30px,5vw,52px); line-height:1.05; font-weight:900; letter-spacing:-.02em}
+h1 .hl{color:var(--accent)}
+.counter{margin:10px 0 0; color:var(--muted); font-size:15px}
+.cta{
+  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
+  border:0; border-radius:999px; padding:15px 28px; font-size:16px; font-weight:700;
+  text-decoration:none; white-space:nowrap; transition:transform .15s, box-shadow .15s;
+}
+.cta:hover{transform:translateY(-1px); box-shadow:0 8px 22px rgba(244,71,31,.28)}
+
+/* поиск и фильтры */
+.search{
+  display:flex; align-items:center; gap:12px; background:#fff; border-radius:14px;
+  padding:16px 20px; margin:28px 0 18px; box-shadow:0 1px 3px rgba(0,0,0,.05);
+}
+.search input{border:0; outline:0; font-size:16px; width:100%; background:transparent; color:var(--ink)}
+.search input::placeholder{color:#b4a49a}
+.chips{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px}
+.chip{
+  border:1px solid var(--line); background:#fff; color:var(--ink);
+  border-radius:999px; padding:9px 18px; font-size:14px; font-weight:600;
+  cursor:pointer; transition:.15s; white-space:nowrap;
+}
+.chip:hover{border-color:var(--accent)}
+.chip.on{background:var(--accent); color:#fff; border-color:var(--accent)}
+
+/* сетка */
+.section-head{display:flex; align-items:center; gap:14px; margin:0 0 20px}
+.section-head h2{margin:0; font-size:26px; font-weight:800}
+.count-pill{background:#f0ddd3; color:var(--muted); border-radius:999px; padding:4px 14px; font-size:14px; font-weight:700}
+/* Четыре обычные карточки в ряд; проверенный занимает место двух.
+   Отсюда и раскладки: 2 проверенных, или 4 обычных, или 1+2. */
+.grid{
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;
+  padding-bottom:64px; align-items:stretch;
+}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}}
+
+/* карточка */
+.card{
+  background:var(--card); border-radius:var(--radius); padding:20px;
+  min-width:0;
+  display:flex; flex-direction:column; gap:12px;
+  box-shadow:0 1px 3px rgba(0,0,0,.05); transition:transform .15s, box-shadow .15s;
+}
+.card:hover{transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.09)}
+a.card{text-decoration:none; color:inherit}
+.card.verified{grid-column:span 2; border:2px solid var(--accent); padding:26px}
+@media(max-width:1100px){.card.verified{padding:20px}}
+
+.card-top{display:flex; align-items:flex-start; gap:14px}
+/* В узкой карточке имя не помещается рядом с фото — ставим его снизу,
+   тогда доступна вся ширина и слова не рвутся по буквам. */
+.card:not(.verified) .card-top{align-items:center; margin-bottom:2px}
+.card:not(.verified) .who{display:none}
+.card:not(.verified) .below{display:block}
+.below{display:none; margin:6px 0 2px}
+.below .name{font-size:16px; margin:0 0 3px}
+.below .city{margin:0}
+@media(max-width:520px){
+  .card-top{gap:10px}
+  .badges{align-items:flex-start}
+  .card-foot{flex-direction:column; align-items:flex-start}
+}
+.ava{width:52px; height:52px; border-radius:50%; object-fit:cover; flex:0 0 52px; background:#eadfd8}
+.card.verified .ava{width:66px; height:66px; flex-basis:66px; border:2px solid var(--accent)}
+.who{flex:1; min-width:0}
+.name{font-weight:800; font-size:16px; margin:0 0 2px; line-height:1.25}
+.card.verified .name{font-size:20px}
+.role{font-size:14px; color:var(--muted); margin:0}
+.city{font-size:13px; color:var(--muted); margin:4px 0 0}
+.badges{display:flex; flex-direction:column; align-items:flex-end; gap:6px}
+.tag-type{background:#f4e5dc; color:var(--muted); border-radius:8px; padding:4px 10px; font-size:12px; font-weight:700; white-space:nowrap}
+.tag-ver{background:var(--accent); color:#fff; border-radius:8px; padding:4px 10px; font-size:12px; font-weight:800; white-space:nowrap}
+.tag-rev{background:var(--accent-soft); color:var(--accent); border-radius:999px; padding:4px 12px; font-size:12px; font-weight:700; white-space:nowrap}
+
+.desc{margin:0; font-size:14px; color:#4a3f39; overflow-wrap:anywhere; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden}
+.card.verified .desc{-webkit-line-clamp:2}
+.tags{display:flex; gap:7px; flex-wrap:wrap; margin-top:auto; min-width:0}
+.tag{background:#f7ece6; color:#6b5a51; border-radius:7px; padding:4px 9px; font-size:11.5px}
+.card.verified .tag{background:var(--accent-soft); color:var(--accent); font-weight:600}
+.card-foot{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:4px; min-width:0}
+.more{background:var(--accent); color:#fff; border-radius:999px; padding:11px 22px; font-size:14px; font-weight:700; text-decoration:none; white-space:nowrap}
+
+.state{padding:70px 0; text-align:center; color:var(--muted)}
+.card[role="button"]{cursor:pointer}
+.more{cursor:pointer}
+
+/* окно проверенного подрядчика */
+.overlay{
+  position:fixed; inset:0; background:rgba(26,22,20,.55); backdrop-filter:blur(3px);
+  display:none; align-items:flex-start; justify-content:center; padding:40px 20px;
+  overflow-y:auto; z-index:50;
+}
+.overlay.open{display:flex}
+.modal{
+  background:#fff; border-radius:24px; max-width:720px; width:100%;
+  padding:34px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,.25);
+}
+.modal .close-x{
+  position:absolute; top:18px; right:18px; width:38px; height:38px; border:0;
+  border-radius:50%; background:#f4e5dc; color:var(--muted);
+  cursor:pointer; display:flex; align-items:center; justify-content:center; padding:0;
+  transition:.15s;
+}
+.modal .close-x svg{width:15px; height:15px; display:block}
+.modal .close-x:hover{background:var(--accent); color:#fff}
+.m-top{display:flex; gap:20px; align-items:flex-start; margin-bottom:22px}
+.m-ava{width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); flex:0 0 96px}
+.m-name{margin:0 0 4px; font-size:26px; font-weight:900}
+.m-role{margin:0 0 8px; color:var(--muted); font-size:15px}
+.m-meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.m-desc{white-space:pre-line; font-size:15px; color:#4a3f39; margin:0 0 22px}
+.m-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
+.m-section{border-top:1px solid var(--line); padding-top:22px; margin-top:22px}
+.m-section h3{margin:0 0 14px; font-size:18px; font-weight:800}
+.review{background:#faf3ef; border-radius:14px; padding:16px 18px; margin-bottom:12px}
+.review .r-who{font-weight:700; font-size:14px; margin:0 0 2px}
+.review .r-role{color:var(--muted); font-size:13px; margin:0 0 8px}
+.review .r-text{margin:0; font-size:14px; color:#4a3f39; white-space:pre-line}
+.no-reviews{color:var(--muted); font-size:14px; margin:0}
+.m-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+.m-btn{
+  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
+  border-radius:999px; padding:13px 26px; font-weight:700; text-decoration:none; font-size:15px;
+}
+.m-btn.ghost{background:#f4e5dc; color:var(--ink)}
+footer{border-top:1px solid var(--line); padding:28px 0 60px; color:var(--muted); font-size:14px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Справочник</p>
+    <div class="head-row">
+      <div>
+        <h1>Участники <span class="hl">сообщества</span></h1>
+        <p class="counter" id="counter">Загружаем участников…</p>
+      </div>
+      <a class="cta" href="contractor.html">Стать проверенным →</a>
+    </div>
+
+    <label class="search">
+      <span>🔍</span>
+      <input id="q" type="search" placeholder="Поиск по имени, специализации, городу…" autocomplete="off">
+    </label>
+
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <div class="section-head">
+    <h2>Участники сообщества</h2>
+    <span class="count-pill" id="shown">—</span>
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="state" class="state">Загружаем участников…</div>
+
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <footer>
+    Сообщество «Франчайзинг по-русски» ·
+    <a href="index.html">на главную</a>
+  </footer>
+</div>
+
+<script>
+const SB_URL = 'https://ylqtmlrwdiqgvovvqakn.supabase.co';
+const SB_KEY = 'sb_publishable_SYuxoupI6mQBCq4Sx5qEDg_hNoRXN4x';
+
+// Проверенные подрядчики: статус подтверждён отзывами клиентов.
+// Список ведётся здесь — в таблице cards такого поля нет.
+// Проверенные подрядчики: статус подтверждён отзывами их клиентов.
+// В таблице cards такого признака нет, поэтому список ведём здесь.
+// Отзывы — сюда же: {who, role, text}.
+const VERIFIED = {
+  'yaroslav_osintsev': {
+    reviews: [],
+  },
+  'oputin': {
+    reviews: [],
+  },
+  'albinachukovaa': {
+    reviews: [],
+    // Альбина не заводила карточку в мини-аппе — данные держим здесь,
+    // подхватятся автоматически, как только появится в cards
+    manual: {
+      first_name: 'Альбина', last_name: 'Чукова',
+      company: 'Совет Лигал', role: 'CEO',
+      city: 'Москва', type: 'Подрядчик',
+      avatar: 'chukova.jpg',
+      tags: ['Юристы', 'Юридическое сопровождение', 'Договоры'],
+      description: 'Юридическое сопровождение франчайзеров: договоры коммерческой концессии, '
+                 + 'товарные знаки, споры с франчайзи, защита интеллектуальной собственности.',
+    },
+  },
+};
+
+// Фильтры собираем не по каждому из 106 тегов, а по смысловым группам
+const GROUPS = [
+  ['Все',        null],
+  ['Маркетинг',  ['маркетинг','реклама','пиар',' pr','таргет','smm','трафик','брендинг','дизайн']],
+  ['Продажи',    ['продаж','отдел продаж','скрипт','переговор','лидоген','колл-центр']],
+  ['Масштаб',    ['масштабирован','партнерск сет','партнёрск сет','региональн','сеть']],
+  ['Упаковка',   ['упаковк франш','упаковка франш','запуск с нуля','сопровожден франш','роялти']],
+  ['IT',         ['разработк','автоматизац','crm','сайт','мобильн','телефони','чат-бот','нейросет']],
+  ['HR',         ['hr','найм','персонал','рекрут','мотивац','адаптац','обучение персонал']],
+  ['Юристы',     ['юрист','юридич','договор','налог','товарный знак','патент']],
+  ['Финансы',    ['финанс','финмодел','инвестиц','бухгалт','юнит-эконом','оценка бизнес']],
+];
+
+let all = [], active = 'Все', query = '';
+
+const norm = s => (s || '').toLowerCase();
+const matchGroup = (card, keys) => {
+  if (!keys) return true;
+  const hay = norm((card.tags || []).join(' ') + ' ' + card.description);
+  return keys.some(k => hay.includes(k));
+};
+
+function cardHTML(c) {
+  const ver = VERIFIED[norm(c.tg_username)];
+  const name = shortName(c);
+  const tags = (c.tags || []).slice(0, ver ? 4 : 3);
+  const tg = c.tg_username ? `https://t.me/${c.tg_username}` : '#';
+  const nRev = ver ? (ver.reviews || []).length : 0;
+
+  // Проверенный — открываем карточку с отзывами. Остальные — сразу в телеграм.
+  const shell = ver
+    ? `<article class="card verified" role="button" tabindex="0" data-open="${esc(c.tg_username)}">`
+    : `<a class="card" href="${tg}" target="_blank" rel="noopener">`;
+  const shellEnd = ver ? '</article>' : '</a>';
+
+  return shell + `
+    <div class="card-top">
+      <img class="ava" src="${c.avatar || ''}" alt="" loading="lazy"
+           onerror="this.style.visibility='hidden'">
+      <div class="who">
+        <p class="name">${esc(name)}</p>
+        ${ver && c.company ? `<p class="role">${esc(c.role ? c.role + ', ' : '')}${esc(c.company)}</p>` : ''}
+        <p class="city">📍 ${esc(c.city || '')}</p>
+      </div>
+      <div class="badges">
+        ${ver ? '<span class="tag-ver">✓ ПРОВЕРЕН</span>' : `<span class="tag-type">${esc(c.type || '')}</span>`}
+        ${nRev ? `<span class="tag-rev">★ ${nRev} отзыв${plural(nRev)}</span>` : ''}
+      </div>
+    </div>
+    <div class="below">
+      <p class="name">${esc(name)}</p>
+      <p class="city">📍 ${esc(c.city || '')}</p>
+    </div>
+    <p class="desc">${esc(c.description || '')}</p>
+    <div class="card-foot">
+      <div class="tags">${tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+      ${ver ? '<span class="more">Подробнее →</span>' : ''}
+    </div>` + shellEnd;
+}
+
+const esc = s => (s || '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+
+// Многие вписали в имя и фамилию род занятий целиком
+// («Ольга Золотухина Маркетинг ТОП Выстраиваю отдел…») — берём два первых слова.
+const shortName = c => [c.first_name, c.last_name].filter(Boolean).join(' ')
+  .split(/\s+/).slice(0, 2).join(' ') || c.tg_username || '';
+const firstLine = s => (s || '').split('\n')[0].slice(0, 90);
+const plural = n => n === 1 ? '' : (n < 5 ? 'а' : 'ов');
+
+function render() {
+  const group = GROUPS.find(g => g[0] === active);
+  const q = norm(query);
+  const list = all.filter(c => {
+    if (!matchGroup(c, group[1])) return false;
+    if (!q) return true;
+    return norm([c.first_name, c.last_name, c.city, c.type,
+                 (c.tags || []).join(' '), c.description].join(' ')).includes(q);
+  });
+
+  // проверенные всегда наверху
+  list.sort((a, b) => (VERIFIED[norm(b.tg_username)] ? 1 : 0) - (VERIFIED[norm(a.tg_username)] ? 1 : 0));
+
+  document.getElementById('grid').innerHTML = list.map(cardHTML).join('');
+  document.getElementById('shown').textContent = list.length;
+  document.getElementById('state').style.display = list.length ? 'none' : 'block';
+  if (!list.length) document.getElementById('state').textContent = 'Никого не нашлось — попробуй другой запрос';
+}
+
+function buildChips() {
+  document.getElementById('chips').innerHTML = GROUPS
+    .map(([name]) => `<button class="chip${name === active ? ' on' : ''}" data-g="${name}">${name}</button>`)
+    .join('');
+  document.querySelectorAll('.chip').forEach(b => b.onclick = () => {
+    active = b.dataset.g;
+    buildChips();
+    render();
+  });
+}
+
+async function load() {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/cards?select=*&order=id.asc`, {
+      headers: {apikey: SB_KEY, Authorization: `Bearer ${SB_KEY}`}
+    });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    all = await r.json();
+
+    // тех проверенных, кого нет в мини-аппе, добавляем из VERIFIED вручную
+    for (const [uname, v] of Object.entries(VERIFIED)) {
+      if (!v.manual) continue;
+      if (all.some(c => norm(c.tg_username) === uname)) continue;
+      all.push({tg_username: uname, ...v.manual});
+    }
+
+    const verified = all.filter(c => VERIFIED[norm(c.tg_username)]).length;
+    document.getElementById('counter').textContent =
+      `${all.length} участник${plural2(all.length)} · ${verified} проверенн${verified === 1 ? 'ый' : 'ых'}`;
+
+    buildChips();
+    render();
+  } catch (e) {
+    document.getElementById('state').innerHTML =
+      'Справочник временно недоступен. Мы уже чиним — загляни чуть позже.';
+    console.error('Не загрузились карточки:', e);
+  }
+}
+
+const plural2 = n => {
+  const d = n % 10, dd = n % 100;
+  if (d === 1 && dd !== 11) return '';
+  if (d >= 2 && d <= 4 && (dd < 10 || dd >= 20)) return 'а';
+  return 'ов';
+};
+
+// ── окно проверенного подрядчика ──────────────────────────────────
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+
+function openCard(uname) {
+  const c = all.find(x => norm(x.tg_username) === norm(uname));
+  const v = VERIFIED[norm(uname)];
+  if (!c || !v) return;
+
+  const name = shortName(c);
+  const reviews = v.reviews || [];
+  const roleLine = [c.role, c.company].filter(Boolean).join(', ');
+
+  modal.innerHTML = `
+    <button class="close-x close" aria-label="Закрыть">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M1 1l12 12M13 1L1 13"/>
+      </svg>
+    </button>
+    <div class="m-top">
+      <img class="m-ava" src="${c.avatar || ''}" alt="" onerror="this.style.visibility='hidden'">
+      <div>
+        <h2 class="m-name">${esc(name)}</h2>
+        ${roleLine ? `<p class="m-role">${esc(roleLine)}</p>` : ''}
+        <div class="m-meta">
+          <span class="tag-ver">✓ ПРОВЕРЕН</span>
+          ${reviews.length ? `<span class="tag-rev">★ ${reviews.length} отзыв${plural(reviews.length)}</span>` : ''}
+          <span class="city">📍 ${esc(c.city || '')}</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="m-desc">${esc(c.description || '')}</p>
+    <div class="m-tags">${(c.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+
+    <div class="m-section">
+      <h3>Отзывы клиентов</h3>
+      ${reviews.length
+        ? reviews.map(r => `
+          <div class="review">
+            <p class="r-who">${esc(r.who)}</p>
+            ${r.role ? `<p class="r-role">${esc(r.role)}</p>` : ''}
+            <p class="r-text">${esc(r.text)}</p>
+          </div>`).join('')
+        : '<p class="no-reviews">Собираем отзывы — скоро появятся.</p>'}
+    </div>
+
+    <div class="m-actions">
+      <a class="m-btn" href="https://t.me/${esc(c.tg_username)}" target="_blank" rel="noopener">Написать в Telegram</a>
+      <button class="m-btn ghost close">Закрыть</button>
+    </div>`;
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.querySelectorAll('.close').forEach(b => b.onclick = closeCard);
+}
+
+function closeCard() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+overlay.onclick = e => { if (e.target === overlay) closeCard(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCard(); });
+document.getElementById('grid').addEventListener('click', e => {
+  const card = e.target.closest('[data-open]');
+  if (card) openCard(card.dataset.open);
+});
+document.getElementById('grid').addEventListener('keydown', e => {
+  const card = e.target.closest('[data-open]');
+  if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openCard(card.dataset.open); }
+});
+
+document.getElementById('q').addEventListener('input', e => { query = e.target.value; render(); });
+
+load();
+</script>
+</body>
+</html>
