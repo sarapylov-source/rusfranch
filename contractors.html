@@ -92,6 +92,46 @@ h1 .hl{color:var(--accent)}
 .more{background:var(--accent); color:#fff; border-radius:999px; padding:11px 22px; font-size:14px; font-weight:700; text-decoration:none; white-space:nowrap}
 
 .state{padding:70px 0; text-align:center; color:var(--muted)}
+.card[role="button"]{cursor:pointer}
+.more{cursor:pointer}
+
+/* окно проверенного подрядчика */
+.overlay{
+  position:fixed; inset:0; background:rgba(26,22,20,.55); backdrop-filter:blur(3px);
+  display:none; align-items:flex-start; justify-content:center; padding:40px 20px;
+  overflow-y:auto; z-index:50;
+}
+.overlay.open{display:flex}
+.modal{
+  background:#fff; border-radius:24px; max-width:720px; width:100%;
+  padding:34px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,.25);
+}
+.modal .close{
+  position:absolute; top:18px; right:18px; width:36px; height:36px; border:0;
+  border-radius:50%; background:#f4e5dc; color:var(--muted); font-size:20px;
+  cursor:pointer; line-height:1;
+}
+.modal .close:hover{background:var(--accent); color:#fff}
+.m-top{display:flex; gap:20px; align-items:flex-start; margin-bottom:22px}
+.m-ava{width:96px; height:96px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); flex:0 0 96px}
+.m-name{margin:0 0 4px; font-size:26px; font-weight:900}
+.m-role{margin:0 0 8px; color:var(--muted); font-size:15px}
+.m-meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+.m-desc{white-space:pre-line; font-size:15px; color:#4a3f39; margin:0 0 22px}
+.m-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
+.m-section{border-top:1px solid var(--line); padding-top:22px; margin-top:22px}
+.m-section h3{margin:0 0 14px; font-size:18px; font-weight:800}
+.review{background:#faf3ef; border-radius:14px; padding:16px 18px; margin-bottom:12px}
+.review .r-who{font-weight:700; font-size:14px; margin:0 0 2px}
+.review .r-role{color:var(--muted); font-size:13px; margin:0 0 8px}
+.review .r-text{margin:0; font-size:14px; color:#4a3f39; white-space:pre-line}
+.no-reviews{color:var(--muted); font-size:14px; margin:0}
+.m-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
+.m-btn{
+  display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
+  border-radius:999px; padding:13px 26px; font-weight:700; text-decoration:none; font-size:15px;
+}
+.m-btn.ghost{background:#f4e5dc; color:var(--ink)}
 footer{border-top:1px solid var(--line); padding:28px 0 60px; color:var(--muted); font-size:14px}
 </style>
 </head>
@@ -124,6 +164,10 @@ footer{border-top:1px solid var(--line); padding:28px 0 60px; color:var(--muted)
   <div id="grid" class="grid"></div>
   <div id="state" class="state">Загружаем участников…</div>
 
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
   <footer>
     Сообщество «Франчайзинг по-русски» ·
     <a href="index.html">на главную</a>
@@ -136,12 +180,30 @@ const SB_KEY = 'sb_publishable_SYuxoupI6mQBCq4Sx5qEDg_hNoRXN4x';
 
 // Проверенные подрядчики: статус подтверждён отзывами клиентов.
 // Список ведётся здесь — в таблице cards такого поля нет.
+// Проверенные подрядчики: статус подтверждён отзывами их клиентов.
+// В таблице cards такого признака нет, поэтому список ведём здесь.
+// Отзывы — сюда же: {who, role, text}.
 const VERIFIED = {
-  'yaroslav_osintsev': {reviews: 2},
-  'oputin':            {reviews: 0},
-  // Альбины Чуковой (Совет Лигал) в таблице cards пока нет —
-  // добавится сюда, когда заведёт карточку в мини-аппе
-  'albinachukovaa':    {reviews: 0},
+  'yaroslav_osintsev': {
+    reviews: [],
+  },
+  'oputin': {
+    reviews: [],
+  },
+  'albinachukovaa': {
+    reviews: [],
+    // Альбина не заводила карточку в мини-аппе — данные держим здесь,
+    // подхватятся автоматически, как только появится в cards
+    manual: {
+      first_name: 'Альбина', last_name: 'Чукова',
+      company: 'Совет Лигал', role: 'CEO',
+      city: 'Москва', type: 'Подрядчик',
+      avatar: 'chukova.jpg',
+      tags: ['Юристы', 'Юридическое сопровождение', 'Договоры'],
+      description: 'Юридическое сопровождение франчайзеров: договоры коммерческой концессии, '
+                 + 'товарные знаки, споры с франчайзи, защита интеллектуальной собственности.',
+    },
+  },
 };
 
 // Фильтры собираем не по каждому из 106 тегов, а по смысловым группам
@@ -171,28 +233,33 @@ function cardHTML(c) {
   const name = [c.first_name, c.last_name].filter(Boolean).join(' ') || c.tg_username;
   const tags = (c.tags || []).slice(0, ver ? 4 : 3);
   const tg = c.tg_username ? `https://t.me/${c.tg_username}` : '#';
+  const nRev = ver ? (ver.reviews || []).length : 0;
 
-  return `
-  <article class="card${ver ? ' verified' : ''}">
+  // Проверенный — открываем карточку с отзывами. Остальные — сразу в телеграм.
+  const shell = ver
+    ? `<article class="card verified" role="button" tabindex="0" data-open="${esc(c.tg_username)}">`
+    : `<a class="card" href="${tg}" target="_blank" rel="noopener">`;
+  const shellEnd = ver ? '</article>' : '</a>';
+
+  return shell + `
     <div class="card-top">
       <img class="ava" src="${c.avatar || ''}" alt="" loading="lazy"
            onerror="this.style.visibility='hidden'">
       <div class="who">
         <p class="name">${esc(name)}</p>
-        ${ver ? `<p class="role">${esc(firstLine(c.description))}</p>` : ''}
+        ${ver && c.company ? `<p class="role">${esc(c.role ? c.role + ', ' : '')}${esc(c.company)}</p>` : ''}
         <p class="city">📍 ${esc(c.city || '')}</p>
       </div>
       <div class="badges">
         ${ver ? '<span class="tag-ver">✓ ПРОВЕРЕН</span>' : `<span class="tag-type">${esc(c.type || '')}</span>`}
-        ${ver && ver.reviews ? `<span class="tag-rev">★ ${ver.reviews} отзыв${plural(ver.reviews)}</span>` : ''}
+        ${nRev ? `<span class="tag-rev">★ ${nRev} отзыв${plural(nRev)}</span>` : ''}
       </div>
     </div>
     <p class="desc">${esc(c.description || '')}</p>
     <div class="card-foot">
       <div class="tags">${tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
-      ${ver ? `<a class="more" href="${tg}" target="_blank" rel="noopener">Подробнее →</a>` : ''}
-    </div>
-  </article>`;
+      ${ver ? '<span class="more">Подробнее →</span>' : ''}
+    </div>` + shellEnd;
 }
 
 const esc = s => (s || '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
@@ -237,6 +304,13 @@ async function load() {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     all = await r.json();
 
+    // тех проверенных, кого нет в мини-аппе, добавляем из VERIFIED вручную
+    for (const [uname, v] of Object.entries(VERIFIED)) {
+      if (!v.manual) continue;
+      if (all.some(c => norm(c.tg_username) === uname)) continue;
+      all.push({tg_username: uname, ...v.manual});
+    }
+
     const verified = all.filter(c => VERIFIED[norm(c.tg_username)]).length;
     document.getElementById('counter').textContent =
       `${all.length} участник${plural2(all.length)} · ${verified} проверенн${verified === 1 ? 'ый' : 'ых'}`;
@@ -256,6 +330,77 @@ const plural2 = n => {
   if (d >= 2 && d <= 4 && (dd < 10 || dd >= 20)) return 'а';
   return 'ов';
 };
+
+// ── окно проверенного подрядчика ──────────────────────────────────
+const overlay = document.getElementById('overlay');
+const modal = document.getElementById('modal');
+
+function openCard(uname) {
+  const c = all.find(x => norm(x.tg_username) === norm(uname));
+  const v = VERIFIED[norm(uname)];
+  if (!c || !v) return;
+
+  const name = [c.first_name, c.last_name].filter(Boolean).join(' ');
+  const reviews = v.reviews || [];
+  const roleLine = [c.role, c.company].filter(Boolean).join(', ');
+
+  modal.innerHTML = `
+    <button class="close" aria-label="Закрыть">×</button>
+    <div class="m-top">
+      <img class="m-ava" src="${c.avatar || ''}" alt="" onerror="this.style.visibility='hidden'">
+      <div>
+        <h2 class="m-name">${esc(name)}</h2>
+        ${roleLine ? `<p class="m-role">${esc(roleLine)}</p>` : ''}
+        <div class="m-meta">
+          <span class="tag-ver">✓ ПРОВЕРЕН</span>
+          ${reviews.length ? `<span class="tag-rev">★ ${reviews.length} отзыв${plural(reviews.length)}</span>` : ''}
+          <span class="city">📍 ${esc(c.city || '')}</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="m-desc">${esc(c.description || '')}</p>
+    <div class="m-tags">${(c.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+
+    <div class="m-section">
+      <h3>Отзывы клиентов</h3>
+      ${reviews.length
+        ? reviews.map(r => `
+          <div class="review">
+            <p class="r-who">${esc(r.who)}</p>
+            ${r.role ? `<p class="r-role">${esc(r.role)}</p>` : ''}
+            <p class="r-text">${esc(r.text)}</p>
+          </div>`).join('')
+        : '<p class="no-reviews">Собираем отзывы — скоро появятся.</p>'}
+    </div>
+
+    <div class="m-actions">
+      <a class="m-btn" href="https://t.me/${esc(c.tg_username)}" target="_blank" rel="noopener">Написать в Telegram</a>
+      <button class="m-btn ghost close">Закрыть</button>
+    </div>`;
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.querySelectorAll('.close').forEach(b => b.onclick = closeCard);
+}
+
+function closeCard() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+overlay.onclick = e => { if (e.target === overlay) closeCard(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCard(); });
+document.getElementById('grid').addEventListener('click', e => {
+  const card = e.target.closest('[data-open]');
+  if (card) openCard(card.dataset.open);
+});
+document.getElementById('grid').addEventListener('keydown', e => {
+  const card = e.target.closest('[data-open]');
+  if (card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openCard(card.dataset.open); }
+});
+
+document.getElementById('q').addEventListener('input', e => { query = e.target.value; render(); });
 
 load();
 </script>
