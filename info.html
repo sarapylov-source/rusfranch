@@ -144,10 +144,38 @@ a.card{text-decoration:none; color:inherit}
 .m-tags{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px}
 .m-section{border-top:1px solid var(--line); padding-top:22px; margin-top:22px}
 .m-section h3{margin:0 0 14px; font-size:18px; font-weight:800}
-.review{background:#faf3ef; border-radius:14px; padding:16px 18px; margin-bottom:12px}
-.review .r-who{font-weight:700; font-size:14px; margin:0 0 2px}
-.review .r-role{color:var(--muted); font-size:13px; margin:0 0 8px}
-.review .r-text{margin:0; font-size:14px; color:#4a3f39; white-space:pre-line}
+.review{background:#faf3ef; border-radius:16px; padding:18px 20px; margin-bottom:14px}
+.r-head{display:flex; gap:13px; align-items:center; margin-bottom:12px}
+.r-photo{width:48px; height:48px; border-radius:50%; object-fit:cover; flex:0 0 48px; background:#eadfd8}
+.r-who{font-weight:800; font-size:15px; margin:0 0 2px}
+.r-role{color:var(--muted); font-size:12.5px; margin:0; line-height:1.35}
+.r-short{margin:0; font-size:14px; color:#4a3f39}
+.r-more{
+  background:none; border:0; padding:0; margin-top:10px; cursor:pointer;
+  color:var(--accent); font-size:14px; font-weight:700; font-family:inherit;
+}
+.r-more:hover{text-decoration:underline}
+.r-full{display:none; margin-top:14px; border-top:1px solid #ecdcd2; padding-top:14px}
+.review.open .r-full{display:block}
+.review.open .r-short{display:none}
+.r-q{margin:0 0 12px}
+.r-q:last-child{margin-bottom:0}
+.r-q dt{font-size:12px; font-weight:700; color:var(--accent); text-transform:uppercase;
+        letter-spacing:.05em; margin-bottom:3px}
+.r-q dd{margin:0; font-size:14px; color:#4a3f39}
+.notes{margin-top:20px; padding-top:20px; border-top:1px dashed var(--line)}
+.notes h4{margin:0 0 12px; font-size:14px; font-weight:700; color:var(--muted);
+          text-transform:uppercase; letter-spacing:.06em}
+.note{display:flex; gap:12px; align-items:flex-start; margin-bottom:14px}
+.note img{width:40px; height:40px; border-radius:50%; object-fit:cover; flex:0 0 40px; background:#eadfd8}
+.note-body{min-width:0}
+.note-who{font-weight:700; font-size:14px; margin:0}
+.note-who a{color:var(--accent); text-decoration:none}
+.note-who a:hover{text-decoration:underline}
+.note-role{color:var(--muted); font-size:12.5px; margin:0 0 4px}
+.note-text{margin:0; font-size:13.5px; color:#4a3f39}
+.r-src{display:inline-block; margin-top:12px; color:var(--muted); font-size:13px}
+.r-tg{display:inline-block; margin-top:12px; color:var(--accent); font-size:13px; font-weight:600; text-decoration:none}
 .no-reviews{color:var(--muted); font-size:14px; margin:0}
 .m-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px}
 .m-btn{
@@ -208,10 +236,113 @@ const SB_KEY = 'sb_publishable_SYuxoupI6mQBCq4Sx5qEDg_hNoRXN4x';
 // Отзывы — сюда же: {who, role, text}.
 const VERIFIED = {
   'yaroslav_osintsev': {
-    reviews: [],
+    reviews: [
+      {
+        who: 'Денис Блохин',
+        role: 'Директор по франчайзингу, Junior Projects (Юниор, Русский балет, ЮниорКод)',
+        photo: 'contractors/rev-blokhin.jpg',
+        tg: 'Denis_BL',
+        duration: 'Сотрудничаем по разным проектам с 2022 года',
+        results: 'Показатели качества лидов и конверсии не хуже, чем у собственного отдела b2b, '
+               + 'но при этом стоимость услуг во много раз дешевле, чем ФОТ собственного отдела.',
+        discipline: 'Да, дисциплина в полном порядке.',
+        verdict: 'Инициативность команды, быстрый запуск и корректировка рекламных кампаний, '
+               + 'честность, прозрачная отчётность. Смело рекомендую агентство Ярослава. '
+               + 'Цена точно ниже, чем выдаваемое качество работ.',
+      },
+      {
+        who: 'Александр Мельников',
+        role: 'OnePrice, EpicPizza и др.',
+        photo: 'contractors/rev-melnikov.jpg',
+        tg: 'aleksandr_melnikov_MG',
+        duration: 'С 2019 года',
+        results: 'Стабильный приток лидов, баланс цена/конверсия.',
+        discipline: 'Да',
+        verdict: 'На мой взгляд адекватная и профессиональная команда, работа на результат.',
+      },
+    ],
   },
   'oputin': {
-    reviews: [],
+    // короткие благодарности — показываем компактно, разворачивать нечего
+    notes: [
+      {
+        who: 'Jina',
+        role: 'Homecentre',
+        photo: 'contractors/rev-jina.jpg',
+        tg: 'Jinasiberian',
+        text: 'Хочу дать обратную связь по нашему большому проекту — фото ИИ для Homecentre. '
+            + 'Я знаю, какая это трудозатратная задача, и доношу это до руководства. '
+            + 'Фото, над которыми Ника работала, просто потрясающие! Уверена, что такие фото '
+            + 'действительно делают реальные продажи. Мы видим и ценим ваш труд.',
+      },
+      {
+        who: 'Сергей Лапухин',
+        photo: 'contractors/rev-lapukhin.jpg',
+        tg: 'lapukhin',
+        text: 'В августе мы продали на первый миллион за месяц! Это большое достижение для нас, '
+            + 'и безусловно — работа всей команды, дизайнеров в том числе. Желаю команде дизайнеров '
+            + 'оставаться вместе с нами ещё долго. Работать с вами одно удовольствие!',
+      },
+      {
+        who: 'Сергей Артёмов',
+        photo: 'contractors/rev-artemov.jpg',
+        tg: 'srgartemov',
+        text: 'Большое спасибо за вашу работу по съезду — презентации, мерч, дизайны, '
+            + 'всё было отлично. Благодарны вам и команде дизайнеров. Кстати, на энтузиазме '
+            + 'решили делать следующий съезд уже через год) Отдельное спасибо Сергею '
+            + 'за презентации для кейсов — получилось отлично и всё в одном стиле.',
+      },
+    ],
+    reviews: [
+      {
+        who: 'Ренат Сагадеев',
+        role: 'Директор по развитию международных направлений, Аскона',
+        photo: 'contractors/rev-sagadeev.jpg',
+        tg: 'rsagadeev',
+        duration: 'По проекту международного развития Асконы работаем с ребятами уже более 2-х лет. '
+                + 'Ранее я работал в течение 7 лет с ребятами в Додо Пицца, поэтому привлекая ребят '
+                + 'к проекту в Асконе сразу понимал, какой будет результат.',
+        results: 'Команда Vagabond помогла адаптировать бренд-бук компании под международное развитие '
+               + 'и взяла все задачи по дизайну коммуникации и контента с клиентами в ОАЭ. '
+               + 'Что удалось достичь:\n'
+               + '— выпуск контента сократился с 2-х недель до 1 дня;\n'
+               + '— коммуникация с клиентами стала более чистой и понятной;\n'
+               + '— полностью перешли от студийной съёмки к макетам через нейронные сети — '
+               + 'экономия составила более 800 тыс. за квартал.\n'
+               + 'Работа агентства получила большой позитивный отклик у коллег в Асконе на рынке '
+               + 'России и СНГ. Как итог, их также привлекли к некоторым задачам на российском рынке — '
+               + 'насколько знаю, результатом остались очень довольны.',
+        discipline: 'Vagabond всегда чётко следит за соблюдением обязательств в рамках утверждённого '
+                  + 'бюджета. При этом ребята всегда действуют гибко в плане приоритизации задач и бюджетов.',
+        verdict: 'Считаю, что агентство Vagabond — одно из лучших в плане подходов и конечного результата. '
+               + 'Их большое преимущество в том, что они глубоко погружаются в бизнес заказчика с точки '
+               + 'зрения понимания бренда и коммуникаций. Планирую и дальше с ними работать и рекомендовать другим.',
+      },
+      {
+        who: 'Дмитрий Соловьёв',
+        role: 'CEO, Dodo Brands',
+        photo: 'contractors/rev-solovyev.jpg',
+        source: 'РБК Компании',
+        verdict: 'Кажется, всё было организовано отлично, отдельно отмечу взаимодействие '
+               + 'с Vagabond — очень комфортно, продуктивно и качественно. Респект ребятам, '
+               + 'и я бы с ними работал дальше.',
+      },
+      {
+        who: 'Толя Малахов',
+        role: 'Лидер команды коммуникационного дизайна, Додо Пицца',
+        photo: 'contractors/rev-malakhov.jpg',
+        tg: 'aaatolyaaa',
+        duration: 'Работаем второй год. Точечно по задачам маркетинга и бренда — от тиражирования '
+                + 'макетов до создания коммуникаций с нуля (небольшие промо и тестовые запуски '
+                + 'продуктов), и регулярно каждый месяц работаем по моушену.',
+        results: 'Снизили ежемесячный кост по моушену на 20% и ускорили доставку результатов '
+               + 'в среднем на 2 дня.',
+        discipline: 'По срокам и бюджетам очень комфортно: ребята гибкие, понимают бизнес-контекст '
+                  + 'и находят вин-вин решения. Не было кейсов, где нас что-то не устроило.',
+        verdict: 'Рекомендую за вин-вин решения по срокам и бюджету, качество и точный подбор '
+               + 'исполнителей, вовлечённость и инициативу.',
+      },
+    ],
   },
   'albinachukovaa': {
     reviews: [],
@@ -256,7 +387,7 @@ function cardHTML(c) {
   const name = shortName(c);
   const tags = (c.tags || []).slice(0, ver ? 4 : 3);
   const tg = c.tg_username ? `https://t.me/${c.tg_username}` : '#';
-  const nRev = ver ? (ver.reviews || []).length : 0;
+  const nRev = ver ? (ver.reviews || []).length + (ver.notes || []).length : 0;
 
   // Проверенный — открываем карточку с отзывами. Остальные — сразу в телеграм.
   const shell = ver
@@ -297,6 +428,16 @@ const shortName = c => [c.first_name, c.last_name].filter(Boolean).join(' ')
   .split(/\s+/).slice(0, 2).join(' ') || c.tg_username || '';
 const firstLine = s => (s || '').split('\n')[0].slice(0, 90);
 const plural = n => n === 1 ? '' : (n < 5 ? 'а' : 'ов');
+
+// В карточке показываем два первых предложения вердикта — самую суть.
+const shortReview = r => {
+  const src = r.verdict || r.results || '';
+  const parts = src.match(/[^.!?]+[.!?]+/g) || [src];
+  return parts.slice(0, 2).join(' ').trim();
+};
+
+const qa = (label, val) => val
+  ? `<dl class="r-q"><dt>${label}</dt><dd>${esc(val)}</dd></dl>` : '';
 
 function render() {
   const group = GROUPS.find(g => g[0] === active);
@@ -374,6 +515,7 @@ function openCard(uname) {
 
   const name = shortName(c);
   const reviews = v.reviews || [];
+  const notes = v.notes || [];
   const roleLine = [c.role, c.company].filter(Boolean).join(', ');
 
   modal.innerHTML = `
@@ -401,13 +543,46 @@ function openCard(uname) {
     <div class="m-section">
       <h3>Отзывы клиентов</h3>
       ${reviews.length
-        ? reviews.map(r => `
-          <div class="review">
-            <p class="r-who">${esc(r.who)}</p>
-            ${r.role ? `<p class="r-role">${esc(r.role)}</p>` : ''}
-            <p class="r-text">${esc(r.text)}</p>
+        ? reviews.map((r, i) => `
+          <div class="review" data-rev="${i}">
+            <div class="r-head">
+              <img class="r-photo" src="${esc(r.photo || '')}" alt="" loading="lazy"
+                   onerror="this.style.visibility='hidden'">
+              <div>
+                <p class="r-who">${esc(r.who)}</p>
+                ${r.role ? `<p class="r-role">${esc(r.role)}</p>` : ''}
+              </div>
+            </div>
+            <p class="r-short">${esc(shortReview(r))}</p>
+            <div class="r-full">
+              ${qa('Как давно сотрудничаете', r.duration)}
+              ${qa('Результаты', r.results)}
+              ${qa('Сроки и бюджеты', r.discipline)}
+              ${qa('Вердикт', r.verdict)}
+              ${r.tg
+                ? `<a class="r-tg" href="https://t.me/${esc(r.tg)}" target="_blank" rel="noopener">${esc(r.who)} в Telegram →</a>`
+                : (r.source ? `<span class="r-src">Источник: ${esc(r.source)}</span>` : '')}
+            </div>
+            <button class="r-more">Читать далее →</button>
           </div>`).join('')
         : '<p class="no-reviews">Собираем отзывы — скоро появятся.</p>'}
+
+      ${(v.notes || []).length ? `
+        <div class="notes">
+          <h4>Коротко от клиентов</h4>
+          ${v.notes.map(n => `
+            <div class="note">
+              <img src="${esc(n.photo || '')}" alt="" loading="lazy"
+                   onerror="this.style.visibility='hidden'">
+              <div class="note-body">
+                <p class="note-who">${n.tg
+                  ? `<a href="https://t.me/${esc(n.tg)}" target="_blank" rel="noopener">${esc(n.who)}</a>`
+                  : esc(n.who)}</p>
+                ${n.role ? `<p class="note-role">${esc(n.role)}</p>` : ''}
+                <p class="note-text">${esc(n.text)}</p>
+              </div>
+            </div>`).join('')}
+        </div>` : ''}
     </div>
 
     <div class="m-actions">
@@ -418,6 +593,11 @@ function openCard(uname) {
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
   modal.querySelectorAll('.close').forEach(b => b.onclick = closeCard);
+  modal.querySelectorAll('.r-more').forEach(b => b.onclick = () => {
+    const box = b.closest('.review');
+    const open = box.classList.toggle('open');
+    b.textContent = open ? 'Свернуть ↑' : 'Читать далее →';
+  });
 }
 
 function closeCard() {
