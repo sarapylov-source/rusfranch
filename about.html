@@ -122,15 +122,21 @@ h1 .hl{color:var(--accent)}
 /* облако лиц */
 .cloud{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:70px}
 .cloud-loading{color:var(--muted); padding:40px 0}
+/* Обрезку по кругу вешаем на картинку, а не на ссылку:
+   overflow:hidden на родителе резал бы всплывающую подпись. */
 .cloud a{
-  display:block; width:66px; height:66px; border-radius:50%; overflow:hidden;
-  background:#e8d9d0; transition:transform .18s ease, box-shadow .18s ease;
-  position:relative; text-decoration:none;
+  display:block; width:66px; height:66px; position:relative; text-decoration:none;
+  transition:transform .18s ease;
 }
-.cloud a:hover{transform:scale(1.35); z-index:5; box-shadow:0 10px 26px rgba(0,0,0,.22)}
-.cloud img{width:100%; height:100%; object-fit:cover; display:block}
+.cloud a:hover{transform:scale(1.35); z-index:20}
+.cloud img{
+  width:100%; height:100%; object-fit:cover; display:block; border-radius:50%;
+  background:#e8d9d0; transition:box-shadow .18s ease;
+}
+.cloud a:hover img{box-shadow:0 10px 26px rgba(0,0,0,.22)}
 .cloud .tip{
-  position:absolute; left:50%; top:calc(100% + 10px); transform:translateX(-50%) scale(.94);
+  position:absolute; left:50%; top:calc(100% + 8px); transform:translateX(-50%) scale(.72);
+  transform-origin:top center;
   background:var(--dark); color:#fff; padding:8px 12px; border-radius:10px;
   white-space:nowrap; opacity:0; pointer-events:none; z-index:10;
   transition:opacity .16s ease, transform .16s ease;
@@ -142,7 +148,7 @@ h1 .hl{color:var(--accent)}
   content:''; position:absolute; left:50%; top:-5px; transform:translateX(-50%);
   border:5px solid transparent; border-top:0; border-bottom-color:var(--dark);
 }
-.cloud a:hover .tip{opacity:1; transform:translateX(-50%) scale(1)}
+.cloud a:hover .tip{opacity:1; transform:translateX(-50%) scale(.76)}
 @media(max-width:600px){.cloud a{width:52px; height:52px}}
 
 /* статистика чата */
