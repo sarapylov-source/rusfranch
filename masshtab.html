@@ -1422,6 +1422,16 @@
       align-items: center;
       gap: 6px;
     }
+    .program-panel-initials {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700;
+      color: rgba(255,255,255,0.6);
+      flex-shrink: 0;
+    }
     .program-panel-member img {
       width: 32px;
       height: 32px;
@@ -1774,7 +1784,25 @@
               <div class="program-text">
                 <div class="program-keynote-badge">Дискуссия</div>
                 <h4>Открытая дискуссия с залом</h4>
-                <p>Состав участников уточняется. Живой разговор о франчайзинге — вопросы, кейсы, мнения</p>
+                <p>Живой разговор о франчайзинге — вопросы, кейсы, мнения</p>
+                <div class="program-panel-avatars">
+                  <div class="program-panel-member">
+                    <img src="speaker-dolgov.jpg" alt="Александр Долгов" />
+                    <span>Долгов</span>
+                  </div>
+                  <div class="program-panel-member">
+                    <div class="program-panel-initials">ИН</div>
+                    <span>Набиуллин</span>
+                  </div>
+                  <div class="program-panel-member">
+                    <div class="program-panel-initials">ДБ</div>
+                    <span>Беседин</span>
+                  </div>
+                  <div class="program-panel-member">
+                    <div class="program-panel-initials">АЗ</div>
+                    <span>Зарипов</span>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- 18:00 Закрытие -->
@@ -2292,7 +2320,7 @@
 
           <a href="https://frgu.ru/resident" target="_blank" rel="noopener" style="font-size:13px; color: rgba(255,255,255,0.4); text-decoration: underline; text-underline-offset: 3px; display:block; margin-bottom:16px;">Подробнее о пакете →</a>
 
-          <a href="https://web.tribute.tg/s/Dks" target="_blank" rel="noopener" class="btn" style="width:100%; justify-content:center; text-align:center; background:#F5921E; color:#fff; border:none;">Стать резидентом</a>
+          <button onclick="openModal('resident')" class="btn" style="width:100%; justify-content:center; text-align:center; background:#F5921E; color:#fff; border:none;">Стать резидентом</button>
         </div>
       </div>
 
@@ -2580,13 +2608,19 @@
         title:    '1 день — Зритель',
         subtitle: '20 000 ₽ · 27 сентября 2026, «Сколково» Москва',
         price:    '20 000 ₽',
-        payLink:  'https://t.me/tribute/app?startapp=sApE', // заменить на ссылку МАСШТАБ
+        payLink:  'https://t.me/tribute/app?startapp=sApE',
       },
       speaker: {
         title:    '2 дня — Участник',
         subtitle: '40 000 ₽ · 27–28 сентября 2026, «Сколково» Москва',
         price:    '40 000 ₽',
-        payLink:  'https://t.me/tribute/app?startapp=sEFq', // заменить на ссылку МАСШТАБ
+        payLink:  'https://t.me/tribute/app?startapp=sEFq',
+      },
+      resident: {
+        title:    'Резидент Сообщества',
+        subtitle: '150 000 ₽ · Годовая подписка · «Франчайзинг по-русски»',
+        price:    '150 000 ₽',
+        payLink:  'https://web.tribute.tg/s/Dks',
       }
     };
 
