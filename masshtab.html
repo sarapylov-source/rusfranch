@@ -647,6 +647,73 @@
     /* ─── VENUE SECTION ────────────────────────────────── */
     .venue { background: var(--bg-alt); }
 
+    .venue-slider {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #111;
+      flex-shrink: 0;
+    }
+
+    .venue-slides {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 400ms cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .venue-slides img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .venue-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      border: none;
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: #fff;
+      transition: background 200ms;
+      z-index: 2;
+    }
+    .venue-arrow:hover { background: rgba(0,0,0,0.7); }
+    .venue-arrow--prev { left: 12px; }
+    .venue-arrow--next { right: 12px; }
+    .venue-arrow svg { width: 20px; height: 20px; }
+
+    .venue-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 2;
+    }
+
+    .venue-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      cursor: pointer;
+      transition: background 200ms, transform 200ms;
+      padding: 0;
+    }
+    .venue-dot.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
+
     .venue-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -2144,9 +2211,31 @@
   <section class="venue" id="venue" aria-labelledby="venueTitle">
     <div class="container">
       <div class="venue-inner">
-        <div class="venue-map reveal" role="img" aria-label="Лофт Идеалиста — место проведения форума">
-          <img src="event-1.jpg" alt="Лофт Идеалиста на Курской" loading="lazy" />
-          <div class="venue-skolkovo-label">Лофт «Идеалиста», Москва</div>
+
+        <!-- Слайдер -->
+        <div class="venue-slider reveal">
+          <div class="venue-slides" id="venueSlides">
+            <img src="venue-idealista-1.jpg" alt="Лофт Идеалиста — интерьер" loading="lazy" />
+            <img src="venue-idealista-2.jpg" alt="Лофт Идеалиста — пространство" loading="lazy" />
+            <img src="venue-idealista-3.jpg" alt="Лофт Идеалиста — второй уровень" loading="lazy" />
+            <img src="venue-idealista-4.jpg" alt="Лофт Идеалиста — веранда" loading="lazy" />
+            <img src="venue-idealista-5.jpg" alt="Лофт Идеалиста — зона нетворкинга" loading="lazy" />
+            <img src="venue-idealista-6.jpg" alt="Лофт Идеалиста — панорамные окна" loading="lazy" />
+          </div>
+          <button class="venue-arrow venue-arrow--prev" onclick="venueSlide(-1)" aria-label="Предыдущее фото">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="venue-arrow venue-arrow--next" onclick="venueSlide(1)" aria-label="Следующее фото">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <div class="venue-dots" id="venueDots">
+            <button class="venue-dot active" onclick="venueGoTo(0)"></button>
+            <button class="venue-dot" onclick="venueGoTo(1)"></button>
+            <button class="venue-dot" onclick="venueGoTo(2)"></button>
+            <button class="venue-dot" onclick="venueGoTo(3)"></button>
+            <button class="venue-dot" onclick="venueGoTo(4)"></button>
+            <button class="venue-dot" onclick="venueGoTo(5)"></button>
+          </div>
         </div>
 
         <div class="venue-info reveal">
@@ -2793,6 +2882,30 @@
       setButtons('idle');
       closeModal();
     }
+
+    // ─── Venue Slider ──────────────────────────────────────
+    let venueIndex = 0;
+    const venueTotalSlides = 6;
+
+    function venueUpdateSlider() {
+      document.getElementById('venueSlides').style.transform = `translateX(-${venueIndex * 100}%)`;
+      document.querySelectorAll('.venue-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === venueIndex);
+      });
+    }
+
+    function venueSlide(dir) {
+      venueIndex = (venueIndex + dir + venueTotalSlides) % venueTotalSlides;
+      venueUpdateSlider();
+    }
+
+    function venueGoTo(idx) {
+      venueIndex = idx;
+      venueUpdateSlider();
+    }
+
+    // Auto-advance every 4s
+    setInterval(() => venueSlide(1), 4000);
 
     // ─── Scroll reveal ─────────────────────────────────────
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
