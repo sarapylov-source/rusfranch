@@ -2215,14 +2215,16 @@
         <!-- Слайдер -->
         <div class="venue-slider reveal">
           <div class="venue-slides" id="venueSlides">
-            <img src="venue-idealista-1.jpg" alt="Лофт Идеалиста — фото 1" loading="lazy" />
-            <img src="venue-idealista-2.jpg" alt="Лофт Идеалиста — фото 2" loading="lazy" />
-            <img src="venue-idealista-3.jpg" alt="Лофт Идеалиста — фото 3" loading="lazy" />
-            <img src="venue-idealista-4.jpg" alt="Лофт Идеалиста — фото 4" loading="lazy" />
-            <img src="venue-idealista-5.jpg" alt="Лофт Идеалиста — фото 5" loading="lazy" />
-            <img src="venue-idealista-6.jpg" alt="Лофт Идеалиста — фото 6" loading="lazy" />
-            <img src="venue-idealista-7.jpg" alt="Лофт Идеалиста — фото 7" loading="lazy" />
-            <img src="venue-idealista-8.jpg" alt="Лофт Идеалиста — фото 8" loading="lazy" />
+            <img src="venue-idealista-1.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-2.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-3.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-4.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-5.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-6.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-7.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-8.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-9.jpg" alt="Лофт Идеалиста" loading="lazy" />
+            <img src="venue-idealista-10.jpg" alt="Лофт Идеалиста" loading="lazy" />
           </div>
           <button class="venue-arrow venue-arrow--prev" onclick="venueSlide(-1)" aria-label="Предыдущее фото">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
@@ -2239,6 +2241,8 @@
             <button class="venue-dot" onclick="venueGoTo(5)"></button>
             <button class="venue-dot" onclick="venueGoTo(6)"></button>
             <button class="venue-dot" onclick="venueGoTo(7)"></button>
+            <button class="venue-dot" onclick="venueGoTo(8)"></button>
+            <button class="venue-dot" onclick="venueGoTo(9)"></button>
           </div>
         </div>
 
@@ -2889,7 +2893,7 @@
 
     // ─── Venue Slider ──────────────────────────────────────
     let venueIndex = 0;
-    const venueTotalSlides = 8;
+    const venueTotalSlides = 10;
 
     function venueUpdateSlider() {
       document.getElementById('venueSlides').style.transform = `translateX(-${venueIndex * 100}%)`;
