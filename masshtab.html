@@ -2749,8 +2749,14 @@
     });
 
     // ─── Payment Modal ─────────────────────────────────────
-    const TG_BOT_TOKEN = '8447258387:AAFEutiJ1gxDWyPtKZS6HC9cQN3U2L-X6q4';
-    const TG_CHAT_ID   = '-5048576857';
+    /* Заявка уходит от имени самого посетителя в чат @rufranch.
+       Раньше страница дёргала Telegram API напрямую, и токен бота лежал
+       в открытом виде в исходнике — его мог прочитать кто угодно. */
+    function openTelegramWith(lines){
+      const text = lines.filter(Boolean).join('\n');
+      window.open('https://t.me/rufranch?text=' + encodeURIComponent(text),
+                  '_blank', 'noopener');
+    }
 
     const PACKAGES = {
       viewer: {
@@ -2842,12 +2848,16 @@
         `💰 <b>Цена:</b> ${escapeHtml(data.price)}\n` +
         `💳 <b>Способ:</b> ${escapeHtml(method)}\n` +
         `🕐 <b>Время:</b> ${escapeHtml(data.date)}`;
-
-      await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ chat_id: TG_CHAT_ID, text, parse_mode: 'HTML' })
-      });
+      openTelegramWith([
+        'Заявка — МАСШТАБ',
+        'Имя: ' + data.name,
+        'Телефон: ' + data.phone,
+        'Telegram: ' + (data.telegram || '—'),
+        'Email: ' + (data.email || '—'),
+        'Пакет: ' + data.package,
+        'Цена: ' + data.price,
+        'Способ оплаты: ' + method
+      ]);
     }
 
     function setButtons(state) {
