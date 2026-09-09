@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ток-шоу «Франчайзинг по-русски» — 2 сезон · 20 сентября 2026</title>
-<meta name="description" content="Второй сезон ток-шоу. 20 сентября 2026, Москва, Чайхона №1 в ТРЦ Европейский. Дискуссии, съёмки, нетворкинг.">
+<title>Ток-шоу «Франчайзинг по-русски» — 2 сезон · 20 марта 2027</title>
+<meta name="description" content="Второй сезон ток-шоу. 20 марта 2027, Москва, Чайхона №1 в ТРЦ Европейский. Дискуссии, съёмки, нетворкинг.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -223,6 +223,32 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
   .cta{padding:80px 20px;border-radius:24px 24px 0 0}
 }
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* БРОНИРОВАНИЕ */
+.ts-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(13,13,13,.65);backdrop-filter:blur(4px)}
+.ts-modal.open{display:flex}
+.ts-modal-box{background:var(--bg-card);border-radius:22px;padding:36px;width:100%;max-width:460px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.ts-modal-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:26px;line-height:1;color:var(--text-muted);cursor:pointer;padding:4px}
+.ts-modal-close:hover{color:var(--accent)}
+.ts-modal-tier{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ts-modal-title{font-family:var(--font-display);font-weight:900;font-size:21px;margin-bottom:4px;letter-spacing:-.3px;line-height:1.25}
+.ts-modal-price{font-family:var(--font-display);font-weight:900;font-size:30px;color:var(--accent);margin-bottom:8px;letter-spacing:-1px;white-space:nowrap}
+.ts-modal-sub{font-size:14px;color:var(--text-muted);margin-bottom:24px;line-height:1.5}
+.ts-field{margin-bottom:14px}
+.ts-field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.ts-field input{width:100%;padding:13px 15px;border:1.5px solid var(--border);border-radius:12px;font-size:15px;font-family:var(--font-body);background:#fff;transition:border-color .2s}
+.ts-field input:focus{outline:none;border-color:var(--accent)}
+.ts-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ts-modal-err{color:#D93D1A;font-size:13px;margin-bottom:12px;min-height:18px}
+.ts-modal-btn{width:100%;padding:15px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-weight:600;font-size:16px;font-family:var(--font-body);cursor:pointer;transition:.2s}
+.ts-modal-btn:hover{background:var(--accent-hover)}
+.ts-modal-btn:disabled{opacity:.6;cursor:default}
+.ts-modal-note{font-size:12px;color:var(--text-muted);text-align:center;margin-top:14px;line-height:1.5}
+.ts-modal-ok{text-align:center;padding:14px 0}
+.ts-modal-ok .tick{font-size:44px;margin-bottom:12px}
+.ts-modal-ok h4{font-family:var(--font-display);font-size:19px;margin-bottom:8px}
+.ts-modal-ok p{font-size:14px;color:var(--text-muted);line-height:1.6}
+@media(max-width:520px){.ts-modal-box{padding:28px 22px}}
 </style>
 </head>
 <body>
@@ -241,11 +267,11 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
     </video>
   </div>
   <div class="hero-inner">
-    <div class="hero-flag">2 СЕЗОН · 20 СЕНТЯБРЯ 2026</div>
+    <div class="hero-flag">2 СЕЗОН · 20 МАРТА 2027</div>
     <h1>Ток-шоу<br>«Франчайзинг<br><span>по-русски»</span></h1>
     <p class="hero-sub">Второй сезон закрытого ток-шоу со съёмками. Дискуссии практиков рынка, нетворкинг, профессиональный видеоконтент. Одно место — все ключевые игроки франчайзинга.</p>
     <div class="hero-meta">
-      <div class="hero-meta-item"><div class="hero-meta-icon">📅</div><div class="hero-meta-title">20 сентября 2026</div><div class="hero-meta-sub">Воскресенье · с 10:30</div></div>
+      <div class="hero-meta-item"><div class="hero-meta-icon">📅</div><div class="hero-meta-title">20 марта 2027</div><div class="hero-meta-sub">Суббота · с 10:30</div></div>
       <div class="hero-meta-item"><div class="hero-meta-icon">📍</div><div class="hero-meta-title">Москва, Чайхона №1</div><div class="hero-meta-sub">ТРЦ «Европейский»</div></div>
       <div class="hero-meta-item"><div class="hero-meta-icon">🎬</div><div class="hero-meta-title">Съёмки</div><div class="hero-meta-sub">Многокамерное видео</div></div>
     </div>
@@ -419,9 +445,9 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
           <li>Нетворкинг с экспертами</li>
           <li>Обед и фуршет</li>
         </ul>
-        <div class="pricing-price">45 000 ₽</div>
-        <div class="pricing-note">Готовый контент + дистрибуция на аудиторию сообщества.</div>
-        <a href="https://t.me/Yes_Yasya" target="_blank" class="pricing-btn pricing-btn-primary">Стать спикером →</a>
+        <div class="pricing-price">60 000 ₽</div>
+        <div class="pricing-note">Готовый контент + дистрибуция на аудиторию сообщества.<br><strong style="color:var(--accent)">Цена действует при оплате до 1 января 2027 года.</strong></div>
+        <button class="pricing-btn pricing-btn-primary" onclick="tsOpen('speaker')">Стать спикером →</button>
       </div>
 
       <div class="pricing-card">
@@ -436,9 +462,9 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
           <li class="dim">Видеоконтент для соцсетей</li>
           <li class="dim">Медийный охват</li>
         </ul>
-        <div class="pricing-price">15 000 ₽</div>
+        <div class="pricing-price">10 000 ₽</div>
         <div class="pricing-note">Посмотрите как снимается контент, познакомьтесь с лидерами рынка.</div>
-        <a href="https://t.me/Yes_Yasya" target="_blank" class="pricing-btn pricing-btn-outline">Купить билет →</a>
+        <button class="pricing-btn pricing-btn-outline" onclick="tsOpen('viewer')">Купить билет →</button>
       </div>
     </div>
 
@@ -487,7 +513,7 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
           <h3>Чайхона №1</h3>
           <div class="venue-meta">
             <div class="venue-meta-item"><span>📍</span><div><strong>Адрес</strong>Москва, площадь Киевского Вокзала, 2<br>ТРЦ «Европейский»</div></div>
-            <div class="venue-meta-item"><span>📅</span><div><strong>Дата</strong>20 сентября 2026, воскресенье</div></div>
+            <div class="venue-meta-item"><span>📅</span><div><strong>Дата</strong>20 марта 2027, воскресенье</div></div>
             <div class="venue-meta-item"><span>⏰</span><div><strong>Время</strong>Сбор с 10:30, начало в 11:00</div></div>
             <div class="venue-meta-item"><span>🚇</span><div><strong>Метро</strong>Киевская — выход к ТРЦ</div></div>
           </div>
@@ -521,9 +547,9 @@ html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--b
 
 <section class="cta">
   <div class="cta-title" style="position:relative">Забронируйте место<br>на ток-шоу</div>
-  <p class="cta-sub" style="position:relative">20 сентября 2026 · Москва · Чайхона №1, ТРЦ «Европейский»</p>
+  <p class="cta-sub" style="position:relative">20 марта 2027 · Москва · Чайхона №1, ТРЦ «Европейский»</p>
   <div style="display:flex;gap:16px;justify-content:center;position:relative;flex-wrap:wrap">
-    <a href="https://t.me/Yes_Yasya" class="btn-primary" target="_blank">Забронировать участие →</a>
+    <button class="btn-primary" onclick="tsOpen('speaker')">Забронировать участие →</button>
     <a href="#program" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,0.2)">Смотреть программу</a>
   </div>
 </section>
@@ -536,7 +562,7 @@ function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
 const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
 // Countdown to 20 September 2026
-const target=new Date('2026-09-20T11:00:00+03:00').getTime();
+const target=new Date('2027-03-20T11:00:00+03:00').getTime();
 function tick(){
   const now=Date.now();const d=Math.max(0,target-now);
   const days=Math.floor(d/86400000);const hours=Math.floor((d%86400000)/3600000);const mins=Math.floor((d%3600000)/60000);const secs=Math.floor((d%60000)/1000);
@@ -547,5 +573,140 @@ function tick(){
 }
 tick();setInterval(tick,1000);
 </script>
+
+<!-- БРОНИРОВАНИЕ -->
+<div class="ts-modal" id="tsModal" onclick="if(event.target===this)tsClose()">
+  <div class="ts-modal-box">
+    <button class="ts-modal-close" onclick="tsClose()" aria-label="Закрыть">&times;</button>
+    <div class="ts-modal-tier" id="tsTier">Участие</div>
+    <div class="ts-modal-title" id="tsTitle">Бронирование</div>
+    <div class="ts-modal-price" id="tsPrice"></div>
+    <div class="ts-modal-sub" id="tsSub">20 марта 2027 · Москва</div>
+
+    <div id="tsFields">
+      <div class="ts-modal-err" id="tsErr"></div>
+      <div class="ts-field">
+        <label for="tsName">Имя и фамилия *</label>
+        <input type="text" id="tsName" placeholder="Иван Иванов" autocomplete="name">
+      </div>
+      <div class="ts-field">
+        <label for="tsPhone">Телефон *</label>
+        <input type="tel" id="tsPhone" placeholder="+7 900 000-00-00" autocomplete="tel">
+      </div>
+      <div class="ts-field">
+        <label for="tsTg">Telegram</label>
+        <input type="text" id="tsTg" placeholder="@username">
+      </div>
+      <div class="ts-field">
+        <label for="tsCompany">Компания или бренд</label>
+        <input type="text" id="tsCompany" placeholder="Название">
+      </div>
+      <!-- поле-ловушка: его заполняют только роботы -->
+      <input type="text" id="tsWebsite" class="ts-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="ts-modal-btn" id="tsBtn" onclick="tsSubmit()">Забронировать →</button>
+      <div class="ts-modal-note">Свяжемся в течение дня и пришлём детали оплаты.</div>
+    </div>
+
+    <div class="ts-modal-ok" id="tsOk" style="display:none">
+      <div class="tick">✅</div>
+      <h4>Заявка принята</h4>
+      <p>Ярослава свяжется с вами в течение дня<br>и пришлёт детали оплаты.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Тарифы ток-шоу. Заявка уходит на наш сервер, оттуда бот публикует
+   её в рабочую группу — секретов в коде страницы нет. */
+const TS_PACKAGES = {
+  speaker: {
+    tier:  'Спикер',
+    title: 'Участник съёмок',
+    price: '60 000 ₽',
+    note:  'При оплате до 1 января 2027 года'
+  },
+  viewer: {
+    tier:  'Зритель',
+    title: 'Гостевой билет',
+    price: '10 000 ₽',
+    note:  ''
+  }
+};
+let tsCurrent = 'speaker';
+
+function tsOpen(pkg){
+  tsCurrent = pkg;
+  const p = TS_PACKAGES[pkg];
+  document.getElementById('tsTier').textContent = p.tier;
+  document.getElementById('tsTitle').textContent = p.title;
+  document.getElementById('tsPrice').textContent = p.price;
+  document.getElementById('tsSub').textContent =
+    '20 марта 2027, суббота · Москва' + (p.note ? ' · ' + p.note : '');
+  document.getElementById('tsFields').style.display = '';
+  document.getElementById('tsOk').style.display = 'none';
+  document.getElementById('tsErr').textContent = '';
+  document.getElementById('tsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function tsClose(){
+  document.getElementById('tsModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') tsClose();
+});
+
+async function tsSubmit(){
+  const name    = document.getElementById('tsName').value.trim();
+  const phone   = document.getElementById('tsPhone').value.trim();
+  const tg      = document.getElementById('tsTg').value.trim();
+  const company = document.getElementById('tsCompany').value.trim();
+  const err     = document.getElementById('tsErr');
+
+  if(!name){ err.textContent = 'Укажите имя'; return; }
+  if(!phone && !tg){ err.textContent = 'Оставьте телефон или Telegram'; return; }
+  err.textContent = '';
+
+  const btn = document.getElementById('tsBtn');
+  btn.disabled = true; btn.textContent = 'Отправляем…';
+
+  const p = TS_PACKAGES[tsCurrent];
+  const payload = {
+    form: 'talkshow',
+    name: name, phone: phone, telegram: tg, company: company,
+    package: p.title, price: p.price,
+    method: p.note || 'Ток-шоу, 20 марта 2027',
+    website: document.getElementById('tsWebsite').value || ''
+  };
+
+  let sent = false;
+  try{
+    const r = await fetch('https://api.frgu.ru/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    sent = r.ok;
+  }catch(e){ /* сеть недоступна */ }
+
+  if(!sent){
+    // запасной путь: открыть переписку с менеджером с готовым текстом
+    const text = ['Заявка — ток-шоу 20 марта 2027',
+                  'Пакет: ' + p.title + ' (' + p.price + ')',
+                  'Имя: ' + name,
+                  'Телефон: ' + (phone || '—'),
+                  'Telegram: ' + (tg || '—'),
+                  'Компания: ' + (company || '—')].join('\n');
+    window.open('https://t.me/Yes_Yasya?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  }
+
+  document.getElementById('tsFields').style.display = 'none';
+  document.getElementById('tsOk').style.display = 'block';
+  btn.disabled = false; btn.textContent = 'Забронировать →';
+}
+</script>
+
 </body>
 </html>
