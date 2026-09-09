@@ -996,6 +996,53 @@
     .cta-section .btn-red { font-size: 16px; padding: 16px 40px; }
 
     /* ─── COMMUNITY STRIP ──────────────────────────────── */
+    /* ─── PARTNERS ─────────────────────────────────────── */
+    .partners-section {
+      background: var(--dark);
+      padding: 60px 0 0;
+    }
+    .partners-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .partners-header .section-title { color: var(--light); }
+    .partners-header .section-label { color: rgba(255,255,255,0.4); }
+
+    .partners-marquee-wrap {
+      overflow: hidden;
+      padding: 20px 0 60px;
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    .partners-marquee {
+      display: flex;
+      align-items: center;
+      gap: 72px;
+      width: max-content;
+      animation: partnersMarquee 30s linear infinite;
+    }
+
+    .partner-logo {
+      height: 40px;
+      width: auto;
+      opacity: 0.55;
+      filter: brightness(0) invert(1);
+      transition: opacity 200ms;
+      flex-shrink: 0;
+    }
+
+    .partner-logo:hover { opacity: 0.9; }
+
+    @keyframes partnersMarquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .partners-marquee { animation: none; }
+    }
+
     .community-strip {
       background: var(--bg-alt);
       padding: 48px 0;
@@ -2517,6 +2564,35 @@
       <div class="cta-actions">
         <a href="#pricing" class="btn btn-red">Выбрать формат участия</a>
         <a href="https://www.frgu.ru/" class="btn btn-outline">О сообществе</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners-section" aria-label="Партнёры форума">
+    <div class="container">
+      <div class="partners-header reveal">
+        <span class="section-label">Партнёры</span>
+        <h2 class="section-title">Партнёры форума</h2>
+      </div>
+    </div>
+    <div class="partners-marquee-wrap" aria-hidden="true">
+      <div class="partners-marquee">
+        <img src="partner-logo-1.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-2.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-3.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-4.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-5.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-6.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-7.png" alt="Партнёр" class="partner-logo" />
+        <!-- дубль для бесшовного зацикливания -->
+        <img src="partner-logo-1.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-2.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-3.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-4.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-5.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-6.png" alt="Партнёр" class="partner-logo" />
+        <img src="partner-logo-7.png" alt="Партнёр" class="partner-logo" />
       </div>
     </div>
   </section>
