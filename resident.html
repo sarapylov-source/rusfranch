@@ -327,13 +327,22 @@ const header=document.getElementById('header');window.addEventListener('scroll',
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
 const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-/* Заявка уходит от имени самого посетителя в чат @Yes_Yasya.
-   Раньше страница дёргала Telegram API напрямую, и токен бота лежал
-   в открытом виде в исходнике — его мог прочитать кто угодно. */
-function openTelegramWith(lines){
-  const text = lines.filter(Boolean).join('\n');
+/* Заявка уходит на наш сервер, оттуда бот публикует её в рабочую группу.
+   Секретов в коде страницы нет — токен лежит только на сервере. */
+async function sendLead(payload, fallbackLines){
+  try{
+    const r = await fetch('https://api.frgu.ru/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    });
+    if(r.ok) return true;
+  }catch(e){ /* сеть недоступна — уходим в запасной путь */ }
+  // Запасной путь: открыть переписку с менеджером с готовым текстом
+  const text = (fallbackLines || []).filter(Boolean).join('\n');
   window.open('https://t.me/Yes_Yasya?text=' + encodeURIComponent(text),
               '_blank', 'noopener');
+  return true;
 }
 function escapeHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 
@@ -357,12 +366,21 @@ async function submitForm(){
     `\ud83d\udcdd <b>Комментарий:</b> ${escapeHtml(note||'—')}\n`+
     `\ud83d\udd50 <b>Время:</b> ${new Date().toLocaleString('ru-RU',{timeZone:'Europe/Moscow'})}`;
   try{
-    openTelegramWith([
+    await sendLead({
+      form: 'resident',
+      name: name,
+      phone: phone,
+      company: company,
+      telegram: tg,
+      note: note,
+      website: (document.getElementById('cWebsite')||{}).value || ''
+    }, [
       'Заявка: резидент сообщества',
       'Имя: ' + name,
       'Телефон: ' + phone,
-      'Компания: ' + (typeof company !== 'undefined' ? company : '—'),
-      'Telegram: ' + (typeof tg !== 'undefined' ? tg : '—')
+      'Компания: ' + (company || '—'),
+      'Telegram: ' + (tg || '—'),
+      'Комментарий: ' + (note || '—')
     ]);
     document.getElementById('formFields').style.display='none';
     document.getElementById('formSuccess').style.display='block';

@@ -2749,13 +2749,22 @@
     });
 
     // ─── Payment Modal ─────────────────────────────────────
-    /* Заявка уходит от имени самого посетителя в чат @Yes_Yasya.
-       Раньше страница дёргала Telegram API напрямую, и токен бота лежал
-       в открытом виде в исходнике — его мог прочитать кто угодно. */
-    function openTelegramWith(lines){
-      const text = lines.filter(Boolean).join('\n');
+        /* Заявка уходит на наш сервер, оттуда бот публикует её в рабочую группу.
+       Секретов в коде страницы нет — токен лежит только на сервере. */
+    async function sendLead(payload, fallbackLines){
+      try{
+        const r = await fetch('https://api.frgu.ru/lead', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        if(r.ok) return true;
+      }catch(e){ /* сеть недоступна — уходим в запасной путь */ }
+      // Запасной путь: открыть переписку с менеджером с готовым текстом
+      const text = (fallbackLines || []).filter(Boolean).join('\n');
       window.open('https://t.me/Yes_Yasya?text=' + encodeURIComponent(text),
                   '_blank', 'noopener');
+      return true;
     }
 
     const PACKAGES = {
@@ -2848,7 +2857,16 @@
         `💰 <b>Цена:</b> ${escapeHtml(data.price)}\n` +
         `💳 <b>Способ:</b> ${escapeHtml(method)}\n` +
         `🕐 <b>Время:</b> ${escapeHtml(data.date)}`;
-      openTelegramWith([
+      await sendLead({
+        form: 'masshtab',
+        name: data.name,
+        phone: data.phone,
+        telegram: data.telegram || '',
+        email: data.email || '',
+        package: data.package,
+        price: data.price,
+        method: method
+      }, [
         'Заявка — МАСШТАБ',
         'Имя: ' + data.name,
         'Телефон: ' + data.phone,
