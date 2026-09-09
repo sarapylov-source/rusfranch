@@ -2749,12 +2749,12 @@
     });
 
     // ─── Payment Modal ─────────────────────────────────────
-    /* Заявка уходит от имени самого посетителя в чат @rufranch.
+    /* Заявка уходит от имени самого посетителя в чат @Yes_Yasya.
        Раньше страница дёргала Telegram API напрямую, и токен бота лежал
        в открытом виде в исходнике — его мог прочитать кто угодно. */
     function openTelegramWith(lines){
       const text = lines.filter(Boolean).join('\n');
-      window.open('https://t.me/rufranch?text=' + encodeURIComponent(text),
+      window.open('https://t.me/Yes_Yasya?text=' + encodeURIComponent(text),
                   '_blank', 'noopener');
     }
 
@@ -2892,7 +2892,7 @@
       const data = getFormData();
       try { await sendToTelegram(data, 'По безналу'); } catch(e) {}
       const msg = encodeURIComponent(`МАСШТАБ · ${data.package} (${data.price})`);
-      window.open('https://t.me/rufranch?text=' + msg, '_blank');
+      window.open('https://t.me/Yes_Yasya?text=' + msg, '_blank');
       setButtons('idle');
       closeModal();
     }

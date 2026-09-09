@@ -279,7 +279,7 @@ a{color:inherit;text-decoration:none}
           <div class="contact-avatar"><img src="tokareva.jpg" alt="Ярослава Токарева"></div>
           <div class="contact-name">Ярослава Токарева</div>
           <div class="contact-role">Менеджер сообщества</div>
-          <a href="https://t.me/rufranch" target="_blank" class="contact-link">Telegram: @rufranch →</a>
+          <a href="https://t.me/Yes_Yasya" target="_blank" class="contact-link">Telegram: @Yes_Yasya →</a>
           <a href="tel:+79281325031" class="contact-link">+7 (928) 132-50-31 →</a>
         </div>
         <p style="font-size:14px;color:var(--text-muted);line-height:1.6">Заполните форму — мы свяжемся с вами, обсудим подходит ли ваш профиль и запустим процесс получения рекомендаций от участников сообщества.</p>
@@ -294,19 +294,19 @@ a{color:inherit;text-decoration:none}
   <div style="display:flex;gap:16px;justify-content:center;position:relative"><a href="#contact" class="btn-primary">Оставить заявку →</a></div>
 </section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="info.html">Справочник</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/franchru" target="_blank">Telegram-сообщество</a><a href="https://t.me/rufranch" target="_blank">@rufranch</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/franchru" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="info.html">Справочник</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/franchru" target="_blank">Telegram-сообщество</a><a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span><div class="footer-social"><a href="https://t.me/franchru" target="_blank">✈</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a><a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a></div></div></div></footer>
 
 <script>
 const header=document.getElementById('header');window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
 const observer=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
 
-/* Заявка уходит от имени самого посетителя в чат @rufranch.
+/* Заявка уходит от имени самого посетителя в чат @Yes_Yasya.
    Раньше страница дёргала Telegram API напрямую, и токен бота лежал
    в открытом виде в исходнике — его мог прочитать кто угодно. */
 function openTelegramWith(lines){
   const text = lines.filter(Boolean).join('\n');
-  window.open('https://t.me/rufranch?text=' + encodeURIComponent(text),
+  window.open('https://t.me/Yes_Yasya?text=' + encodeURIComponent(text),
               '_blank', 'noopener');
 }
 
@@ -343,7 +343,7 @@ async function submitForm(){
     document.getElementById('formFields').style.display='none';
     document.getElementById('formSuccess').style.display='block';
   }catch(e){
-    errEl.textContent='Ошибка отправки. Напишите напрямую в Telegram @rufranch';
+    errEl.textContent='Ошибка отправки. Напишите напрямую в Telegram @Yes_Yasya';
     btn.disabled=false;btn.textContent='Отправить заявку →';
   }
 }
