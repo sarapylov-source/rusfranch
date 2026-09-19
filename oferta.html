@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Публичная оферта — Франчайзинг по-русски</title>
+<meta name="description" content="Условия оказания услуг сообщества «Франчайзинг по-русски»: участие в мероприятиях, резидентство, статус проверенного подрядчика, подписка.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#8A7A72;--accent:#F24822;--accent-hover:#D93D1A;--accent-light:rgba(242,72,34,0.08);--border:rgba(13,13,13,0.08);--border-hover:rgba(13,13,13,0.15);--font-display:'Unbounded',sans-serif;--font-body:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--font-display);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2;color:var(--text)}
+.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted);text-decoration:none}
+.nav a:hover{color:var(--text);text-decoration:none}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+.wrap{max-width:860px;margin:0 auto;padding:130px 24px 80px}
+.doc-title{font-family:var(--font-display);font-weight:900;font-size:clamp(26px,4vw,40px);line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px}
+.doc-sub{font-size:16px;color:var(--text-muted);margin-bottom:8px}
+.doc-date{font-size:14px;color:var(--text-muted);margin-bottom:40px}
+
+.toc{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:26px 30px;margin-bottom:44px}
+.toc h2{font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.toc ol{list-style:none;counter-reset:toc}
+.toc li{counter-increment:toc;padding:6px 0;font-size:15px}
+.toc li::before{content:counter(toc) ". ";color:var(--text-muted);font-weight:600}
+
+h2.sec{font-family:var(--font-display);font-weight:900;font-size:clamp(20px,2.6vw,26px);line-height:1.2;letter-spacing:-0.8px;margin:52px 0 18px;scroll-margin-top:100px}
+h3.sub{font-family:var(--font-display);font-weight:700;font-size:17px;margin:28px 0 10px}
+p{margin-bottom:12px;font-size:15.5px;color:var(--text-sec)}
+p strong,li strong{color:var(--text);font-weight:600}
+ul.list{margin:0 0 14px 0;padding-left:0;list-style:none}
+ul.list li{position:relative;padding-left:22px;margin-bottom:8px;font-size:15.5px;color:var(--text-sec)}
+ul.list li::before{content:'—';position:absolute;left:0;color:var(--accent)}
+ol.num{margin:0 0 14px 20px;padding:0}
+ol.num li{margin-bottom:8px;font-size:15.5px;color:var(--text-sec);padding-left:6px}
+
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:28px 30px;margin:20px 0}
+.card.accent{border-color:var(--accent);background:linear-gradient(160deg,var(--bg-card) 0%,var(--accent-light) 100%)}
+.price{font-family:var(--font-display);font-weight:900;font-size:26px;color:var(--accent);letter-spacing:-1px;margin:6px 0 14px}
+.price small{font-family:var(--font-body);font-size:14px;font-weight:400;color:var(--text-muted);letter-spacing:0}
+
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
+table th{text-align:left;font-weight:600;padding:10px 12px;background:rgba(13,13,13,.04);border:1px solid var(--border)}
+table td{padding:10px 12px;border:1px solid var(--border);color:var(--text-sec)}
+.tbl-wrap{overflow-x:auto}
+
+.req{background:var(--bg-dark);color:#fff;border-radius:18px;padding:30px;margin:44px 0 0}
+.req h2{font-family:var(--font-display);font-size:18px;font-weight:900;margin-bottom:18px}
+.req dl{display:grid;grid-template-columns:190px 1fr;gap:9px 20px;font-size:14.5px}
+.req dt{color:rgba(255,255,255,.5)}
+.req dd{color:#fff}
+@media(max-width:620px){.req dl{grid-template-columns:1fr;gap:2px 0}.req dd{margin-bottom:12px}}
+
+.footer{background:var(--bg-dark);color:#fff;padding:50px 40px;margin-top:60px}
+.footer-inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:14px}
+.footer a{color:rgba(255,255,255,.7)}
+.footer a:hover{color:var(--accent)}
+
+@media(max-width:768px){
+  .header{padding:16px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);justify-content:center;align-items:center;gap:22px;z-index:100;overflow-y:auto;padding:80px 20px}
+  .nav.open a{font-size:22px;color:var(--text)}
+  .wrap{padding:110px 18px 60px}
+  .card,.toc,.req{padding:22px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="info.html">Справочник</a><a href="https://t.me/franchru" class="nav-cta" target="_blank">Вступить</a></nav>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="wrap">
+
+  <h1 class="doc-title">Публичная оферта</h1>
+  <p class="doc-sub">Условия оказания услуг сообщества «Франчайзинг по-русски»</p>
+  <p class="doc-date">Редакция от 19 сентября 2026 года</p>
+
+  <div class="card accent">
+    <p style="margin-bottom:0"><strong>Коротко.</strong> Этот документ — предложение заключить договор
+    на условиях, описанных ниже. Отдельный договор подписывать не нужно:
+    <strong>оплата счёта означает согласие с этими условиями</strong> (ст. 435, 437, 438 ГК РФ).
+    Если условия не подходят — не оплачивайте счёт.</p>
+  </div>
+
+  <div class="toc">
+    <h2>Содержание</h2>
+    <ol>
+      <li><a href="#common">Общие положения</a></li>
+      <li><a href="#event">Участие в мероприятиях</a></li>
+      <li><a href="#resident">Резидент сообщества</a></li>
+      <li><a href="#contractor">Проверенный подрядчик</a></li>
+      <li><a href="#subscription">Подписка на чат «Масштаб»</a></li>
+      <li><a href="#payment">Оплата и возвраты</a></li>
+      <li><a href="#responsibility">Ответственность сторон</a></li>
+      <li><a href="#final">Заключительные положения</a></li>
+    </ol>
+  </div>
+
+  <!-- 1 -->
+  <h2 class="sec" id="common">1. Общие положения</h2>
+  <p><strong>1.1.</strong> Индивидуальный предприниматель Сарапулова Дарья Сергеевна
+  (ИНН 027611813929, ОГРНИП 312028024200155), далее — <strong>«Исполнитель»</strong>,
+  публикует настоящую оферту — предложение заключить договор возмездного оказания услуг
+  на условиях, изложенных ниже.</p>
+
+  <p><strong>1.2.</strong> <strong>Заказчик</strong> — юридическое лицо, индивидуальный
+  предприниматель или физическое лицо, оплатившее выставленный Исполнителем счёт.</p>
+
+  <p><strong>1.3. Акцепт.</strong> Оплата счёта является полным и безоговорочным принятием
+  условий оферты (п. 3 ст. 438 ГК РФ). С момента поступления денежных средств на расчётный
+  счёт Исполнителя договор считается заключённым на условиях настоящей оферты и счёта.
+  Подписание отдельного договора не требуется.</p>
+
+  <p><strong>1.4.</strong> Состав, стоимость и сроки конкретной услуги определяются
+  выставленным счётом и описанием услуги на сайте
+  <a href="https://www.frgu.ru">frgu.ru</a>. При расхождении между счётом и сайтом
+  приоритет имеет счёт.</p>
+
+  <p><strong>1.5.</strong> Исполнитель вправе изменять настоящую оферту. Новая редакция
+  вступает в силу с момента публикации на этой странице и не распространяется на услуги,
+  оплаченные до её публикации.</p>
+
+  <!-- 2 -->
+  <h2 class="sec" id="event">2. Участие в мероприятиях</h2>
+  <p>Форум «Масштаб», ток-шоу «Франчайзинг по-русски», офлайн-встречи сообщества.</p>
+
+  <h3 class="sub">Что входит</h3>
+  <p><strong>2.1.</strong> Участие в деловой программе согласно выбранному пакету,
+  раздаточные материалы и нетворкинг. Конкретное наполнение указывается в описании
+  мероприятия на сайте.</p>
+
+  <p><strong>2.2.</strong> Питание и проживание в стоимость <strong>не входят</strong>,
+  если иное прямо не указано в наименовании услуги в счёте.</p>
+
+  <p><strong>2.3.</strong> Участие именное. Передача места другому лицу возможна
+  по письменному согласованию с Исполнителем не позднее чем за 3 рабочих дня
+  до начала мероприятия.</p>
+
+  <h3 class="sub">Отказ и перенос</h3>
+  <p><strong>2.4.</strong> При отказе Заказчика <strong>более чем за 14 календарных дней</strong>
+  до даты мероприятия оплата возвращается полностью в течение 10 рабочих дней.</p>
+
+  <p><strong>2.5.</strong> При отказе <strong>менее чем за 14 календарных дней</strong>
+  оплата не возвращается, но по заявлению Заказчика может быть зачтена в счёт участия
+  в следующем мероприятии Исполнителя в течение 12 месяцев.</p>
+
+  <p><strong>2.6.</strong> Исполнитель вправе перенести дату или изменить место проведения,
+  уведомив Заказчика не позднее чем за 7 календарных дней. В этом случае Заказчик вправе
+  получить полный возврат либо сохранить оплату для новой даты.</p>
+
+  <p><strong>2.7.</strong> Состав спикеров носит предварительный характер. Замена
+  отдельных спикеров не является основанием для возврата.</p>
+
+  <h3 class="sub">Съёмка</h3>
+  <p><strong>2.8.</strong> Мероприятия сопровождаются фото- и видеосъёмкой. Оплачивая
+  счёт, Заказчик даёт согласие на использование материалов с его изображением
+  в информационных и рекламных материалах сообщества без выплаты вознаграждения.
+  Отзыв согласия возможен по письменному обращению на za@frgu.ru.</p>
+
+  <!-- 3 -->
+  <h2 class="sec" id="resident">3. Резидент сообщества</h2>
+  <div class="card">
+    <div class="price">150 000 ₽ <small>/ год</small></div>
+    <p style="margin-bottom:0">Годовое членство в сообществе «Франчайзинг по-русски».
+    Подробное описание: <a href="resident.html">frgu.ru/resident.html</a></p>
+  </div>
+
+  <p><strong>3.1.</strong> В пакет входит: годовая подписка на закрытый чат «Масштаб»
+  с архивом записей, участие в офлайн-встречах сообщества, ежемесячные мастер-классы
+  и разборы.</p>
+
+  <p><strong>3.2.</strong> Статус действует <strong>12 месяцев</strong> с даты поступления
+  оплаты.</p>
+
+  <p><strong>3.3.</strong> Конкретный состав и календарь активностей определяются
+  Исполнителем и могут изменяться. Исполнитель гарантирует проведение не менее
+  <strong>10 мероприятий</strong> за период действия статуса.</p>
+
+  <p><strong>3.4.</strong> Оплаченная сумма возврату не подлежит, за исключением случаев,
+  предусмотренных п. 6.4 и законодательством РФ. При досрочном отказе Заказчика
+  неиспользованная часть не возвращается и не пересчитывается.</p>
+
+  <p><strong>3.5.</strong> Статус именной и не передаётся третьим лицам.</p>
+
+  <!-- 4 -->
+  <h2 class="sec" id="contractor">4. Проверенный подрядчик</h2>
+  <div class="card">
+    <div class="price">150 000 ₽ <small>/ год · 135 000 ₽ со скидкой за кросс-промо</small></div>
+    <p style="margin-bottom:0">Подробное описание пакета:
+    <a href="contractor.html">frgu.ru/contractor.html</a></p>
+  </div>
+
+  <h3 class="sub">Что входит в годовой пакет</h3>
+  <ul class="list">
+    <li>2 выступления по 30 минут на закрытых офлайн-встречах сообщества</li>
+    <li>3 вебинара по 1 часу для аудитории сообщества</li>
+    <li>Приоритетное размещение в справочнике с отметкой «Проверенный подрядчик»</li>
+    <li>3 рекламные публикации в год в Telegram-группе с активной ссылкой и закрепом на 24 часа</li>
+  </ul>
+
+  <h3 class="sub">Обязательная проверка</h3>
+  <p><strong>4.1.</strong> Статус присваивается <strong>только после модерации</strong>.
+  Заказчик обязан в течение <strong>3 рабочих дней</strong> после оплаты предоставить
+  на <a href="mailto:za@frgu.ru">za@frgu.ru</a> контакты не менее трёх участников
+  сообщества «Франчайзинг по-русски», работавших с ним, для подтверждения
+  добросовестности.</p>
+
+  <p><strong>4.2.</strong> Если проверка не пройдена, Исполнитель <strong>возвращает
+  100% оплаты</strong> в течение 5 рабочих дней, и договор считается расторгнутым.
+  То же применяется, если Заказчик не предоставил контакты в срок по п. 4.1.</p>
+
+  <p><strong>4.3.</strong> После успешной проверки статус присваивается сроком
+  на <strong>1 год</strong> с даты оплаты.</p>
+
+  <h3 class="sub">Отзыв статуса</h3>
+  <p><strong>4.4.</strong> Исполнитель вправе отозвать статус <strong>без возврата
+  средств</strong> при поступлении более двух обоснованных жалоб на качество работ
+  Заказчика от участников сообщества. Жалоба считается обоснованной после рассмотрения
+  Исполнителем позиций обеих сторон.</p>
+
+  <p><strong>4.5.</strong> Оплачивая счёт, Заказчик даёт согласие на использование своего
+  наименования, логотипа и товарных знаков в реестре подрядчиков сообщества
+  и в сопутствующих информационных материалах.</p>
+
+  <p><strong>4.6.</strong> Исполнитель предоставляет площадку для размещения и верификацию,
+  но <strong>не гарантирует конкретный объём заявок, клиентов или прибыли</strong>.</p>
+
+  <!-- 5 -->
+  <h2 class="sec" id="subscription">5. Подписка на чат «Масштаб»</h2>
+  <div class="tbl-wrap">
+  <table>
+    <tr><th>Период</th><th>Стоимость</th></tr>
+    <tr><td>Первый месяц, пробный</td><td>1 000 ₽</td></tr>
+    <tr><td>Далее ежемесячно</td><td>5 000 ₽</td></tr>
+    <tr><td>Год, единовременно</td><td>35 000 ₽</td></tr>
+  </table>
+  </div>
+
+  <p><strong>5.1.</strong> Подписка даёт доступ к закрытому чату сообщества с архивом
+  записей эфиров, презентаций и материалов. Описание:
+  <a href="subscribe.html">frgu.ru/subscribe.html</a></p>
+
+  <p><strong>5.2.</strong> <strong>Доступ действует, пока действует подписка.</strong>
+  При прекращении оплаты доступ к чату и архиву закрывается. Материалы остаются
+  собственностью Исполнителя и не передаются Заказчику.</p>
+
+  <p><strong>5.3.</strong> Ежемесячная подписка продлевается автоматически через сервис
+  Tribute. Отмена возможна в любой момент в интерфейсе сервиса; доступ сохраняется
+  до конца оплаченного периода.</p>
+
+  <p><strong>5.4.</strong> Исполнитель пополняет архив по мере проведения эфиров,
+  но не гарантирует конкретную периодичность.</p>
+
+  <!-- 6 -->
+  <h2 class="sec" id="payment">6. Оплата и возвраты</h2>
+  <p><strong>6.1.</strong> Оплата производится в рублях РФ по реквизитам, указанным
+  в счёте, либо через подключённые платёжные сервисы.</p>
+
+  <p><strong>6.2.</strong> <strong>Услуги не облагаются НДС</strong> — Исполнитель
+  применяет упрощённую систему налогообложения (ст. 346.11 НК РФ).</p>
+
+  <p><strong>6.3.</strong> Обязательства Заказчика по оплате считаются исполненными
+  с момента зачисления средств на расчётный счёт Исполнителя.</p>
+
+  <p><strong>6.4.</strong> Возврат производится в случаях, прямо предусмотренных
+  настоящей офертой (пп. 2.4, 2.6, 4.2), а также при невозможности оказания услуги
+  по вине Исполнителя. Срок возврата — 10 рабочих дней с даты письменного заявления
+  на za@frgu.ru.</p>
+
+  <p><strong>6.5.</strong> Акт оказанных услуг направляется по запросу Заказчика.
+  Если в течение 5 рабочих дней с даты направления акта Заказчик не заявил письменных
+  возражений, услуги считаются принятыми в полном объёме.</p>
+
+  <!-- 7 -->
+  <h2 class="sec" id="responsibility">7. Ответственность сторон</h2>
+  <p><strong>7.1.</strong> Исполнитель оказывает услуги лично либо с привлечением
+  третьих лиц, оставаясь ответственным за результат.</p>
+
+  <p><strong>7.2.</strong> Ответственность Исполнителя по любым основаниям ограничена
+  <strong>суммой, фактически оплаченной Заказчиком</strong> по соответствующему счёту.
+  Упущенная выгода возмещению не подлежит.</p>
+
+  <p><strong>7.3.</strong> Исполнитель не несёт ответственности за решения, принятые
+  Заказчиком на основании информации, полученной в ходе мероприятий и консультаций.
+  Материалы носят информационный характер и не являются юридической, налоговой
+  или инвестиционной рекомендацией.</p>
+
+  <p><strong>7.4.</strong> Стороны освобождаются от ответственности при обстоятельствах
+  непреодолимой силы, включая решения органов власти, делающие исполнение невозможным.</p>
+
+  <p><strong>7.5.</strong> Заказчик обязуется не распространять материалы закрытых
+  мероприятий и чата третьим лицам. При нарушении Исполнитель вправе прекратить доступ
+  без возврата средств.</p>
+
+  <!-- 8 -->
+  <h2 class="sec" id="final">8. Заключительные положения</h2>
+  <p><strong>8.1.</strong> Электронная переписка по адресу
+  <a href="mailto:za@frgu.ru">za@frgu.ru</a> признаётся сторонами юридически значимой.
+  Документы, направленные с этого адреса и на него, имеют силу подписанных сторонами.</p>
+
+  <p><strong>8.2.</strong> Персональные данные обрабатываются в целях исполнения договора
+  и информирования об услугах сообщества. Оплачивая счёт, Заказчик даёт согласие
+  на такую обработку. Отзыв согласия — письменно на za@frgu.ru.</p>
+
+  <p><strong>8.3.</strong> Все споры решаются путём переговоров. Претензионный порядок
+  обязателен, срок ответа на претензию — 15 рабочих дней.</p>
+
+  <p><strong>8.4.</strong> Не урегулированные переговорами споры подлежат рассмотрению
+  в суде по месту нахождения Исполнителя (г. Москва), а споры с потребителями —
+  в порядке, установленном законодательством РФ.</p>
+
+  <p><strong>8.5.</strong> Во всём, что не урегулировано настоящей офертой, стороны
+  руководствуются законодательством Российской Федерации.</p>
+
+  <div class="req">
+    <h2>Реквизиты Исполнителя</h2>
+    <dl>
+      <dt>Наименование</dt><dd>ИП Сарапулова Дарья Сергеевна</dd>
+      <dt>ИНН</dt><dd>027611813929</dd>
+      <dt>ОГРНИП</dt><dd>312028024200155</dd>
+      <dt>Адрес</dt><dd>Московская область, Одинцовский р-н, рп Заречье, ул. Луговая, д. 6, к. 1, кв. 183</dd>
+      <dt>Расчётный счёт</dt><dd>40802810829300000795</dd>
+      <dt>Банк</dt><dd>Филиал «Нижегородский» в г. Нижний Новгород АО «АЛЬФА-БАНК»</dd>
+      <dt>БИК</dt><dd>042202824</dd>
+      <dt>Корр. счёт</dt><dd>30101810200000000824</dd>
+      <dt>Почта</dt><dd><a href="mailto:za@frgu.ru" style="color:#F24822">za@frgu.ru</a></dd>
+    </dl>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2024–2026 Франчайзинг по-русски</span>
+    <span>
+      <a href="index.html">Главная</a> ·
+      <a href="oferta.html">Оферта</a> ·
+      <a href="https://t.me/Yes_Yasya" target="_blank">Связаться</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+</script>
+</body>
+</html>
