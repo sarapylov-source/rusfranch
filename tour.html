@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тур-Де-Франч — экскурсия в Colizeum, 29 октября | Франчайзинг по-русски</title>
+<meta name="description" content="29 октября, Москва-Сити: экскурсия в офис Colizeum (600+ компьютерных клубов), выступления основателя и гендиректора, ужин в PhoBo. 20 мест.">
+<meta property="og:title" content="Тур-Де-Франч — экскурсия в Colizeum">
+<meta property="og:description" content="29 октября, Башня Федерации. Как устроена УК сети из 600+ клубов, плюс ужин с командой PhoBo.">
+<meta property="og:image" content="https://frgu.ru/tour-city.jpg">
+<meta property="og:url" content="https://frgu.ru/tour">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#6E5E56;--accent:#F24822;--accent-hover:#D93D1A;--border:rgba(13,13,13,0.08);--fd:'Unbounded',sans-serif;--fb:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;align-items:center;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.header.scrolled{background:rgba(242,224,213,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:-0.3px;display:flex;flex-direction:column;line-height:1.2}
+.logo-accent{color:var(--accent)}
+.nav{display:flex;gap:28px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted);transition:color .2s}
+.nav a:hover{color:var(--text)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 24px;border-radius:100px;font-weight:600!important}
+.nav-cta:hover{background:var(--accent-hover)!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:0;padding:8px}
+.burger span{width:24px;height:2px;background:var(--text)}
+.wrap{max-width:1312px;margin:0 auto;padding:0 40px}
+.tag{font-family:var(--fd);font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.h2{font-family:var(--fd);font-weight:900;font-size:clamp(28px,3.5vw,48px);line-height:1.08;letter-spacing:-1.5px;max-width:900px}
+.sub{font-size:clamp(18px,1.6vw,22px);line-height:1.5;color:var(--text-sec);margin-top:16px;max-width:860px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:18px 40px;border-radius:100px;font-weight:600;font-size:17px;transition:all .2s;white-space:nowrap}
+.btn:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 32px rgba(242,72,34,.25)}
+.btn-dark{background:var(--bg-dark)}.btn-dark:hover{background:#2a2a2a}
+.btn-light{background:#fff;color:var(--text)}.btn-light:hover{background:#f3f3f3}
+.btn-sm{padding:14px 28px;font-size:15px}
+section{scroll-margin-top:80px}
+/* hero */
+.hero{padding:130px 0 60px}
+.hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hero-l{max-width:760px}
+.flag{display:inline-block;background:var(--accent);color:#fff;border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px}
+h1{font-family:var(--fd);font-weight:900;font-size:clamp(40px,5.6vw,76px);line-height:1;letter-spacing:-3px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:clamp(18px,1.8vw,22px);color:var(--text-sec);margin-top:24px}
+.hero-cta{display:flex;align-items:center;gap:32px;margin-top:36px;flex-wrap:wrap}
+.cd-l{font-size:13px;color:var(--text-muted);font-weight:500;margin-bottom:4px}
+.cd{display:flex;gap:14px;font-family:var(--fd);font-weight:700;font-size:26px}
+.cd small{font-size:13px;color:var(--text-muted);font-family:var(--fb);font-weight:500;margin-left:3px}
+.hero-note{font-size:15px;color:var(--text-muted);margin-top:20px}
+.hero-net{width:520px;max-width:42vw;flex-shrink:0}
+.hero-net .nd{animation:blink 3s ease-in-out infinite}
+.hero-net .pulse{transform-origin:280px 300px;animation:pulse 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.35}}@keyframes pulse{50%{transform:scale(1.18);opacity:.6}}
+/* uk */
+.uk{padding:60px 0 72px}
+.uk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.uk-card{background:#fff;border-radius:24px;padding:28px}
+.uk-ico{width:52px;height:52px;border-radius:14px;background:rgba(242,72,34,.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.uk-card h3{font-family:var(--fd);font-weight:700;font-size:20px;line-height:1.2;margin-bottom:10px}
+.uk-card p{font-size:16px;line-height:1.55;color:var(--text-sec)}
+/* program */
+.prog{margin:0 32px;background:var(--bg-dark);border-radius:40px;padding:64px 0 40px;color:#fff}
+.prog .wrap{padding:0 32px}
+.prog .h2{color:#fff;margin-bottom:32px}
+.p-list{display:flex;flex-direction:column;gap:14px}
+.p-row{display:grid;grid-template-columns:110px 140px 1fr;gap:28px;align-items:center;padding:18px 28px;background:#1C1C1C;border-radius:20px}
+.p-simple{grid-template-columns:110px 1fr;background:rgba(255,255,255,.04);font-size:17px;color:rgba(255,255,255,.85)}
+.p-free{grid-template-columns:110px 1fr auto;background:transparent;border:1.5px dashed rgba(255,255,255,.3)}
+.p-time{font-family:var(--fd);font-weight:700;font-size:22px;color:var(--accent)}
+.p-avs{display:flex}.p-avs img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #1C1C1C}.p-avs img+img{margin-left:-18px}
+.p-title{font-family:var(--fd);font-weight:700;font-size:19px;line-height:1.3}
+.p-free .p-title{font-size:22px}
+.p-desc{font-size:15px;line-height:1.5;color:rgba(255,255,255,.7);margin-top:6px}
+.p-who{font-size:15px;color:#FF8A6B;font-weight:500;margin-top:6px}
+.p-strong{font-weight:600;color:#fff}
+/* why */
+.why{padding:80px 0 40px}
+.why .wrap{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+.why-list{display:flex;flex-direction:column;gap:16px}
+.why-card{display:flex;gap:24px;background:#fff;border-radius:24px;padding:28px 32px}
+.why-n{font-family:var(--fd);font-weight:900;font-size:32px;color:var(--accent)}
+.why-card h3{font-family:var(--fd);font-weight:700;font-size:20px;margin-bottom:6px}
+.why-card p{font-size:16px;line-height:1.55;color:var(--text-sec)}
+/* pricing */
+.price{padding:64px 0 40px}
+.tariffs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.tar{border-radius:32px;padding:40px;display:flex;flex-direction:column;gap:18px;background:#fff;border:2px solid var(--accent)}
+.tar-dark{background:var(--bg-dark);border-color:var(--bg-dark);color:#fff}
+.tar-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tar-name{font-family:var(--fd);font-weight:900;font-size:26px;line-height:1.15}
+.tar-badge{background:var(--accent);color:#fff;border-radius:100px;padding:6px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+.tar-price{display:flex;align-items:baseline;gap:14px;font-family:var(--fd);font-weight:900;font-size:clamp(38px,4vw,52px);color:var(--accent)}
+.tar-dark .tar-price{color:#fff}
+.tar-price s{font-family:var(--fb);font-weight:400;font-size:22px;color:var(--text-muted)}
+.tar-per{font-size:15px;color:var(--text-muted);margin-top:-10px}
+.tar-dark .tar-per{color:rgba(255,255,255,.7)}
+.tar ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.tar li{display:flex;gap:12px;font-size:16px;line-height:1.45}
+.tar li svg{flex-shrink:0;margin-top:1px}
+.tar .btn{margin-top:auto;align-self:flex-start}
+.notes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+.note{border-top:2px solid var(--text);padding-top:16px;font-family:var(--fd);font-weight:700;font-size:16px;line-height:1.35}
+/* carousel */
+.lib{padding:40px 0 72px}
+.lib-top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.car-nav{display:flex;gap:12px;flex-shrink:0}
+.car-nav button{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--text);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:.2s}
+.car-nav button.next{background:var(--text);color:#fff}
+.car-nav button:hover{transform:translateY(-2px)}
+.car{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;margin-top:28px;padding-bottom:8px;scrollbar-width:none}
+.car::-webkit-scrollbar{display:none}
+.w-card{flex:0 0 calc((100% - 48px)/4);scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden}
+.w-thumb{position:relative;aspect-ratio:16/9;background:#1c1c1c}.w-thumb img{width:100%;height:100%;object-fit:cover}
+.w-dur{position:absolute;right:10px;bottom:10px;background:rgba(13,13,13,.8);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:100px}
+.w-body{padding:18px 20px 22px}
+.w-title{font-family:var(--fd);font-weight:700;font-size:15px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:61px}
+.w-sp{font-size:13px;line-height:1.4;color:var(--text-sec);margin-top:8px}
+.lib-foot{display:flex;justify-content:flex-end;margin-top:28px}
+/* cta */
+.cta{margin:0 32px;background:var(--accent);border-radius:40px;padding:72px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px}
+.cta h2{font-family:var(--fd);font-weight:900;font-size:clamp(28px,3.6vw,52px);line-height:1.05;letter-spacing:-1.5px;color:#fff;max-width:860px}
+/* org */
+.org{padding:88px 0 32px}
+.org-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px;margin-top:28px}
+.org-text p{font-size:18px;line-height:1.6;color:var(--text-sec)}
+.org-text p+p{margin-top:16px}
+.org-text .btn{margin-top:28px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start}
+.stat{background:#fff;border-radius:24px;padding:24px}
+.stat-n{font-family:var(--fd);font-weight:900;font-size:32px;color:var(--accent)}
+.stat-l{font-size:15px;color:var(--text-sec);margin-top:6px}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.gal img{width:100%;height:240px;object-fit:cover;border-radius:24px}
+/* reviews */
+.rv{padding:56px 0 24px}
+.rv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:32px}
+.rv-card{background:#fff;border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:18px;min-height:440px}
+.rv-q{font-family:var(--fd);font-weight:900;font-size:48px;color:var(--accent);line-height:.6}
+.rv-card p{font-size:17px;line-height:1.6;flex-grow:1}
+.rv-who{display:flex;flex-direction:column;gap:12px}
+.rv-who img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.rv-who b{display:block;font-size:15px}.rv-who span{font-size:13px;color:var(--text-sec)}
+.rv-video{border-radius:24px;overflow:hidden;background:#0D0D0D}
+.rv-video iframe{width:100%;aspect-ratio:9/16;display:block;border:0}
+/* manager */
+.mgr{padding:40px 0 80px}
+.mgr-card{background:var(--bg-alt);border-radius:32px;padding:40px 48px;display:flex;align-items:center;gap:40px}
+.mgr-card img{width:140px;height:140px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.mgr-info{flex-grow:1}
+.mgr-k{font-size:15px;color:var(--text-sec);font-weight:500}
+.mgr-n{font-family:var(--fd);font-weight:900;font-size:32px;margin:6px 0}
+.mgr-r{font-size:16px;color:var(--text-sec)}
+/* footer */
+.footer{background:var(--bg-dark);color:#fff;padding:72px 40px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--fd);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);padding:6px 0}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.4)}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:none}
+@media(max-width:1100px){.w-card{flex-basis:calc((100% - 32px)/3)}.rv-grid{grid-template-columns:repeat(2,1fr)}.rv-video:nth-child(n+3){}.notes{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.hero .wrap{flex-direction:column;align-items:flex-start}.hero-net{max-width:100%;width:360px;align-self:center}.uk-grid{grid-template-columns:1fr 1fr}.why .wrap,.org-grid,.tariffs{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start;padding:48px 32px}.p-row{grid-template-columns:80px 1fr;gap:14px 20px}.p-avs{grid-column:2}.p-row>.p-body{grid-column:1/-1}.p-simple>.p-body{grid-column:2}.p-free{grid-template-columns:80px 1fr}.p-free .btn{grid-column:1/-1;justify-self:start}}
+@media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);justify-content:center;align-items:center;gap:22px;z-index:100;padding:80px 20px}.nav.open a{font-size:22px;color:var(--text)}
+.wrap{padding:0 20px}.hero{padding:100px 0 40px}h1{letter-spacing:-1.5px}.uk-grid{grid-template-columns:1fr}.prog,.cta{margin:0 12px;border-radius:28px}.prog{padding:44px 0 20px}.prog .wrap{padding:0 12px}.p-row{padding:16px 18px}.p-time{font-size:18px}.p-title{font-size:17px}
+.w-card{flex-basis:78%}.lib-top{flex-direction:column;align-items:flex-start}.car-nav{display:none}.lib-foot{justify-content:flex-start}.rv-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -20px 0;padding:0 20px 8px}.rv-grid>*{flex:0 0 72%;scroll-snap-align:start}.gal{grid-template-columns:1fr 1fr}.gal img{height:150px;border-radius:16px}
+.mgr-card{flex-direction:column;align-items:flex-start;padding:32px 24px;gap:20px}.mgr-card img{width:100px;height:100px}.notes{grid-template-columns:1fr}.tar{padding:28px 24px}.tar .btn{white-space:normal}.btn{padding:16px 28px;font-size:16px}.cta .btn{align-self:stretch;justify-content:center}.footer{padding:40px 20px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:20px;text-align:center}}
+
+.nav{gap:20px}
+.nav a{font-size:14px}
+.uk-grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.uk-grid-4{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.uk-grid-4{grid-template-columns:1fr}}
+/* tour hero */
+.thero{position:relative;padding:150px 0 70px;overflow:hidden}
+.thero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.thero-ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(242,224,213,.96) 0%,rgba(242,224,213,.88) 42%,rgba(242,224,213,.35) 100%)}
+.thero .wrap{position:relative}
+.thero h1{font-size:clamp(40px,6vw,86px);letter-spacing:-3px}
+.thero-sub{font-size:clamp(18px,1.9vw,24px);line-height:1.4;color:var(--text-sec);margin-top:22px;max-width:640px}
+.logos{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.logo-chip{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px 22px;display:flex;align-items:center}
+.logo-chip img{display:block}
+.seats{display:flex;flex-direction:column;gap:6px}
+.seats b{font-size:17px;font-weight:600}
+.seats-bar{width:220px;height:8px;border-radius:100px;background:rgba(13,13,13,.15);overflow:hidden}
+.seats-bar i{display:block;width:10%;height:100%;background:var(--accent)}
+/* people */
+.people{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:32px}
+.person{background:#fff;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.person img{width:96px;height:96px;border-radius:50%;object-fit:cover}
+.person b{font-family:var(--fd);font-weight:700;font-size:19px;line-height:1.2}
+.person span{font-size:15px;line-height:1.45;color:var(--text-sec)}
+/* tariffs */
+.tars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.tcard{background:#fff;border:2px solid #fff;border-radius:32px;padding:36px;display:flex;flex-direction:column;gap:18px}
+.tcard.pop{border-color:var(--accent)}
+.tcard.dark{background:var(--bg-dark);border-color:var(--bg-dark);color:#fff}
+.tcard-head{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tcard-name{font-family:var(--fd);font-weight:900;font-size:26px}
+.tcard-badge{background:var(--accent);color:#fff;border-radius:100px;padding:6px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+.tcard-price{font-family:var(--fd);font-weight:900;font-size:clamp(34px,3.4vw,44px);color:var(--accent)}
+.tcard.dark .tcard-price{color:#fff}
+.tcard-per{font-size:15px;color:var(--text-muted);margin-top:-10px}
+.tcard.dark .tcard-per{color:rgba(255,255,255,.7)}
+.tcard ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.tcard li{display:flex;gap:12px;font-size:16px;line-height:1.45}
+.tcard li svg{flex-shrink:0;margin-top:1px}
+.tcard button{margin-top:auto;border:none;cursor:pointer;font-family:var(--fb)}
+@media(max-width:1100px){.people{grid-template-columns:repeat(3,1fr)}.tars{grid-template-columns:1fr}}
+@media(max-width:768px){.thero{padding:110px 0 44px}.thero-ov{background:linear-gradient(180deg,rgba(242,224,213,.95) 0%,rgba(242,224,213,.88) 60%,rgba(242,224,213,.75) 100%)}.people{grid-template-columns:1fr 1fr;gap:14px}.person{padding:18px}.person img{width:72px;height:72px}.tcard{padding:28px 24px}}
+
+/* booking modal */
+.ts-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(13,13,13,.65);backdrop-filter:blur(4px)}
+.ts-modal.open{display:flex}
+.ts-modal-box{background:var(--bg-card);border-radius:22px;padding:32px 28px;width:100%;max-width:460px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.25)}
+.ts-modal-close{position:absolute;top:16px;right:18px;background:none;border:none;font-size:26px;line-height:1;color:var(--text-muted);cursor:pointer;padding:4px}
+.ts-modal-close:hover{color:var(--accent)}
+.ts-modal-tier{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.ts-modal-title{font-family:var(--fd);font-weight:900;font-size:21px;margin-bottom:4px;letter-spacing:-.3px;line-height:1.25}
+.ts-modal-price{font-family:var(--fd);font-weight:900;font-size:30px;color:var(--accent);margin-bottom:8px;letter-spacing:-1px}
+.ts-modal-sub{font-size:14px;color:var(--text-muted);margin-bottom:22px;line-height:1.5}
+.ts-field{margin-bottom:14px}
+.ts-field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+.ts-field input{width:100%;padding:13px 15px;border:1.5px solid var(--border);border-radius:12px;font-size:15px;font-family:var(--fb);background:#fff}
+.ts-field input:focus{outline:none;border-color:var(--accent)}
+.ts-pay{display:flex;gap:10px;margin:4px 0 16px}
+.ts-pay label{flex:1;display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:500;cursor:pointer}
+.ts-pay label:has(input:checked){border-color:var(--accent);background:rgba(242,72,34,.06)}
+.ts-pay input{accent-color:var(--accent);width:18px;height:18px}
+.ts-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.ts-modal-err{color:#D93D1A;font-size:13px;margin-bottom:12px;min-height:18px}
+.ts-modal-btn{width:100%;padding:15px;border:none;border-radius:12px;background:var(--accent);color:#fff;font-weight:600;font-size:16px;font-family:var(--fb);cursor:pointer}
+.ts-modal-btn:hover{background:var(--accent-hover)}
+.ts-modal-btn:disabled{opacity:.6;cursor:default}
+.ts-modal-note{font-size:12px;color:var(--text-muted);text-align:center;margin-top:14px;line-height:1.5}
+.ts-modal-ok{text-align:center;padding:14px 0}
+.ts-modal-ok .tick{font-size:44px;margin-bottom:12px}
+.ts-modal-ok h4{font-family:var(--fd);font-size:19px;margin-bottom:8px}
+.ts-modal-ok p{font-size:14px;color:var(--text-muted);line-height:1.6}
+</style>
+</head>
+<body>
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="tour.html">Тур-Де-Франч</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="info.html">Справочник</a><a href="blog.html">Блог</a><a href="#price" class="nav-cta">Забронировать</a></nav>
+  <button class="burger" id="burger" aria-label="Меню" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</header>
+
+<section class="thero">
+  <img src="tour-city.jpg" alt="Москва-Сити" class="thero-bg">
+  <div class="thero-ov"></div>
+  <div class="wrap">
+    <div class="flag">29 октября · Москва-Сити, Башня Федерации</div>
+    <h1>TOUR DE FRANCH</h1>
+    <p class="thero-sub">Colizeum, 600+ компьютерных клубов<br>+ ужин с командой PhoBo.</p>
+    <div class="logos"><div class="logo-chip"><img src="tour-logo-colizeum.png" alt="Colizeum" style="height:26px"></div><div class="logo-chip"><img src="tour-logo-phobo.png" alt="PhoBo" style="height:40px"></div></div>
+    <div class="hero-cta">
+      <a href="#price" class="btn">Забронировать место<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="seats"><b>Осталось 18 мест из 20</b><div class="seats-bar"><i></i></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="uk"><div class="wrap">
+  <div class="tag">Формат</div>
+  <h2 class="h2">Один день внутри сети на 600+ точек</h2>
+  <p class="sub">Не конференция и не вебинар. Приезжаете в офис, смотрите, как работает управляющая компания, и забираете применимое к своей сети.</p>
+  <div class="uk-grid uk-grid-4"><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>УК изнутри, а не в презентации</h3><p>Проходим по офису Colizeum, смотрим, как устроены отделы, и спрашиваем руководителей о том, что обычно не показывают.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div><h3>Разговор с основателем и гендиром</h3><p>Николай Антонов и Ринат Магдеев рассказывают, как сеть дошла до 600+ клубов и что ломалось по дороге.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M17 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></div><h3>20 франчайзеров, а не 200 зевак</h3><p>Камерная группа: успеваете задать свой вопрос и познакомиться со всеми участниками.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10a2 2 0 0 1 2 2v16l-7-4-7 4V5a2 2 0 0 1 2-2z"/></svg></div><h3>Вечер в PhoBo</h3><p>Ужин в Депо Лесная, нетворк-рулетка и разбор франчайзинга PhoBo от директора по франчайзингу.</p></div></div>
+</div></section>
+
+<section class="uk" style="padding-top:0"><div class="wrap">
+  <div class="tag">Кто принимает и выступает</div>
+  <h2 class="h2">Colizeum — сеть из 600+ компьютерных клубов</h2>
+  <p class="sub">Одна из самых быстрорастущих российских франшиз в своей нише. Офис в Башне Федерации, собственная управляющая компания, маркетинг и продажи под одной крышей.</p>
+  <div class="people"><div class="person fade-in"><img src="tour-antonov.jpg" alt="Николай Антонов" loading="lazy"><b>Николай Антонов</b><span>Основатель Colizeum</span></div><div class="person fade-in"><img src="tour-magdeev.jpg" alt="Ринат Магдеев" loading="lazy"><b>Ринат Магдеев</b><span>Генеральный директор Colizeum</span></div><div class="person fade-in"><img src="tour-lidia.jpg" alt="Лидия" loading="lazy"><b>Лидия</b><span>Руководитель B2B-маркетинга Colizeum</span></div><div class="person fade-in"><img src="tour-zolotarev.jpg" alt="Александр Золотарёв" loading="lazy"><b>Александр Золотарёв</b><span>Директор по франчайзингу PhoBo</span></div><div class="person fade-in"><img src="tour-sarapulov.jpg" alt="Семён Сарапулов" loading="lazy"><b>Семён Сарапулов</b><span>Основатель сообщества «Франчайзинг по-русски»</span></div></div>
+</div></section>
+
+<section class="prog" id="program"><div class="wrap">
+  <div class="tag">29 октября · четверг</div>
+  <h2 class="h2">Программа дня</h2>
+  <p class="sub" style="color:rgba(255,255,255,.7);margin-bottom:32px">Дневная часть — офис Colizeum в Башне Федерации. Вечерняя — ресторан PhoBo в Депо Лесная.</p>
+  <div class="p-list"><div class="p-row p-simple"><div class="p-time">14:00</div><div class="p-body"><span class="p-strong">Сбор и знакомство участников</span> · Башня Федерации, Москва-Сити</div></div><div class="p-row p-simple"><div class="p-time">14:30</div><div class="p-body"><span class="p-strong">Экскурсия по офису Colizeum</span> · Знакомство с отделами и руководителями</div></div><div class="p-row"><div class="p-time">15:30</div><div class="p-avs"><img src="tour-magdeev.jpg" alt="" loading="lazy"></div><div class="p-body"><div class="p-title">Выступление генерального директора</div><div class="p-who">Ринат Магдеев · генеральный директор Colizeum</div></div></div><div class="p-row"><div class="p-time">16:30</div><div class="p-avs"><img src="tour-lidia.jpg" alt="" loading="lazy"></div><div class="p-body"><div class="p-title">Маркетинг и продажи Colizeum</div><div class="p-who">Лидия · руководитель B2B-маркетинга</div></div></div><div class="p-row p-simple"><div class="p-time">17:00</div><div class="p-body"><span class="p-strong">Сессия вопросов и ответов</span> · Отвечают основатель и руководители направлений</div></div><div class="p-row p-simple"><div class="p-time">17:30</div><div class="p-body"><span class="p-strong">Завершение сессии, общее фото</span></div></div><div class="p-row p-simple"><div class="p-time">18:30</div><div class="p-body"><span class="p-strong">Встреча в ресторане PhoBo</span> · Депо Лесная</div></div><div class="p-row p-simple"><div class="p-time">19:00</div><div class="p-body"><span class="p-strong">Нетворк-рулетка</span> · Знакомства по формату сообщества</div></div><div class="p-row"><div class="p-time">19:30</div><div class="p-avs"><img src="tour-zolotarev.jpg" alt="" loading="lazy"></div><div class="p-body"><div class="p-title">Ужин и выступление директора по франчайзингу PhoBo</div><div class="p-who">Александр Золотарёв · директор по франчайзингу PhoBo</div></div></div></div>
+</div></section>
+
+<section class="price" id="price"><div class="wrap">
+  <div class="tag">Участие</div>
+  <h2 class="h2">Три формата участия</h2>
+  <p class="sub">Всего 20 мест, осталось 18. Бронь через форму: выбираете пакет, оставляете контакты и способ оплаты.</p>
+  <div class="tars">
+    <div class="tcard">
+      <div class="tcard-head"><div class="tcard-name">Стандарт</div></div>
+      <div class="tcard-price">20 000 ₽</div><div class="tcard-per">за участника</div>
+      <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Экскурсия по офису Colizeum</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Все выступления и сессия вопросов</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Нетворк-рулетка и ужин в PhoBo</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Общее фото и контакты участников</span></li></ul>
+      <button class="btn" onclick="tsOpen('standard')">Забронировать<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="tcard pop">
+      <div class="tcard-head"><div class="tcard-name">Биг-Босс</div><div class="tcard-badge">Популярный</div></div>
+      <div class="tcard-price">40 000 ₽</div><div class="tcard-per">за участника</div>
+      <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Всё из тарифа «Стандарт»</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Подписка на чат <a href="subscribe.html">«Масштаб»</a> на год</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><a href="ai.html">Мастер-класс по нейросетям 27 октября</a></span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Остальные онлайн-мастер-классы в течение года</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Записи всех эвентов и база из 62 выступлений</span></li></ul>
+      <button class="btn" onclick="tsOpen('bigboss')">Забронировать<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+    <div class="tcard dark">
+      <div class="tcard-head"><div class="tcard-name">Резидент</div></div>
+      <div class="tcard-price">150 000 ₽</div><div class="tcard-per">в год</div>
+      <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Тур-Де-Франч 29 октября</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Все мероприятия сообщества в течение года</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Подписка на чат «Масштаб» на год</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Ежемесячные онлайн-мастер-классы и мастермайнды</span></li></ul>
+      <button class="btn btn-light" onclick="tsOpen('resident')">Оставить заявку<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</div></section>
+
+<section class="lib"><div class="wrap">
+  <div class="lib-top">
+    <div><div class="tag">Что внутри чата «Масштаб»</div><h2 class="h2">62 выступления и 51 час записей в тарифах «Биг-Босс» и «Резидент»</h2><p class="sub">Ежемесячные мастер-классы и база знаний из более чем 60 вебинаров и выступлений инсайдеров рынка франчайзинга.</p></div>
+    <div class="car-nav"><button type="button" aria-label="Назад" onclick="car(-1)"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13 8H3m0 0l4-4M3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="next" aria-label="Вперёд" onclick="car(1)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+  </div>
+  <div class="car" id="car"><div class="w-card"><div class="w-thumb"><img src="ai-web-01.jpg" alt="" loading="lazy"><span class="w-dur">29 мин</span></div><div class="w-body"><div class="w-title">Персональные данные — как хранить, обрабатывать и не попасть на штрафы</div><div class="w-sp">Юрий Батищев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-02.jpg" alt="" loading="lazy"><span class="w-dur">1 ч 21 мин</span></div><div class="w-body"><div class="w-title">Почему одни франшизы растут а другие нет</div><div class="w-sp">Александр Долгов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-03.jpg" alt="" loading="lazy"><span class="w-dur">25 мин</span></div><div class="w-body"><div class="w-title">Франшиза «Без бренда» — масло без сливок или новый тренд?</div><div class="w-sp">Семён и Дарья Сарапуловы</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-04.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">Возможности Альфа-Банка для франчайзеров</div><div class="w-sp">Дамир Умаров, Николай Сергеев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-05.jpg" alt="" loading="lazy"><span class="w-dur">43 мин</span></div><div class="w-body"><div class="w-title">Развитие медицинской франшизы. Опыт BIORIZE</div><div class="w-sp">Артур Зарипов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-06.jpg" alt="" loading="lazy"><span class="w-dur">33 мин</span></div><div class="w-body"><div class="w-title">Маша — AI агент для звонков</div><div class="w-sp">Вадим Попов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-07.jpg" alt="" loading="lazy"><span class="w-dur">21 мин</span></div><div class="w-body"><div class="w-title">Стабильный поток заявок — дискуссия, ответы на вопросы</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-08.jpg" alt="" loading="lazy"><span class="w-dur">38 мин</span></div><div class="w-body"><div class="w-title">Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка</div><div class="w-sp">Алёна Овчинникова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-09.jpg" alt="" loading="lazy"><span class="w-dur">30 мин</span></div><div class="w-body"><div class="w-title">Как налоговая реформа повлияет на франшизы</div><div class="w-sp">Альбина Чукова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-10.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">SMM во франшизе</div><div class="w-sp">Анастасия Мансурова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-11.jpg" alt="" loading="lazy"><span class="w-dur">1 ч 18 мин</span></div><div class="w-body"><div class="w-title">Маркетинг франшиз в 2026 году</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-12.jpg" alt="" loading="lazy"><span class="w-dur">34 мин</span></div><div class="w-body"><div class="w-title">Система продажи франшиз которая приносит деньги</div><div class="w-sp">Александр Старжинский</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-13.jpg" alt="" loading="lazy"><span class="w-dur">47 мин</span></div><div class="w-body"><div class="w-title">Офис DODO-brands: сессия вопрос-ответ</div><div class="w-sp">Александр Столбовский, бизнес-девелопер Dodo</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-14.jpg" alt="" loading="lazy"><span class="w-dur">36 мин</span></div><div class="w-body"><div class="w-title">Налоговые изменения в 2026 году и что делать франчайзеру</div><div class="w-sp">Игорь Анфалов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-15.jpg" alt="" loading="lazy"><span class="w-dur">18 мин</span></div><div class="w-body"><div class="w-title">Кейс франшизы — банкрота. Дискуссия</div><div class="w-sp">Владимир Панкратов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-16.jpg" alt="" loading="lazy"><span class="w-dur">32 мин</span></div><div class="w-body"><div class="w-title">PR для бизнеса: Как продвигаться результативно</div><div class="w-sp">Анастасия Панчук, основательница PR-агентства PunchR</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-17.jpg" alt="" loading="lazy"><span class="w-dur">21 мин</span></div><div class="w-body"><div class="w-title">Реклама франшизы у блогеров по бартеру</div><div class="w-sp">Анастасия Мансурова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-18.jpg" alt="" loading="lazy"><span class="w-dur">15 мин</span></div><div class="w-body"><div class="w-title">Офис DODO-brands: экскурсия</div><div class="w-sp">Александр Столбовский, бизнес-девелопер Dodo</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-19.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">Стабильный поток заявок при растущей конкуренции и уходящих площадках</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-20.jpg" alt="" loading="lazy"><span class="w-dur">20 мин</span></div><div class="w-body"><div class="w-title">Готовность бизнеса к масштабированию через франшизу</div><div class="w-sp">Владимир Панкратов</div></div></div></div>
+  
+</div></section>
+
+<section class="cta"><h2>29 октября, 20 мест. Остальные увидят это в чужих сторис</h2><a href="#price" class="btn btn-dark">Занять место<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></section>
+
+<section class="org"><div class="wrap">
+  <div class="tag">Организатор · сообщество «Франчайзинг по-русски»</div>
+  <h2 class="h2">Так проходят наши эвенты</h2>
+  <div class="org-grid">
+    <div class="org-text">
+      <p>Год назад мы собрались в чате обсуждать франчайзинг. Сегодня за участниками сообщества — более 11 500 работающих точек: Чио-Чио, Чебурек.ми, Суши Wok, «Другие Миры», Cheese Photo, Додо Пицца и ещё около 250 сетей.</p>
+      <p>За год — четыре «Масштаба» в Сколково, первое ток-шоу о франчайзинге, 40+ вебинаров и экскурсии в действующие сети. Тур-Де-Франч — продолжение этих экскурсий.</p>
+      <a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank" rel="noopener" class="btn">Присоединиться к сообществу<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="stats"><div class="stat"><div class="stat-n">~11 500</div><div class="stat-l">точек за участниками</div></div><div class="stat"><div class="stat-n">1 411</div><div class="stat-l">участников сообщества</div></div><div class="stat"><div class="stat-n">33</div><div class="stat-l">города России и СНГ</div></div><div class="stat"><div class="stat-n">250+</div><div class="stat-l">сетей в составе</div></div></div>
+  </div>
+  <div class="gal"><img src="gallery-1.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"><img src="gallery-2.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"><img src="gallery-3.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"><img src="gallery-4.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"><img src="gallery-5.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"><img src="gallery-6.jpg" alt="Встреча сообщества «Франчайзинг по-русски»" loading="lazy"></div>
+</div></section>
+
+<section class="rv"><div class="wrap">
+  <div class="tag">Отзывы</div>
+  <h2 class="h2">Слово тем, кто уже был</h2>
+  <div class="rv-grid"><div class="rv-card"><div class="rv-q">“</div><p>Сообщество «Франчайзинг по-русски» — не просто чат, а настоящее комьюнити, где можно найти подрядчиков, партнёров и новые инсайты для масштабирования.</p><div class="rv-who"><img src="ai-rv-nazarov.jpg" alt="Александр Назаров" loading="lazy"><div><b>Александр Назаров</b><span>Лидер брендов My Box и Secret Kitchen</span></div></div></div><div class="rv-card"><div class="rv-q">“</div><p>Стараюсь не пропускать встречи сообщества «Франчайзинг по-русски», всегда рад делиться экспертизой и находить новые знакомства среди франчайзеров.</p><div class="rv-who"><img src="ai-rv-nabiullin.jpg" alt="Ильназ Набиуллин" loading="lazy"><div><b>Ильназ Набиуллин</b><span>Основатель Чио-Чио</span></div></div></div><div class="rv-video"><iframe src="https://player.vimeo.com/video/1128159622?badge=0&amp;autopause=0&amp;player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Видео-отзыв участника"></iframe></div><div class="rv-video"><iframe src="https://player.vimeo.com/video/1148576108?badge=0&amp;autopause=0&amp;player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Видео-отзыв участника"></iframe></div><div class="rv-video"><iframe src="https://player.vimeo.com/video/1148577108?badge=0&amp;autopause=0&amp;player_id=0" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Видео-отзыв участника"></iframe></div></div>
+</div></section>
+
+<section class="mgr"><div class="wrap"><div class="mgr-card">
+  <img src="ai-sp-tokareva.jpg" alt="Ярослава Токарева" loading="lazy">
+  <div class="mgr-info"><div class="mgr-k">По вопросам участия, партнёрства и выступления</div><div class="mgr-n">Ярослава Токарева</div><div class="mgr-r">Менеджер сообщества «Франчайзинг по-русски» · @Yes_Yasya</div></div>
+  <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="btn">Написать в Telegram<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</div></div></section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="masshtab.html">Форум «Масштаб»</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="info.html">Справочник</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="oferta.html">Оферта</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span></div></div></footer>
+
+<div class="ts-modal" id="tsModal" onclick="if(event.target===this)tsClose()">
+  <div class="ts-modal-box">
+    <button class="ts-modal-close" onclick="tsClose()" aria-label="Закрыть">&times;</button>
+    <div class="ts-modal-tier" id="tsTier">Участие</div>
+    <div class="ts-modal-title" id="tsTitle">Бронирование</div>
+    <div class="ts-modal-price" id="tsPrice"></div>
+    <div class="ts-modal-sub" id="tsSub">29 октября · Москва-Сити, Башня Федерации</div>
+    <div id="tsFields">
+      <div class="ts-modal-err" id="tsErr"></div>
+      <div class="ts-field"><label for="tsName">Имя и фамилия *</label><input type="text" id="tsName" placeholder="Иван Иванов" autocomplete="name"></div>
+      <div class="ts-field"><label for="tsPhone">Телефон *</label><input type="tel" id="tsPhone" placeholder="+7 900 000-00-00" autocomplete="tel"></div>
+      <div class="ts-field"><label for="tsTg">Telegram</label><input type="text" id="tsTg" placeholder="@username"></div>
+      <div class="ts-field"><label for="tsCompany">Компания или бренд</label><input type="text" id="tsCompany" placeholder="Название"></div>
+      <div class="ts-field"><label>Способ оплаты</label>
+        <div class="ts-pay">
+          <label><input type="radio" name="tsPay" value="card" checked>Картой</label>
+          <label><input type="radio" name="tsPay" value="invoice">По счёту</label>
+        </div>
+      </div>
+      <input type="text" id="tsWebsite" class="ts-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="ts-modal-btn" id="tsBtn" onclick="tsSubmit()">Забронировать →</button>
+      <div class="ts-modal-note">При оплате картой откроется страница оплаты. По счёту — Ярослава пришлёт реквизиты и договор.</div>
+    </div>
+    <div class="ts-modal-ok" id="tsOk" style="display:none">
+      <div class="tick">✅</div>
+      <h4>Заявка принята</h4>
+      <p id="tsOkText">Ярослава свяжется с вами и пришлёт детали.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+function car(dir){const c=document.getElementById('car');const card=c.querySelector('.w-card');const step=(card.offsetWidth+16)*Math.max(1,Math.round(c.clientWidth/(card.offsetWidth+16)));
+const max=c.scrollWidth-c.clientWidth;let x=c.scrollLeft+dir*step;if(x>max+5)x=0;else if(x<-5)x=max;c.scrollTo({left:x,behavior:'smooth'})}
+const io=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+
+/* Бронирование. Заявка уходит на наш сервер, оттуда бот публикует её в группу оргов. */
+const TOUR_PACKAGES={
+  standard:{tier:'Стандарт',title:'Экскурсия в Colizeum',price:'20 000 ₽',pay:'https://t.me/tribute/app?startapp=sApE'},
+  bigboss:{tier:'Биг-Босс',title:'Экскурсия + чат «Масштаб» на год',price:'40 000 ₽',pay:'https://t.me/tribute/app?startapp=sEFq'},
+  resident:{tier:'Резидент',title:'Резидентство на год',price:'150 000 ₽',pay:''}
+};
+let tourCurrent='standard';
+function tsOpen(pkg){
+  tourCurrent=pkg;const p=TOUR_PACKAGES[pkg];
+  document.getElementById('tsTier').textContent=p.tier;
+  document.getElementById('tsTitle').textContent=p.title;
+  document.getElementById('tsPrice').textContent=p.price;
+  document.getElementById('tsFields').style.display='';
+  document.getElementById('tsOk').style.display='none';
+  document.getElementById('tsErr').textContent='';
+  document.getElementById('tsModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function tsClose(){document.getElementById('tsModal').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')tsClose()});
+async function tsSubmit(){
+  const name=document.getElementById('tsName').value.trim();
+  const phone=document.getElementById('tsPhone').value.trim();
+  const tg=document.getElementById('tsTg').value.trim();
+  const company=document.getElementById('tsCompany').value.trim();
+  const method=document.querySelector('input[name="tsPay"]:checked').value;
+  const err=document.getElementById('tsErr');
+  if(!name){err.textContent='Укажите имя';return}
+  if(!phone&&!tg){err.textContent='Оставьте телефон или Telegram';return}
+  err.textContent='';
+  const btn=document.getElementById('tsBtn');btn.disabled=true;btn.textContent='Отправляем…';
+  const p=TOUR_PACKAGES[tourCurrent];
+  const payload={form:'tour',name:name,phone:phone,telegram:tg,company:company,
+    package:p.tier+' — '+p.title,price:p.price,
+    method:(method==='card'?'Оплата картой':'Оплата по счёту')+' · Тур-Де-Франч, 29 октября 2026',
+    website:document.getElementById('tsWebsite').value||''};
+  let sent=false;
+  try{const r=await fetch('https://api.frgu.ru/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});sent=r.ok}catch(e){}
+  const text=['Заявка — Тур-Де-Франч, 29 октября',
+    'Пакет: '+p.tier+' ('+p.price+')',
+    'Оплата: '+(method==='card'?'картой':'по счёту'),
+    'Имя: '+name,'Телефон: '+(phone||'—'),'Telegram: '+(tg||'—'),'Компания: '+(company||'—')].join('\n');
+  const ok=document.getElementById('tsOkText');
+  if(method==='card'&&p.pay){
+    ok.textContent='Открыли страницу оплаты. Если окно не появилось, напишите Ярославе — пришлёт ссылку.';
+    window.open(p.pay,'_blank','noopener');
+  }else{
+    ok.textContent='Ярослава пришлёт счёт и договор. Если переписка не открылась, напишите ей сами: @Yes_Yasya.';
+    window.open('https://t.me/Yes_Yasya?text='+encodeURIComponent(text),'_blank','noopener');
+  }
+  if(!sent&&method==='card'){window.open('https://t.me/Yes_Yasya?text='+encodeURIComponent(text),'_blank','noopener')}
+  document.getElementById('tsFields').style.display='none';
+  document.getElementById('tsOk').style.display='block';
+  btn.disabled=false;btn.textContent='Забронировать →';
+}
+</script>
+</body>
+</html>
