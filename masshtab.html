@@ -806,17 +806,47 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1280px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
       margin: 0 auto 32px;
     }
-    @media (max-width: 1100px) {
-      .pricing-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
+    @media (max-width: 860px) {
       .pricing-grid { grid-template-columns: 1fr; }
     }
+
+    .resident-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto 32px;
+      padding: 20px 28px;
+      background: var(--dark);
+      border: 1.5px solid #F5921E;
+      border-radius: 16px;
+      flex-wrap: wrap;
+    }
+    .resident-strip-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .resident-strip-badge {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #F5921E;
+      white-space: nowrap;
+    }
+    .resident-strip-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .resident-strip-text strong { color: #fff; }
 
     .pricing-card {
       background: var(--light);
@@ -1930,83 +1960,35 @@
           <div class="program-day-header">
             <div class="program-day-num" aria-hidden="true">2</div>
             <div class="program-day-info">
-              <h3>14 декабря — Премия, нетворкинг и экскурсия</h3>
-              <span>12:00 — 17:30 · Москва</span>
+              <h3>14 декабря — Премия и нетворкинг</h3>
+              <span>Москва · программа уточняется</span>
             </div>
           </div>
 
-          <!-- Партнёр дня 2 -->
-          <div class="fitservice-card">
-            <div class="fitservice-header">
-              <div class="fitservice-meta">
-                <div class="fitservice-badge">Партнёр дня 2</div>
-                <p>Компания для закулисной экскурсии уточняется. Это будет один из ведущих российских франчайзеров — закрытый доступ, живое общение с командой и возможность задать любые вопросы напрямую.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Timeline -->
           <div class="program-items" role="list">
             <!-- Премия -->
             <div class="program-item program-item--keynote" role="listitem">
-              <span class="program-time">13 декабря</span>
+              <span class="program-time">14 декабря</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-keynote-badge">🏆 Премия</div>
                 <h4>Премия профессионального признания «Франчайзинг по-русски»</h4>
-                <p>Торжественное вручение наград лучшим представителям франчайзинга по итогам года — в рамках второго дня форума</p>
+                <p>Торжественное вручение наград лучшим представителям франчайзинга по итогам года. Закрытый формат — только для участников форума</p>
               </div>
             </div>
-            <!-- 12:00 Сбор -->
-            <div class="program-item program-item--break" role="listitem">
-              <span class="program-time">12:00–12:30</span>
-              <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <h4>Сбор гостей · Osteria Mario</h4>
-                <p>Ул. Мясницкая, 25А — <a href="https://osteriamario.ru/" target="_blank" rel="noopener" style="color: var(--red); text-decoration: none;">osteriamario.ru</a></p>
-              </div>
-            </div>
-            <!-- 12:30 Бизнес-экскурсия -->
-            <div class="program-item program-item--keynote" role="listitem">
-              <span class="program-time">12:30–14:00</span>
-              <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-keynote-badge">Бизнес-экскурсия</div>
-                <h4>Экскурсия от ТОП-менеджмента ресторанного холдинга «Тигрус»</h4>
-                <p>Закулисная история одного из крупнейших ресторанных холдингов России — от первого стола до сети</p>
-              </div>
-            </div>
-            <!-- 14:00 Нетворкинг-карусель -->
+            <!-- Нетворкинг -->
             <div class="program-item" role="listitem">
-              <span class="program-time">14:00–15:00</span>
+              <span class="program-time">программа</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
-                <h4>Глубокий нетворкинг-карусель с менторством процесса</h4>
-                <p>Структурированный обмен опытом: каждый участник — и ментор, и стажёр</p>
-              </div>
-            </div>
-            <!-- 15:00 Фуршет -->
-            <div class="program-item program-item--break" role="listitem">
-              <span class="program-time">15:00–16:00</span>
-              <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <h4>Фуршет и свободное общение</h4>
-                <p>Неформальные разговоры за едой в кругу предпринимателей</p>
-              </div>
-            </div>
-            <!-- 16:00 Экскурсия -->
-            <div class="program-item" role="listitem">
-              <span class="program-time">16:00–17:30</span>
-              <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <h4>Экскурсия «Смешение»</h4>
-                <p>Москва от купеческих усадеб до сталинских высоток: один маршрут, несколько эпох. Прогулка с профессиональным гидом</p>
+                <h4>Нетворкинг и живое общение</h4>
+                <p>Подробная программа второго дня уточняется</p>
               </div>
             </div>
           </div>
 
           <p style="margin-top: 28px; font-size: 13px; color: rgba(255,255,255,0.35); padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">
-            День 2 доступен только для тарифа «2 дня — Участник»
+            День 2 доступен для тарифов «2 дня» и «Спикер»
           </p>
         </div>
       </div>
@@ -2410,44 +2392,15 @@
           <a href="https://t.me/frguru" target="_blank" rel="noopener" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Стать спикером</a>
         </div>
 
-        <!-- Tier 3 — Резидент -->
-        <div class="pricing-card pricing-card--resident reveal" role="listitem" aria-label="Резидент Сообщества — 150 000 рублей в год">
-          <div class="pricing-badge--resident">Годовая подписка</div>
-          <div class="pricing-tier">Резидент</div>
-          <div class="pricing-name">Резидент<br/>Сообщества</div>
+      </div>
 
-          <div class="pricing-price">
-            <div class="pricing-amount">
-              <span class="pricing-currency">₽</span>150 000
-            </div>
-            <div class="pricing-period">в год · всё включено</div>
-          </div>
-
-          <div class="pricing-divider" aria-hidden="true"></div>
-
-          <ul class="pricing-features">
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Участие зрителем на всех мероприятиях сообщества (4+ в год)
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Подписка на закрытый чат «Масштаб» на весь год
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              12 закрытых мастермайндов с разборами в год
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Аудит франшизы от проверенных подрядчиков сообщества
-            </li>
-          </ul>
-
-          <a href="https://frgu.ru/resident" target="_blank" rel="noopener" style="font-size:13px; color: rgba(255,255,255,0.4); text-decoration: underline; text-underline-offset: 3px; display:block; margin-bottom:16px;">Подробнее о пакете →</a>
-
-          <button onclick="openModal('resident')" class="btn" style="width:100%; justify-content:center; text-align:center; background:#F5921E; color:#fff; border:none;">Стать резидентом</button>
+      <!-- Резидент-полоска -->
+      <div class="resident-strip reveal">
+        <div class="resident-strip-left">
+          <span class="resident-strip-badge">🔑 Всё включено</span>
+          <span class="resident-strip-text">Участие во всех мероприятиях сообщества в течение года уже включено в пакет <strong>«Резидент Сообщества»</strong></span>
         </div>
+        <a href="https://frgu.ru/resident" target="_blank" rel="noopener" class="btn" style="background:#F5921E; color:#fff; border:none; white-space:nowrap; flex-shrink:0;">Узнать о пакете</a>
       </div>
 
       <div class="pricing-note reveal" aria-live="polite">
