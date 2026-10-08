@@ -806,12 +806,15 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 24px;
-      max-width: 1160px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1280px;
       margin: 0 auto 32px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 1100px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
       .pricing-grid { grid-template-columns: 1fr; }
     }
 
@@ -1801,177 +1804,78 @@
                 <p>Быстрый круг знакомств — кто здесь, чем занимается и с каким запросом приехал</p>
               </div>
             </div>
-            <!-- 10:15 Батищев -->
+            <!-- 10:15 Анфалов -->
             <div class="program-item" role="listitem">
               <span class="program-time">10:15–10:45</span>
               <div class="program-dot" aria-hidden="true"></div>
               <div class="program-text">
                 <div class="program-speaker-header">
-                  <img src="speaker-batishchev.jpg" alt="Юрий Батищев" class="program-speaker-avatar" loading="lazy" />
+                  <img src="speaker-anfalov.jpg" alt="Игорь Анфалов" class="program-speaker-avatar" loading="lazy" />
                   <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Юрий Батищев</span>
-                    <span class="program-speaker-role">DPO · Soglasen.ru</span>
+                    <span class="program-speaker-name">Игорь Анфалов</span>
+                    <span class="program-speaker-role">Lumos Partners</span>
                   </div>
                 </div>
                 <h4>Тема уточняется</h4>
               </div>
             </div>
-            <!-- 10:45 Цыпко -->
-            <div class="program-item" role="listitem">
+            <!-- Вакантные слоты -->
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">10:45–11:15</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-tsypko.jpg" alt="Марина Цыпко" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Марина Цыпко</span>
-                    <span class="program-speaker-role">Совет Лигал</span>
-                  </div>
-                </div>
-                <h4>Свой среди чужих: как вывести франшизу за рубеж в непростое для российского бизнеса время</h4>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 11:15 Бунцевич -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">11:15–11:45</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-buntsevich.jpg" alt="Сергей Бунцевич" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Сергей Бунцевич</span>
-                    <span class="program-speaker-role">Coffee Way</span>
-                  </div>
-                </div>
-                <h4>Когда одной франшизы становится мало</h4>
-                <p>Как из Coffee Way выросли 9 направлений бизнеса</p>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
             <!-- 11:45 Кофе-брейк -->
             <div class="program-item program-item--break" role="listitem">
               <span class="program-time">11:45–12:00</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <h4>☕ Кофе-брейк</h4>
-              </div>
+              <div class="program-text"><h4>☕ Кофе-брейк</h4></div>
             </div>
-            <!-- 12:00 Панчук -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">12:00–12:30</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-panchuk.jpg" alt="Анастасия Панчук" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Анастасия Панчук</span>
-                    <span class="program-speaker-role">PR-эксперт</span>
-                  </div>
-                </div>
-                <h4>PR без пиарщика: как управлять репутацией компании своими силами</h4>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 13:00 Романов -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">13:00–13:30</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-romanov.jpg" alt="Денис Романов" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Денис Романов</span>
-                    <span class="program-speaker-role">Франчайзинг</span>
-                  </div>
-                </div>
-                <h4>Новая экономика франчайзинга: почему качество лида важнее количества и как перестроить привлечение</h4>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 13:30 Штомпель -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">13:30–14:00</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-shtompel.jpg" alt="Роман Штомпель" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Роман Штомпель</span>
-                    <span class="program-speaker-role">Black Tab</span>
-                  </div>
-                </div>
-                <h4>Когда франчайзи становится конкурентом?</h4>
-                <p>Почему сильные партнёры уходят из сети и как франчайзеру к этому подготовиться</p>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
             <!-- 14:00 Обед -->
             <div class="program-item program-item--break" role="listitem">
               <span class="program-time">14:00–15:00</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <h4>🍽 Обед</h4>
-                <p>Питание не включено в стоимость участия</p>
-              </div>
+              <div class="program-text"><h4>🍽 Обед</h4><p>Питание не включено в стоимость участия</p></div>
             </div>
-            <!-- 15:00 Селезнев -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">15:00–15:30</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-seleznev.jpg" alt="Денис Селезнев" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Денис Селезнев</span>
-                    <span class="program-speaker-role">Доставка Кайфа</span>
-                  </div>
-                </div>
-                <h4>Маркетинг в эпоху блокировок</h4>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 15:30 Назаров -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">15:30–16:00</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="nazarov.jpg" alt="Александр Назаров" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Александр Назаров</span>
-                    <span class="program-speaker-role">My Box · Secret Kitchen</span>
-                  </div>
-                </div>
-                <h4>От 5 до 250 точек</h4>
-                <p>Почему франшизу нельзя масштабировать одинаково на разных стадиях развития бизнеса</p>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 16:00 Швецов -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">16:00–16:30</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="speaker-shvetsov.jpg" alt="Егор Швецов" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Егор Швецов</span>
-                    <span class="program-speaker-role">makes</span>
-                  </div>
-                </div>
-                <h4>От ручных процессов к цифровой экосистеме</h4>
-                <p>CRM, база знаний, автоматизации и AI — что уже сегодня можно объединить внутри франшизы</p>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
-            <!-- 16:30 Овчинникова -->
-            <div class="program-item" role="listitem">
+            <div class="program-item program-item--vacant" role="listitem">
               <span class="program-time">16:30–17:00</span>
               <div class="program-dot" aria-hidden="true"></div>
-              <div class="program-text">
-                <div class="program-speaker-header">
-                  <img src="ovchinnikova.jpg" alt="Алёна Овчинникова" class="program-speaker-avatar" loading="lazy" />
-                  <div class="program-speaker-tag">
-                    <span class="program-speaker-name">Алёна Овчинникова</span>
-                    <span class="program-speaker-role">Эксперт по франчайзингу · Спикер ТПП</span>
-                  </div>
-                </div>
-                <h4>ИИ в помощь: ИИ-помощники франчайзера и франчайзи</h4>
-                <p>ИИ-найм, ИИ-аудит, персональный ассистент и помощник юриста</p>
-              </div>
+              <div class="program-text"><div class="program-vacant-slot"><span class="program-vacant-label">Место спикера</span><span class="program-vacant-hint">Тема уточняется</span></div></div>
             </div>
             <!-- 17:00 Кофе-брейк -->
             <div class="program-item program-item--break" role="listitem">
@@ -1988,44 +1892,7 @@
               <div class="program-text">
                 <div class="program-keynote-badge">Дискуссия</div>
                 <h4>Открытая дискуссия с залом</h4>
-                <p>Живой разговор о франчайзинге — вопросы, кейсы, мнения</p>
-                <div class="program-panel-avatars">
-                  <div class="program-panel-member">
-                    <img src="speaker-dolgov.jpg" alt="Александр Долгов" />
-                    <div>
-                      <span>Александр Долгов</span>
-                      <span class="program-panel-role">20x80 · 800+ франчайзи</span>
-                    </div>
-                  </div>
-                  <div class="program-panel-member">
-                    <img src="nabiullin.jpg" alt="Ильназ Набиуллин" />
-                    <div>
-                      <span>Ильназ Набиуллин</span>
-                      <span class="program-panel-role">INBRAND · 1000+ франчайзи</span>
-                    </div>
-                  </div>
-                  <div class="program-panel-member">
-                    <img src="speaker-besedin.jpg" alt="Дмитрий Беседин" />
-                    <div>
-                      <span>Дмитрий Беседин</span>
-                      <span class="program-panel-role">Другие Миры · 400+ франчайзи в 54 странах</span>
-                    </div>
-                  </div>
-                  <div class="program-panel-member">
-                    <img src="speaker-belonoshchenko.jpg" alt="Юрий Белонощенко" />
-                    <div>
-                      <span>Юрий Белонощенко</span>
-                      <span class="program-panel-role">Бэби-Клуб · 150+ детских клубов</span>
-                    </div>
-                  </div>
-                  <div class="program-panel-member">
-                    <img src="speaker-sarapulov.jpg" alt="Семён Сарапулов" />
-                    <div>
-                      <span>Семён Сарапулов</span>
-                      <span class="program-panel-role">Основатель сообщества · модератор</span>
-                    </div>
-                  </div>
-                </div>
+                <p>Состав участников уточняется. Живой разговор о франчайзинге — вопросы, кейсы, мнения</p>
               </div>
             </div>
             <!-- 18:45 Закрытие -->
@@ -2063,8 +1930,8 @@
           <div class="program-day-header">
             <div class="program-day-num" aria-hidden="true">2</div>
             <div class="program-day-info">
-              <h3>14 декабря — Нетворкинг и экскурсия</h3>
-              <span>Osteria Mario · 12:00 — 17:30</span>
+              <h3>14 декабря — Премия, нетворкинг и экскурсия</h3>
+              <span>12:00 — 17:30 · Москва</span>
             </div>
           </div>
 
@@ -2080,6 +1947,16 @@
 
           <!-- Timeline -->
           <div class="program-items" role="list">
+            <!-- Премия -->
+            <div class="program-item program-item--keynote" role="listitem">
+              <span class="program-time">13 декабря</span>
+              <div class="program-dot" aria-hidden="true"></div>
+              <div class="program-text">
+                <div class="program-keynote-badge">🏆 Премия</div>
+                <h4>Премия профессионального признания «Франчайзинг по-русски»</h4>
+                <p>Торжественное вручение наград лучшим представителям франчайзинга по итогам года — в рамках второго дня форума</p>
+              </div>
+            </div>
             <!-- 12:00 Сбор -->
             <div class="program-item program-item--break" role="listitem">
               <span class="program-time">12:00–12:30</span>
@@ -2474,85 +2351,63 @@
       <div class="pricing-header reveal">
         <span class="section-label">Участие</span>
         <h2 class="section-title" id="pricingTitle">Выберите формат</h2>
-        <p class="section-lead">Три формата участия — выбери подходящий. Спикерские места включены в тариф «2 дня».</p>
+        <p class="section-lead">Четыре формата участия — выбери подходящий. Спикерское участие — отдельный тариф.</p>
       </div>
 
       <div class="pricing-grid" role="list">
-        <!-- Tier 1 -->
-        <div class="pricing-card reveal" role="listitem" aria-label="Тариф 1 день Зритель — 20 000 рублей">
+        <!-- Tier 1 — 1 день -->
+        <div class="pricing-card reveal" role="listitem" aria-label="1 день Зритель — 25 000 рублей">
           <div class="pricing-tier">Тариф</div>
           <div class="pricing-name">1 день<br/>Зритель</div>
-
           <div class="pricing-price">
-            <div class="pricing-amount">
-              <span class="pricing-currency">₽</span>20 000
-            </div>
-            <div class="pricing-period">уточняется</div>
+            <div class="pricing-amount"><span class="pricing-currency">₽</span>25 000</div>
+            <div class="pricing-period">13 декабря 2026</div>
           </div>
-
           <div class="pricing-divider" aria-hidden="true"></div>
-
           <ul class="pricing-features">
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Деловая программа 13 декабря
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Доступ ко всем сессиям и дискуссиям
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Материалы форума
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Нетворкинг в рамках 1 дня
-            </li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Деловая программа 13 декабря</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Доступ ко всем сессиям и дискуссиям</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Материалы форума</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Нетворкинг в рамках 1 дня</li>
           </ul>
-
           <button onclick="openModal('viewer')" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Купить</button>
         </div>
 
-        <!-- Tier 2 (Featured) -->
-        <div class="pricing-card featured reveal" role="listitem" aria-label="Тариф 2 дня Участник — 40 000 рублей — популярный">
+        <!-- Tier 2 — 2 дня (Featured) -->
+        <div class="pricing-card featured reveal" role="listitem" aria-label="2 дня Участник — 50 000 рублей">
           <div class="pricing-badge" aria-label="Наиболее популярный">Популярный</div>
           <div class="pricing-tier" style="color: rgba(242,72,34,0.9);">Тариф</div>
           <div class="pricing-name">2 дня<br/>Участник</div>
-
           <div class="pricing-price">
-            <div class="pricing-amount">
-              <span class="pricing-currency">₽</span>40 000
-            </div>
-            <div class="pricing-period">уточняется</div>
+            <div class="pricing-amount"><span class="pricing-currency">₽</span>50 000</div>
+            <div class="pricing-period">13–14 декабря 2026</div>
           </div>
-
           <div class="pricing-divider" aria-hidden="true"></div>
-
           <ul class="pricing-features">
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Всё из тарифа «1 день»
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Возможность выступить с докладом
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Экскурсия и нетворкинг (14 декабря)
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Вечерняя экскурсия по Москве с гидом
-            </li>
-            <li>
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Встречи тет-а-тет с участниками
-            </li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Всё из тарифа «1 день»</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Программа 2-го дня (14 декабря)</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Нетворкинг и экскурсия по Москве</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Встречи тет-а-тет с участниками</li>
           </ul>
-
           <button onclick="openModal('speaker')" class="btn btn-red" style="width:100%; justify-content:center;">Купить</button>
+        </div>
+
+        <!-- Tier 3 — Спикер -->
+        <div class="pricing-card reveal" role="listitem" aria-label="Спикерское участие — 60 000 рублей">
+          <div class="pricing-tier">Тариф</div>
+          <div class="pricing-name">Спикер<br/>2 дня</div>
+          <div class="pricing-price">
+            <div class="pricing-amount"><span class="pricing-currency">₽</span>60 000</div>
+            <div class="pricing-period">13–14 декабря 2026</div>
+          </div>
+          <div class="pricing-divider" aria-hidden="true"></div>
+          <ul class="pricing-features">
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Всё из тарифа «2 дня»</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Выступление с докладом на форуме</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Упоминание в программе и анонсах</li>
+            <li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Статус спикера сообщества</li>
+          </ul>
+          <a href="https://t.me/frguru" target="_blank" rel="noopener" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Стать спикером</a>
         </div>
 
         <!-- Tier 3 — Резидент -->
@@ -2598,7 +2453,7 @@
       <div class="pricing-note reveal" aria-live="polite">
         <div class="pricing-countdown">
           <svg aria-hidden="true" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Стоимость участия уточняется
+          Цены актуальны до объявления раннего бёрда
         </div>
         <p style="margin-top: 16px;">Стоимость питания не включена. Число мест ограничено.</p>
       </div>
@@ -2921,14 +2776,14 @@
     const PACKAGES = {
       viewer: {
         title:    '1 день — Зритель',
-        subtitle: '20 000 ₽ · 13 декабря 2026, Москва',
-        price:    '20 000 ₽',
+        subtitle: '25 000 ₽ · 13 декабря 2026, Москва',
+        price:    '25 000 ₽',
         payLink:  'https://t.me/tribute/app?startapp=sApE',
       },
       speaker: {
         title:    '2 дня — Участник',
-        subtitle: '40 000 ₽ · 13–14 декабря 2026, Москва',
-        price:    '40 000 ₽',
+        subtitle: '50 000 ₽ · 13–14 декабря 2026, Москва',
+        price:    '50 000 ₽',
         payLink:  'https://t.me/tribute/app?startapp=sEFq',
       },
       resident: {
