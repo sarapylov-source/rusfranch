@@ -484,6 +484,105 @@ h3 {
 /* ===== REVEAL ===== */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== TALK PROMO (видео-плашка) ===== */
+.talk-promo {
+  display: block;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.talk-promo:hover { transform: translateY(-4px); box-shadow: 0 32px 80px rgba(0,0,0,0.12); }
+.talk-promo-image {
+  position: relative;
+  display: block;
+  background: var(--dark);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+.talk-promo-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.talk-promo:hover .talk-promo-image img { transform: scale(1.03); }
+.talk-promo-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+  pointer-events: none;
+}
+.talk-promo-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px; height: 96px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  padding-left: 6px;
+  box-shadow: 0 16px 48px rgba(242,72,34,0.45);
+  transition: transform 0.2s, background 0.2s;
+}
+.talk-promo:hover .talk-promo-play { transform: translate(-50%, -50%) scale(1.08); background: var(--accent-hover); }
+.talk-promo-body {
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.talk-promo-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.talk-promo-body h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+.talk-promo-body p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+.talk-promo-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--accent);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--font-body);
+  transition: all .2s;
+  margin-top: 8px;
+}
+.talk-promo:hover .talk-promo-cta { background: var(--accent-hover); }
+@media (max-width: 768px) {
+  .talk-promo-body { padding: 28px 24px; }
+  .talk-promo-play { width: 72px; height: 72px; font-size: 24px; }
+}
+
+
 </style>
 </head>
 <body>
@@ -662,6 +761,25 @@ h3 {
         <p><strong>ЦФА?</strong> Запросов в эту сторону пока не было. Главная сложность не в праве, а в продаже: чем сложнее конструкция, тем сильнее режется конверсия на этапе, когда вы объясняете инвестору, как всё устроено.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ==================== TALK PROMO ==================== -->
+<section class="section" style="padding-top: 40px;">
+  <div class="container">
+    <a href="https://t.me/frguru?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B0%D0%BC%20%D1%87%D0%B0%D1%82%D0%B0%20%C2%AB%D0%9C%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%C2%BB" target="_blank" rel="noopener" class="talk-promo reveal">
+      <div class="talk-promo-image">
+        <img src="anfalov-talk.jpg" alt="Игорь Анфалов выступает на «Масштабе» в Сколково">
+        <div class="talk-promo-play">▶</div>
+      </div>
+      <div class="talk-promo-body">
+        <div class="talk-promo-label">Полная версия выступления</div>
+        <h3>Разбор целиком, со схемами и вопросами из зала</h3>
+        <p>Запись выступления Игоря доступна участникам закрытой подписки «Масштаб». Там же — записи всех остальных спикеров, материалы прошлых встреч и живой чат сообщества.</p>
+        <span class="talk-promo-cta">Получить доступ →</span>
+      </div>
+    </a>
   </div>
 </section>
 
