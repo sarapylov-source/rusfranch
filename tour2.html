@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тур-Де-Франч, 19 ноября — один день, три бренда: My Box, Secret Kitchen, Danjiro | Франчайзинг по-русски</title>
-<meta name="description" content="19 ноября, Москва. Экскурсии в три ресторанных бренда за один день: My Box, Secret Kitchen и Danjiro. Операционка, доставка и агрегаторы, портфель брендов, нейросети в УК.">
+<meta name="description" content="19 ноября, Москва. Бизнес-тур по трём брендам за один день: MYBOX Market, Secret Kitchen и Danjiro. Операционные модели, экономика, дегустации, трансфер и экскурсия по Москве включены.">
 <meta property="og:title" content="Тур-Де-Франч: один день — три бренда">
-<meta property="og:description" content="19 ноября, Москва. My Box, Secret Kitchen, Danjiro: заходим в офисы, смотрим процессы, задаём неудобные вопросы.">
+<meta property="og:description" content="19 ноября, Москва. MYBOX Market, Secret Kitchen и Danjiro за один день: операционные модели, экономика, дегустации. Трансфер и экскурсия по Москве включены.">
 <meta property="og:image" content="https://frgu.ru/tour2-hero.jpg">
 <meta property="og:url" content="https://frgu.ru/tour2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,6 +76,24 @@ h1 em{font-style:normal;color:var(--accent)}
 .p-time{font-family:var(--fd);font-weight:700;font-size:22px;color:var(--accent)}
 .p-avs{display:flex}.p-avs img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #1C1C1C}.p-avs img+img{margin-left:-18px}
 .p-title{font-family:var(--fd);font-weight:700;font-size:19px;line-height:1.3}
+.loc{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:30px 32px;background:#1C1C1C;border-radius:24px}
+.loc-time{font-family:var(--fd);font-weight:700;font-size:22px;color:var(--accent);white-space:nowrap}
+.loc-name{font-family:var(--fd);font-weight:900;font-size:27px;line-height:1.15;color:#fff}
+.loc-addr{font-size:16px;color:rgba(255,255,255,.55);margin-top:9px;line-height:1.4}
+.loc-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.loc-list li{position:relative;padding-left:24px;font-size:17px;line-height:1.4;color:rgba(255,255,255,.88)}
+.loc-list li:before{content:'';position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.move{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:18px 32px;border:1.5px dashed rgba(255,255,255,.22);border-radius:20px;font-size:16px;color:rgba(255,255,255,.6);align-items:center}
+.move b{font-family:var(--fd);font-weight:700;font-size:18px;color:rgba(255,255,255,.75);white-space:nowrap}
+.p-note{margin-top:24px;font-size:16px;color:rgba(255,255,255,.5);line-height:1.5}
+.transfer{padding:72px 0 48px}
+.transfer .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:center}
+.tr-img{border-radius:32px;overflow:hidden;background:var(--bg-alt)}
+.tr-img img{width:100%;height:auto;display:block}
+.tr-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px}
+.tr-list li{position:relative;padding-left:30px;font-size:18px;line-height:1.45;color:var(--text-sec)}
+.tr-list li:before{content:'';position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+@media(max-width:900px){.loc,.move{grid-template-columns:1fr;gap:12px}.transfer .wrap{grid-template-columns:1fr;gap:28px}}
 .p-free .p-title{font-size:22px}
 .p-desc{font-size:15px;line-height:1.5;color:rgba(255,255,255,.7);margin-top:6px}
 .p-who{font-size:15px;color:#FF8A6B;font-weight:500;margin-top:6px}
@@ -314,10 +332,10 @@ h1 em{font-style:normal;color:var(--accent)}
   <img src="tour2-hero.jpg" alt="" class="t2hero-bg">
   <div class="t2hero-ov"></div>
   <div class="wrap">
-    <div class="flag">19 ноября · Москва · 12:00–19:00</div>
+    <div class="flag">19 ноября, четверг · Москва · 10:00–18:00</div>
     <h1>TOUR DE FRANCH</h1>
     <div class="t2-slogan">Один день — <em>три бренда</em></div>
-    <p class="t2-sub">My Box, Secret Kitchen и Danjiro. Заходим в офисы, смотрим операционку изнутри, а вечером — точку Danjiro на «Белой Даче».</p>
+    <p class="t2-sub">MYBOX Market, Secret Kitchen и Danjiro. Ресторан с производством, дарк-кухня и фудкорт: операционка, экономика и дегустации на каждой точке.</p>
     <div class="brands">
       <div class="brand-chip"><img src="t2-logo-mybox.png" alt="My Box"></div>
       <div class="brand-chip"><img src="t2-logo-secret.png" alt="Secret Kitchen"></div>
@@ -334,8 +352,8 @@ h1 em{font-style:normal;color:var(--accent)}
 <section class="uk"><div class="wrap">
   <div class="tag">Формат</div>
   <h2 class="h2">Три компании за один день</h2>
-  <p class="sub">Не конференция и не вебинар. Приезжаем в офисы, смотрим, как работают управляющие компании, и забираем применимое к своей сети.</p>
-  <div class="uk-grid uk-grid-4"><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Три кухни за один день</h3><p>Не презентации, а живая операционка: заходим в офисы, смотрим процессы, задаём неудобные вопросы руководителям.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Доставка и маркетплейсы</h3><p>Secret Kitchen выжимает из Яндекс Еды и агрегаторов максимум. Разберём, как устроена работа с площадками и что это даёт в деньгах.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></div><h3>Портфель брендов</h3><p>Как управлять несколькими брендами в одной УК, где процессы общие, а где начинается каннибализация.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M17 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></div><h3>20 франчайзеров, а не 200 зевак</h3><p>Камерная группа: успеваете задать свой вопрос и познакомиться со всеми участниками за день.</p></div></div>
+  <p class="sub">Не конференция и не вебинар. Приезжаем на действующие точки, смотрим, как устроены процессы и экономика, и забираем применимое к своей сети.</p>
+  <div class="uk-grid uk-grid-4"><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Три кухни за один день</h3><p>Не презентации, а живая операционка: заходим внутрь работающих точек, смотрим процессы, задаём неудобные вопросы руководителям.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Доставка и маркетплейсы</h3><p>Secret Kitchen выжимает из Яндекс Еды и агрегаторов максимум. Разберём, как устроена работа с площадками и что это даёт в деньгах.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg></div><h3>Портфель брендов</h3><p>Как управлять несколькими брендами в одной УК, где процессы общие, а где начинается каннибализация.</p></div><div class="uk-card fade-in"><div class="uk-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1M17 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"/></svg></div><h3>20 франчайзеров, а не 200 зевак</h3><p>Камерная группа: успеваете задать свой вопрос и познакомиться со всеми участниками за день.</p></div></div>
 </div></section>
 
 <section class="uk" style="padding-top:0"><div class="wrap">
@@ -354,7 +372,7 @@ h1 em{font-style:normal;color:var(--accent)}
       <div class="tag">Кто едет</div>
       <h2 class="h2" style="color:#fff">Половина ценности — это группа</h2>
       <p>Принимающая компания открывает двери, но рядом с вами весь день едут основатели и первые лица крупнейших сетей, директора по развитию и топовые отраслевые СМИ.</p>
-      <p>Двадцать человек: офис, переезды, обед, ужин. За день успеваете поговорить с каждым — такой состав в одной комнате на конференции не соберёшь никакими деньгами, там все разбегаются по залам после докладов.</p>
+      <p>Двадцать человек: три точки, переезды в одном автобусе, дегустации, ужин. За день успеваете поговорить с каждым — такой состав в одной комнате на конференции не соберёшь никакими деньгами, там все разбегаются по залам после докладов.</p>
     </div>
     <div class="group-list"><span class="g">BIORIZE</span><span class="g">Банк Точка</span><span class="g">Dodo Brands</span><span class="g">FIT SERVICE</span><span class="g">Forbes</span><span class="g">Black Tab</span><span class="g">Idol Face</span><span class="g">Чио-Чио</span><span class="g">Суши Wok</span><span class="g">Cheese Photo</span><span class="g more">и другие</span></div>
   </div>
@@ -363,8 +381,23 @@ h1 em{font-style:normal;color:var(--accent)}
 <section class="prog" id="program"><div class="wrap">
   <div class="tag">19 ноября · четверг</div>
   <h2 class="h2">Маршрут</h2>
-  <p class="sub" style="color:rgba(255,255,255,.7);margin-bottom:32px">Весь день с 12:00 до 19:00: три площадки, выступления руководителей, вечером точка Danjiro на «Белой Даче» и ужин.</p>
-  <div class="p-list"><div class="p-row p-simple"><div class="p-time">12:00</div><div class="p-body"><span class="p-strong">Сбор и знакомство участников</span> · Москва</div></div><div class="p-row p-simple"><div class="p-time">12:30</div><div class="p-body"><span class="p-strong">Экскурсия в My Box</span> · Операционка сети: как устроена УК и что делают нейросети</div></div><div class="p-row"><div class="p-time">13:30</div><div class="p-avs"><img src="t2-sp-nazarov.jpg" alt="" loading="lazy"></div><div class="p-body"><div class="p-title">Портфель брендов: My Box и Danjiro в одной управляющей компании</div><div class="p-who">Александр Назаров · лидер брендов My Box и Danjiro</div></div></div><div class="p-row p-simple"><div class="p-time">14:30</div><div class="p-body"><span class="p-strong">Переезд и обед</span></div></div><div class="p-row"><div class="p-time">15:00</div><div class="p-avs"><img src="t2-sp-oreshkin.jpg" alt="" loading="lazy"></div><div class="p-body"><div class="p-title">Secret Kitchen: доставка, агрегаторы и Яндекс как главный канал продаж</div><div class="p-who">Роман Орешкин · CEO Secret Kitchen</div></div></div><div class="p-row p-simple"><div class="p-time">16:00</div><div class="p-body"><span class="p-strong">Сессия вопросов и ответов</span> · Отвечают руководители направлений</div></div><div class="p-row p-simple"><div class="p-time">17:00</div><div class="p-body"><span class="p-strong">Danjiro на «Белой Даче»</span> · Смотрим точку вживую: быстрый старт нового бренда</div></div><div class="p-row p-simple"><div class="p-time">18:00</div><div class="p-body"><span class="p-strong">Нетворк-рулетка и ужин</span> · Формат сообщества</div></div></div>
+  <p class="sub" style="color:rgba(255,255,255,.7);margin-bottom:32px">Три действующие точки за один день: ресторан и производство MYBOX Market, дарк-кухня Secret Kitchen и фудкорт Danjiro. На каждой — операционная модель, экономика и дегустация.</p>
+  <div class="p-list"><div class="loc"><div class="loc-time">10:00–12:00</div><div><div class="loc-name">MYBOX Market</div><div class="loc-addr">Москва, ТРЦ «Метрополис», Ленинградское шоссе, 16А, стр. 4</div><ul class="loc-list"><li>Знакомство с концепцией MYBOX Market</li><li>Экскурсия по ресторану и производству</li><li>Разбор операционной модели и экономики</li><li>Дегустация продукции</li></ul></div></div><div class="move"><b>12:00–13:00</b><div>Переезд на Новочерёмушкинскую — около часа. В дороге экскурсия по Москве от гида.</div></div><div class="loc"><div class="loc-time">13:00–15:00</div><div><div class="loc-name">Secret Kitchen</div><div class="loc-addr">Москва, ул. Новочерёмушкинская, 53А</div><ul class="loc-list"><li>Экскурсия по действующей дарк-кухне</li><li>Знакомство с мультибрендовой моделью</li><li>Операционное управление, доставка и экономика бизнеса</li><li>Дегустация продукции</li></ul></div></div><div class="move"><b>15:00–16:00</b><div>Переезд на «Белую Дачу» — около часа с учётом пробок.</div></div><div class="loc"><div class="loc-time">16:00–18:00</div><div><div class="loc-name">Danjiro</div><div class="loc-addr">МО, ТРЦ «МЕГА Белая Дача», 1-й Покровский проезд, 5</div><ul class="loc-list"><li>Знакомство с концепцией корейского стритфуда</li><li>Экскурсия по ресторану</li><li>Операционная модель и экономика фудкорта</li><li>Ужин, обсуждение и ответы на вопросы</li></ul></div></div></div>
+  <p class="p-note">Общая продолжительность — около 8 часов с переездами, по два часа на каждой локации. Программа предварительная, детали уточняются.</p>
+</div></section>
+
+<section class="transfer fade-in" id="transfer"><div class="wrap">
+  <div>
+    <div class="tag">Трансфер</div>
+    <h2 class="h2">Между точками едем вместе</h2>
+    <p class="sub">Три локации разбросаны по Москве, но искать такси и созваниваться на парковках не придётся.</p>
+    <ul class="tr-list">
+      <li>Брендированный автобус на весь день — трансфер между точками уже включён в стоимость участия.</li>
+      <li>Во время переездов — профессиональная экскурсия по Москве от гида.</li>
+      <li>Два перегона примерно по часу: лучшее время, чтобы познакомиться со всей группой.</li>
+    </ul>
+  </div>
+  <div class="tr-img"><img src="tour2-bus.jpg" alt="Автобус Tour De Franch на улице Москвы" loading="lazy"></div>
 </div></section>
 
 <section class="price" id="price"><div class="wrap">
@@ -374,13 +407,13 @@ h1 em{font-style:normal;color:var(--accent)}
   <div class="tars">
     <div class="tcard">
       <div class="tcard-head"><div class="tcard-name">Стандарт</div></div>
-      <div class="tcard-price">25 000 ₽</div><div class="tcard-per">за участника</div>
-      <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Экскурсии в три компании за один день</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Выступления руководителей и сессии вопросов</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Нетворк-рулетка и ужин</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Общее фото и контакты участников</span></li></ul>
+      <div class="tcard-price">30 000 ₽</div><div class="tcard-per">за участника</div>
+      <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Экскурсии в три компании за один день</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Трансфер между точками и экскурсия по Москве</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Выступления руководителей и сессии вопросов</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Нетворк-рулетка и ужин</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Общее фото и контакты участников</span></li></ul>
       <button class="btn" onclick="tsOpen('standard')">Забронировать<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
     <div class="tcard pop">
       <div class="tcard-head"><div class="tcard-name">Для участников чата «Масштаб»</div><div class="tcard-badge">−5 000 ₽</div></div>
-      <div class="tcard-price">20 000 ₽</div><div class="tcard-per">за участника</div>
+      <div class="tcard-price">25 000 ₽</div><div class="tcard-per">за участника</div>
       <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Всё из тарифа «Стандарт»</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Скидка 5 000 ₽ по подписке на чат «Масштаб»</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Записи всех эвентов сообщества</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>База из 62 выступлений и материалов</span></li></ul>
       <a href="https://t.me/tribute/app?startapp=sCed" target="_blank" rel="noopener" class="btn">Подписка со скидкой<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <button class="btn btn-dark" style="margin-top:12px" onclick="tsOpen('subscriber')">Я уже в «Масштабе»<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -441,7 +474,7 @@ h1 em{font-style:normal;color:var(--accent)}
     <div class="ts-modal-tier" id="tsTier">Участие</div>
     <div class="ts-modal-title" id="tsTitle">Бронирование</div>
     <div class="ts-modal-price" id="tsPrice"></div>
-    <div class="ts-modal-sub" id="tsSub">19 ноября · Москва · 12:00–19:00</div>
+    <div class="ts-modal-sub" id="tsSub">19 ноября, четверг · Москва · 10:00–18:00</div>
     <div id="tsFields">
       <div class="ts-modal-err" id="tsErr"></div>
       <div class="ts-field"><label for="tsName">Имя и фамилия *</label><input type="text" id="tsName" placeholder="Иван Иванов" autocomplete="name"></div>
@@ -472,7 +505,7 @@ const header=document.getElementById('header');
 window.addEventListener('scroll',()=>{header.classList.toggle('scrolled',window.scrollY>60)});
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
 document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
-const START=new Date('2026-11-19T12:00:00+03:00').getTime();
+const START=new Date('2026-11-19T10:00:00+03:00').getTime();
 function tick(){let ms=Math.max(0,START-Date.now());const d=Math.floor(ms/864e5);ms-=d*864e5;const h=Math.floor(ms/36e5);ms-=h*36e5;const m=Math.floor(ms/6e4);
 document.getElementById('cdD').textContent=d;document.getElementById('cdH').textContent=String(h).padStart(2,'0');document.getElementById('cdM').textContent=String(m).padStart(2,'0')}
 tick();setInterval(tick,30000);
@@ -483,8 +516,8 @@ document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
 
 /* Бронирование. Заявка уходит на наш сервер, оттуда бот публикует её в группу оргов. */
 const TOUR_PACKAGES={
-  standard:{tier:'Стандарт',title:'Тур-Де-Франч: три бренда',price:'25 000 ₽',pay:''},
-  subscriber:{tier:'Участник «Масштаба»',title:'Тур-Де-Франч со скидкой',price:'20 000 ₽',pay:''}
+  standard:{tier:'Стандарт',title:'Тур-Де-Франч: три бренда',price:'30 000 ₽',pay:''},
+  subscriber:{tier:'Участник «Масштаба»',title:'Тур-Де-Франч со скидкой',price:'25 000 ₽',pay:''}
 };
 let tourCurrent='standard';
 function tsOpen(pkg){
