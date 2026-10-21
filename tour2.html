@@ -87,13 +87,19 @@ h1 em{font-style:normal;color:var(--accent)}
 .move b{font-family:var(--fd);font-weight:700;font-size:18px;color:rgba(255,255,255,.75);white-space:nowrap}
 .p-note{margin-top:24px;font-size:16px;color:rgba(255,255,255,.5);line-height:1.5}
 .transfer{padding:72px 0 48px}
-.transfer .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:center}
-.tr-img{border-radius:32px;overflow:hidden;background:var(--bg-alt)}
-.tr-img img{width:100%;height:auto;display:block}
-.tr-list{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:14px}
-.tr-list li{position:relative;padding-left:30px;font-size:18px;line-height:1.45;color:var(--text-sec)}
-.tr-list li:before{content:'';position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-@media(max-width:900px){.loc,.move{grid-template-columns:1fr;gap:12px}.transfer .wrap{grid-template-columns:1fr;gap:28px}}
+.tr-card{position:relative;border-radius:40px;overflow:hidden;background:var(--bg-alt)}
+.tr-card>img{width:100%;height:auto;display:block}
+.tr-text{position:absolute;inset:0 auto 0 0;width:46%;padding:0 clamp(28px,3.4vw,56px);display:flex;flex-direction:column;justify-content:center}
+.tr-text .h2{font-size:clamp(28px,3.2vw,44px);margin-bottom:14px}
+.tr-text .sub{font-size:clamp(15px,1.3vw,19px);margin:0}
+.tr-list{list-style:none;margin-top:clamp(16px,1.8vw,26px);display:flex;flex-direction:column;gap:clamp(9px,1vw,14px)}
+.tr-list li{position:relative;padding-left:28px;font-size:clamp(14px,1.25vw,18px);line-height:1.4;color:var(--text-sec)}
+.tr-list li:before{content:'';position:absolute;left:0;top:.5em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+@media(max-width:900px){.loc,.move{grid-template-columns:1fr;gap:12px}
+.tr-card{border-radius:28px}
+.tr-text{position:static;width:100%;padding:28px 24px 32px}
+.tr-text .h2{font-size:30px}
+}
 .p-free .p-title{font-size:22px}
 .p-desc{font-size:15px;line-height:1.5;color:rgba(255,255,255,.7);margin-top:6px}
 .p-who{font-size:15px;color:#FF8A6B;font-weight:500;margin-top:6px}
@@ -387,17 +393,19 @@ h1 em{font-style:normal;color:var(--accent)}
 </div></section>
 
 <section class="transfer fade-in" id="transfer"><div class="wrap">
-  <div>
-    <div class="tag">Трансфер</div>
-    <h2 class="h2">Между точками едем вместе</h2>
-    <p class="sub">Три локации разбросаны по Москве, но искать такси и созваниваться на парковках не придётся.</p>
-    <ul class="tr-list">
-      <li>Брендированный автобус на весь день — трансфер между точками уже включён в стоимость участия.</li>
-      <li>Во время переездов — профессиональная экскурсия по Москве от гида.</li>
-      <li>Два перегона примерно по часу: лучшее время, чтобы познакомиться со всей группой.</li>
-    </ul>
+  <div class="tr-card">
+    <img src="tour2-bus.jpg" alt="Автобус Tour De Franch на улице Москвы">
+    <div class="tr-text">
+      <div class="tag">Трансфер</div>
+      <h2 class="h2">Между точками едем вместе</h2>
+      <p class="sub">Три локации разбросаны по Москве — искать такси и созваниваться на парковках не придётся.</p>
+      <ul class="tr-list">
+        <li>Брендированный автобус на весь день: трансфер между точками включён в стоимость участия.</li>
+        <li>Во время переездов — профессиональная экскурсия по Москве от гида.</li>
+        <li>Два перегона примерно по часу — лучшее время, чтобы познакомиться со всей группой.</li>
+      </ul>
+    </div>
   </div>
-  <div class="tr-img"><img src="tour2-bus.jpg" alt="Автобус Tour De Franch на улице Москвы" loading="lazy"></div>
 </div></section>
 
 <section class="price" id="price"><div class="wrap">
