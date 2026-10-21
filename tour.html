@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Тур-Де-Франч — экскурсия в Colizeum, 29 октября | Франчайзинг по-русски</title>
-<meta name="description" content="29 октября, Москва-Сити: экскурсия в офис Colizeum (600+ компьютерных клубов), выступления основателя и гендиректора, ужин в PhoBo. Осталось 3 места.">
+<meta name="description" content="29 октября, Москва-Сити: экскурсия в офис Colizeum (600+ компьютерных клубов), выступления основателя и гендиректора, ужин в PhoBo. Мест нет — все 20 мест проданы.">
 <meta property="og:title" content="Тур-Де-Франч — экскурсия в Colizeum">
 <meta property="og:description" content="29 октября, Башня Федерации. Как устроена УК сети из 600+ клубов, плюс ужин с командой PhoBo.">
 <meta property="og:image" content="https://frgu.ru/tour-city.jpg">
@@ -198,7 +198,12 @@ h1 em{font-style:normal;color:var(--accent)}
 .seats{display:flex;flex-direction:column;gap:6px}
 .seats b{font-size:17px;font-weight:600}
 .seats-bar{width:220px;height:8px;border-radius:100px;background:rgba(13,13,13,.15);overflow:hidden}
-.seats-bar i{display:block;width:85%;height:100%;background:var(--accent)}
+.seats-bar i{display:block;width:100%;height:100%;background:var(--accent)}
+.sold{display:inline-flex;align-items:center;gap:12px;background:var(--bg-dark);color:#fff;border-radius:100px;padding:16px 30px;font-family:var(--fd);font-weight:800;font-size:clamp(20px,2.4vw,28px);letter-spacing:.02em}
+.sold span{font-family:var(--fb);font-weight:500;font-size:15px;letter-spacing:0;color:rgba(255,255,255,.6)}
+.btn-off{background:rgba(13,13,13,.08)!important;color:var(--text-muted)!important;border:1px solid var(--border)!important;cursor:not-allowed;pointer-events:none}
+.tcard.dark .btn-off{background:rgba(255,255,255,.1)!important;color:rgba(255,255,255,.5)!important;border-color:rgba(255,255,255,.18)!important}
+.next-tour{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-weight:600;color:var(--accent)}
 /* people */
 .people{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:32px}
 .person{background:#fff;border-radius:24px;padding:26px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
@@ -257,7 +262,7 @@ h1 em{font-style:normal;color:var(--accent)}
 <body>
 <header class="header" id="header">
   <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
-  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="tour.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="info.html">Справочник</a><a href="blog.html">Блог</a><a href="#price" class="nav-cta">Забронировать</a></nav>
+  <nav class="nav" id="nav"><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="tour2.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Масштаб</a><a href="club.html">Клуб</a><a href="info.html">Справочник</a><a href="blog.html">Блог</a><a href="tour2.html" class="nav-cta">Тур 19 ноября</a></nav>
   <button class="burger" id="burger" aria-label="Меню" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </header>
 
@@ -270,9 +275,10 @@ h1 em{font-style:normal;color:var(--accent)}
     <p class="thero-sub">Colizeum, 600+ компьютерных клубов<br>+ ужин с командой PhoBo.</p>
     <div class="logos"><div class="logo-chip"><img src="tour-logo-colizeum.png" alt="Colizeum" style="height:26px"></div><div class="logo-chip"><img src="tour-logo-phobo.png" alt="PhoBo" style="height:40px"></div></div>
     <div class="hero-cta">
-      <a href="#price" class="btn">Забронировать место<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <div class="seats"><b>Осталось 3 места из 20</b><div class="seats-bar"><i></i></div></div>
+      <div class="sold">МЕСТ НЕТ <span>20 из 20 продано</span></div>
+      <div class="seats"><b>Регистрация закрыта</b><div class="seats-bar"><i></i></div></div>
     </div>
+    <a href="tour2.html" class="next-tour">Следующий Тур-Де-Франч — 19 ноября, три бренда за день →</a>
   </div>
 </section>
 
@@ -300,25 +306,25 @@ h1 em{font-style:normal;color:var(--accent)}
 <section class="price" id="price"><div class="wrap">
   <div class="tag">Участие</div>
   <h2 class="h2">Три формата участия</h2>
-  <p class="sub">Всего 20 мест, осталось 3. Бронь через форму: выбираете пакет, оставляете контакты и способ оплаты.</p>
+  <p class="sub">Мест нет — все 20 мест проданы, регистрация на 29 октября закрыта. Ближайший тур, куда ещё можно попасть, — <a href="tour2.html">19 ноября</a>.</p>
   <div class="tars">
     <div class="tcard">
       <div class="tcard-head"><div class="tcard-name">Стандарт</div></div>
       <div class="tcard-price">20 000 ₽</div><div class="tcard-per">за участника</div>
       <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Экскурсия по офису Colizeum</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Все выступления и сессия вопросов</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Нетворк-рулетка и ужин в PhoBo</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Общее фото и контакты участников</span></li></ul>
-      <button class="btn" onclick="tsOpen('standard')">Забронировать<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn btn-off" disabled>Мест нет</button>
     </div>
     <div class="tcard pop">
       <div class="tcard-head"><div class="tcard-name">Биг-Босс</div><div class="tcard-badge">Популярный</div></div>
       <div class="tcard-price">40 000 ₽</div><div class="tcard-per">за участника</div>
       <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Всё из тарифа «Стандарт»</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Подписка на чат <a href="subscribe.html">«Масштаб»</a> на год</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><a href="ai.html">Мастер-класс по нейросетям 27 октября</a></span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Остальные онлайн-мастер-классы в течение года</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Записи всех эвентов и база из 62 выступлений</span></li></ul>
-      <button class="btn" onclick="tsOpen('bigboss')">Забронировать<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn btn-off" disabled>Мест нет</button>
     </div>
     <div class="tcard dark">
       <div class="tcard-head"><div class="tcard-name">Резидент</div></div>
       <div class="tcard-price">150 000 ₽</div><div class="tcard-per">в год</div>
       <ul><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Тур-Де-Франч 29 октября</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Все мероприятия сообщества в течение года</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Подписка на чат «Масштаб» на год</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F24822" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Ежемесячные онлайн-мастер-классы и мастермайнды</span></li></ul>
-      <button class="btn btn-light" onclick="tsOpen('resident')">Оставить заявку<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="btn btn-light btn-off" disabled>Мест нет</button>
     </div>
   </div>
 </div></section>
@@ -332,7 +338,7 @@ h1 em{font-style:normal;color:var(--accent)}
   
 </div></section>
 
-<section class="cta"><h2>29 октября. Осталось 3 места — остальные увидят это в чужих сторис</h2><a href="#price" class="btn btn-dark">Занять место<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></section>
+<section class="cta"><h2>29 октября — мест нет. Все 20 разобрали</h2><a href="tour2.html" class="btn btn-dark">Тур 19 ноября<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></section>
 
 <section class="org"><div class="wrap">
   <div class="tag">Организатор · сообщество «Франчайзинг по-русски»</div>
@@ -360,7 +366,7 @@ h1 em{font-style:normal;color:var(--accent)}
   <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="btn">Написать в Telegram<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </div></div></section>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="tour.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Форум «Масштаб»</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="info.html">Справочник</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="oferta.html">Оферта</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div><p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p></div><div class="footer-col"><h4>Продукты</h4><a href="index.html">Сообщество</a><a href="about.html">О нас</a><a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a><a href="tour2.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Форум «Масштаб»</a><a href="club.html">Клуб «Гуру Франшиз»</a></div><div class="footer-col"><h4>Партнёрство</h4><a href="info.html">Справочник</a><a href="partners.html">Медиа-партнёрам</a><a href="founder.html">Основатель</a><a href="oferta.html">Оферта</a><a href="blog.html">Блог</a></div><div class="footer-col"><h4>Связаться</h4><a href="https://t.me/+9r_ooRQLEDg0MmM6" target="_blank">Telegram-сообщество</a><a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a><a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a><a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a></div></div><div class="footer-bottom"><span>© 2024–2026 Франчайзинг по-русски</span></div></div></footer>
 
 <div class="ts-modal" id="tsModal" onclick="if(event.target===this)tsClose()">
   <div class="ts-modal-box">
