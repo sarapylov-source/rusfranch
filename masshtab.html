@@ -241,7 +241,7 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 12.5vw, 14rem);
+      font-size: clamp(2.5rem, 11vw, 14rem);
       font-weight: 900;
       line-height: 0.9;
       letter-spacing: -0.03em;
@@ -257,7 +257,7 @@
     /* Desktop — разрешаем крупнее */
     @media (min-width: 769px) {
       .hero-title {
-        font-size: clamp(5rem, 16vw, 14rem);
+        font-size: clamp(4rem, 13vw, 14rem);
       }
     }
 
@@ -555,6 +555,9 @@
     .nom-card h3 { flex: 1; font-size: 17px; font-weight: 600; line-height: 1.3; }
     .nom-btn {
       flex-shrink: 0;
+      background: transparent;
+      font-family: inherit;
+      cursor: pointer;
       border: 1px solid rgba(255,255,255,0.25);
       border-radius: 100px;
       padding: 10px 20px;
@@ -1910,52 +1913,52 @@
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">01</span>
           <h3>CEO франчайзинговой компании</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('CEO франчайзинговой компании')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">02</span>
           <h3>РОП по продажам франшиз</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('РОП по продажам франшиз')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">03</span>
           <h3>Менеджер по продаже франшиз</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Менеджер по продаже франшиз')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">04</span>
           <h3>Юрист рынка франчайзинга</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Юрист рынка франчайзинга')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">05</span>
           <h3>Маркетолог рынка франчайзинга</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Маркетолог рынка франчайзинга')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">06</span>
           <h3>Консультант рынка франчайзинга</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Консультант рынка франчайзинга')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">07</span>
           <h3>Руководитель франшизного каталога</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Руководитель франшизного каталога')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">08</span>
           <h3>Клиентский менеджер франчайзингового каталога</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Клиентский менеджер франчайзингового каталога')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">09</span>
           <h3>Руководитель отдела сопровождения франчайзи</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Руководитель отдела сопровождения франчайзи')">Стать номинантом</button>
         </div>
         <div class="nom-card reveal">
           <span class="nom-num" aria-hidden="true">10</span>
           <h3>Упаковщик франшиз года</h3>
-          <a href="https://t.me/Yes_Yasya" target="_blank" rel="noopener" class="nom-btn">Стать номинантом</a>
+          <button type="button" class="nom-btn" onclick="openNomination('Упаковщик франшиз года')">Стать номинантом</button>
         </div>
         </div>
       </div>
@@ -2929,8 +2932,63 @@
     };
 
     let currentPackage = 'viewer';
+    let currentNomination = null;
+    const CASH_BTN_HTML = document.getElementById('payCashBtn').innerHTML;
+
+    function resetModalButtons() {
+      currentNomination = null;
+      document.getElementById('payCardBtn').style.display = '';
+      document.getElementById('payCashBtn').innerHTML = CASH_BTN_HTML;
+    }
+
+    function openNomination(nom) {
+      resetModalButtons();
+      currentNomination = nom;
+      document.getElementById('modalTitle').textContent    = 'Заявка на номинацию';
+      document.getElementById('modalSubtitle').textContent = nom + ' · премия «МАСШТАБ», 14 декабря 2026';
+      document.getElementById('modalError').textContent    = '';
+      document.getElementById('regForm').querySelectorAll('input').forEach(i => i.value = '');
+      document.getElementById('payCardBtn').style.display  = 'none';
+      document.getElementById('payCashBtn').textContent    = 'Отправить заявку';
+      document.getElementById('modalOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('regName').focus();
+    }
+
+    async function submitNomination() {
+      if (!validateForm()) return;
+      setButtons('loading');
+      const nom   = currentNomination;
+      const name  = document.getElementById('regName').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const tg    = document.getElementById('regTg').value.trim();
+      const mail  = document.getElementById('regEmail').value.trim();
+      try {
+        await sendLead({
+          form: 'masshtab-nomination',
+          nomination: nom,
+          name: name,
+          phone: phone,
+          telegram: tg,
+          email: mail,
+          date: new Date().toLocaleString('ru-RU', {timeZone: 'Europe/Moscow'})
+        }, [
+          'Заявка на номинацию — премия «МАСШТАБ»',
+          'Номинация: ' + nom,
+          'Имя: ' + name,
+          'Телефон: ' + phone,
+          tg   ? 'Telegram: ' + tg : '',
+          mail ? 'Email: ' + mail : ''
+        ]);
+      } catch(e) {}
+      const msg = encodeURIComponent('Премия «МАСШТАБ» · заявка на номинацию: ' + nom);
+      window.open('https://t.me/Yes_Yasya?text=' + msg, '_blank', 'noopener');
+      setButtons('idle');
+      closeModal();
+    }
 
     function openModal(pkg) {
+      resetModalButtons();
       currentPackage = pkg;
       const p = PACKAGES[pkg];
       document.getElementById('modalTitle').textContent   = p.title;
@@ -3045,6 +3103,7 @@
     }
 
     async function payByCash() {
+      if (currentNomination) return submitNomination();
       if (!validateForm()) return;
       setButtons('loading');
       const data = getFormData();
@@ -3139,6 +3198,37 @@
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(e){ e[0].isIntersecting?start():stop(); },{threshold:0}).observe(hero);
     }
+  })();
+  </script>
+
+  <script>
+  (function(){
+    var h=document.getElementById('heroTitle');
+    if(!h) return;
+    var box=h.parentElement, probe=null;
+    function fit(){
+      if(!probe){
+        probe=document.createElement('span');
+        probe.style.cssText='position:absolute;visibility:hidden;white-space:nowrap;left:-9999px;top:0;';
+        document.body.appendChild(probe);
+      }
+      var cs=getComputedStyle(h);
+      probe.style.fontFamily=cs.fontFamily;
+      probe.style.fontWeight=cs.fontWeight;
+      probe.style.letterSpacing=cs.letterSpacing;
+      probe.style.textTransform=cs.textTransform;
+      probe.style.fontSize='100px';
+      probe.textContent=(h.firstChild&&h.firstChild.nodeValue||'').trim()||'МАСШТАБ';
+      var ratio=probe.getBoundingClientRect().width/100;
+      if(!ratio) return;
+      var avail=box.clientWidth-parseFloat(getComputedStyle(box).paddingLeft)-parseFloat(getComputedStyle(box).paddingRight);
+      var max=parseFloat(getComputedStyle(document.documentElement).fontSize)*14;
+      var size=Math.min(max,(avail*0.93)/ratio);
+      h.style.fontSize=size+'px';
+    }
+    fit();
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+    var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(fit,150);});
   })();
   </script>
 </body>
