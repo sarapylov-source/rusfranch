@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Трансляция — Франчайзинг по-русски</title>
+<meta name="description" content="Доступ к онлайн-трансляции для участников закрытого чата «Масштаб».">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-dark:#0D0D0D;--text:#0D0D0D;
+--text-sec:#5A4A42;--text-muted:#6E5E56;--accent:#F24822;--accent-hover:#D93D1A;
+--ok:#1B8A5A;--border:rgba(13,13,13,0.08);
+--fd:'Unbounded',sans-serif;--fb:'Onest',sans-serif}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.6;
+min-height:100vh;display:flex;flex-direction:column;align-items:center;
+justify-content:center;padding:24px}
+
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:24px;
+padding:clamp(28px,5vw,48px);max-width:520px;width:100%;text-align:center;
+box-shadow:0 2px 24px rgba(13,13,13,.04)}
+
+.logo{font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:-.3px;
+line-height:1.2;margin-bottom:28px;color:var(--text)}
+.logo span{color:var(--accent);display:block}
+
+h1{font-family:var(--fd);font-weight:900;font-size:clamp(22px,3.6vw,30px);
+line-height:1.15;letter-spacing:-1px;margin-bottom:12px}
+.sub{color:var(--text-muted);font-size:15.5px;margin-bottom:28px}
+
+.when{display:inline-flex;align-items:center;gap:8px;background:rgba(242,72,34,.08);
+color:var(--accent);font-weight:600;font-size:14px;padding:8px 16px;
+border-radius:100px;margin-bottom:24px}
+
+#widget{display:flex;justify-content:center;min-height:48px}
+.hint{font-size:13.5px;color:var(--text-muted);margin-top:18px;line-height:1.5}
+
+.state{display:none}
+.state.on{display:block}
+
+.spinner{width:28px;height:28px;border:3px solid var(--border);
+border-top-color:var(--accent);border-radius:50%;margin:8px auto 16px;
+animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+font-weight:600;font-size:16px;padding:16px 32px;border-radius:100px;
+transition:background .2s;margin-top:8px}
+.btn:hover{background:var(--accent-hover)}
+.btn-dark{background:var(--bg-dark)}
+.btn-dark:hover{background:#2a2a2a}
+
+.who{font-weight:600;font-size:17px;margin-bottom:6px}
+.ok-mark{font-size:40px;line-height:1;margin-bottom:12px}
+.err{color:var(--text-sec);font-size:15px;margin:14px 0 22px;text-align:left;
+background:rgba(13,13,13,.03);border-radius:14px;padding:16px 18px}
+.err b{color:var(--text)}
+.small{font-size:13px;color:var(--text-muted);margin-top:20px}
+.small a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">ФРАНЧАЙЗИНГ<span>ПО-РУССКИ</span></div>
+
+  <!-- ждём входа -->
+  <div class="state on" id="s-login">
+    <div class="when">27 октября · 12:00–20:00 МСК</div>
+    <h1>Мастер-класс «AI-переход для франшизных сетей»</h1>
+    <p class="sub">Трансляция для участников закрытого чата «Масштаб».
+      Войдите через Telegram, чтобы мы узнали вас.</p>
+    <div id="widget"></div>
+    <p class="hint">Нажмите кнопку выше — Telegram спросит подтверждение.
+      Мы увидим только имя и ник, доступа к переписке у нас нет.</p>
+  </div>
+
+  <!-- проверяем -->
+  <div class="state" id="s-wait">
+    <div class="spinner"></div>
+    <p class="sub">Проверяем подписку…</p>
+  </div>
+
+  <!-- пустили -->
+  <div class="state" id="s-ok">
+    <div class="ok-mark">🎬</div>
+    <p class="who" id="ok-name"></p>
+    <h1 style="font-size:22px;margin-bottom:18px">Доступ открыт</h1>
+    <a class="btn" id="zoom" href="#" target="_blank" rel="noopener">Подключиться к трансляции</a>
+    <p class="small">Ссылка личная — не пересылайте её,
+      по ней считается, кто подключился.</p>
+  </div>
+
+  <!-- не подписчик -->
+  <div class="state" id="s-no">
+    <h1 style="font-size:22px">Вас нет в чате «Масштаб»</h1>
+    <div class="err">
+      <p>Трансляция доступна участникам закрытого чата. Если подписка
+        оформлена только что — <b>зайдите в чат по ссылке из бота</b>
+        и обновите страницу.</p>
+    </div>
+    <a class="btn btn-dark" href="https://www.frgu.ru/ai">Оформить доступ</a>
+    <p class="small">Уже оплатили, но видите это сообщение? Напишите
+      <a href="https://t.me/Yes_Yasya">Ярославе</a> — разберёмся.</p>
+  </div>
+
+  <!-- что-то пошло не так -->
+  <div class="state" id="s-err">
+    <h1 style="font-size:22px">Не получилось проверить</h1>
+    <div class="err"><p id="err-text">Попробуйте обновить страницу.</p></div>
+    <p class="small">Если повторяется — напишите
+      <a href="https://t.me/Yes_Yasya">Ярославе</a>.</p>
+  </div>
+</div>
+
+<script>
+const API = 'https://api.frgu.ru/live/check';
+
+function show(id){
+  document.querySelectorAll('.state').forEach(e => e.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+}
+
+// Telegram вызывает это, когда человек подтвердил вход.
+function onTelegramAuth(user){
+  show('s-wait');
+  fetch(API, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(user)
+  })
+  .then(r => r.json().then(d => ({status: r.status, data: d})))
+  .then(({status, data}) => {
+    if (data.ok && data.link){
+      document.getElementById('ok-name').textContent = data.name || '';
+      document.getElementById('zoom').href = data.link;
+      show('s-ok');
+      return;
+    }
+    if (data.reason === 'not_member'){ show('s-no'); return; }
+    // подпись не сошлась или устарела — просим войти заново
+    document.getElementById('err-text').textContent =
+      (data.reason === 'expired')
+        ? 'Вход устарел. Обновите страницу и войдите ещё раз.'
+        : 'Не удалось подтвердить вход. Обновите страницу и попробуйте снова.';
+    show('s-err');
+  })
+  .catch(() => {
+    document.getElementById('err-text').textContent =
+      'Сервер не ответил. Проверьте связь и обновите страницу.';
+    show('s-err');
+  });
+}
+
+// Виджет подставляется скриптом, чтобы можно было задать параметры.
+(function(){
+  const s = document.createElement('script');
+  s.src = 'https://telegram.org/js/telegram-widget.js?22';
+  s.setAttribute('data-telegram-login', 'rusfranch_bot');
+  s.setAttribute('data-size', 'large');
+  s.setAttribute('data-radius', '20');
+  s.setAttribute('data-onauth', 'onTelegramAuth(user)');
+  s.setAttribute('data-request-access', 'write');
+  s.async = true;
+  document.getElementById('widget').appendChild(s);
+})();
+</script>
+</body>
+</html>
