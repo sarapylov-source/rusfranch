@@ -774,9 +774,9 @@ h3 {
 
         <div class="promo-pricing">
           <div class="pricing-row">
-            <span class="price-old">5 000 ₽/мес</span>
+            <span class="price-old"><span data-price-regular>5 000 ₽</span>/мес</span>
             <span class="price-arrow">→</span>
-            <span class="price-new">1 000 ₽<small>/мес</small></span>
+            <span class="price-new"><span data-price>1 000 ₽</span><small>/мес</small></span>
           </div>
           <div class="price-tag">−40% для новых подписчиков · только 1-й месяц</div>
         </div>
@@ -983,5 +983,6 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
+<script src="pricing.js" defer></script>
 </body>
 </html>
