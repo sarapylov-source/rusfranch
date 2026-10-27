@@ -98,6 +98,31 @@ gap:28px;flex-wrap:wrap;font-size:14px}
 .footer a{color:rgba(255,255,255,.7)}
 .footer a:hover{color:var(--accent)}
 
+
+.logo-accent{color:var(--accent)}
+.nav{gap:26px}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px;margin-top:60px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--fd);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:1px;
+text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);padding:6px 0}
+.footer-col a:hover{color:var(--accent);text-decoration:none}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;
+padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;
+color:rgba(255,255,255,.4)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;
+justify-content:center;font-size:16px;color:#fff}
+.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,.1)}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;gap:18px;text-align:center}}
+
 @media(max-width:768px){
   .header{padding:14px 20px}.nav{display:none}.burger{display:flex}
   .nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);
@@ -113,15 +138,16 @@ gap:28px;flex-wrap:wrap;font-size:14px}
 <body>
 
 <header class="header" id="header">
-  <a href="index.html" class="logo"><span style="color:var(--text)">ФРАНЧАЙЗИНГ</span><span>ПО-РУССКИ</span></a>
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
   <nav class="nav" id="nav">
-    <a href="index.html">Сообщество</a>
+    <a href="index.html">Сообщество</a><a href="about.html">О нас</a>
+    <a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a>
+    <a href="tour2.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Масштаб</a>
+    <a href="contractor.html">Подрядчикам</a>
     <a href="blog.html">Блог</a>
-    <a href="tour2.html">Тур-Де-Франч</a>
-    <a href="market.html">Franch-Marketing</a>
     <a href="https://t.me/franchru" class="nav-cta" target="_blank">Вступить</a>
   </nav>
-  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </header>
 
 <div class="wrap">
@@ -240,7 +266,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         территориального менеджера</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -293,7 +319,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         меньше двух минут до ответа в любом канале</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -346,7 +372,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         и конкретная рекомендация технику</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -401,7 +427,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         ещё одна таблица</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -453,7 +479,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         результат — каждый шаг со своей моделью</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -509,7 +535,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         за рабочий инструмент, УК получает комиссию</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -563,7 +589,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         партнёры видят себя среди остальных</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -627,7 +653,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
         решение за человеком, свои инструменты</figcaption>
     </figure>
 
-    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+    <a class="watch" href="https://web.tribute.tg/s/Ced">
       Смотреть полное выступление
       <small>в закрытом чате «Масштаб»</small>
     </a>
@@ -657,7 +683,7 @@ gap:28px;flex-wrap:wrap;font-size:14px}
     <h2>Полные записи всех выступлений</h2>
     <p>Восемь часов разборов с демонстрацией экрана, презентации спикеров
       и 60+ записей прошлых встреч — в закрытом чате «Масштаб».</p>
-    <a class="btn" href="https://t.me/tribute/app?startapp=sCed">Оформить доступ</a>
+    <a class="btn" href="https://web.tribute.tg/s/Ced">Оформить доступ</a>
   </div>
 
   <p style="margin-top:34px;font-size:15px;color:var(--text-muted)">
@@ -670,11 +696,38 @@ gap:28px;flex-wrap:wrap;font-size:14px}
 
 <footer class="footer">
   <div class="footer-inner">
-    <div>© 2026 Франчайзинг по-русски</div>
-    <div>
-      <a href="blog.html">Блог</a> ·
-      <a href="index.html">Сообщество</a> ·
-      <a href="https://t.me/franchru" target="_blank">Telegram</a>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div>
+        <p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Продукты</h4>
+        <a href="index.html">Сообщество</a>
+        <a href="subscribe.html">Подписка</a><a href="masshtab.html">Масштаб</a>
+      </div>
+      <div class="footer-col">
+        <h4>Партнёрство</h4>
+        <a href="contractor.html">Подрядчикам</a>
+        <a href="partners.html">Медиа-партнёрам</a>
+        <a href="founder.html">Основатель</a><a href="oferta.html">Оферта</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-col">
+        <h4>Связаться</h4>
+        <a href="https://t.me/franchru" target="_blank">Telegram-сообщество</a>
+        <a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a>
+        <a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024–2026 Франчайзинг по-русски</span>
+      <div class="footer-social">
+        <a href="https://t.me/franchru" target="_blank">✈</a>
+        <a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a>
+        <a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a>
+      </div>
     </div>
   </div>
 </footer>
