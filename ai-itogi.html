@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-переход для франшизных сетей — что рассказали практики 27 октября | Франчайзинг по-русски</title>
+<meta name="description" content="Итоги мастер-класса: семь франчайзеров показали, что у них уже работает на нейросетях. УК с 30 человек до 5, контент-завод из 16 агентов, своя CRM за два месяца, рейтинг сети вместо Power BI за 3 млн.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="AI-переход для франшизных сетей: что работает на практике">
+<meta property="og:description" content="Семь франчайзеров показали свои системы: цифры, схемы, грабли. Итоги мастер-класса 27 октября.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;
+--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#6E5E56;--accent:#F24822;
+--accent-hover:#D93D1A;--border:rgba(13,13,13,0.08);
+--fd:'Unbounded',sans-serif;--fb:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;
+display:flex;align-items:center;justify-content:space-between;transition:background .3s}
+.header.scrolled{background:rgba(242,224,213,.94);backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:-.3px;
+display:flex;flex-direction:column;line-height:1.2;color:var(--text)}
+.logo span{color:var(--accent)}
+.nav{display:flex;gap:20px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted)}
+.nav a:hover{color:var(--text);text-decoration:none}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 22px;
+border-radius:100px;font-weight:600!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+.wrap{max-width:880px;margin:0 auto;padding:130px 24px 40px}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(242,72,34,.09);
+color:var(--accent);font-weight:600;font-size:13px;padding:7px 16px;border-radius:100px;
+margin-bottom:22px}
+h1{font-family:var(--fd);font-weight:900;font-size:clamp(28px,4.6vw,46px);line-height:1.1;
+letter-spacing:-1.6px;margin-bottom:18px}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--text-sec);margin-bottom:14px}
+.meta{font-size:14px;color:var(--text-muted);padding-bottom:28px;
+border-bottom:1px solid var(--border);margin-bottom:34px}
+
+p{margin-bottom:16px;color:var(--text-sec);font-size:16.5px}
+.intro p{font-size:17.5px}
+h2.sec{font-family:var(--fd);font-weight:900;font-size:clamp(21px,2.8vw,28px);
+line-height:1.2;letter-spacing:-.9px;margin:54px 0 20px;scroll-margin-top:90px}
+
+/* спикер */
+.speaker{background:var(--bg-card);border:1px solid var(--border);border-radius:22px;
+padding:30px;margin:38px 0}
+.sp-head{display:flex;gap:18px;align-items:center;margin-bottom:8px}
+.sp-face{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.sp-name{font-family:var(--fd);font-weight:700;font-size:19px;letter-spacing:-.4px;
+line-height:1.25;margin-bottom:4px}
+.sp-role{font-size:14.5px;color:var(--text-muted);line-height:1.45}
+.sp-topic{font-size:15px;color:var(--text);background:var(--bg-alt);border-radius:12px;
+padding:12px 16px;margin:16px 0 22px}
+.sp-topic b{font-weight:600}
+
+.insight{margin:22px 0}
+.insight h3{font-family:var(--fd);font-weight:700;font-size:17px;letter-spacing:-.3px;
+line-height:1.3;margin-bottom:9px;padding-left:16px;border-left:3px solid var(--accent)}
+.insight p{margin-bottom:0;font-size:16px}
+
+figure{margin:24px 0 8px}
+figure img{border-radius:14px;border:1px solid var(--border)}
+figcaption{font-size:13.5px;color:var(--text-muted);margin-top:9px;text-align:center}
+
+.watch{display:block;background:var(--bg-dark);color:#fff;border-radius:16px;
+padding:18px 24px;margin-top:26px;text-align:center;font-weight:600;font-size:15.5px;
+transition:background .2s}
+.watch:hover{background:#242424;text-decoration:none;color:#fff}
+.watch small{display:block;font-weight:400;font-size:13px;color:rgba(255,255,255,.6);
+margin-top:5px}
+
+.final{background:var(--bg-dark);color:#fff;border-radius:24px;padding:40px 34px;
+margin:50px 0 10px;text-align:center}
+.final h2{font-family:var(--fd);font-weight:900;font-size:clamp(21px,3vw,28px);
+letter-spacing:-.9px;margin-bottom:14px;line-height:1.2}
+.final p{color:rgba(255,255,255,.72);margin-bottom:24px;font-size:16px}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
+font-size:16px;padding:16px 34px;border-radius:100px;transition:background .2s}
+.btn:hover{background:var(--accent-hover);text-decoration:none}
+
+.footer{background:var(--bg-dark);color:#fff;padding:46px 40px;margin-top:60px}
+.footer-inner{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;
+gap:28px;flex-wrap:wrap;font-size:14px}
+.footer a{color:rgba(255,255,255,.7)}
+.footer a:hover{color:var(--accent)}
+
+@media(max-width:768px){
+  .header{padding:14px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);
+  justify-content:center;align-items:center;gap:22px;z-index:100;padding:80px 20px}
+  .nav.open a{font-size:22px;color:var(--text)}
+  .wrap{padding:104px 18px 30px}
+  .speaker{padding:22px 18px;border-radius:18px}
+  .sp-head{gap:14px}.sp-face{width:60px;height:60px}
+  .final{padding:32px 22px}
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span style="color:var(--text)">ФРАНЧАЙЗИНГ</span><span>ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav">
+    <a href="index.html">Сообщество</a>
+    <a href="blog.html">Блог</a>
+    <a href="tour2.html">Тур-Де-Франч</a>
+    <a href="market.html">Franch-Marketing</a>
+    <a href="https://t.me/franchru" class="nav-cta" target="_blank">Вступить</a>
+  </nav>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="wrap">
+
+  <div class="kicker">27 октября 2026 · итоги мастер-класса</div>
+  <h1>AI-переход для франшизных сетей: что у кого уже работает</h1>
+  <p class="lead">Семь франчайзеров показали свои системы изнутри — с цифрами,
+    схемами и граблями, на которые успели наступить.</p>
+  <p class="meta">Восемь часов эфира · 10 выступлений · конспект для тех, кто не был</p>
+
+  <div class="intro">
+    <p>Про нейросети в франчайзинге говорят много, а показывают мало. Обычная
+      конференция по теме выглядит так: спикер рассказывает, что будущее уже
+      наступило, показывает слайд с роботом и уходит. Полезного — ноль.</p>
+
+    <p>Мы собрали другой состав. Позвали тех, кто уже перевёл часть операционки
+      на агентов и может показать экран: вот дашборд, вот переписка агента
+      с партнёром, вот цифры до и после. Никакой теории про сингулярность —
+      только то, что работает в сетях от 50 до 2700 точек.</p>
+
+    <p>Ниже — главное из каждого выступления. Если захочется подробностей,
+      полные записи лежат в закрытом чате «Масштаб».</p>
+  </div>
+
+  <h2 class="sec">С чего начинается внедрение</h2>
+
+  <!-- Семён -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-semen.jpg" alt="Семён Сарапулов">
+      <div>
+        <div class="sp-name">Семён Сарапулов</div>
+        <div class="sp-role">Основатель сообщества «Франчайзинг по-русски».
+          Создатель франшиз «Перспектива 24» и Zoltor, два выхода в «Самолёт»</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> базовый словарь и зачем собственнику
+      лезть в это самому</div>
+
+    <div class="insight">
+      <h3>Реализацию можно делегировать, понимание — нет</h3>
+      <p>Есть два подхода к любой технологической новинке: нанять специалиста
+        и не разбираться или разобраться самому. В случае с нейросетями работает
+        только второй. Если собственник не понимает возможностей технологии,
+        у него не возникнет идей, как применить её именно в своём бизнесе —
+        а специалист со стороны этих идей не придумает, он не знает бизнес
+        изнутри.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Интеллектуальный труд перестал быть дефицитом</h3>
+      <p>Десять лет назад альтернативой был наём: человеку нужна зарплата,
+        отпуск, ипотека. Агенту нужно электричество и видеокарты — и то,
+        и другое дешевеет. Поэтому вопрос не в том, заменят ли нейросети людей,
+        а в том, какую ценность даёт сотрудник сверх того, что уже умеет машина.
+        Первыми позиции теряют не рабочие, а интеллектуальный сектор:
+        разработчики, аналитики, дизайнеры.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Не бояться выглядеть глупо перед нейросетью</h3>
+      <p>Самый базовый навык, который почему-то даётся тяжелее всего. Не знаешь,
+        что такое GitHub — спроси у модели. Нужен свой сервер — спроси, где купить
+        и как настроить, она проведёт по шагам. Люди вместо этого идут гуглить
+        и теряют часы.</p>
+    </div>
+  </div>
+
+  <h2 class="sec">Операционка управляющей компании</h2>
+
+  <!-- Бугреев -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-bugreev.jpg" alt="Виталий Бугреев">
+      <div>
+        <div class="sp-name">Виталий Бугреев</div>
+        <div class="sp-role">Директор по развитию сети «Другие Миры».
+          320 активных филиалов, 600+ подписанных партнёров, 47 стран</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> AI и вайб-кодинг в управлении франшизой
+      без роста расходов</div>
+
+    <div class="insight">
+      <h3>Один менеджер ведёт 80 точек вместо 20</h3>
+      <p>Во франшизе Avito на менеджера сопровождения приходилось двадцать точек.
+        В «Других Мирах» дошли до сорока пяти, а сейчас у самых продвинутых
+        территориальных менеджеров — семьдесят-восемьдесят. Качество не просело.
+        В момент, когда по-старому пришлось бы нанимать двух-трёх дорогих
+        управленцев, их не наняли.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Обучение сети строится на своих же сотрудниках</h3>
+      <p>Общая подписка на ChatGPT ничего не дала — ей пользовались единицы.
+        Тогда взяли тех, кто пользуется активно, записали, как они решают
+        конкретные задачи, и сложили в свою вики-библиотеку. Эту библиотеку
+        раскатали на всех. У каждого отдела — свой проект в чате, чтобы
+        не портить контекст. Самым заинтересованным открыли доступ к Cursor
+        и Claude: через полгода в штате появился полноценный вайб-кодер,
+        а остальные сотрудники пишут ему технические задания через GPT.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Свои инструменты вместо подписок на чужие</h3>
+      <p>Готовая аналитика соцсетей стоит около 800 ₽ за учётную запись — при
+        320 точках это заметные деньги. Собрали свой дашборд: охваты, подписчики,
+        динамика в разрезе сети, менеджера и города. Платят 14 долларов в неделю
+        за API. Та же история с обучающей платформой: вместо 380 тысяч в год
+        за готовое решение нашли открытый исходный код и допилили под себя.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/bugreev-scope.jpg" alt="Дашборд контроля соцсетей франчайзи">
+      <figcaption>Свой дашборд: охваты и активность каждой арены в разрезе
+        территориального менеджера</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <!-- Голиков -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-golikov.jpg" alt="Игорь Голиков">
+      <div>
+        <div class="sp-name">Игорь Голиков</div>
+        <div class="sp-role">Основатель сети химчисток «Хозяюшка», 54 точки.
+          Сооснователь AIconic — внедряют агентов в чужие бизнесы</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> управляющая компания из 30 человек
+      превратилась в 5</div>
+
+    <div class="insight">
+      <h3>Тридцать человек в УК стали пятью при той же сети</h3>
+      <p>Было: пять продажников, пять человек клиентского сервиса, отдел контроля
+        качества, юристы, финансисты, эйчар. Стало: пять человек и агенты
+        на каждой из этих ролей. Сеть осталась прежней — 54 точки. Контроль
+        качества, который раньше делали живые люди (и который продавали
+        франчайзи как услугу), теперь полностью на агентах.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Агента обучают как сотрудника, а не «подключают»</h3>
+      <p>У «Хозяюшки» первую линию ведёт агент по имени Надя — она сидит во всех
+        чатах с партнёрами, знает каждого франчайзи, отвечает на вопросы,
+        разбирает претензии. Три раза в неделю сама рассылает обучающие материалы
+        из базы знаний — в человеческой форме, с шутками. Среднее время первого
+        ответа клиенту упало до двух минут: раньше было пять операторов
+        по сменам, ночью и в выходные не отвечал никто.</p>
+    </div>
+
+    <div class="insight">
+      <h3>GEO вместо SEO: попасть в ответ нейросети</h3>
+      <p>Привычное SEO — это выдача Яндекса и Google. GEO (Generative Engine
+        Optimization) — это когда человек спрашивает у нейросети, где почистить
+        пуховик, и она отвечает «Хозяюшка». Отдельное направление лидогенерации,
+        которым в сети занимаются уже год, параллельно с мониторингом районных
+        чатов и нативными ответами в них.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/golikov-2min.jpg" alt="Слайд: клиент больше не ждёт оператора">
+      <figcaption>Первая линия: было пять операторов по сменам, стало
+        меньше двух минут до ответа в любом канале</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <h2 class="sec">Маркетинг и продажи</h2>
+
+  <!-- Кузьминых -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-kuzminyh.jpg" alt="Константин Кузьминых">
+      <div>
+        <div class="sp-name">Константин Кузьминых</div>
+        <div class="sp-role">Основатель Take&amp;Wake. 2700 кофеен самообслуживания,
+          1000+ партнёров, 500+ городов, 18 тысяч продаж в день</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> как не программист за восемь месяцев
+      собрал контент-завод и свою аналитику</div>
+
+    <div class="insight">
+      <h3>Один репозиторий как мозг компании</h3>
+      <p>Вся архитектура держится на одном репозитории: туда сложены цифровой
+        двойник компании, экономика, правила, ретроспективы. Claude Code управляет
+        этим через агентов-исполнителей и агентов-критиков. На выходе — сайт,
+        блог, приложения, контент, база партнёров. Программистов в контуре нет,
+        собственник не программист.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Шестнадцать агентов пишут статьи, которые приводят заявки</h3>
+      <p>Контент-завод: агенты ищут тему, сверяют с внутренними цифрами, проверяют,
+        есть ли пробел в поисковой выдаче, пишут статью по правилам копирайтинга,
+        прогоняют на факты, тон оф войс и стоп-слова, проверяют на машинные
+        маркеры и публикуют. Вышло 143 разбора. Сейчас это 673 визита в неделю,
+        84% поискового трафика в блог даёт Яндекс. Система сама каждую неделю
+        дописывает себе новые правила, анализируя, что зашло.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Расчёт в первые сутки повышает продажу в 4,5 раза</h3>
+      <p>Через API amoCRM разобрали 2500 обращений за год и искали закономерности.
+        Нашлась конкретная: если менеджер после разговора вернулся с расчётом
+        под клиента в первые сутки, франшизу покупают в четыре с половиной раза
+        чаще. Это сразу встроили в работу отдела продаж. Заодно заменили Roistat
+        своей системой — бесплатно вместо десяти тысяч в месяц.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/kuzminyh-id.jpg" alt="Единая база партнёров Take and Wake">
+      <figcaption>Без единой базы партнёров любая автоматизация —
+        ещё одна таблица</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <!-- Фролов -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-frolov.jpg" alt="Максим Фролов">
+      <div>
+        <div class="sp-name">Максим Фролов</div>
+        <div class="sp-role">Продукт-менеджер Точка Банка, отвечает за работу
+          с франчайзинговыми сетями</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> три способа встроить нейросеть в процесс
+      и где проходит граница автоматизации</div>
+
+    <div class="insight">
+      <h3>Ассистент, партнёр, конвейер — три разных уровня</h3>
+      <p>Ассистент ускоряет сотрудника внутри его компетенции. Партнёр добавляет
+        компетенций, которых у сотрудника нет, — чтобы он не стоял в очереди
+        к загруженному коллеге. Конвейер работает сам: процесс стартует
+        по триггеру, проходит этапы и завершается без человека. Первые два
+        требуют, чтобы кто-то запустил процесс и забрал результат, третий — нет.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Автоматизация масштабирует то, что уже есть. Включая хаос</h3>
+      <p>Главное препятствие к внедрению агентов — не технологии, а отсутствие
+        твёрдого описания процессов. Если на каждом шаге решение принимается
+        интуитивно, автоматизировать нечего: агент не создаёт процесс,
+        он работает поверх уже созданного. Сначала процесс, потом автоматизация,
+        не наоборот.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Человек в контуре — не слабость, а продуктовое решение</h3>
+      <p>В Точке сознательно оставили живую поддержку и дали клиенту переключатель:
+        хочешь — говори с ботом по простому вопросу, хочешь — сразу с человеком.
+        По исследованиям, около 70% людей жалуются на невозможность дозваться
+        оператора. Поэтому граница автоматизации — это стратегический выбор,
+        а не техническое ограничение.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/frolov-pipeline.jpg" alt="Схема пайплайна из агентов">
+      <figcaption>Пайплайн: триггер, агент разбирает вход, маршрутизация,
+        результат — каждый шаг со своей моделью</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <h2 class="sec">Свои системы вместо коробочных</h2>
+
+  <!-- Егоры -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-egors.jpg" alt="Егор Швецов и Егор Кыров">
+      <div>
+        <div class="sp-name">Егор Швецов и Егор Кыров</div>
+        <div class="sp-role">Makes (разработка цифровых продуктов)
+          и Cheese Photo — сеть фотосалонов, 115+ филиалов, 13 лет на рынке</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> своя CRM для франшизы за два месяца
+      и кто за неё платит</div>
+
+    <div class="insight">
+      <h3>Расходы на разработку делятся внутри сети</h3>
+      <p>Обычная схема — управляющая компания один раз платит большую сумму
+        и забирает продукт. Здесь иначе: УК вносит небольшую фиксированную сумму
+        на входе, а дальше партнёры платят подписку за инструмент, которым
+        пользуются каждый день, и УК получает с этих подписок комиссию.
+        Разработчик остаётся техническим партнёром на постоянку и обязан
+        развивать систему — иначе через полгода возникнет вопрос, за что платить.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Вайб-кодинг для дашборда и вайб-кодинг для CRM на 115 филиалов — разные вещи</h3>
+      <p>Собрать себе небольшой дашборд или чек-лист можно и в одиночку.
+        Но облачная CRM, которая считает продажи ста филиалов, раздаёт доступы
+        и разбирает диалоги с сотнями клиентов ежедневно, на коленке
+        не собирается. Франчайзер честно сказал: администрировать и чинить такое
+        сам он не потянет, поэтому ключевым условием была постоянная техподдержка
+        со стороны партнёра.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Появились инструменты, которые раньше не окупались</h3>
+      <p>Главная перемена даже не в экономии на коде, а в том, что бизнес может
+        позволить себе мелочи. Не каждую проблему нужно решать большой дорогой
+        программой. Сотрудникам фотосалонов было неудобно работать в Photoshop —
+        за пару дней сделали свой простой фоторедактор под их конкретные операции.
+        Раньше такую задачу просто не стали бы разрабатывать.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/makes-model.jpg" alt="Схема оплаты разработки">
+      <figcaption>Как устроена оплата: УК вносит входную сумму, партнёры платят
+        за рабочий инструмент, УК получает комиссию</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <!-- Бородин -->
+  <div class="speaker">
+    <div class="sp-head">
+      <img class="sp-face" src="img/ai27/face-borodin.jpg" alt="Константин Бородин">
+      <div>
+        <div class="sp-name">Константин Бородин</div>
+        <div class="sp-role">Основатель сети массажных студий
+          «Рельсы-Рельсы, Шпалы-Шпалы», 75+ студий от Камчатки до Калининграда</div>
+      </div>
+    </div>
+    <div class="sp-topic"><b>Тема:</b> аналитика для сети, собранная
+      собственником в одиночку</div>
+
+    <div class="insight">
+      <h3>Три миллиона за Power BI против подписки на Claude</h3>
+      <p>Три года назад за рейтинг сети по разным показателям просили от миллиона
+        до трёх — предлагали собрать на Power BI. Собрал сам, заплатив только
+        за подписку. И собрал ровно так, как видел нужным для партнёров,
+        а не так, как понял подрядчик. Система подключена к YClients и достраивает
+        то, чего в коробке нет: учёт абонементов и сертификатов, которые
+        в массажном бизнесе дают больше половины выручки и выбираются месяцами.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Рейтинг включил соревнование между партнёрами</h3>
+      <p>Когда партнёры увидели себя в общем рейтинге, они начали смотреть,
+        сколько нужно, чтобы догнать соседа. Топ-15 заметно прибавили
+        в результатах. Побочный эффект: нашёлся партнёр, который весь год
+        продаёт абонементов в полтора-два раза больше остальных — причём сам
+        считал, что работает как все. Его разобрали на слёте, подход забрали
+        остальные.</p>
+    </div>
+
+    <div class="insight">
+      <h3>Администратор получает готовый список, кому звонить</h3>
+      <p>В базе сети сотни тысяч клиентов, у каждой студии — от пяти
+        до тридцати тысяч. Система сама размечает: кому пора прийти,
+        кто под угрозой оттока (ходил раз в три недели, а не появляется пятую),
+        кто относится к золотым клиентам. Администратор не думает, за кого
+        браться, — он открывает готовый список с историей и поводом для звонка.</p>
+    </div>
+
+    <figure>
+      <img src="img/ai27/borodin-rating.jpg" alt="Рейтинг студий сети">
+      <figcaption>Рейтинг сети: выручка, прирост, средний чек, абонементы —
+        партнёры видят себя среди остальных</figcaption>
+    </figure>
+
+    <a class="watch" href="https://t.me/rusfranch_bot?start=live">
+      Смотреть полное выступление
+      <small>в закрытом чате «Масштаб»</small>
+    </a>
+  </div>
+
+  <h2 class="sec">Что общего у всех семи</h2>
+
+  <p><b>Начинали с себя, а не с найма.</b> Ни один из спикеров не нанял
+    подрядчика, чтобы тот «внедрил ИИ». Все разбирались сами, и только потом
+    подключали людей — своих или внешних.</p>
+
+  <p><b>Первым делом автоматизировали не продажи, а рутину управляющей
+    компании.</b> Отчёты, контроль качества, ответы партнёрам, сбор данных
+    из разрозненных систем. Это то, что съедает штат и не растёт в деньгах.</p>
+
+  <p><b>Считали экономию в конкретных суммах.</b> 380 тысяч в год на обучающей
+    платформе, 10 тысяч в месяц на сквозной аналитике, от миллиона до трёх
+    на дашборде, 800 рублей за учётную запись в сервисе аналитики соцсетей.
+    Не «оптимизировали процессы», а перестали платить за конкретные подписки.</p>
+
+  <p><b>Упирались в одно и то же: в отсутствие порядка.</b> Единая база
+    партнёров, твёрдые критерии на каждом шаге процесса, описанные стандарты.
+    Агент не наводит порядок — он масштабирует тот, который уже есть.
+    Или тот хаос, который есть.</p>
+
+  <div class="final">
+    <h2>Полные записи всех выступлений</h2>
+    <p>Восемь часов разборов с демонстрацией экрана, презентации спикеров
+      и 60+ записей прошлых встреч — в закрытом чате «Масштаб».</p>
+    <a class="btn" href="https://t.me/tribute/app?startapp=sCed">Оформить доступ</a>
+  </div>
+
+  <p style="margin-top:34px;font-size:15px;color:var(--text-muted)">
+    Следующая встреча сообщества — онлайн-конференция
+    <a href="market.html">Franch-Marketing</a> 24 ноября: лидген, бренд,
+    упаковка, площадки и ROMI на опыте сетей. Доступ по той же подписке.
+  </p>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>© 2026 Франчайзинг по-русски</div>
+    <div>
+      <a href="blog.html">Блог</a> ·
+      <a href="index.html">Сообщество</a> ·
+      <a href="https://t.me/franchru" target="_blank">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('open');
+}
+</script>
+</body>
+</html>
