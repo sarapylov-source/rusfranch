@@ -115,12 +115,13 @@ h1 em{font-style:normal;color:var(--accent)}
 .car-nav button:hover{transform:translateY(-2px)}
 .car{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;margin-top:28px;padding-bottom:8px;scrollbar-width:none}
 .car::-webkit-scrollbar{display:none}
-.w-card{flex:0 0 calc((100% - 48px)/4);scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden}
-.w-thumb{position:relative;aspect-ratio:16/9;background:#1c1c1c}.w-thumb img{width:100%;height:100%;object-fit:cover}
+.car:focus-visible{outline:2px solid var(--accent);outline-offset:6px;border-radius:20px}
+.w-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;background:#fff;border-radius:20px;overflow:hidden}
+.w-thumb{position:relative;aspect-ratio:16/9;background:#1c1c1c}.w-thumb img{width:100%;height:100%;object-fit:contain;display:block}
 .w-dur{position:absolute;right:10px;bottom:10px;background:rgba(13,13,13,.8);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:100px}
 .w-body{padding:18px 20px 22px}
-.w-title{font-family:var(--fd);font-weight:700;font-size:15px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:61px}
-.w-sp{font-size:13px;line-height:1.4;color:var(--text-sec);margin-top:8px}
+.w-title{margin:0;font-family:var(--fd);font-weight:700;font-size:15px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:61px}
+.w-sp{margin-bottom:0;font-size:13px;line-height:1.4;color:var(--text-sec);margin-top:8px}
 .lib-foot{display:flex;justify-content:flex-end;margin-top:28px}
 /* cta */
 .cta{margin:0 32px;background:var(--accent);border-radius:40px;padding:72px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px}
@@ -168,11 +169,11 @@ h1 em{font-style:normal;color:var(--accent)}
 .footer-col a:hover{color:var(--accent)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;color:rgba(255,255,255,.4)}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:none}
-@media(max-width:1100px){.w-card{flex-basis:calc((100% - 32px)/3)}.rv-grid{grid-template-columns:repeat(2,1fr)}.rv-video:nth-child(n+3){}.notes{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1100px){.w-card{flex-basis:calc((100% - 16px)/2)}.rv-grid{grid-template-columns:repeat(2,1fr)}.rv-video:nth-child(n+3){}.notes{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){.hero .wrap{flex-direction:column;align-items:flex-start}.hero-net{max-width:100%;width:360px;align-self:center}.uk-grid{grid-template-columns:1fr 1fr}.why .wrap,.org-grid,.tariffs{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start;padding:48px 32px}.p-row{grid-template-columns:80px 1fr;gap:14px 20px}.p-avs{grid-column:2}.p-row>.p-body{grid-column:1/-1}.p-simple>.p-body{grid-column:2}.p-free{grid-template-columns:80px 1fr}.p-free .btn{grid-column:1/-1;justify-self:start}}
 @media(max-width:768px){.header{padding:16px 20px}.nav{display:none}.burger{display:flex}.nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);justify-content:center;align-items:center;gap:22px;z-index:100;padding:80px 20px}.nav.open a{font-size:22px;color:var(--text)}
 .wrap{padding:0 20px}.hero{padding:100px 0 40px}h1{letter-spacing:-1.5px}.uk-grid{grid-template-columns:1fr}.prog,.cta{margin:0 12px;border-radius:28px}.prog{padding:44px 0 20px}.prog .wrap{padding:0 12px}.p-row{padding:16px 18px}.p-time{font-size:18px}.p-title{font-size:17px}
-.w-card{flex-basis:78%}.lib-top{flex-direction:column;align-items:flex-start}.car-nav{display:none}.lib-foot{justify-content:flex-start}.rv-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -20px 0;padding:0 20px 8px}.rv-grid>*{flex:0 0 72%;scroll-snap-align:start}.gal{grid-template-columns:1fr 1fr}.gal img{height:150px;border-radius:16px}
+.w-card{flex-basis:86%}.lib-top{flex-direction:column;align-items:flex-start}.car-nav{display:none}.lib-foot{justify-content:flex-start}.rv-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:32px -20px 0;padding:0 20px 8px}.rv-grid>*{flex:0 0 72%;scroll-snap-align:start}.gal{grid-template-columns:1fr 1fr}.gal img{height:150px;border-radius:16px}
 .mgr-card{flex-direction:column;align-items:flex-start;padding:32px 24px;gap:20px}.mgr-card img{width:100px;height:100px}.notes{grid-template-columns:1fr}.tar{padding:28px 24px}.tar .btn{white-space:normal}.btn{padding:16px 28px;font-size:16px}.cta .btn{align-self:stretch;justify-content:center}.footer{padding:40px 20px}.footer-grid{grid-template-columns:1fr;gap:32px}.footer-bottom{flex-direction:column;gap:20px;text-align:center}}
 
 .nav{gap:18px}.nav a{font-size:13.5px}
@@ -263,7 +264,96 @@ h1 em{font-style:normal;color:var(--accent)}
     <div><div class="tag">Что внутри чата «Масштаб»</div><h2 class="h2">62 выступления и 51 час записей уже внутри</h2><p class="sub">Ежемесячные мастер-классы и база знаний из более чем 60 вебинаров и выступлений инсайдеров рынка франчайзинга.</p></div>
     <div class="car-nav"><button type="button" aria-label="Назад" onclick="car(-1)"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M13 8H3m0 0l4-4M3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="next" aria-label="Вперёд" onclick="car(1)"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
   </div>
-  <div class="car" id="car"><div class="w-card"><div class="w-thumb"><img src="ai-web-01.jpg" alt="" loading="lazy"><span class="w-dur">29 мин</span></div><div class="w-body"><div class="w-title">Персональные данные — как хранить, обрабатывать и не попасть на штрафы</div><div class="w-sp">Юрий Батищев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-02.jpg" alt="" loading="lazy"><span class="w-dur">1 ч 21 мин</span></div><div class="w-body"><div class="w-title">Почему одни франшизы растут а другие нет</div><div class="w-sp">Александр Долгов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-03.jpg" alt="" loading="lazy"><span class="w-dur">25 мин</span></div><div class="w-body"><div class="w-title">Франшиза «Без бренда» — масло без сливок или новый тренд?</div><div class="w-sp">Семён и Дарья Сарапуловы</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-04.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">Возможности Альфа-Банка для франчайзеров</div><div class="w-sp">Дамир Умаров, Николай Сергеев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-05.jpg" alt="" loading="lazy"><span class="w-dur">43 мин</span></div><div class="w-body"><div class="w-title">Развитие медицинской франшизы. Опыт BIORIZE</div><div class="w-sp">Артур Зарипов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-06.jpg" alt="" loading="lazy"><span class="w-dur">33 мин</span></div><div class="w-body"><div class="w-title">Маша — AI агент для звонков</div><div class="w-sp">Вадим Попов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-07.jpg" alt="" loading="lazy"><span class="w-dur">21 мин</span></div><div class="w-body"><div class="w-title">Стабильный поток заявок — дискуссия, ответы на вопросы</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-08.jpg" alt="" loading="lazy"><span class="w-dur">38 мин</span></div><div class="w-body"><div class="w-title">Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка</div><div class="w-sp">Алёна Овчинникова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-09.jpg" alt="" loading="lazy"><span class="w-dur">30 мин</span></div><div class="w-body"><div class="w-title">Как налоговая реформа повлияет на франшизы</div><div class="w-sp">Альбина Чукова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-10.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">SMM во франшизе</div><div class="w-sp">Анастасия Мансурова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-11.jpg" alt="" loading="lazy"><span class="w-dur">1 ч 18 мин</span></div><div class="w-body"><div class="w-title">Маркетинг франшиз в 2026 году</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-12.jpg" alt="" loading="lazy"><span class="w-dur">34 мин</span></div><div class="w-body"><div class="w-title">Система продажи франшиз которая приносит деньги</div><div class="w-sp">Александр Старжинский</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-13.jpg" alt="" loading="lazy"><span class="w-dur">47 мин</span></div><div class="w-body"><div class="w-title">Офис DODO-brands: сессия вопрос-ответ</div><div class="w-sp">Александр Столбовский, бизнес-девелопер Dodo</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-14.jpg" alt="" loading="lazy"><span class="w-dur">36 мин</span></div><div class="w-body"><div class="w-title">Налоговые изменения в 2026 году и что делать франчайзеру</div><div class="w-sp">Игорь Анфалов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-15.jpg" alt="" loading="lazy"><span class="w-dur">18 мин</span></div><div class="w-body"><div class="w-title">Кейс франшизы — банкрота. Дискуссия</div><div class="w-sp">Владимир Панкратов</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-16.jpg" alt="" loading="lazy"><span class="w-dur">32 мин</span></div><div class="w-body"><div class="w-title">PR для бизнеса: Как продвигаться результативно</div><div class="w-sp">Анастасия Панчук, основательница PR-агентства PunchR</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-17.jpg" alt="" loading="lazy"><span class="w-dur">21 мин</span></div><div class="w-body"><div class="w-title">Реклама франшизы у блогеров по бартеру</div><div class="w-sp">Анастасия Мансурова</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-18.jpg" alt="" loading="lazy"><span class="w-dur">15 мин</span></div><div class="w-body"><div class="w-title">Офис DODO-brands: экскурсия</div><div class="w-sp">Александр Столбовский, бизнес-девелопер Dodo</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-19.jpg" alt="" loading="lazy"><span class="w-dur">22 мин</span></div><div class="w-body"><div class="w-title">Стабильный поток заявок при растущей конкуренции и уходящих площадках</div><div class="w-sp">Ярослав Осинцев</div></div></div><div class="w-card"><div class="w-thumb"><img src="ai-web-20.jpg" alt="" loading="lazy"><span class="w-dur">20 мин</span></div><div class="w-body"><div class="w-title">Готовность бизнеса к масштабированию через франшизу</div><div class="w-sp">Владимир Панкратов</div></div></div></div>
+  <div class="car" id="car" tabindex="0" role="region" aria-label="Записи выступлений в чате Масштаб">
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/marketing-2026.webp" alt="Маркетинг франшиз в 2026 году" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 18 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Маркетинг франшиз в 2026 году</h3><p class="w-sp">Ярослав Осинцев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/marketing-mastermind.webp" alt="Маркетинг франшиз: практический мастермайнд" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">59 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Маркетинг франшиз: практический мастермайнд</h3><p class="w-sp">Анастасия Мансурова, Семён Сарапулов, Денис Блохин, Ярослав Осинцев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/pr-business.webp" alt="PR для бизнеса: как продвигаться результативно" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">32 мин</span></div>
+      <div class="w-body"><h3 class="w-title">PR для бизнеса: как продвигаться результативно</h3><p class="w-sp">Анастасия Панчук</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/presentations.webp" alt="Разбор франчайзинговых презентаций" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 04 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Разбор франчайзинговых презентаций</h3><p class="w-sp">Егор Кыров, Семён Сарапулов и другие участники</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/sales-workshop.webp" alt="Практикум по продажам" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 04 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Практикум по продажам</h3><p class="w-sp">Рустэм Юсупов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/human-approach.webp" alt="Как выстроить очередь из франчайзи благодаря человечному подходу" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 31 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Как выстроить очередь из франчайзи благодаря человечному подходу</h3><p class="w-sp">Даниил Безко</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/conversion-franchise.webp" alt="Конверсионная франшиза, перекрас или обратный франчайзинг?" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">59 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Конверсионная франшиза, перекрас или обратный франчайзинг?</h3><p class="w-sp">Борис Колесников</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/dodo-seven-reasons.webp" alt="7 причин, почему Додо — икона франчайзинга" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 01 мин</span></div>
+      <div class="w-body"><h3 class="w-title">7 причин, почему Додо — икона франчайзинга</h3><p class="w-sp">Александр Касьянов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/franchise-growth.webp" alt="Почему одни франшизы растут, а другие нет" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 21 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Почему одни франшизы растут, а другие нет</h3><p class="w-sp">Александр Долгов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/refranch.webp" alt="РеФранч: продажи франшиз силами франчайзи" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">39 мин</span></div>
+      <div class="w-body"><h3 class="w-title">РеФранч: продажи франшиз силами франчайзи</h3><p class="w-sp">Семён Сарапулов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/tax-reform.webp" alt="Как налоговая реформа повлияет на франшизы?" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">30 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Как налоговая реформа повлияет на франшизы?</h3><p class="w-sp">Альбина Чукова</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/alfa-bank.webp" alt="Возможности Альфа-Банка для франчайзеров" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">22 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Возможности Альфа-Банка для франчайзеров</h3><p class="w-sp">Дамир Умяров, Николай Сергеев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/restaurant-adaptation.webp" alt="Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">38 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка</h3><p class="w-sp">Алёна Овчинникова</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/franchising-at-scale.webp" alt="Франчайзинг по-крупному" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч</span></div>
+      <div class="w-body"><h3 class="w-title">Франчайзинг по-крупному</h3><p class="w-sp">Ильназ Набиуллин</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/medical-franchise.webp" alt="Развитие медицинской франшизы: опыт BIORISE" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">43 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Развитие медицинской франшизы: опыт BIORISE</h3><p class="w-sp">Артур Зарипов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/franchise-discussion.webp" alt="Франчайзинг вчера, сегодня и завтра. Куда мы катимся?" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 53 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Франчайзинг вчера, сегодня и завтра. Куда мы катимся?</h3><p class="w-sp">Александр Долгов, Тимур Бабаев, Семён Сарапулов</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/dodo-questions.webp" alt="Офис Dodo: сессия вопрос-ответ" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">47 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Офис Dodo: сессия вопрос-ответ</h3><p class="w-sp">Александр Столбовский</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/dodo-office.webp" alt="Экскурсия в офис Dodo" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">15 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Экскурсия в офис Dodo</h3><p class="w-sp">Александр Столбовский</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/colizeum-questions.webp" alt="Colizeum: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">1 ч 01 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Colizeum: сессия вопрос-ответ. Часть 1</h3><p class="w-sp">Ринат Магдеев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/colizeum-office.webp" alt="Colizeum: экскурсия по офису УК. Часть 2" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">5 мин</span></div>
+      <div class="w-body"><h3 class="w-title">Colizeum: экскурсия по офису УК. Часть 2</h3><p class="w-sp">Ринат Магдеев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/phobo-questions.webp" alt="PhoBo: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">23 мин</span></div>
+      <div class="w-body"><h3 class="w-title">PhoBo: сессия вопрос-ответ. Часть 1</h3><p class="w-sp">Александр Золоторев</p></div>
+    </article>
+    <article class="w-card">
+      <div class="w-thumb"><img src="img/market-library/phobo-restaurant.webp" alt="PhoBo: экскурсия по ресторану. Часть 2" width="960" height="540" loading="lazy" decoding="async"><span class="w-dur">3 мин</span></div>
+      <div class="w-body"><h3 class="w-title">PhoBo: экскурсия по ресторану. Часть 2</h3><p class="w-sp">Александр Золоторев</p></div>
+    </article>
+  </div>
   
   <div class="lib-foot"><a href="https://t.me/tribute/app?startapp=sCed" class="btn" target="_blank" rel="noopener">Оформить подписку за <span data-price>1 000 ₽</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </div></section>
