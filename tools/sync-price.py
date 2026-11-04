@@ -51,13 +51,20 @@ def sync_file(path, cfg):
             re.S)
         t = pat.sub(lambda m: m.group(1) + value + m.group(6), t)
 
+    # Скрываем весь срок вместе с предлогом, если дата не задана.
+    def deadline_visibility(m):
+        attrs = re.sub(r'\s+hidden(?:=["\'][^"\']*["\'])?', '', m.group(1))
+        return '<span' + attrs + ('' if cfg['price-until'] else ' hidden') + '>'
+    t = re.sub(r'<span([^>]*\bdata-price-deadline\b[^>]*)>', deadline_visibility, t)
+
     # шаблон meta description
     m = re.search(r'<meta name="description" content="([^"]*)" data-price-tpl="([^"]*)"', t)
     if m:
         baked = (m.group(2)
                  .replace('{price}', cfg['price'])
                  .replace('{regular}', cfg['price-regular'])
-                 .replace('{until}', cfg['price-until']))
+                 .replace('{until}', cfg['price-until'])
+                 .replace('{deadline}', ' до ' + cfg['price-until'] if cfg['price-until'] else ''))
         t = t.replace(m.group(0),
                       '<meta name="description" content="%s" data-price-tpl="%s"' % (baked, m.group(2)))
 

@@ -5,10 +5,10 @@
    python3 tools/sync-price.py */
 (function () {
   var P = {
-    price: '1 000 ₽',          // цена первого месяца по акции
+    price: '2 000 ₽',          // цена первого месяца по акции
     priceRegular: '5 000 ₽',   // обычная цена месяца
-    until: '3 ноября',         // до какого числа действует акция
-    badge: '−80%',             // плашка скидки
+    until: '',         // срок акции; пустая строка — без указанной даты
+    badge: '−60%',             // плашка скидки
     payLink: 'https://t.me/tribute/app?startapp=sCed'
   };
 
@@ -26,6 +26,9 @@
       for (var i = 0; i < nodes.length; i++) nodes[i].textContent = map[key];
     });
 
+    var deadlines = document.querySelectorAll('[data-price-deadline]');
+    for (var d = 0; d < deadlines.length; d++) deadlines[d].hidden = !P.until;
+
     var links = document.querySelectorAll('[data-price-link]');
     for (var j = 0; j < links.length; j++) links[j].setAttribute('href', P.payLink);
 
@@ -34,7 +37,8 @@
       meta.setAttribute('content', meta.getAttribute('data-price-tpl')
         .split('{price}').join(P.price)
         .split('{regular}').join(P.priceRegular)
-        .split('{until}').join(P.until));
+        .split('{until}').join(P.until)
+        .split('{deadline}').join(P.until ? ' до ' + P.until : ''));
     }
   }
 
