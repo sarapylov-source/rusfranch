@@ -429,10 +429,67 @@
 
     .format-header { margin-bottom: 64px; }
 
-    .format-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .format-screens {
+      display: flex;
+      flex-direction: column;
       gap: 24px;
+    }
+
+    .format-screen {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      min-height: 440px;
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .format-screen-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px;
+    }
+
+    .format-screen-text h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .format-screen-text p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .format-screen-text .format-day { align-self: flex-start; }
+    .format-screen-text .format-tags { margin-top: 8px; }
+
+    .format-screen-photo {
+      position: relative;
+      min-height: 280px;
+    }
+
+    .format-screen-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .format-screen--reverse .format-screen-photo { order: -1; }
+
+    @media (max-width: 860px) {
+      .format-screen { grid-template-columns: 1fr; min-height: 0; }
+      .format-screen-photo,
+      .format-screen--reverse .format-screen-photo { order: -1; min-height: 220px; }
+      .format-screen-text { padding: 32px 24px; }
     }
 
     .format-card {
@@ -896,7 +953,7 @@
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
       max-width: 960px;
       margin: 0 auto 32px;
@@ -941,9 +998,12 @@
     .pricing-card {
       background: var(--light);
       border-radius: 20px;
-      padding: 40px 36px;
+      padding: 36px 32px;
       border: 2px solid var(--border);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      container-type: inline-size;
       transition: box-shadow 250ms var(--ease), transform 250ms var(--ease);
       cursor: default;
     }
@@ -987,9 +1047,11 @@
     .pricing-name {
       font-family: var(--font-display);
       font-size: 1.4rem;
+      font-size: min(1.4rem, 9.2cqi);
       font-weight: 700;
       margin-bottom: 28px;
       line-height: 1.2;
+      min-height: 2.4em;
     }
 
     .pricing-card.featured .pricing-name { color: var(--light); }
@@ -1000,13 +1062,22 @@
 
     .pricing-amount {
       font-family: var(--font-display);
-      font-size: 3rem;
+      font-size: clamp(34px, 3.4vw, 44px);
+      white-space: nowrap;
       font-weight: 900;
       line-height: 1;
       color: var(--text);
     }
 
     .pricing-card.featured .pricing-amount { color: var(--light); }
+
+    .pricing-amount--free {
+      display: flex;
+      align-items: center;
+      min-height: clamp(34px, 3.4vw, 44px);
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-size: min(40px, 11.3cqi);
+    }
 
     .pricing-currency {
       font-size: 1.1rem;
@@ -1018,6 +1089,8 @@
 
     .pricing-period {
       font-size: 13px;
+      line-height: 1.5;
+      min-height: 4.5em;
       color: var(--muted);
       margin-top: 6px;
     }
@@ -1038,6 +1111,7 @@
       flex-direction: column;
       gap: 14px;
       margin-bottom: 36px;
+      flex: 1 1 auto;
     }
 
     .pricing-features li {
@@ -1059,6 +1133,12 @@
     .pricing-card.featured .pricing-features li svg { color: #4ade80; }
 
     .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.8); }
+
+    .pricing-card .btn {
+      box-sizing: border-box;
+      min-height: 54px;
+      line-height: 1.2;
+    }
 
     .pricing-note {
       text-align: center;
@@ -1269,6 +1349,7 @@
       .program-days { grid-template-columns: 1fr; gap: 40px; }
       .venue-inner { grid-template-columns: 1fr; gap: 40px; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .pricing-period { min-height: 0; }
       .nav-links, .nav-cta { display: none; }
       .burger { display: flex; }
     }
@@ -1808,7 +1889,7 @@
 
       <h1 class="hero-title" id="heroTitle">МАСШТАБ<span class="hero-title-ny">Новогодний</span></h1>
 
-      <p class="hero-subtitle">Большой форум сообщества и премия профессионального признания</p>
+      <p class="hero-subtitle">МАСШТАБ — новогодняя ёлка франчайзеров</p>
 
       <div class="hero-meta" role="list">
         <div class="hero-meta-item" role="listitem">
@@ -1853,36 +1934,43 @@
         <p class="section-lead">Мероприятие для владельцев франшиз и топ-менеджмента сетей. Закрытый формат, живые дискуссии, реальный обмен опытом.</p>
       </div>
 
-      <div class="format-grid">
+      <div class="format-screens">
         <!-- Day 1 -->
-        <div class="format-card reveal">
-          <div class="format-day">День 1 · 14 декабря</div>
-          <div class="format-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        <article class="format-screen reveal">
+          <div class="format-screen-text">
+            <div class="format-day">День 1 · 14 декабря</div>
+            <h3>Настоящий новогодний корпоратив «Франчайзеров»</h3>
+            <p>Мы соберёмся в самом центре Москвы, чтобы подвести итоги года, поделиться успехами и планами на будущий год. Мы проводим корпоративы для своих партнёров и сотрудников, ну а что же мы сами? Сообщество «Франчайзинг по-русски» соберёт в одном ресторане весь цвет российского франчайзинга.</p>
+            <p>Один стол на всех: обменяемся инсайтами, вдохновим друг друга и создадим новые партнёрства и связи. Вечер пройдёт в ресторане Vasilchuki Chaihona № 1, дресс-код — Black Tie.</p>
+            <div class="format-tags" role="list">
+              <span class="tag" role="listitem">Стендап Франчайзеров</span>
+              <span class="tag" role="listitem">Корпоратив</span>
+              <span class="tag" role="listitem">Премия «МАСШТАБ»</span>
+            </div>
           </div>
-          <h3>Стендап, корпоратив и премия</h3>
-          <p>Вечер в ресторане Vasilchuki Chaihona № 1: Стендап Франчайзеров, корпоративная часть и вручение премии профессионального признания «МАСШТАБ». Дресс-код — Black Tie.</p>
-          <div class="format-tags" role="list">
-            <span class="tag" role="listitem">Стендап Франчайзеров</span>
-            <span class="tag" role="listitem">Корпоратив</span>
-            <span class="tag" role="listitem">Премия «МАСШТАБ»</span>
+          <div class="format-screen-photo">
+            <img src="venue-chaihona-3.jpg" alt="Зал ресторана Vasilchuki Chaihona № 1" width="1280" height="853" loading="lazy">
           </div>
-        </div>
+        </article>
 
         <!-- Day 2 -->
-        <div class="format-card reveal">
-          <div class="format-day">День 2 · 15 декабря</div>
-          <div class="format-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>
+        <article class="format-screen format-screen--reverse reveal">
+          <div class="format-screen-text">
+            <div class="format-day">День 2 · 15 декабря</div>
+            <h3>Экскурсия в гости к резидентам сообщества</h3>
+            <p>Во второй день мы отправимся в гости к нашим резидентам Александру Назарову, Роману Орешкину и Руслану Ким: экскурсия сразу в три бренда за один день.</p>
+            <p>MYBOX Market — витрина готовых блюд, Secret Kitchen — дарк-китчен, Danjiro — фудкорт с посадкой. Посмотрим, как устроен бизнес изнутри, разберём процессы и экономику, попробуем продукт и пообщаемся с командами. Детали и тайминг уточняются.</p>
+            <div class="format-tags" role="list">
+              <span class="tag" role="listitem">MYBOX Market</span>
+              <span class="tag" role="listitem">Secret Kitchen</span>
+              <span class="tag" role="listitem">Danjiro</span>
+              <span class="tag" role="listitem">Экскурсия</span>
+            </div>
           </div>
-          <h3>Экскурсия по действующим точкам</h3>
-          <p>Выезд на действующие точки: My Box Secret Kitchen и Danjiro. Смотрим, как устроен бизнес изнутри, пробуем продукт и общаемся с командами. Детали и тайминг уточняются.</p>
-          <div class="format-tags" role="list">
-            <span class="tag" role="listitem">My Box Secret Kitchen</span>
-            <span class="tag" role="listitem">Danjiro</span>
-            <span class="tag" role="listitem">Экскурсия</span>
+          <div class="format-screen-photo">
+            <img src="tour2-bus.jpg" alt="Автобус «Tour De Franch» на московской набережной" width="1800" height="1011" loading="lazy" style="object-position: 70% center;">
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -2360,7 +2448,7 @@
         <p class="section-lead">Три формата участия — выбери подходящий. Оплата до 22 ноября — по сниженной цене.</p>
       </div>
 
-      <div class="pricing-grid" role="list"><div class="pricing-card featured reveal" role="listitem" aria-label="2 дня Участник — 30 000 рублей"><div class="pricing-badge" aria-label="Наиболее популярный">Популярный</div><div class="pricing-tier" style="color: rgba(242,72,34,0.9);">Пакет</div><div class="pricing-name">2 дня<br/>Участник</div><div class="pricing-price"><div class="pricing-amount"><span class="pricing-currency">₽</span>30 000</div><div class="pricing-period">14–15 декабря 2026<br/>при оплате до 22 ноября, затем 40 000 ₽</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Стендап Франчайзеров, корпоратив и премия — 14 декабря</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Экскурсия 15 декабря: My Box Secret Kitchen и Danjiro</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Нетворкинг и встречи с участниками</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ресторан Vasilchuki Chaihona № 1</li></ul><button onclick="openModal('participant')" class="btn btn-red" style="width:100%; justify-content:center;">Купить</button></div><div class="pricing-card reveal" role="listitem" aria-label="Спикер 2 дня — 50 000 рублей"><div class="pricing-tier">Пакет</div><div class="pricing-name">2 дня<br/>+ выступление</div><div class="pricing-price"><div class="pricing-amount"><span class="pricing-currency">₽</span>50 000</div><div class="pricing-period">14–15 декабря 2026<br/>при оплате до 22 ноября, затем 60 000 ₽</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Всё из пакета «2 дня — Участник»</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Выступление на форуме</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Упоминание в программе и анонсах</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Статус спикера сообщества</li></ul><a href="https://t.me/frguru" target="_blank" rel="noopener" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Стать спикером</a></div><div class="pricing-card reveal" role="listitem" aria-label="Резидент — бесплатно"><div class="pricing-tier">Пакет</div><div class="pricing-name">Резидент<br/>Сообщества</div><div class="pricing-price"><div class="pricing-amount" style="font-size:clamp(28px,3.4vw,40px);">БЕСПЛАТНО</div><div class="pricing-period">для Резидентов Сообщества</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Участие во всех эвентах сообщества в течение года</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>МАСШТАБ Новогодний входит в пакет</li></ul><a href="https://frgu.ru/resident" target="_blank" rel="noopener" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Стать резидентом</a></div></div>
+      <div class="pricing-grid" role="list"><div class="pricing-card reveal" role="listitem" aria-label="2 дня Участник — 30 000 рублей"><div class="pricing-tier">Пакет</div><div class="pricing-name">2 дня<br/>Участник</div><div class="pricing-price"><div class="pricing-amount"><span class="pricing-currency">₽</span>30 000</div><div class="pricing-period">14–15 декабря 2026<br/>при оплате до 22 ноября, затем 40&nbsp;000&nbsp;₽</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Стендап Франчайзеров, корпоратив и премия — 14 декабря</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Экскурсия 15 декабря: My Box Secret Kitchen и Danjiro</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Нетворкинг и встречи с участниками</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Ресторан Vasilchuki Chaihona № 1</li></ul><button onclick="openModal('participant')" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Купить</button></div><div class="pricing-card featured reveal" role="listitem" aria-label="Спикер 2 дня — 50 000 рублей"><div class="pricing-badge" aria-label="Наиболее популярный">Популярный</div><div class="pricing-tier">Пакет</div><div class="pricing-name">2 дня<br/>+ выступление</div><div class="pricing-price"><div class="pricing-amount"><span class="pricing-currency">₽</span>50 000</div><div class="pricing-period">14–15 декабря 2026<br/>при оплате до 22 ноября, затем 60&nbsp;000&nbsp;₽</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Всё из пакета «2 дня — Участник»</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Выступление на форуме</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Упоминание в программе и анонсах</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Статус спикера сообщества</li></ul><a href="https://t.me/frguru" target="_blank" rel="noopener" class="btn btn-red" style="width:100%; justify-content:center;">Стать спикером</a></div><div class="pricing-card reveal" role="listitem" aria-label="Резидент — бесплатно"><div class="pricing-tier">Пакет</div><div class="pricing-name">Резидент<br/>Сообщества</div><div class="pricing-price"><div class="pricing-amount pricing-amount--free">БЕСПЛАТНО</div><div class="pricing-period">для Резидентов Сообщества</div></div><div class="pricing-divider" aria-hidden="true"></div><ul class="pricing-features"><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Участие во всех эвентах сообщества в течение года</li><li><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>МАСШТАБ Новогодний входит в пакет</li></ul><a href="https://frgu.ru/resident" target="_blank" rel="noopener" class="btn btn-outline-dark" style="width:100%; justify-content:center;">Стать резидентом</a></div></div>
 
       <div class="pricing-note reveal" aria-live="polite">
         <div class="pricing-countdown">
