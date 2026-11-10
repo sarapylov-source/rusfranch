@@ -6,14 +6,15 @@
   const content = document.getElementById('nomineeDetails');
   const stamp = document.getElementById('nomineeUpdated');
   const categories = ['ff', 'fs', 'ef', 'es'];
+  const localPhotoIds = new Set([2,3,4,5,6,7]);
   let data = null, activeId = null, trigger = null;
   const el = (tag, text, cls) => { const n = document.createElement(tag); if (text != null) n.textContent = text; if (cls) n.className = cls; return n; };
   function photo(n, cls) {
     const box = el('div', null, cls);
     const initials = n.name.split(/\s+/).slice(0, 2).map(x => x[0] || '').join('');
     box.append(el('span', initials, 'nominee-initials'));
-    if (n.photo && n.photo.startsWith('https://api.frgu.ru/award/photos/')) {
-      const image = el('img'); image.src = n.photo; image.alt = n.name; image.loading = 'lazy';
+    if (localPhotoIds.has(n.id) || (n.photo && n.photo.startsWith('https://api.frgu.ru/award/photos/'))) {
+      const image = el('img'); image.src = localPhotoIds.has(n.id) ? 'award-photos/nominee-' + n.id + '.jpg' : n.photo; image.alt = n.name; image.loading = 'eager'; image.decoding = 'async';
       image.addEventListener('error', () => image.remove()); box.append(image);
     }
     return box;
@@ -64,7 +65,7 @@
     }
     const date = new Date(data.updated_at); stamp.textContent = 'Данные обновлены ' + date.toLocaleString('ru-RU', {timeZone:'Europe/Moscow', day:'numeric', month:'long', hour:'2-digit', minute:'2-digit'}) + ' МСК';
   }
-  async function load(url) { const r = await fetch(url, {cache:'no-store'}); if (!r.ok) throw new Error('Unavailable'); render(await r.json()); }
-  (async () => { try { await load('https://api.frgu.ru/award/nominees.json'); } catch (_) { try { await load('award-nominees.json'); } catch (_) { stamp.textContent = 'Список временно недоступен. Все номинанты и респекты — в боте.'; } } })();
+  async function load(url) { const r = await fetch(url, {cache:'no-store', signal:AbortSignal.timeout(6000)}); if (!r.ok) throw new Error('Unavailable'); render(await r.json()); }
+  (async () => { try { await load('award-nominees.json'); } catch (_) {} try { await load('https://api.frgu.ru/award/nominees.json'); } catch (_) { if (!data) stamp.textContent = 'Список временно недоступен. Все номинанты и респекты — в боте.'; } })();
   setInterval(() => { if (!document.hidden) load('https://api.frgu.ru/award/nominees.json').catch(() => {}); }, 60000);
 })();

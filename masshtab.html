@@ -1830,8 +1830,8 @@
     .participant-tg:hover { color: var(--red); }
     .participant-tg svg { width: 14px; height: 14px; flex-shrink: 0; }
   </style>
-  <link rel="stylesheet" href="masshtab-award.css">
-  <script src="masshtab-award.js" defer></script>
+  <link rel="stylesheet" href="masshtab-award.css?v=2">
+  <script src="masshtab-award.js?v=2" defer></script>
 </head>
 <body>
 
@@ -1994,7 +1994,14 @@
         </div>
       </div>
 
-      <div class="award-mechanics">
+      <div class="award-dates">
+          <div class="award-date"><strong>До 1 декабря</strong><span>Заявки и респекты — до 23:59 МСК 30 ноября 2026</span></div>
+          <div class="award-date"><strong>1–10 декабря</strong><span>Прямое открытое голосование — до 23:59 МСК 10 декабря</span></div>
+          <div class="award-date"><strong>14 декабря</strong><span>Награждение на новогоднем «МАСШТАБЕ»</span></div>
+        </div>
+      <details class="award-mechanics">
+        <summary>Правила премии <span>Развернуть подробности</span></summary>
+        <div class="award-rules-content">
         <h3>За вклад в развитие рынка франчайзинга</h3>
         <p>Одна номинация, четыре когорты участников:</p>
         <ol style="padding-left:24px;margin-top:12px">
@@ -2003,18 +2010,21 @@
           <li>Сотрудники УК франшизных сетей.</li>
           <li>Сотрудники компаний-подрядчиков.</li>
         </ol>
-        <div class="award-dates">
-          <div class="award-date"><strong>До 1 декабря</strong><span>Заявки и респекты — до 23:59 МСК 30 ноября 2026</span></div>
-          <div class="award-date"><strong>1–10 декабря</strong><span>Прямое открытое голосование — до 23:59 МСК 10 декабря</span></div>
-          <div class="award-date"><strong>14 декабря</strong><span>Награждение на новогоднем «МАСШТАБЕ»</span></div>
-        </div>
+
         <p><strong>1. Выдвижение.</strong> В Telegram-боте можно номинировать себя или другого участника группы «Франчайзинг по-русски». Укажите его Telegram-аккаунт, когорту, компанию, должность и объясните, за какой вклад предлагаете вручить премию. Один человек участвует в одной когорте.</p>
         <p><strong>2. Сбор респектов.</strong> Для подтверждения заявки нужны минимум 2 респекта других участников сообщества. Автор заявки и сам номинант не могут поддержать своё выдвижение. Можно поставить респект нескольким номинантам; в боте свой респект можно снять. Сбор продолжается до 1 декабря, в том числе после первых двух респектов.</p>
         <p><strong>3. Выход в финал.</strong> В каждой когорте в голосование проходят до 10 подтверждённых номинантов, собравших больше всего респектов. При равенстве на границе десятки состав финалистов определяет организатор. Респекты — это поддержка выдвижения, финальное голосование проходит отдельно.</p>
         <p><strong>4. Голосование и награды.</strong> С 1 по 10 декабря все участники сообщества голосуют в открытых опросах группы «Франчайзинг по-русски». Можно выбрать нескольких кандидатов, в том числе в одной когорте. До завершения опроса выбор можно изменить. Три человека с наибольшим числом голосов в каждой когорте получают награды. Равенство голосов на призовых местах отдельно рассматривает организатор.</p>
         <p>Протесты по заявкам рассматривает организатор. Решения и результаты сохраняются в базе премии. Все даты указаны по московскому времени.</p>
-        <div class="award-actions"><a class="btn btn-red" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Выдвинуть себя или коллегу</a><a class="btn btn-outline" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Поставить респект</a></div>
-      </div>
+
+        </div>
+      </details>
+      <div class="award-actions"><a class="btn btn-red" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Выдвинуть себя или коллегу</a><a class="btn btn-outline" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Поставить респект</a></div>
+    </div>
+  </section>
+
+  <section class="nominees-section" id="awardCandidates" aria-label="Номинанты премии">
+    <div class="container">
       <div class="noms">
         <div class="noms-head"><h3>Номинанты премии</h3><p>Познакомьтесь с номинантами и поддержите тех, чей вклад считаете достойным признания.</p></div>
         <div id="awardNominees" aria-live="polite"><p class="nominee-empty">Загружаем номинантов…</p></div>
