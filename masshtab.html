@@ -1830,6 +1830,8 @@
     .participant-tg:hover { color: var(--red); }
     .participant-tg svg { width: 14px; height: 14px; flex-shrink: 0; }
   </style>
+  <link rel="stylesheet" href="masshtab-award.css">
+  <script src="masshtab-award.js" defer></script>
 </head>
 <body>
 
@@ -1984,72 +1986,40 @@
         <div class="award-text reveal">
           <span class="section-label">Премия</span>
           <h2 class="section-title" id="awardTitle">Премия профессионального признания «МАСШТАБ»</h2>
-          <p>Рейтингов и премий на рынке хватает: топы франшиз, звёзды, золотые бренды. Награждают компании.</p>
-          <p>Но компанию не придумывает логотип и не продаёт презентация. За каждой сетью стоят конкретные люди: операционный директор, который держит сотню точек, РОП, закрывающий план в несезон, юрист, переписавший договор так, что суды больше не нужны. Их имена знают в узком кругу — публичного признания у них нет.</p>
-          <p><strong>«МАСШТАБ» — премия, которая награждает не бренды, а людей рынка франчайзинга.</strong> Номинантов выдвигает сообщество, победителей объявляем 14 декабря на новогоднем форуме.</p>
+          <p><strong>Одна номинация — «За вклад в развитие рынка франчайзинга».</strong> Это признание конкретных людей: тех, кто развивает франшизы, помогает партнёрам и делится опытом с рынком.</p>
+          <p>Номинантов выдвигает сообщество. Победителей выбирают участники «Франчайзинга по-русски» прямым открытым голосованием. В каждой из четырёх когорт наградим трёх человек — всего 12 наград.</p>
         </div>
         <div class="award-shot reveal">
           <img src="masshtab-award.jpg" alt="Статуэтка премии «МАСШТАБ»" loading="lazy">
         </div>
       </div>
 
+      <div class="award-mechanics">
+        <h3>За вклад в развитие рынка франчайзинга</h3>
+        <p>Одна номинация, четыре когорты участников:</p>
+        <ol style="padding-left:24px;margin-top:12px">
+          <li>Собственники и основатели франшиз.</li>
+          <li>Собственники и основатели компаний-подрядчиков рынка франчайзинга.</li>
+          <li>Сотрудники УК франшизных сетей.</li>
+          <li>Сотрудники компаний-подрядчиков.</li>
+        </ol>
+        <div class="award-dates">
+          <div class="award-date"><strong>До 1 декабря</strong><span>Заявки и респекты — до 23:59 МСК 30 ноября 2026</span></div>
+          <div class="award-date"><strong>1–10 декабря</strong><span>Прямое открытое голосование — до 23:59 МСК 10 декабря</span></div>
+          <div class="award-date"><strong>14 декабря</strong><span>Награждение на новогоднем «МАСШТАБЕ»</span></div>
+        </div>
+        <p><strong>1. Выдвижение.</strong> В Telegram-боте можно номинировать себя или другого участника группы «Франчайзинг по-русски». Укажите его Telegram-аккаунт, когорту, компанию, должность и объясните, за какой вклад предлагаете вручить премию. Один человек участвует в одной когорте.</p>
+        <p><strong>2. Сбор респектов.</strong> Для подтверждения заявки нужны минимум 2 респекта других участников сообщества. Автор заявки и сам номинант не могут поддержать своё выдвижение. Можно поставить респект нескольким номинантам; в боте свой респект можно снять. Сбор продолжается до 1 декабря, в том числе после первых двух респектов.</p>
+        <p><strong>3. Выход в финал.</strong> В каждой когорте в голосование проходят до 10 подтверждённых номинантов, собравших больше всего респектов. При равенстве на границе десятки состав финалистов определяет организатор. Респекты — это поддержка выдвижения, финальное голосование проходит отдельно.</p>
+        <p><strong>4. Голосование и награды.</strong> С 1 по 10 декабря все участники сообщества голосуют в открытых опросах группы «Франчайзинг по-русски». Можно выбрать нескольких кандидатов, в том числе в одной когорте. До завершения опроса выбор можно изменить. Три человека с наибольшим числом голосов в каждой когорте получают награды. Равенство голосов на призовых местах отдельно рассматривает организатор.</p>
+        <p>Протесты по заявкам рассматривает организатор. Решения и результаты сохраняются в базе премии. Все даты указаны по московскому времени.</p>
+        <div class="award-actions"><a class="btn btn-red" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Выдвинуть себя или коллегу</a><a class="btn btn-outline" href="https://t.me/rusfranch_bot?start=award" target="_blank" rel="noopener">Поставить респект</a></div>
+      </div>
       <div class="noms">
-        <div class="noms-head reveal">
-          <h3>Номинации</h3>
-          <p>Выдвинуть можно себя или коллегу — напишите, кого и за что, остальное подскажем.</p>
-        </div>
-        <div class="noms-grid">
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">01</span>
-          <h3>CEO франчайзинговой компании</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('CEO франчайзинговой компании')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">02</span>
-          <h3>РОП по продажам франшиз</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('РОП по продажам франшиз')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">03</span>
-          <h3>Менеджер по продаже франшиз</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Менеджер по продаже франшиз')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">04</span>
-          <h3>Юрист рынка франчайзинга</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Юрист рынка франчайзинга')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">05</span>
-          <h3>Маркетолог рынка франчайзинга</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Маркетолог рынка франчайзинга')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">06</span>
-          <h3>Консультант рынка франчайзинга</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Консультант рынка франчайзинга')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">07</span>
-          <h3>Руководитель франшизного каталога</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Руководитель франшизного каталога')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">08</span>
-          <h3>Клиентский менеджер франчайзингового каталога</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Клиентский менеджер франчайзингового каталога')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">09</span>
-          <h3>Руководитель отдела сопровождения франчайзи</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Руководитель отдела сопровождения франчайзи')">Стать номинантом</button>
-        </div>
-        <div class="nom-card reveal">
-          <span class="nom-num" aria-hidden="true">10</span>
-          <h3>Упаковщик франшиз года</h3>
-          <button type="button" class="nom-btn" onclick="openNomination('Упаковщик франшиз года')">Стать номинантом</button>
-        </div>
-        </div>
+        <div class="noms-head"><h3>Номинанты премии</h3><p>Познакомьтесь с номинантами и поддержите тех, чей вклад считаете достойным признания.</p></div>
+        <div id="awardNominees" aria-live="polite"><p class="nominee-empty">Загружаем номинантов…</p></div>
+        <p id="nomineeUpdated"></p>
+        <noscript><p>Список номинантов и сбор респектов доступны в <a href="https://t.me/rusfranch_bot?start=award">Telegram-боте премии</a>.</p></noscript>
       </div>
     </div>
   </section>
@@ -2074,7 +2044,7 @@
             </div>
           </div>
 
-          <div class="program-items" role="list"><div class="program-item" role="listitem"><span class="program-time">сбор</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><h4>Велком-зона и фотосессия</h4><p>Встречаем гостей в Black Tie, знакомим новых участников сообщества</p></div></div><div class="program-item program-item--keynote" role="listitem"><span class="program-time">стендап</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><div class="program-keynote-badge">🎤 Стендап</div><h4>Стендап Франчайзеров</h4><p>Выступления франчайзеров в формате стендапа</p></div></div><div class="program-item program-item--keynote" role="listitem"><span class="program-time">премия</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><div class="program-keynote-badge">🏆 Премия</div><h4>Премия профессионального признания «МАСШТАБ»</h4><p>Вручаем награды по всем номинациям. <a href="#award" style="color:var(--red)">Список номинаций и подача заявки</a></p></div></div><div class="program-item" role="listitem"><span class="program-time">корпоратив</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><h4>Новогодний корпоратив франчайзеров</h4><p>Ужин, музыка и свободное общение — без докладов и слайдов</p></div></div></div>
+          <div class="program-items" role="list"><div class="program-item" role="listitem"><span class="program-time">сбор</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><h4>Велком-зона и фотосессия</h4><p>Встречаем гостей в Black Tie, знакомим новых участников сообщества</p></div></div><div class="program-item program-item--keynote" role="listitem"><span class="program-time">стендап</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><div class="program-keynote-badge">🎤 Стендап</div><h4>Стендап Франчайзеров</h4><p>Выступления франчайзеров в формате стендапа</p></div></div><div class="program-item program-item--keynote" role="listitem"><span class="program-time">премия</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><div class="program-keynote-badge">🏆 Премия</div><h4>Премия профессионального признания «МАСШТАБ»</h4><p>Награждаем трёх победителей в каждой из четырёх когорт. <a href="#award" style="color:var(--red)">Номинанты и подача заявки</a></p></div></div><div class="program-item" role="listitem"><span class="program-time">корпоратив</span><div class="program-dot" aria-hidden="true"></div><div class="program-text"><h4>Новогодний корпоратив франчайзеров</h4><p>Ужин, музыка и свободное общение — без докладов и слайдов</p></div></div></div>
 
           <!-- CTA стать спикером -->
           <div class="speaker-cta-block reveal">
@@ -2809,18 +2779,8 @@
       document.getElementById('payCashBtn').innerHTML = CASH_BTN_HTML;
     }
 
-    function openNomination(nom) {
-      resetModalButtons();
-      currentNomination = nom;
-      document.getElementById('modalTitle').textContent    = 'Заявка на номинацию';
-      document.getElementById('modalSubtitle').textContent = nom + ' · премия «МАСШТАБ», 14 декабря 2026';
-      document.getElementById('modalError').textContent    = '';
-      document.getElementById('regForm').querySelectorAll('input').forEach(i => i.value = '');
-      document.getElementById('payCardBtn').style.display  = 'none';
-      document.getElementById('payCashBtn').textContent    = 'Отправить заявку';
-      document.getElementById('modalOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-      document.getElementById('regName').focus();
+    function openNomination() {
+      window.location.href = 'https://t.me/rusfranch_bot?start=award';
     }
 
     async function submitNomination() {
@@ -3099,5 +3059,9 @@
     var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(fit,150);});
   })();
   </script>
+  <dialog id="nomineeDialog" class="nominee-dialog" aria-labelledby="nomineeDialogTitle">
+    <button id="closeNominee" class="nominee-dialog-close" type="button" aria-label="Закрыть карточку номинанта">×</button>
+    <div id="nomineeDetails"></div>
+  </dialog>
 </body>
 </html>
