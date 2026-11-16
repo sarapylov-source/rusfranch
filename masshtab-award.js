@@ -6,7 +6,7 @@
   const content = document.getElementById('nomineeDetails');
   const stamp = document.getElementById('nomineeUpdated');
   const categories = ['ff', 'fs', 'ef', 'es'];
-  const localPhotoIds = new Set([2,3,4,5,6,7]);
+  const localPhotoIds = new Set([2,3,4,5,6,7,8,9,10,11]);
   let data = null, activeId = null, trigger = null;
   const el = (tag, text, cls) => { const n = document.createElement(tag); if (text != null) n.textContent = text; if (cls) n.className = cls; return n; };
   function photo(n, cls) {
@@ -14,7 +14,7 @@
     const initials = n.name.split(/\s+/).slice(0, 2).map(x => x[0] || '').join('');
     box.append(el('span', initials, 'nominee-initials'));
     if (localPhotoIds.has(n.id) || (n.photo && n.photo.startsWith('https://api.frgu.ru/award/photos/'))) {
-      const image = el('img'); image.src = localPhotoIds.has(n.id) ? 'award-photos/nominee-' + n.id + '.jpg' : n.photo; image.alt = n.name; image.loading = 'eager'; image.decoding = 'async';
+      const image = el('img'); image.src = localPhotoIds.has(n.id) ? 'award-photos/nominee-' + n.id + '.jpg?v=20261116' : n.photo; image.alt = n.name; image.loading = 'eager'; image.decoding = 'async';
       image.addEventListener('error', () => image.remove()); box.append(image);
     }
     return box;
