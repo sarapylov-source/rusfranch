@@ -45,7 +45,7 @@ def sync_file(path, cfg):
         if attr == 'payLink':
             continue
         pat = re.compile(
-            r'(<(?P<tag>\w+)(?P<attrs>[^>]*\sdata-' + attr + r'(?:=["\'][^"\']*["\'])?)(?P<rest>[^>]*)>)'
+            r'(<(?P<tag>\w+)(?P<attrs>[^>]*\sdata-' + attr + r'(?![\w-])(?:=["\'][^"\']*["\'])?)(?P<rest>[^>]*)>)'
             r'(?P<inner>(?:(?!</?(?P=tag)\b).)*?)'
             r'(</(?P=tag)>)',
             re.S)

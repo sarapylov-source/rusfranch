@@ -5,10 +5,10 @@
    python3 tools/sync-price.py */
 (function () {
   var P = {
-    price: '2 000 ₽',          // цена первого месяца по акции
+    price: '3 000 ₽',          // цена первого месяца по акции
     priceRegular: '5 000 ₽',   // обычная цена месяца
     until: '',         // срок акции; пустая строка — без указанной даты
-    badge: '−60%',             // плашка скидки
+    badge: '−40%',             // плашка скидки
     payLink: 'https://t.me/tribute/app?startapp=sCed'
   };
 
