@@ -1,0 +1,21 @@
+--- listener.py.before
++++ listener.py.after
+@@ -27,0 +28 @@
++import community_events
+@@ -281 +282,3 @@
+-        "/live — ссылка на ближайший эфир, если у вас подписка на «Масштаб».")
++        "/live — ссылка на ближайший эфир, если у вас подписка на «Масштаб».\n"
++        "/add_event — добавить событие в календарь\n"
++        "/my_events — мои события")
+@@ -288 +291,3 @@
+-        "/live — ссылка на ближайший эфир, если у вас подписка на «Масштаб».")
++        "/live — ссылка на ближайший эфир, если у вас подписка на «Масштаб».\n"
++        "/add_event — добавить событие в календарь\n"
++        "/my_events — мои события")
+@@ -448,0 +454 @@
++    calendar_service = community_events.build(bot, dp, BASE)
+@@ -450,0 +457,2 @@
++    calendar_service.club = club
++    calendar_service.award = award_service
+@@ -458,0 +467 @@
++    asyncio.create_task(calendar_service.worker())

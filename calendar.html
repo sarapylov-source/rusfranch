@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Календарь событий | Франчайзинг по-русски</title>
+<meta name="description" content="События сообщества и его партнёров: встречи, экскурсии, вебинары и МАСШТАБ. Выбирайте даты и добавляйте своё событие через бота.">
+<link rel="canonical" href="https://www.frgu.ru/calendar.html"><meta name="theme-color" content="#F2E0D5">
+<meta property="og:title" content="Календарь событий — Франчайзинг по-русски"><meta property="og:description" content="Один календарь для встреч сообщества, вебинаров, экскурсий и событий партнёров."><meta property="og:type" content="website"><meta property="og:url" content="https://www.frgu.ru/calendar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="calendar.css?v=20261118">
+<script src="pricing.js?v=20261117" defer></script><script src="calendar.js?v=20261118" defer></script>
+</head>
+<body>
+<header class="site-header"><a class="logo" href="index.html">ФРАНЧАЙЗИНГ<span>ПО-РУССКИ</span></a><nav aria-label="Главное меню"><a href="index.html">Сообщество</a><a href="masshtab.html">Масштаб</a><a href="blog.html">Блог</a><a class="header-link" href="https://t.me/franchru" target="_blank" rel="noopener">Вступить ↗</a></nav></header>
+<main class="wrap">
+<section class="intro"><div><p class="eyebrow">ВСТРЕЧАЕМСЯ. ДЕЛИМСЯ. РАСТЁМ.</p><h1>Есть планы.<br><span>Есть календарь.</span></h1><p class="lead">Встречи сообщества и события наших партнёров.<br>Выберите то, ради чего стоит освободить день.</p></div><aside class="submit-card"><span class="plus" aria-hidden="true">↗</span><h2>Ваше событие<br>тоже здесь</h2><p>Участники «Масштаба» могут добавить встречу, вебинар или конференцию. Заполните анкету в боте — мы проверим и опубликуем.</p><a class="button" href="https://t.me/rusfranch_bot?start=event_add" target="_blank" rel="noopener">Добавить событие ↗</a></aside></section>
+<section class="calendar-section" aria-label="Календарь событий">
+<div class="filter-bar"><fieldset><legend>Организатор</legend><button type="button" data-filter="source" data-value="community" aria-pressed="false"><span class="dot community"></span>События сообщества</button><button type="button" data-filter="source" data-value="partner" aria-pressed="false"><span class="dot partner"></span>События партнёров</button></fieldset><fieldset><legend>Формат</legend><button type="button" data-filter="format" data-value="online" aria-pressed="false">Онлайн</button><button type="button" data-filter="format" data-value="offline" aria-pressed="false">Офлайн</button></fieldset><fieldset><legend>Участие</legend><button type="button" data-filter="fee" data-value="paid" aria-pressed="false">Платные</button><button type="button" data-filter="fee" data-value="free" aria-pressed="false">Бесплатные</button></fieldset><button id="reset-filters" class="reset" type="button" hidden>Сбросить</button></div>
+<div class="calendar-toolbar"><div class="month-nav"><button id="prev-month" class="arrow" type="button" aria-label="Предыдущий месяц">←</button><h2 id="month-title" aria-live="polite"></h2><button id="next-month" class="arrow" type="button" aria-label="Следующий месяц">→</button></div><div class="view-controls"><button id="today" type="button">Сегодня</button><div class="view-switch" role="group" aria-label="Вид календаря"><button id="grid-view" type="button" aria-pressed="true">Сетка</button><button id="list-view" type="button" aria-pressed="false">Список</button></div></div></div>
+<p id="data-status" class="data-status" role="status">Загружаем события…</p>
+<div id="weekdays" class="weekdays" aria-hidden="true"><span>Пн</span><span>Вт</span><span>Ср</span><span>Чт</span><span>Пт</span><span>Сб</span><span>Вс</span></div><div id="calendar-grid" class="calendar-grid" aria-label="События по дням"></div><div id="event-list" class="event-list" hidden></div>
+<div id="empty" class="empty" hidden><h3>Пока свободно</h3><p>В этом месяце нет событий с выбранными условиями.</p><button id="find-next" type="button" class="button">К ближайшему событию →</button></div>
+<p class="calendar-note">Время — московское. В фильтре «Платные» также показаны события по подписке. Если условия ещё не объявлены, у события стоит «Стоимость уточняется».</p>
+<noscript><p>Для календаря включите JavaScript. <a href="index.html#events">Ближайшие события сообщества</a> можно посмотреть на главной.</p></noscript>
+</section>
+<section class="how"><div><p class="eyebrow">ОТ УЧАСТНИКОВ — ДЛЯ УЧАСТНИКОВ</p><h2>Полезное событие?<br>Давайте расскажем.</h2></div><div><p>Проводите событие для рынка франчайзинга? Добавьте его через <a href="https://t.me/rusfranch_bot?start=event_add">бота сообщества</a>: название, дата, условия участия, описание и афиша, если есть.</p><p>Публикация доступна участникам закрытого чата «Масштаб», включая резидентов и проверенных подрядчиков. Семён или Ярослава проверят заявку. После одобрения событие появится здесь и в общем чате.</p><a class="text-link" href="https://t.me/tribute/app?startapp=sCed" data-price-link>Присоединиться к «Масштабу» ↗</a></div></section>
+</main>
+<footer><a class="logo" href="index.html">ФРАНЧАЙЗИНГ<span>ПО-РУССКИ</span></a><p>Каждый заинтересован в успехе каждого.</p><a href="https://t.me/franchru">Наше сообщество в Telegram ↗</a></footer>
+<dialog id="event-dialog" aria-labelledby="dialog-title"><button id="close-dialog" class="dialog-close" type="button" aria-label="Закрыть">×</button><div id="dialog-body"></div></dialog>
+</body></html>

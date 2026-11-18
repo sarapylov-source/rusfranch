@@ -1,0 +1,2 @@
+# Uses the existing bot's aiogram environment. New dependency for poster normalization:
+Pillow>=11,<13
