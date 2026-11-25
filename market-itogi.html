@@ -160,24 +160,18 @@ figure img{width:100%;height:auto}
 .archive-label{font-size:14px;font-weight:600;color:#FF896F;margin-bottom:12px}
 .archive h2{font-family:var(--fd);font-size:clamp(23px,3vw,32px);font-weight:900;line-height:1.2;letter-spacing:-.8px}
 .archive>p,.archive-cta p{color:rgba(255,255,255,.8);font-size:16px}
-.archive-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 16px}
-.archive-controls>span{font-size:14px;color:rgba(255,255,255,.7)}
-.archive-controls>div{display:flex;gap:8px}
-.archive-controls button{font:600 14px var(--fb);border:1px solid rgba(255,255,255,.3);color:#fff;background:transparent;padding:10px 15px;border-radius:100px;cursor:pointer}
-.archive-controls button:hover:not(:disabled){background:rgba(255,255,255,.12)}
-.archive-controls button:disabled{opacity:.35;cursor:default}
-.archive-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#65534B transparent;padding-bottom:14px;overscroll-behavior-x:contain}
-.archive-track:focus-visible,.archive-controls button:focus-visible{outline:2px solid #FF896F;outline-offset:4px}
-.archive-card{flex:0 0 calc((100% - 16px)/2);min-width:0;background:#fff;border-radius:16px;overflow:hidden;scroll-snap-align:start;color:var(--text)}
-.archive-thumb{position:relative;aspect-ratio:16/9;background:#1c1c1c}
-.archive-thumb img{display:block;width:100%;height:100%;object-fit:contain}
-.archive-duration{position:absolute;bottom:8px;right:8px;background:rgba(13,13,13,.86);padding:4px 9px;border-radius:100px;font-size:12px;font-weight:600;color:#fff}
-.archive-body{padding:18px}
-.archive-title{font-family:var(--fd);font-size:15px;line-height:1.4;font-weight:700;letter-spacing:-.3px}
-.archive-speaker{font-size:14px;color:var(--text-sec);margin:10px 0 0;line-height:1.5}
 .archive-cta{text-align:center;margin-top:28px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15)}
 .archive-cta p{margin-bottom:18px}
-@media(max-width:560px){.archive{padding:24px 18px;margin-top:36px}.archive-card{flex-basis:92%}.archive-body{padding:16px}.archive h2{font-size:25px}.archive-cta .btn{font-size:15px;padding:15px 20px}.article-cover{border-radius:14px}}
+@media(max-width:560px){.archive{padding:24px 18px;margin-top:36px}.archive h2{font-size:25px}.archive-cta .btn{font-size:15px;padding:15px 20px}.article-cover{border-radius:14px}}
+
+.archive-marquee{--cover-width:300px;--cover-gap:16px;overflow:hidden;margin:28px -32px 0;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.archive-marquee-track{display:flex;width:max-content;animation:archive-flow 193s linear infinite;will-change:transform}
+.archive-cover-group{display:flex;gap:var(--cover-gap);padding-right:var(--cover-gap);flex-shrink:0}
+.archive-cover{width:var(--cover-width);flex:0 0 var(--cover-width);aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#1c1c1c}
+.archive-cover img{display:block;width:100%;height:100%;object-fit:contain;user-select:none}
+@keyframes archive-flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:560px){.archive-marquee{--cover-width:240px;--cover-gap:12px;margin-left:-18px;margin-right:-18px}.archive-marquee-track{animation-duration:154s}}
+@media(prefers-reduced-motion:reduce){.archive-marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.archive-marquee-track{animation:none;will-change:auto}.archive-cover-group[aria-hidden="true"]{display:none}}
 </style>
 </head>
 <body>
@@ -330,97 +324,58 @@ figure img{width:100%;height:auto}
 <section class="archive" aria-labelledby="archive-heading">
   <div class="archive-heading"><div><p class="archive-label">Библиотека закрытого чата</p><h2 id="archive-heading">60+ записей в «Масштабе»</h2></div></div>
   <p>Эфиры, мастер-классы и живые выступления на офлайн-встречах сообщества. Маркетинг и продажи франшиз, работа с партнёрами, разборы кейсов и экскурсии в управляющие компании — всё в одном чате.</p>
-  <p>Вот часть записей, которые уже доступны по подписке:</p>
-  <div class="archive-controls"><span id="archive-position" aria-live="polite"></span><div><button type="button" id="archive-prev" aria-controls="archive-track" aria-label="Предыдущие записи">Назад</button><button type="button" id="archive-next" aria-controls="archive-track" aria-label="Следующие записи">Далее</button></div></div>
-  <div class="archive-track" id="archive-track" role="region" aria-roledescription="карусель" aria-label="Обложки записей в чате Масштаб" tabindex="0">
-<article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/marketing-2026.webp" alt="Маркетинг франшиз в 2026 году" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 18 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Маркетинг франшиз в 2026 году</h3><p class="archive-speaker">Ярослав Осинцев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/marketing-mastermind.webp" alt="Маркетинг франшиз: практический мастермайнд" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">59 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Маркетинг франшиз: практический мастермайнд</h3><p class="archive-speaker">Анастасия Мансурова, Семён Сарапулов, Денис Блохин, Ярослав Осинцев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/pr-business.webp" alt="PR для бизнеса: как продвигаться результативно" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">32 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">PR для бизнеса: как продвигаться результативно</h3><p class="archive-speaker">Анастасия Панчук</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/presentations.webp" alt="Разбор франчайзинговых презентаций" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 04 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Разбор франчайзинговых презентаций</h3><p class="archive-speaker">Егор Кыров, Семён Сарапулов и другие участники</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/sales-workshop.webp" alt="Практикум по продажам" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 04 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Практикум по продажам</h3><p class="archive-speaker">Рустэм Юсупов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/human-approach.webp" alt="Как выстроить очередь из франчайзи благодаря человечному подходу" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 31 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Как выстроить очередь из франчайзи благодаря человечному подходу</h3><p class="archive-speaker">Даниил Безко</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/conversion-franchise.webp" alt="Конверсионная франшиза, перекрас или обратный франчайзинг?" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">59 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Конверсионная франшиза, перекрас или обратный франчайзинг?</h3><p class="archive-speaker">Борис Колесников</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/dodo-seven-reasons.webp" alt="7 причин, почему Додо — икона франчайзинга" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 01 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">7 причин, почему Додо — икона франчайзинга</h3><p class="archive-speaker">Александр Касьянов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/franchise-growth.webp" alt="Почему одни франшизы растут, а другие нет" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 21 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Почему одни франшизы растут, а другие нет</h3><p class="archive-speaker">Александр Долгов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/refranch.webp" alt="РеФранч: продажи франшиз силами франчайзи" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">39 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">РеФранч: продажи франшиз силами франчайзи</h3><p class="archive-speaker">Семён Сарапулов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/tax-reform.webp" alt="Как налоговая реформа повлияет на франшизы?" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">30 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Как налоговая реформа повлияет на франшизы?</h3><p class="archive-speaker">Альбина Чукова</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/alfa-bank.webp" alt="Возможности Альфа-Банка для франчайзеров" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">22 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Возможности Альфа-Банка для франчайзеров</h3><p class="archive-speaker">Дамир Умяров, Николай Сергеев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/restaurant-adaptation.webp" alt="Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">38 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка</h3><p class="archive-speaker">Алёна Овчинникова</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/franchising-at-scale.webp" alt="Франчайзинг по-крупному" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч</span></div>
-      <div class="archive-body"><h3 class="archive-title">Франчайзинг по-крупному</h3><p class="archive-speaker">Ильназ Набиуллин</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/medical-franchise.webp" alt="Развитие медицинской франшизы: опыт BIORISE" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">43 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Развитие медицинской франшизы: опыт BIORISE</h3><p class="archive-speaker">Артур Зарипов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/franchise-discussion.webp" alt="Франчайзинг вчера, сегодня и завтра. Куда мы катимся?" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 53 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Франчайзинг вчера, сегодня и завтра. Куда мы катимся?</h3><p class="archive-speaker">Александр Долгов, Тимур Бабаев, Семён Сарапулов</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/dodo-questions.webp" alt="Офис Dodo: сессия вопрос-ответ" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">47 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Офис Dodo: сессия вопрос-ответ</h3><p class="archive-speaker">Александр Столбовский</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/dodo-office.webp" alt="Экскурсия в офис Dodo" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">15 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Экскурсия в офис Dodo</h3><p class="archive-speaker">Александр Столбовский</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/colizeum-questions.webp" alt="Colizeum: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">1 ч 01 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Colizeum: сессия вопрос-ответ. Часть 1</h3><p class="archive-speaker">Ринат Магдеев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/colizeum-office.webp" alt="Colizeum: экскурсия по офису УК. Часть 2" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">5 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">Colizeum: экскурсия по офису УК. Часть 2</h3><p class="archive-speaker">Ринат Магдеев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/phobo-questions.webp" alt="PhoBo: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">23 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">PhoBo: сессия вопрос-ответ. Часть 1</h3><p class="archive-speaker">Александр Золоторев</p></div>
-    </article>
-    <article class="archive-card">
-      <div class="archive-thumb"><img src="img/market-library/phobo-restaurant.webp" alt="PhoBo: экскурсия по ресторану. Часть 2" width="960" height="540" loading="lazy" decoding="async"><span class="archive-duration">3 мин</span></div>
-      <div class="archive-body"><h3 class="archive-title">PhoBo: экскурсия по ресторану. Часть 2</h3><p class="archive-speaker">Александр Золоторев</p></div>
-    </article>
+  <p>Внутри — выступления основателей сетей и экспертов рынка:</p>
+  <div class="archive-marquee" role="region" aria-label="Обложки выступлений из библиотеки Масштаба">
+    <div class="archive-marquee-track">
+      <div class="archive-cover-group" role="list" aria-label="Записи выступлений">
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/marketing-2026.webp" alt="Маркетинг франшиз в 2026 году" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/marketing-mastermind.webp" alt="Маркетинг франшиз: практический мастермайнд" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/pr-business.webp" alt="PR для бизнеса: как продвигаться результативно" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/presentations.webp" alt="Разбор франчайзинговых презентаций" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/sales-workshop.webp" alt="Практикум по продажам" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/human-approach.webp" alt="Как выстроить очередь из франчайзи благодаря человечному подходу" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/conversion-franchise.webp" alt="Конверсионная франшиза, перекрас или обратный франчайзинг?" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/dodo-seven-reasons.webp" alt="7 причин, почему Додо — икона франчайзинга" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/franchise-growth.webp" alt="Почему одни франшизы растут, а другие нет" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/refranch.webp" alt="РеФранч: продажи франшиз силами франчайзи" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/tax-reform.webp" alt="Как налоговая реформа повлияет на франшизы?" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/alfa-bank.webp" alt="Возможности Альфа-Банка для франчайзеров" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/restaurant-adaptation.webp" alt="Выживут сильнейшие: адаптация ресторанной концепции к реалиям рынка" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/franchising-at-scale.webp" alt="Франчайзинг по-крупному" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/medical-franchise.webp" alt="Развитие медицинской франшизы: опыт BIORISE" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/franchise-discussion.webp" alt="Франчайзинг вчера, сегодня и завтра. Куда мы катимся?" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/dodo-questions.webp" alt="Офис Dodo: сессия вопрос-ответ" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/dodo-office.webp" alt="Экскурсия в офис Dodo" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/colizeum-questions.webp" alt="Colizeum: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/colizeum-office.webp" alt="Colizeum: экскурсия по офису УК. Часть 2" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/phobo-questions.webp" alt="PhoBo: сессия вопрос-ответ. Часть 1" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover" role="listitem"><img draggable="false" src="img/market-library/phobo-restaurant.webp" alt="PhoBo: экскурсия по ресторану. Часть 2" width="960" height="540" loading="eager" decoding="async"></div>
+      </div>
+      <div class="archive-cover-group" aria-hidden="true">
+<div class="archive-cover"><img draggable="false" src="img/market-library/marketing-2026.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/marketing-mastermind.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/pr-business.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/presentations.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/sales-workshop.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/human-approach.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/conversion-franchise.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/dodo-seven-reasons.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/franchise-growth.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/refranch.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/tax-reform.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/alfa-bank.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/restaurant-adaptation.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/franchising-at-scale.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/medical-franchise.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/franchise-discussion.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/dodo-questions.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/dodo-office.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/colizeum-questions.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/colizeum-office.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/phobo-questions.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+<div class="archive-cover"><img draggable="false" src="img/market-library/phobo-restaurant.webp" alt="" width="960" height="540" loading="eager" decoding="async"></div>
+      </div>
+    </div>
   </div>
   <div class="archive-cta"><p>Franch-Marketing 2027 и предыдущие мероприятия входят в одну подписку.</p><a class="btn" href="subscribe.html">Присоединиться к «Масштабу»</a></div>
 </section>
@@ -473,33 +428,6 @@ function toggleMenu(){
   document.getElementById('nav').classList.toggle('open');
 }
 
-(function(){
- const track=document.getElementById('archive-track');
- const prev=document.getElementById('archive-prev');
- const next=document.getElementById('archive-next');
- const position=document.getElementById('archive-position');
- const cards=Array.from(track.children);
- const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
- function step(){return cards[0].getBoundingClientRect().width+16;}
- function update(){
-   const first=Math.round(track.scrollLeft/step())+1;
-   const visible=Math.max(1,Math.floor((track.clientWidth+16)/step()));
-   const last=Math.min(cards.length,first+visible-1);
-   position.textContent=first+'–'+last+' из '+cards.length;
-   prev.disabled=track.scrollLeft<=1;
-   next.disabled=track.scrollLeft+track.clientWidth>=track.scrollWidth-1;
- }
- function move(dir){track.scrollBy({left:dir*step(),behavior:reduced.matches?'instant':'smooth'});}
- prev.addEventListener('click',()=>move(-1));
- next.addEventListener('click',()=>move(1));
- track.addEventListener('keydown',event=>{
-   if(event.target!==track)return;
-   if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();move(event.key==='ArrowRight'?1:-1);}
- });
- track.addEventListener('scroll',update,{passive:true});
- window.addEventListener('resize',update);
- update();
-})();
 </script>
 </body>
 </html>
