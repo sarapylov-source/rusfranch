@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Franch-Marketing 2027 — итоги конференции 24 ноября | Франчайзинг по-русски</title>
+<meta name="description" content="Конспект Franch-Marketing 2027: лидген, каталоги, PR, позиционирование и лояльность. Главное из десяти докладов со скриншотами выступлений 24 ноября 2026.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Franch-Marketing 2027: как привлекать франчайзи и строить бренд">
+<meta property="og:description" content="Десять докладов, практические выводы и кадры из записей. Итоги конференции сообщества 24 ноября 2026.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.frgu.ru/market-itogi.html">
+<meta property="og:image" content="https://www.frgu.ru/img/market24/cover.jpg">
+<meta property="og:locale" content="ru_RU">
+<meta property="article:published_time" content="2026-11-25T12:00:00+03:00">
+<link rel="canonical" href="https://www.frgu.ru/market-itogi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;900&family=Onest:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#F2E0D5;--bg-card:#FFFFFF;--bg-alt:#EDD5C8;--bg-dark:#0D0D0D;
+--text:#0D0D0D;--text-sec:#5A4A42;--text-muted:#6E5E56;--accent:#F24822;
+--accent-hover:#D93D1A;--border:rgba(13,13,13,0.08);
+--fd:'Unbounded',sans-serif;--fb:'Onest',sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;
+-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;
+display:flex;align-items:center;justify-content:space-between;transition:background .3s}
+.header.scrolled{background:rgba(242,224,213,.94);backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.logo{font-family:var(--fd);font-weight:900;font-size:13px;letter-spacing:-.3px;
+display:flex;flex-direction:column;line-height:1.2;color:var(--text)}
+.logo span{color:var(--accent)}
+.nav{display:flex;gap:20px;align-items:center}
+.nav a{font-size:14px;font-weight:500;color:var(--text-muted)}
+.nav a:hover{color:var(--text);text-decoration:none}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:10px 22px;
+border-radius:100px;font-weight:600!important}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+.burger span{width:24px;height:2px;background:var(--text);transition:.3s}
+
+.wrap{max-width:880px;margin:0 auto;padding:130px 24px 40px}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(242,72,34,.09);
+color:var(--accent);font-weight:600;font-size:13px;padding:7px 16px;border-radius:100px;
+margin-bottom:22px}
+h1{font-family:var(--fd);font-weight:900;font-size:clamp(28px,4.6vw,46px);line-height:1.1;
+letter-spacing:-1.6px;margin-bottom:18px}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--text-sec);margin-bottom:14px}
+.meta{font-size:14px;color:var(--text-muted);padding-bottom:28px;
+border-bottom:1px solid var(--border);margin-bottom:34px}
+
+p{margin-bottom:16px;color:var(--text-sec);font-size:16.5px}
+.intro p{font-size:17.5px}
+h2.sec{font-family:var(--fd);font-weight:900;font-size:clamp(21px,2.8vw,28px);
+line-height:1.2;letter-spacing:-.9px;margin:54px 0 20px;scroll-margin-top:90px}
+
+/* спикер */
+.speaker{background:var(--bg-card);border:1px solid var(--border);border-radius:22px;
+padding:30px;margin:38px 0}
+.sp-head{display:flex;gap:18px;align-items:center;margin-bottom:8px}
+.sp-face{width:76px;height:76px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.sp-name{font-family:var(--fd);font-weight:700;font-size:19px;letter-spacing:-.4px;
+line-height:1.25;margin-bottom:4px}
+.sp-role{font-size:14.5px;color:var(--text-muted);line-height:1.45}
+.sp-topic{font-size:15px;color:var(--text);background:var(--bg-alt);border-radius:12px;
+padding:12px 16px;margin:16px 0 22px}
+.sp-topic b{font-weight:600}
+
+.insight{margin:22px 0}
+.insight h3{font-family:var(--fd);font-weight:700;font-size:17px;letter-spacing:-.3px;
+line-height:1.3;margin-bottom:9px;padding-left:16px;border-left:3px solid var(--accent)}
+.insight p{margin-bottom:0;font-size:16px}
+
+figure{margin:24px 0 8px}
+figure img{border-radius:14px;border:1px solid var(--border)}
+figcaption{font-size:13.5px;color:var(--text-muted);margin-top:9px;text-align:center}
+
+.watch{display:block;background:var(--bg-dark);color:#fff;border-radius:16px;
+padding:18px 24px;margin-top:26px;text-align:center;font-weight:600;font-size:15.5px;
+transition:background .2s}
+.watch:hover{background:#242424;text-decoration:none;color:#fff}
+.watch small{display:block;font-weight:400;font-size:13px;color:rgba(255,255,255,.6);
+margin-top:5px}
+
+.final{background:var(--bg-dark);color:#fff;border-radius:24px;padding:40px 34px;
+margin:50px 0 10px;text-align:center}
+.final h2{font-family:var(--fd);font-weight:900;font-size:clamp(21px,3vw,28px);
+letter-spacing:-.9px;margin-bottom:14px;line-height:1.2}
+.final p{color:rgba(255,255,255,.72);margin-bottom:24px;font-size:16px}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:600;
+font-size:16px;padding:16px 34px;border-radius:100px;transition:background .2s}
+.btn:hover{background:var(--accent-hover);text-decoration:none}
+
+.footer{background:var(--bg-dark);color:#fff;padding:46px 40px;margin-top:60px}
+.footer-inner{max-width:880px;margin:0 auto;display:flex;justify-content:space-between;
+gap:28px;flex-wrap:wrap;font-size:14px}
+.footer a{color:rgba(255,255,255,.7)}
+.footer a:hover{color:var(--accent)}
+
+
+.logo-accent{color:var(--accent)}
+.nav{gap:26px}
+.footer{background:var(--bg-dark);color:#fff;padding:60px 40px;margin-top:60px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand{font-family:var(--fd);font-weight:900;font-size:20px;margin-bottom:12px}
+.footer-brand-accent{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;max-width:300px}
+.footer-col h4{font-family:var(--fd);font-size:13px;font-weight:700;letter-spacing:1px;
+text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.7);padding:6px 0}
+.footer-col a:hover{color:var(--accent);text-decoration:none}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;
+padding-top:32px;border-top:1px solid rgba(255,255,255,.08);font-size:13px;
+color:rgba(255,255,255,.4)}
+.footer-social{display:flex;gap:16px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;
+justify-content:center;font-size:16px;color:#fff}
+.footer-social a:hover{border-color:var(--accent);background:rgba(242,72,34,.1)}
+@media(max-width:860px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column;gap:18px;text-align:center}}
+
+@media(max-width:768px){
+  .header{padding:14px 20px}.nav{display:none}.burger{display:flex}
+  .nav.open{display:flex;flex-direction:column;position:fixed;inset:0;background:var(--bg);
+  justify-content:center;align-items:center;gap:22px;z-index:100;padding:80px 20px}
+  .nav.open a{font-size:22px;color:var(--text)}
+  .wrap{padding:104px 18px 30px}
+  .speaker{padding:22px 18px;border-radius:18px}
+  .sp-head{gap:14px}.sp-face{width:60px;height:60px}
+  .final{padding:32px 22px}
+}
+
+.contents{background:var(--bg-alt);padding:24px;border-radius:18px;margin:30px 0}
+.contents summary{font-weight:700;cursor:pointer;font-size:17px}
+.contents ol{padding-left:24px;margin-top:14px;display:grid;gap:8px}
+.contents a{color:var(--text-sec);font-size:15px}
+.speaker{scroll-margin-top:100px}
+.sp-name{margin:0 0 4px}
+figure a{display:block}
+figure img{width:100%;height:auto}
+.editor-note{font-size:14px;color:var(--text-muted)}
+.header .nav{gap:14px}
+.header .nav a{font-size:13px}
+@media(min-width:769px) and (max-width:1200px){.header{padding:18px 20px}.header .nav{gap:9px}.header .nav a{font-size:11px}.nav-cta{padding:9px 12px}}
+@media(max-width:768px){.header .nav.open{gap:22px}.header .nav.open a{font-size:22px}.sp-name{font-size:17px}.sp-head>div{min-width:0}.kicker{font-size:12px}.contents{padding:20px}}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="index.html" class="logo"><span>ФРАНЧАЙЗИНГ</span><span class="logo-accent">ПО-РУССКИ</span></a>
+  <nav class="nav" id="nav">
+    <a href="index.html">Сообщество</a><a href="about.html">О нас</a>
+    <a href="subscribe.html">Подписка</a><a href="resident.html">Резидентам</a>
+    <a href="tour2.html">Тур-Де-Франч</a><a href="market.html">Franch-Marketing</a><a href="masshtab.html">Масштаб</a>
+    <a href="contractor.html">Подрядчикам</a>
+    <a href="blog.html">Блог</a>
+    <a href="https://t.me/franchru" class="nav-cta" target="_blank">Вступить</a>
+  </nav>
+  <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<main class="wrap">
+  <div class="kicker">24 ноября 2026 · итоги конференции</div>
+  <h1>Franch-Marketing 2027: как привлекать франчайзи и строить бренд</h1>
+  <p class="lead">Лидген, каталоги, PR и лояльность: что разобрали практики и какие выводы можно забрать в свою сеть.</p>
+  <p class="meta">Около восьми часов эфира · десять докладов и открытие · опубликовано 25 ноября 2026</p>
+  <div class="intro">
+    <p>24 ноября собрали агентства, три каталога франшиз и команды сетей, чтобы разобрать маркетинг перед 2027 годом. Поговорили о том, как находить будущих партнёров, что происходит с их выбором и почему одной заявки для оценки рекламы уже недостаточно.</p>
+    <p>Участники смотрели на задачу с разных сторон. Каталоги разбирали спрос и обработку обращений. «Пятёрочка Франчайзинг» показала, как объяснять предпринимателям продукт внутри известного бренда. Drinkit — как создавать опыт, ради которого возвращаются гости. Между ними — аналитика, PR, Авито и коммуникация сложного B2B-продукта.</p>
+    <p>Ниже — главное по каждому спикеру. Конспект подготовлен по расшифровкам Zoom и записям выступлений. У каждого разбора — один кадр из эфира. Полные записи доступны участникам закрытого чата «Масштаб».</p>
+  </div>
+  <details class="contents"><summary>Спикеры и темы</summary><ol>
+<li><a href="#sp-01-sarapulov">Семён Сарапулов — Открытие конференции: обмен опытом между практиками</a></li>
+<li><a href="#sp-02-osintsev">Ярослав Осинцев — Системный лидген, построенный на метриках</a></li>
+<li><a href="#sp-03-romanov">Денис Романов — Новая экономика франчайзинга: почему качество лида важнее количества и как перестроить привлечение</a></li>
+<li><a href="#sp-04-rolko">Дмитрий Ролько — Как увеличить число заявок с каталога</a></li>
+<li><a href="#sp-05-rozhdestvenskaya">Анна Рождественская — Кто купит вашу франшизу в 2027 году: портрет, бюджет и сценарии поведения потенциальных франчайзи</a></li>
+<li><a href="#sp-06-koloskova">Валерия Колоскова — Бренд франшизы ≠ бренд компании: как мы строили позиционирование «Пятёрочка Франчайзинг»</a></li>
+<li><a href="#sp-07-panchuk">Анастасия Панчук — Как франшизе создавать инфоповоды, о которых захотят написать СМИ</a></li>
+<li><a href="#sp-08-sapelnikova">Мария Сапельникова — Как меняется коммуникация с клиентами по мере развития продукта</a></li>
+<li><a href="#sp-09-papazyan">Овсеп Папазян — Как на практике работает лидген через Авито у маркетолога «Доставки Кайфа»</a></li>
+<li><a href="#sp-10-boreyko">Павел Борейко — Сильный бренд как инструмент маркетинга и привлечения франчайзи</a></li>
+<li><a href="#sp-11-drozdova">Алёна Дроздова — Маркетинг, который влюбляет клиентов в бренд</a></li>
+</ol></details>
+<h2 class="sec">С чего начали</h2>
+<section class="speaker" id="sp-01-sarapulov" aria-labelledby="name-01-sarapulov">
+ <div class="sp-head"><img class="sp-face" src="speaker-sarapulov.jpg" alt="Семён Сарапулов" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-01-sarapulov">Семён Сарапулов</h2><div class="sp-role">Основатель сообщества «Франчайзинг по-русски»</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Открытие конференции: обмен опытом между практиками</div>
+<div class="insight"><h3>Учиться у рынка приходится постоянно</h3><p>Семён начал встречу со знакомства участников и приглашения к разговору. За день предстояло разобрать привлечение франчайзи с разных сторон: агентства, каталоги, PR, продуктовые команды и сами сети. Важен не только доклад, но и возможность спросить, как это устроено у коллег. Сам Семён отдельно отметил, что продолжает ходить на выступления других практиков и учиться у них. Для быстро меняющегося рынка регулярный обмен опытом становится частью работы руководителя.</p></div>
+<figure><a href="img/market24/01-sarapulov.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Семён Сарапулов"><img src="img/market24/01-sarapulov.jpg" alt="Семён открывает конференцию: знакомимся, задаём вопросы и разбираем опыт коллег." width="1280" height="720" loading="lazy"></a><figcaption>Семён открывает конференцию: знакомимся, задаём вопросы и разбираем опыт коллег.</figcaption></figure>
+</section>
+<h2 class="sec">Лидген, каталоги и новый покупатель</h2>
+<section class="speaker" id="sp-02-osintsev" aria-labelledby="name-02-osintsev">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-osintsev.jpg" alt="Ярослав Осинцев" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-02-osintsev">Ярослав Осинцев</h2><div class="sp-role">Основатель агентства Osintsev, проверенный подрядчик сообщества</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Системный лидген, построенный на метриках</div>
+<div class="insight"><h3>Считать стоимость франчайзи по всей системе</h3><p>Ярослав предложил смотреть на суммарные затраты на привлечение и полученные сделки. Покупатель может увидеть рекламу, изучить каталог, подписаться на основателя и вернуться через другой канал. Если оценивать каждую площадку только по последнему касанию, часть работы останется невидимой. Задача аналитики — связать расходы, квалификацию заявок и продажи, а не найти канал с самой красивой ценой лида.</p></div>
+<div class="insight"><h3>Дать покупателю время на решение</h3><p>По наблюдениям Ярослава, для франшиз с инвестициями 3–5 млн рублей цикл сделки нередко занимает полтора-два месяца. Несколько недель наблюдения могут ничего не сказать об эффективности продвижения. В обсуждении прозвучал и случай, когда лид вернулся к покупке спустя год. Поэтому Ярослав советует смотреть на более длинные периоды и продолжать работу с накопленной базой. Вебинар, кейс или личная коммуникация могут стать следующим шагом для человека, который уже интересовался предложением, но ещё не был готов.</p></div>
+<div class="insight"><h3>Расширять аудиторию через доверие и небольшие шаги</h3><p>Узкий слой людей, уже решивших купить франшизу, быстро становится конкурентным и дорогим. Следующий резерв — те, кто рассматривает бизнес, но боится риска или пока не понимает, какую модель выбрать. Здесь нужны объяснения, примеры и промежуточные действия: посмотреть разбор, прийти на вебинар, познакомиться с предпринимателем. Одного призыва оставить заявку на покупку недостаточно.</p></div>
+<div class="insight"><h3>Личный голос основателя помогает контенту</h3><p>По наблюдениям Ярослава, материалы от предпринимателя получают больше живого отклика, чем обезличенные публикации о франшизе. Но контент требует системности: оформленных кейсов, регулярной работы и понятной связи с бизнесом. Дополнительные площадки и блогеры имеют смысл внутри этой системы — с оценкой качества аудитории и дальнейшего движения заявок.</p></div>
+<figure><a href="img/market24/02-osintsev.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Ярослав Осинцев"><img src="img/market24/02-osintsev.jpg" alt="Причины проблем с маркетингом: больше касаний, сложная окупаемость каналов, нехватка лидов и внутренние процессы." width="1280" height="720" loading="lazy"></a><figcaption>Причины проблем с маркетингом: больше касаний, сложная окупаемость каналов, нехватка лидов и внутренние процессы.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1240" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-03-romanov" aria-labelledby="name-03-romanov">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-romanov.jpg" alt="Денис Романов" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-03-romanov">Денис Романов</h2><div class="sp-role">Директор по развитию каталога HF</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Новая экономика франчайзинга: почему качество лида важнее количества и как перестроить привлечение</div>
+<div class="insight"><h3>Покупатель проходит другую воронку</h3><p>Франчайзер видит последовательность «лид — звонок — встреча — договор». Предприниматель сначала выбирает идею, исследует рынок, сравнивает варианты и сомневается. Заявка не означает, что он уже выбрал именно эту сеть. Если менеджер сразу ведёт человека к оплате, не разобрав его задачу и альтернативы, коммуникация расходится с реальным этапом решения.</p></div>
+<div class="insight"><h3>Квалификация должна продолжаться в продажах</h3><p>Бюджет, готовность к диалогу, сроки и намерения нужны не для галочки в форме. Менеджер должен получить эти сведения, использовать их в разговоре и вернуть маркетингу обратную связь по результату. Важны контроль передачи контакта, фиксация в CRM и разбор причин отказа. Иначе даже хорошо отобранные заявки теряются в стандартном скрипте.</p></div>
+<div class="insight"><h3>Дешёвый контакт может дорого обойтись</h3><p>Денис предложил сравнивать не только цену заявки, но и вероятность сделки, время отдела продаж и готовность будущего партнёра открыть бизнес. Контакт без достаточного бюджета может выглядеть как лид, но не превратиться в работающую точку. Более дорогая квалифицированная заявка иногда выгоднее множества дешёвых: она экономит ограниченное время команды и приближает к открытию.</p></div>
+<div class="insight"><h3>Планировать бюджет по задачам воронки</h3><p>Одни инструменты перехватывают существующий спрос, другие помогают поверить в предложение, третьи доводят до договора. В схеме Дениса контекст и каталоги отвечают за привлечение; бренд, контент, отзывы и присутствие в поисковых ответах — за убеждение; CRM, обучение продаж и аналитика — за завершение сделки. Перераспределять бюджет стоит с учётом того, на каком этапе теряются люди.</p></div>
+<figure><a href="img/market24/03-romanov.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Денис Романов"><img src="img/market24/03-romanov.jpg" alt="Бюджет по этапам воронки: привлечь, убедить и довести до договора. У каждого этапа — свои инструменты и метрики." width="1280" height="720" loading="lazy"></a><figcaption>Бюджет по этапам воронки: привлечь, убедить и довести до договора. У каждого этапа — свои инструменты и метрики.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1241" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-04-rolko" aria-labelledby="name-04-rolko">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-rolko.jpg" alt="Дмитрий Ролько" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-04-rolko">Дмитрий Ролько</h2><div class="sp-role">Исполнительный директор TopFranchise.ru</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Как увеличить число заявок с каталога</div>
+<div class="insight"><h3>Размещение требует работы после публикации</h3><p>Карточка франшизы — начало взаимодействия с площадкой. Дмитрий рекомендовал обсуждать с менеджером каталога предложение, позицию, формат продвижения и изменения в результатах. Менеджер видит поведение аудитории внутри площадки и может помочь выбрать следующий тест. Простое ожидание заявок после оплаты базового размещения оставляет эти возможности неиспользованными. Дмитрий привёл данные своего каталога: в сентябре 2026 года трафик снизился на 20% год к году, а число заявок выросло на 25%. Это результат конкретной площадки, а не оценка всего рынка.</p></div>
+<div class="insight"><h3>Разбирать сочетание оффера, формата и продаж</h3><p>Дмитрий показал кейсы, в которых смена формата размещения и активная работа с площадкой меняли поток обращений. Само по себе сложное направление бизнеса или неблагоприятный новостной фон ещё не объясняют весь результат. Значение имеют предложение, заметность карточки и способность отдела продаж работать с интересом. При этом результаты отдельных кейсов не гарантируют такие же цифры другой франшизе.</p></div>
+<div class="insight"><h3>Не ждать от каталога любого покупателя</h3><p>Аудитория площадки имеет свои инвестиционные возможности и сценарии выбора. Если франшиза ищет очень узкую категорию крупных инвесторов или почти исчерпала доступные территории, массовое размещение может не решать её задачу. Перед покупкой продвижения полезнее сопоставить портрет нужного партнёра с аудиторией каталога, чем ориентироваться только на общий трафик.</p></div>
+<div class="insight"><h3>Учитывать путь между площадками</h3><p>После знакомства в каталоге человек может проверить сайт, соцсети и объявления франшизы, а оставить заявку уже в другом месте. Дмитрий отдельно обсуждал такие переходы и возможности анализа поведения внутри каталога. Для оценки вклада площадки важно разбирать этот путь вместе с собственной аналитикой и данными продаж.</p></div>
+<figure><a href="img/market24/04-rolko.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Дмитрий Ролько"><img src="img/market24/04-rolko.jpg" alt="Выводы из кейсов TopFranchise: формат размещения, работа с каталогом и сильный отдел продаж влияют на результат." width="1280" height="720" loading="lazy"></a><figcaption>Выводы из кейсов TopFranchise: формат размещения, работа с каталогом и сильный отдел продаж влияют на результат.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1242" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-05-rozhdestvenskaya" aria-labelledby="name-05-rozhdestvenskaya">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-rozhdestvenskaya.jpg" alt="Анна Рождественская" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-05-rozhdestvenskaya">Анна Рождественская</h2><div class="sp-role">Руководитель каталога franshiza.ru</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Кто купит вашу франшизу в 2027 году: портрет, бюджет и сценарии поведения потенциальных франчайзи</div>
+<div class="insight"><h3>Продавать понятную инвестиционную модель</h3><p>По наблюдениям Анны, покупатель всё чаще рассматривает франшизу как серьёзную инвестицию и ждёт стабильного работающего бизнеса. Ему нужны объяснения экономики, условий запуска и поддержки. Красивой идеи недостаточно: менеджер должен уверенно отвечать о точке безубыточности, помещении и реальных затратах. Неуверенность в таких вопросах быстро разрушает доверие.</p></div>
+<div class="insight"><h3>Проверить, что человек узнаёт до звонка</h3><p>Инвестор приходит уже с результатами собственного исследования: прочитанными отзывами, сравнением предложений и вопросами к репутации. Анна предложила начать с аудита информации о своей франшизе и регулярно обновлять цифры в разных каналах. Отдельная задача — посмотреть, как бренд представлен в ответах нейросетей и поиске. Это помогает обнаружить расхождения до того, как на них укажет покупатель.</p></div>
+<div class="insight"><h3>Первый ответ — часть маркетинга</h3><p>На слайде Анны — четыре правила: ответить в течение 15 минут, проявить компетентность и открытость, доверить обработку профессиональному менеджеру и продолжить контакт через другие каналы. Речь о её рекомендации по организации продаж. Важно и то, с какого номера звонят: если вызов выглядит как спам, качественно привлечённый человек может просто не взять трубку.</p></div>
+<div class="insight"><h3>Уточнять портрет и показывать опыт партнёров</h3><p>Анна подчеркнула изменения в возрасте, географии, опыте и инвестиционных возможностях покупателей. Старое описание аудитории не стоит автоматически переносить в новый план. Сильный аргумент — действующие франчайзи, которые готовы рассказывать о работе сети. Их участие в мероприятиях и коммуникациях делает поддержку и бизнес-модель проверяемыми, а обещания — конкретнее.</p></div>
+<figure><a href="img/market24/05-rozhdestvenskaya.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Анна Рождественская"><img src="img/market24/05-rozhdestvenskaya.jpg" alt="Приоритеты маркетинга: точный портрет инвестора, проверяемые цифры, репутация и действующие франчайзи как амбассадоры." width="1280" height="720" loading="lazy"></a><figcaption>Приоритеты маркетинга: точный портрет инвестора, проверяемые цифры, репутация и действующие франчайзи как амбассадоры.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1243" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<h2 class="sec">Позиционирование, PR и коммуникация</h2>
+<section class="speaker" id="sp-06-koloskova" aria-labelledby="name-06-koloskova">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-chebotkova.jpg" alt="Валерия Колоскова" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-06-koloskova">Валерия Колоскова</h2><div class="sp-role">Руководитель маркетинга «Пятёрочка Франчайзинг»</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Бренд франшизы ≠ бренд компании: как мы строили позиционирование «Пятёрочка Франчайзинг»</div>
+<div class="insight"><h3>Известность магазина не объясняет франшизу</h3><p>Человек может отлично знать «Пятёрочку» как покупатель и не понимать, что значит стать её партнёром. Валерия показала задачу отдельного B2B-позиционирования внутри большого потребительского бренда: сохранить связь с сетью, но объяснить другой продукт, роли сторон и пользу для предпринимателя. Узнаваемость материнского бренда помогает начать разговор, а содержание партнёрства приходится раскрывать отдельно.</p></div>
+<div class="insight"><h3>Строить позиционирование вместе с бизнесом</h3><p>В разработку вовлекали команду и действующих партнёров. Нужно было понять, что важно предпринимателям помимо дохода и как они видят своё развитие. В результате в центре оказалась возможность расти вместе с «Пятёрочкой». Такое обещание должно опираться на реальную модель работы и ценности компании: коммуникация не исправит разрыв между красивой формулировкой и опытом партнёра.</p></div>
+<div class="insight"><h3>Продолжать маркетинг после первой сделки</h3><p>Партнёрство не заканчивается открытием магазина. Доверие, ощущение развития и качество взаимодействия влияют на готовность предпринимателя открыть следующую точку. Поэтому бренд франшизы работает и на привлечение новых людей, и на отношения с существующими. Это требует согласованности внешних сообщений с тем, как сеть общается и помогает внутри.</p></div>
+<div class="insight"><h3>Проверять каналы на своей аудитории</h3><p>Валерия рассказала и об ограничениях: доступ к огромной покупательской аудитории сети сам по себе не дал сопоставимого потока заявок на франшизу. Покупатель продуктов и потенциальный бизнес-партнёр — разные аудитории. Каналы выбирали под конкретный инвестиционный продукт и его позиционирование: деловые встречи, вебинары, Telegram, email и медийные форматы. Её опыт с отдельными площадками важно рассматривать именно в этом контексте.</p></div>
+<figure><a href="img/market24/06-koloskova.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Валерия Колоскова"><img src="img/market24/06-koloskova.jpg" alt="Позиционирование «Пятёрочка Франчайзинг»: развитие предпринимателя вместе с сетью, миссия и суть партнёрства." width="1280" height="720" loading="lazy"></a><figcaption>Позиционирование «Пятёрочка Франчайзинг»: развитие предпринимателя вместе с сетью, миссия и суть партнёрства.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1244" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-07-panchuk" aria-labelledby="name-07-panchuk">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-panchuk.jpg" alt="Анастасия Панчук" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-07-panchuk">Анастасия Панчук</h2><div class="sp-role">Основатель PR-агентства PunchR, проверенный подрядчик сообщества</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Как франшизе создавать инфоповоды, о которых захотят написать СМИ</div>
+<div class="insight"><h3>Перевести событие компании в тему для читателя</h3><p>Открытие офиса или внутренний юбилей важны бизнесу, но не обязательно редакции. Анастасия предложила проверять тему на актуальность, неожиданность, конфликт, масштаб и пользу. Хорошая история помогает читателю понять происходящее или принять решение. Прежде чем отправлять релиз, полезно сформулировать, зачем человеку вне компании его читать.</p></div>
+<div class="insight"><h3>Искать новости в данных и экспертизе</h3><p>Если громкого события нет, повод можно найти в собственной статистике: изменении спроса, необычных запросах, покупательских привычках. К данным нужен комментарий специалиста, который объяснит причины и последствия. На примерах исследований Анастасия показала, как наблюдение из бизнеса становится темой для широких СМИ. Простое рекламное утверждение о качестве компании такую работу не выполняет.</p></div>
+<div class="insight"><h3>Писать конкретной редакции и журналисту</h3><p>Питч должен попадать в тематику издания, рубрики и автора. Нужны короткое объяснение повода, его ценность для аудитории и понятное предложение: данные, комментарий, интервью. Массовая отправка одинакового корпоративного текста снижает шансы. До обращения стоит посмотреть, о чём журналист уже пишет и какой формат материалов у него выходит.</p></div>
+<div class="insight"><h3>Подкреплять репутацию действиями</h3><p>PR помогает человеку узнать о компании и проверить её, но не заменяет весь маркетинг и продажи. В обсуждении кризисной ситуации в сети студий Анастасия объяснила, почему молчания недостаточно: нужны публичная коммуникация и реальная помощь затронутым людям. Доверие формируется тем, как компания решает проблему, а публикации позволяют сделать эту работу видимой.</p></div>
+<figure><a href="img/market24/07-panchuk.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Анастасия Панчук"><img src="img/market24/07-panchuk.jpg" alt="Пять свойств интересного инфоповода: актуальность, неожиданность, конфликт, масштаб и цифры, польза читателю." width="1280" height="720" loading="lazy"></a><figcaption>Пять свойств интересного инфоповода: актуальность, неожиданность, конфликт, масштаб и цифры, польза читателю.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1245" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-08-sapelnikova" aria-labelledby="name-08-sapelnikova">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-sapelnikova.jpg" alt="Мария Сапельникова" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-08-sapelnikova">Мария Сапельникова</h2><div class="sp-role">MBP Trisigma — платформы A/B-тестирования от «Авито»</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Как меняется коммуникация с клиентами по мере развития продукта</div>
+<div class="insight"><h3>Начинать с готовности клиента к результату</h3><p>На примере Trisigma Мария разобрала продажу сложного B2B-продукта: внедрение требует времени, изменений в процессах и доказательства экономической пользы. Поэтому разговор начинается с диагностики аналитики, команды и целей заказчика. Иногда клиенту сначала нужны обучение и настройка подхода к экспериментам, а уже затем автоматизация. Продать инструмент без условий для его использования — недостаточно.</p></div>
+<div class="insight"><h3>Менять подход по мере зрелости продукта</h3><p>На раннем этапе отдельный заказчик и его запрос могут сильно влиять на развитие решения: бизнес ищет выручку и подтверждает спрос. Когда появляется повторяемая ценность и начинается масштабирование, команда больше опирается на продуктовую стратегию. Меняется и коммуникация: вместо готовности подстроиться под любую задачу нужно ясно объяснить, какую проблему продукт решает лучше всего и кому он подходит.</p></div>
+<div class="insight"><h3>Не обещать любую доработку ради сделки</h3><p>Совместное развитие с крупным заказчиком может принести полезную функцию, но занять значительную часть времени разработки. Такие запросы Мария предложила оценивать по бизнес-ценности, затратам и соответствию направлению продукта. Важно различать полезное партнёрство и ситуацию, когда единичная просьба определяет всю дорожную карту.</p></div>
+<div class="insight"><h3>Согласовывать цели и говорить на языке заказчика</h3><p>Продажам нужна выручка, маркетингу — доверие и узнаваемость, продуктовой команде — развитие решения. Заказчик при этом решает собственную бизнес-задачу. Если её потерять из виду, внутренние цели начинают конфликтовать. Выход, который предложила Мария, — глубокое понимание предметной области, помощь и экспертная поддержка, выраженные в понятной клиенту ценности.</p></div>
+<figure><a href="img/market24/08-sapelnikova.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Мария Сапельникова"><img src="img/market24/08-sapelnikova.jpg" alt="Заказчик, бизнес и маркетинг, продукт: у сторон разные цели, которые нужно согласовать вокруг ценности для клиента." width="1280" height="720" loading="lazy"></a><figcaption>Заказчик, бизнес и маркетинг, продукт: у сторон разные цели, которые нужно согласовать вокруг ценности для клиента.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1246" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<h2 class="sec">Практика площадок и сила бренда</h2>
+<section class="speaker" id="sp-09-papazyan" aria-labelledby="name-09-papazyan">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-papazyan.jpg" alt="Овсеп Папазян" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-09-papazyan">Овсеп Папазян</h2><div class="sp-role">Маркетолог франшизы «Доставка Kaifa»</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Как на практике работает лидген через Авито у маркетолога «Доставки Кайфа»</div>
+<div class="insight"><h3>Работать с объявлениями как с системой тестов</h3><p>Овсеп показал практику регулярного тестирования связок объявлений, описаний и визуалов. В кейсе Kaifa важны живой контент и видео, а не только формальный текст о продаже франшизы. По его словам, команда ежедневно тестирует около 200 объявлений, а на момент выступления в аккаунте было около 21 тысячи объявлений. Масштабирование строится через массовую загрузку и работу по городам. Это опыт конкретной команды: большое число объявлений само по себе ещё не означает такое же количество качественных обращений.</p></div>
+<div class="insight"><h3>Не потерять человека между сообщением и разговором</h3><p>Пользователь может написать в Авито и сразу выйти из приложения. Поэтому Овсеп выделил скорость ответа, пользу в первом сообщении и получение контакта для дальнейшей связи. Команда использует автоответы, чтобы начать диалог, пока менеджер подключается к общению. Важен следующий шаг — перевод интереса в контакт и содержательный разговор о франшизе.</p></div>
+<div class="insight"><h3>Следить за сервисом и расходами</h3><p>В докладе прозвучали две операционные задачи: поддерживать качество обработки обращений и проверять, какие действия площадки расходуют бюджет. Овсеп поделился собственным опытом работы с показателями сервиса и автоматическими инструментами продвижения. Практический вывод — регулярно разбирать настройки и списания, а не оставлять кампанию без контроля после запуска.</p></div>
+<div class="insight"><h3>Достраивать путь после первого касания</h3><p>На итоговом слайде цепочка продолжается рассылками и повторными коммуникациями по собранной базе. Объявление привлекает внимание, автоответ помогает не потерять интерес, менеджер квалифицирует запрос. Оценивать эту цепочку полезно целиком: просмотры и сообщения ещё нужно довести до подходящего франчайзи и сделки.</p></div>
+<figure><a href="img/market24/09-papazyan.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Овсеп Папазян"><img src="img/market24/09-papazyan.jpg" alt="Рабочая схема Kaifa: масштабировать объявления, настраивать автоответы, собирать контакты и продолжать коммуникацию." width="1280" height="720" loading="lazy"></a><figcaption>Рабочая схема Kaifa: масштабировать объявления, настраивать автоответы, собирать контакты и продолжать коммуникацию.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1247" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-10-boreyko" aria-labelledby="name-10-boreyko">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-boreyko.jpg" alt="Павел Борейко" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-10-boreyko">Павел Борейко</h2><div class="sp-role">CEO и co-founder креативного агентства RGBY</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Сильный бренд как инструмент маркетинга и привлечения франчайзи</div>
+<div class="insight"><h3>Бренд участвует в выборе до знакомства с продуктом</h3><p>Павел начал с того, как много решений принимается через цифровой опыт: изображения, отзывы, сайт и коммуникации. Человек ещё не попробовал продукт, но уже сформировал ожидания. В сложной покупке франшизы это влияет на готовность продолжать знакомство. Значение имеют не только слова о выгоде, но и форма, в которой предложение появляется перед предпринимателем.</p></div>
+<div class="insight"><h3>Проверять ассоциации у своей аудитории</h3><p>В интерактивной части участники по-разному интерпретировали один визуальный пример. Цвет, шрифт и композиция вызывают ассоциации, но они зависят от контекста и опыта людей. Поэтому оценка «нам красиво» не заменяет понимания целевой аудитории. Сначала нужно решить, какой смысл бренд должен передать именно ей, затем проверять, считывается ли он.</p></div>
+<div class="insight"><h3>Сохранять характер среди одинаковых решений</h3><p>Павел показал, как следование общим цифровым правилам сближает внешний вид разных брендов. Похожая опасность возникает с шаблонным контентом и массовой генерацией. На таком фоне внимание привлекают различия, человеческий голос и собственная идея. Главный тезис доклада: строить маркетинг от бренда, а тренды использовать как инструмент для его выражения.</p></div>
+<div class="insight"><h3>Рассматривать интеграции как отношения надолго</h3><p>Вместо разовой покупки внимания Павел предложил рассматривать творческие партнёрства с медиа и другими брендами: с взаимной пользой и несколькими точками контакта. Для сложного продукта он также отметил роль личности основателя. Это работа на накопление ассоциаций и доверия; её результат нельзя целиком оценить по заявкам сразу после одной публикации.</p></div>
+<figure><a href="img/market24/10-boreyko.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Павел Борейко"><img src="img/market24/10-boreyko.jpg" alt="Пример из доклада: следование общим правилам упрощения делает визуальный язык разных брендов похожим." width="1280" height="720" loading="lazy"></a><figcaption>Пример из доклада: следование общим правилам упрощения делает визуальный язык разных брендов похожим.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1248" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<section class="speaker" id="sp-11-drozdova" aria-labelledby="name-11-drozdova">
+ <div class="sp-head"><img class="sp-face" src="mk-sp-drozdova.jpg" alt="Алёна Дроздова" loading="lazy" width="76" height="76"><div><h2 class="sp-name" id="name-11-drozdova">Алёна Дроздова</h2><div class="sp-role">Head of strategic marketing Drinkit</div></div></div>
+ <div class="sp-topic"><b>Тема:</b> Маркетинг, который влюбляет клиентов в бренд</div>
+<div class="insight"><h3>Проектировать опыт, ради которого возвращаются</h3><p>Алёна разобрала путь гостя от заказа до получения напитка. Приложение, возможность настроить продукт, скорость и понятность выдачи работают вместе с интерьером и общением. Для одного человека важен быстрый предзаказ, для другого — возможность спокойно выбрать без давления. Эмоциональная связь начинается с этих конкретных удобств, а не только с рекламного сообщения.</p></div>
+<div class="insight"><h3>Проверять ценность коммуникации, а не только данные</h3><p>В докладе был пример персональной рекомендации, построенной на знании о предпочтениях гостя: ожидаемого отклика она не дала. Одного факта «человек любит этот напиток» недостаточно, чтобы определить, чего он хочет сейчас. В коллаборациях действует тот же принцип: известность партнёра и объём охвата не заменяют понятной пользы и подходящего повода для клиента.</p></div>
+<div class="insight"><h3>Смотреть на возвраты и честность обещания</h3><p>Алёна рассказала об анализе удержания по группам гостей и разным временным окнам. Это помогает видеть эффект после первого визита. Но никакая механика не отменяет качества: реальный напиток должен соответствовать изображению, а обещанный опыт — тому, что человек получает в кофейне. В выступлении она отдельно подчеркнула роль настоящего контента и доверия к продукту.</p></div>
+<div class="insight"><h3>Давать партнёрам инструменты для единого бренда</h3><p>Сеть работает в разных городах и условиях, поэтому локальные действия могут отличаться. Чтобы сохранять узнаваемый опыт, команда перешла к гайдам, шаблонам и инструкциям к запускам. Общая идея должна воспроизводиться в деталях — от материалов до обслуживания. В обсуждении скидок Алёна снова вернулась к продукту и причинам вернуться: краткий стимул не заменяет ценности самого посещения.</p></div>
+<figure><a href="img/market24/11-drozdova.jpg" target="_blank" rel="noopener" aria-label="Открыть скриншот выступления: Алёна Дроздова"><img src="img/market24/11-drozdova.jpg" alt="Кейс Drinkit: в коллаборации важен не объём контактов сам по себе, а ценность предложения для гостя." width="1280" height="720" loading="lazy"></a><figcaption>Кейс Drinkit: в коллаборации важен не объём контактов сам по себе, а ценность предложения для гостя.</figcaption></figure>
+<a class="watch" href="https://t.me/c/2982534919/1249" target="_blank" rel="noopener">Смотреть выступление<small>Запись в закрытом чате «Масштаб» · для участников с доступом</small></a>
+</section>
+<h2 class="sec">Что забрать в план маркетинга</h2>
+<p><b>Проверить всю цепочку до открытия.</b> Низкая цена заявки ещё не означает дешёвого франчайзи. Нужно видеть квалификацию, работу менеджера, длину решения и итог сделки. Несколько спикеров по-разному описывали одну потерю: маркетинг привёл человека, но следующий этап не был готов его принять.</p>
+<p><b>Дать инвестору основания доверять.</b> Понятная экономика, актуальная карточка, компетентный ответ, опыт действующих партнёров и репутация в открытых источниках работают вместе. Покупатель сравнивает их ещё до первого разговора. Полезный аудит — пройти этот путь самому и проверить, совпадает ли информация в разных каналах.</p>
+<p><b>Отделить охват от ценности.</b> Большой канал не обязательно приводит нужных инвесторов. Знание предпочтений гостя не гарантирует удачной рекомендации. Известный потребительский бренд ещё нужно объяснить как бизнес-партнёрство. В каждом случае важен конкретный человек, его задача и следующий осмысленный шаг.</p>
+<p><b>Подкрепить бренд опытом.</b> Обещания маркетинга должны воспроизводиться в продукте, поддержке франчайзи и работе точек. Для этого нужны не только идеи, но и инструкции, шаблоны, обратная связь и согласованные действия команды. Тогда продвижение опирается на то, о чём могут рассказать сами партнёры и клиенты.</p>
+<p class="editor-note">Примеры и оценки в разделах относятся к опыту соответствующих спикеров и их компаний на момент конференции. Кадры открываются в полном размере по нажатию.</p>
+<div class="final"><h2>Полные записи — в «Масштабе»</h2>
+<p>Все десять выступлений Franch-Marketing 2027 с презентациями и вопросами участников, а также записи предыдущих мероприятий сообщества — по подписке на закрытый чат.</p>
+<a class="btn" href="subscribe.html">Получить доступ к записям</a></div>
+<p style="margin-top:30px"><a href="blog.html">Вернуться в блог сообщества</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ФРАНЧАЙЗИНГ <span class="footer-brand-accent">ПО-РУССКИ</span></div>
+        <p class="footer-desc">Делаем рынок франшиз прозрачнее, франчайзи успешнее, а франчайзёров богаче.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Продукты</h4>
+        <a href="index.html">Сообщество</a>
+        <a href="subscribe.html">Подписка</a><a href="masshtab.html">Масштаб</a>
+      </div>
+      <div class="footer-col">
+        <h4>Партнёрство</h4>
+        <a href="contractor.html">Подрядчикам</a>
+        <a href="partners.html">Медиа-партнёрам</a>
+        <a href="founder.html">Основатель</a><a href="oferta.html">Оферта</a>
+        <a href="blog.html">Блог</a>
+      </div>
+      <div class="footer-col">
+        <h4>Связаться</h4>
+        <a href="https://t.me/franchru" target="_blank">Telegram-сообщество</a>
+        <a href="https://t.me/Yes_Yasya" target="_blank">@Yes_Yasya</a>
+        <a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/rus.franch/" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024–2026 Франчайзинг по-русски</span>
+      <div class="footer-social">
+        <a href="https://t.me/franchru" target="_blank">✈</a>
+        <a href="https://www.youtube.com/@rusfranch/shorts" target="_blank">▶</a>
+        <a href="https://www.instagram.com/rus.franch/" target="_blank">◎</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+function toggleMenu(){
+  document.getElementById('nav').classList.toggle('open');
+}
+</script>
+</body>
+</html>
