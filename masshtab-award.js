@@ -6,7 +6,7 @@
   const content = document.getElementById('nomineeDetails');
   const stamp = document.getElementById('nomineeUpdated');
   const categories = ['ff', 'fs', 'ef', 'es'];
-  const localPhotoIds = new Set([2,3,4,5,6,7,8,9,10,11,12]);
+  const localPhotoIds = new Set([2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]);
   let data = null, activeId = null, trigger = null;
   const el = (tag, text, cls) => { const n = document.createElement(tag); if (text != null) n.textContent = text; if (cls) n.className = cls; return n; };
   function photo(n, cls) {
@@ -14,8 +14,13 @@
     const initials = n.name.split(/\s+/).slice(0, 2).map(x => x[0] || '').join('');
     box.append(el('span', initials, 'nominee-initials'));
     if (localPhotoIds.has(n.id) || (n.photo && n.photo.startsWith('https://api.frgu.ru/award/photos/'))) {
-      const image = el('img'); image.src = localPhotoIds.has(n.id) ? 'award-photos/nominee-' + n.id + '.jpg?v=20261118' : n.photo; image.alt = n.name; image.loading = 'eager'; image.decoding = 'async';
-      image.addEventListener('error', () => image.remove()); box.append(image);
+      const image = el('img'); image.src = localPhotoIds.has(n.id) ? 'award-photos/nominee-' + n.id + '.jpg?v=20261127' : n.photo; image.alt = n.name; image.loading = 'eager'; image.decoding = 'async';
+      const remote = n.photo && n.photo.startsWith('https://api.frgu.ru/award/photos/') ? n.photo : null;
+      let triedRemote = !localPhotoIds.has(n.id);
+      image.addEventListener('error', () => {
+        if (!triedRemote && remote) { triedRemote = true; image.src = remote; return; }
+        image.remove(); box.dataset.photoRetry = String(n.id);
+      }); box.append(image);
     }
     return box;
   }
@@ -63,6 +68,11 @@
       });
       if (dialog.open) { const n = data.nominees.find(n => n.id === activeId); if (n) details(n); else dialog.close(); }
     }
+    // A transient image failure must not leave initials forever when JSON is unchanged.
+    [root, content].forEach(container => container.querySelectorAll('[data-photo-retry]').forEach(box => {
+      const n = data.nominees.find(item => item.id === Number(box.dataset.photoRetry));
+      if (n) box.replaceWith(photo(n, box.className));
+    }));
     const date = new Date(data.updated_at); stamp.textContent = 'Данные обновлены ' + date.toLocaleString('ru-RU', {timeZone:'Europe/Moscow', day:'numeric', month:'long', hour:'2-digit', minute:'2-digit'}) + ' МСК';
   }
   async function load(url) { const r = await fetch(url, {cache:'no-store', signal:AbortSignal.timeout(6000)}); if (!r.ok) throw new Error('Unavailable'); render(await r.json()); }
